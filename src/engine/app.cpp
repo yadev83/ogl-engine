@@ -4,11 +4,16 @@
 #include <chrono>
 #include <thread>
 
+#include "defaults.hpp"
 #include "core/stacktrace.hpp"
 #include "core/logger.hpp"
-#include "render/debugrenderer.hpp"
 #include "input/input.hpp"
 #include "utils/resourcemanager.hpp"
+
+#include "render.hpp"
+#include "graphics/particlesystem.hpp"
+#include "scene/behavioursystem.hpp"
+#include "physics/physicsystem.hpp"
 
 namespace Engine {
     void FramebufferSizeCallbackFitToApp(GLFWwindow* window, int width, int height) {
@@ -67,6 +72,20 @@ namespace Engine {
         #if defined(NDEBUG)
             GetSystem<Render::DebugRenderer>().Pause();
         #endif
+
+        // Register basic systems
+        // RegisterSystem<Scene::BehaviourSystem>();
+        // RegisterSystem<Physics::PhysicSystem>();
+        // RegisterSystem<Render::SpriteRenderer>();
+        //RegisterSystem<Render::UIRenderer>();
+        RegisterSystem<ParticleSystem>();
+        
+        // Default variables init
+        Utils::ResourceManager::LoadPak("data/default.pak", "default");
+        Defaults::font = Utils::ResourceManager::GetFont("default:fonts/default.ttf");
+        Defaults::shader = Utils::ResourceManager::GetShader("default:shaders/default");
+        Defaults::textShader = Utils::ResourceManager::GetShader("default:shaders/default_text");
+        Defaults::texture = Utils::ResourceManager::GetTexture("default:textures/default.png");
     }
 
     int App::GetWidth() { return mWidth; }
@@ -141,7 +160,7 @@ namespace Engine {
         mSceneToLoad = name;
     }
 
-    void App::Run() {        
+    void App::Run() {
         // Time step manager
         float frameStartTime = static_cast<float>(glfwGetTime());
         float deltaTime = 0.0f;

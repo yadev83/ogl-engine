@@ -1,6 +1,6 @@
 #include "uirenderer.hpp"
 
-#include <glm/gtc/matrix_transform.hpp>
+#include "../app.hpp"
 
 #include "../input/input.hpp"
 #include "../scene/behaviour.hpp"
@@ -215,15 +215,21 @@ namespace Engine::Render {
     }
 
     glm::vec2 UIRenderer::GetTransformedPosition(Text text, Transform transform) {
+        glm::vec2 computedSize = text.font->GetTextSize(text.text, transform.scale, text.maxWidth);
+
         switch(text.anchor) {
             case Anchor::BottomLeft:
                 return glm::vec2(transform.position);
 
+            case Anchor::Top:
+                return glm::vec2(transform.position.x - computedSize.x * 0.5f, transform.position.y - computedSize.y);
+
+            case Anchor::Bottom:
+                return glm::vec2(transform.position.x - computedSize.x * 0.5f, transform.position.y);
+
             default:
-            case Anchor::Center: {
-                glm::vec2 computedSize = text.font->GetTextSize(text.text, transform.scale, text.maxWidth);
+            case Anchor::Center:
                 return (glm::vec2(transform.position) - (computedSize * 0.5f));
-            }
         }
     }
 

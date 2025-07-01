@@ -18,6 +18,18 @@ namespace Engine { class App; }
 
 namespace Engine::Scene {
     /**
+     * @brief Les PrimitiveType sont des types d'entités préfabriquées
+     * 
+     * Le but est de passer un type d'entité primitive à la fonction Scene::CreateEntity(PrimitiveType type) pour pouvoir générer des prefabs simples.
+     * On a souvent besoin de créer des éléments redondants, alors certains ont été préparés au sein même du moteur.
+     */
+    enum class PrimitiveType {
+        Empty,
+        Quad,
+        Text
+    };
+
+    /**
      * @brief Classe qui encapsule un registre de composants ECS, et des fonctions de lifcecycle
      */
     class Scene {
@@ -90,7 +102,7 @@ namespace Engine::Scene {
              * 
              * @return ECS::Entity 
              */
-            ECS::Entity CreateEntity();
+            ECS::Entity CreateEntity(PrimitiveType type = PrimitiveType::Empty);
 
             /**
              * @brief Créé une entité en lui ajoutant au passage une liste de components

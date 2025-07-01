@@ -7,6 +7,7 @@
 #include "core/stacktrace.hpp"
 #include "core/logger.hpp"
 #include "render/debugrenderer.hpp"
+#include "defaults.hpp"
 #include "input/input.hpp"
 #include "utils/resourcemanager.hpp"
 
@@ -62,11 +63,12 @@ namespace Engine {
         Input::InputManager::Init(mWindow->GetRawContext());
         Audio::AudioManager::Init();
 
-        // Global registration of a debug renderer system
-        RegisterSystem<Render::DebugRenderer>();
-        #if defined(NDEBUG)
-            GetSystem<Render::DebugRenderer>().Pause();
-        #endif
+        // Default variables init
+        Utils::ResourceManager::LoadPak("data/default.pak", "default");
+        Defaults::font = Utils::ResourceManager::GetFont("default:fonts/default.ttf");
+        Defaults::shader = Utils::ResourceManager::GetShader("default:shaders/default");
+        Defaults::textShader = Utils::ResourceManager::GetShader("default:shaders/default_text");
+        Defaults::texture = Utils::ResourceManager::GetTexture("default:textures/default.png");
     }
 
     int App::GetWidth() { return mWidth; }

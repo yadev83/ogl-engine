@@ -26,6 +26,7 @@
 #include "render/rendertarget.hpp"
 #include "render/screenrenderer.hpp"
 
+
 namespace Engine {
     /**
      * @brief Point d'entrée d'une application. Gère les différents systèmes associés au moteur de jeu

@@ -4,5 +4,3 @@
 #include "ui/element.hpp"
 #include "ui/font.hpp"
 #include "ui/text.hpp"
-
-#include "ui/defaults.hpp"

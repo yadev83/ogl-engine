@@ -1,7 +1,5 @@
 #include "debugrenderer.hpp"
 
-#include "../app.hpp"
-
 #include "../scene/transform.hpp"
 #include "../physics/collider.hpp"
 #include "../physics/rigidbody.hpp"

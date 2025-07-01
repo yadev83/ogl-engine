@@ -48,11 +48,7 @@ namespace Engine::Core {
         auto it = mFiles.find(name);
         if (it != mFiles.end()) return it->second;
 
-        LOG_ERROR(std::string("File not found " + name));
-        LOG_ERROR("Possible files for this pak are:");
-        for(auto it: mFiles) {
-            LOG_ERROR(it.first);
-        }
+        LOG_ERROR("File not found ");
         return {};
     }
 

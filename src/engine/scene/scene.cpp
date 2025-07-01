@@ -1,11 +1,5 @@
 #include "scene.hpp"
 
-#include "transform.hpp"
-#include "../physics/rigidbody.hpp"
-#include "../physics/collider.hpp"
-#include "../graphics/sprite.hpp"
-#include "../ui/text.hpp"
-
 namespace Engine::Scene {
     Scene::Scene() {
         mRegistry.mScene = this;
@@ -15,28 +9,9 @@ namespace Engine::Scene {
     ICamera* Scene::GetCamera() { return mCamera; }
     App& Scene::GetApp() { return *mApp; }
 
-    ECS::Entity Scene::CreateEntity(PrimitiveType type) {
+    ECS::Entity Scene::CreateEntity() {
         EntityID id = mRegistry.CreateEntity();
-        ECS::Entity entity(id, &mRegistry);
-
-        switch(type) {
-            case PrimitiveType::Quad:
-                entity.AddComponent<Transform>();
-                entity.AddComponent<Physics::Rigidbody>();
-                entity.AddComponent<Physics::BoxCollider>();
-                entity.AddComponent<Graphics::Sprite>();
-                break;
-
-            case PrimitiveType::Text:
-                entity.AddComponent<Transform>();
-                entity.AddComponent<UI::Text>(UI::Text{.text="Text"});
-                break;
-
-            default:
-                break;
-        }
-
-        return entity;
+        return ECS::Entity(id, &mRegistry);
     }
 
     void Scene::DestroyEntity(EntityID entityID) {

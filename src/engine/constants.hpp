@@ -20,8 +20,6 @@ namespace Engine {
     /** @brief Définition d'une enum "Anchor" qui permet de définir le point d'ancrage d'un item (très utile pour les Interfaces Utilisateur) */
     enum class Anchor {
         BottomLeft,
-        Center,
-        Bottom,
-        Top
+        Center
     };
 }

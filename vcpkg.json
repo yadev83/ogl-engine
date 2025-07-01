@@ -1,5 +1,5 @@
 {
-    "name": "ogl-engine",
+    "name": "ogl_engine",
     "version": "0.0.1-d",
     "dependencies": [
         "glfw3",

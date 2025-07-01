@@ -11,9 +11,10 @@
 
 #include <engine/ecs/component.hpp>
 #include <engine/constants.hpp>
-#include <engine/defaults.hpp>
+#include <engine/graphics/defaults.hpp>
 
 #include "font.hpp"
+#include "defaults.hpp"
 
 namespace Engine::UI {
     /**
@@ -29,7 +30,7 @@ namespace Engine::UI {
         glm::vec3 color = {1.0f, 1.0f, 1.0f};
         
         /** @brief le shader utilisé pour rendre le texte */
-        Graphics::Shader *shader = Defaults::textShader;
+        Graphics::Shader *shader = Graphics::Defaults::textShader;
         /** @brief la police d'écriture utilisée */
         Font *font = Defaults::font;
         /** @brief Une ancre pour positionner le texte */

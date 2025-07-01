@@ -4,6 +4,8 @@
  */
 #pragma once
 
+#include "../app.hpp"
+
 #include "../graphics/shader.hpp"
 #include "../ecs/system.hpp"
 

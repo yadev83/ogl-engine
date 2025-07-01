@@ -4,7 +4,7 @@
  */
 #pragma once
 
-#include "../defaults.hpp"
+#include "defaults.hpp"
 
 #include "texture.hpp"
 #include "shader.hpp"

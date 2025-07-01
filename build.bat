@@ -1,7 +1,7 @@
 :: Configuration
 set "BUILD_DIR=build"
 set "VCPKG_DIR=C:/vcpkg"
-set "PROJECT_NAME=ogl_engine"
+set "PROJECT_NAME=ogl-engine"
 set "EXECUTABLE=%PROJECT_NAME%.exe"
 set "DEBUG_WORKDIR=%BUILD_DIR%\Debug"
 set "RELEASE_WORKDIR=%BUILD_DIR%\Release"

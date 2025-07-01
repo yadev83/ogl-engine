@@ -5,5 +5,3 @@
 #include "graphics/shader.hpp"
 #include "graphics/sprite.hpp"
 #include "graphics/texture.hpp"
-
-#include "graphics/defaults.hpp"

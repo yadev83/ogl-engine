@@ -1,15 +1,12 @@
 #include <iostream>
 #include <windows.h>
 #include <engine/app.hpp>
-#include <engine/utils/iniparser.hpp>
-#include <engine/utils/colors.hpp>
+#include <engine/utils.hpp>
 
-#include <engine/render/spriterenderer.hpp>
-#include <engine/render/uirenderer.hpp>
-#include <engine/render/debugrenderer.hpp>
-#include <engine/graphics/particlesystem.hpp>
-#include <engine/scene/behavioursystem.hpp>
-#include <engine/physics/physicsystem.hpp>
+#include <engine/render.hpp>
+#include <engine/graphics.hpp>
+#include <engine/scene.hpp>
+#include <engine/physics.hpp>
 
 using namespace Engine::Scene;
 using namespace Engine::Render;
@@ -17,9 +14,17 @@ using namespace Engine::Physics;
 using namespace Engine::Graphics;
 using namespace Engine::Utils;
 
+#include "scenes/hello_world.hpp"
+
+
 class Game : public Engine::App {
     public:
         Game(int width = 800, int height = 600, AppSettings settings = {.title="Game"}) : App(width, height, settings) {
+            // Global registration of a debug renderer system
+            RegisterSystem<DebugRenderer>();
+            #if defined(NDEBUG)
+                GetSystem<Render::DebugRenderer>().Pause();
+            #endif
             RegisterSystem<BehaviourSystem>();
             RegisterSystem<PhysicSystem>();
             RegisterSystem<SpriteRenderer>();
@@ -27,6 +32,9 @@ class Game : public Engine::App {
             RegisterSystem<ParticleSystem>();
             
             settings.clearColor = RGBAColor(92, 102, 86);
+
+            RegisterScene<HelloWorld>("HelloWorld");
+            LoadScene("HelloWorld");
         }
 };
 

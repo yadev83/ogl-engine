@@ -1,0 +1,161 @@
+\doxysection{Engine\+::Graphics\+::Texture Class Reference}
+\hypertarget{class_engine_1_1_graphics_1_1_texture}{}\label{class_engine_1_1_graphics_1_1_texture}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+
+
+Transporte un ID de texture Open\+GL.  
+
+
+
+
+{\ttfamily \#include $<$texture.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a41a04135b4bd173b3a120faba127d208}{Texture}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} et charge la texture demandée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a4980573e4a0418987f36c1f08c096b99}{Texture}} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} et charge la texture depuis un buffer mémoire. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a8be8de537edfc7bca072f3cf3758c953}{Texture}} ()
+\begin{DoxyCompactList}\small\item\em Construit un nouvel object \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a44ffaee385b6eea92e6d114ef471533f}{\texorpdfstring{$\sim$}{\string~}\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Détruit proprement la texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a4294d430f99393ecf2a87bec31533b2b}{Load\+From\+File}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Charge un fichier texture et construit la texture Open\+GL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_acf5f5ee7ba9f7dd1d896fe9d88474f60}{Load\+From\+Memory}} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Charge une texture depuis le buffer donné \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a74da08d473005f8497115bda0bdfd902}{Get}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}identifiant de la texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_ab805d4967e99752251283f13f81d20cd}{Bind}} (int unit=0) const
+\begin{DoxyCompactList}\small\item\em Lie la texture à l\textquotesingle{}unité demandée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Transporte un ID de texture Open\+GL. 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_a41a04135b4bd173b3a120faba127d208}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_a41a04135b4bd173b3a120faba127d208} 
+Engine\+::\+Graphics\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} et charge la texture demandée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Le chemin vers la texture à charger \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_a4980573e4a0418987f36c1f08c096b99}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_a4980573e4a0418987f36c1f08c096b99} 
+Engine\+::\+Graphics\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} et charge la texture depuis un buffer mémoire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & La donnée binaire à charger \\
+\hline
+{\em size} & La taille du buffer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_a8be8de537edfc7bca072f3cf3758c953}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_a8be8de537edfc7bca072f3cf3758c953} 
+Engine\+::\+Graphics\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel object \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} vide. 
+
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_a44ffaee385b6eea92e6d114ef471533f}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}}
+\index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_a44ffaee385b6eea92e6d114ef471533f} 
+Engine\+::\+Graphics\+::\+Texture\+::\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Détruit proprement la texture. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_ab805d4967e99752251283f13f81d20cd}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!Bind@{Bind}}
+\index{Bind@{Bind}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_ab805d4967e99752251283f13f81d20cd} 
+void Engine\+::\+Graphics\+::\+Texture\+::\+Bind (\begin{DoxyParamCaption}\item[{int}]{unit}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Lie la texture à l\textquotesingle{}unité demandée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Unité de bind pour la texture (GL\+\_\+\+TEXTURE\+\_\+0-\/\texorpdfstring{$>$}{>}16) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_a74da08d473005f8497115bda0bdfd902}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!Get@{Get}}
+\index{Get@{Get}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_a74da08d473005f8497115bda0bdfd902} 
+GLuint Engine\+::\+Graphics\+::\+Texture\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Renvoie l\textquotesingle{}identifiant de la texture. 
+
+\begin{DoxyReturn}{Returns}
+GLuint 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_a4294d430f99393ecf2a87bec31533b2b}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_a4294d430f99393ecf2a87bec31533b2b} 
+void Engine\+::\+Graphics\+::\+Texture\+::\+Load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Charge un fichier texture et construit la texture Open\+GL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Chemin vers l\textquotesingle{}image à charger \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_texture_acf5f5ee7ba9f7dd1d896fe9d88474f60}\index{Engine::Graphics::Texture@{Engine::Graphics::Texture}!LoadFromMemory@{LoadFromMemory}}
+\index{LoadFromMemory@{LoadFromMemory}!Engine::Graphics::Texture@{Engine::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{LoadFromMemory()}{LoadFromMemory()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_texture_acf5f5ee7ba9f7dd1d896fe9d88474f60} 
+void Engine\+::\+Graphics\+::\+Texture\+::\+Load\+From\+Memory (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Charge une texture depuis le buffer donné 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Donnée de la texture à charger \\
+\hline
+{\em size} & Taille du buffer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+graphics/\mbox{\hyperlink{texture_8hpp}{texture.\+hpp}}\item 
+graphics/\mbox{\hyperlink{texture_8cpp}{texture.\+cpp}}\end{DoxyCompactItemize}

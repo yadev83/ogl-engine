@@ -1,0 +1,107 @@
+\doxysection{Engine\+::Audio\+::Sound Struct Reference}
+\hypertarget{struct_engine_1_1_audio_1_1_sound}{}\label{struct_engine_1_1_audio_1_1_sound}\index{Engine::Audio::Sound@{Engine::Audio::Sound}}
+
+
+\doxylink{struct_engine_1_1_audio_1_1_sound}{Sound} est un type de donnée qui contient ce qu\textquotesingle{}il faut pour jouer un son avec l\textquotesingle{}api Open\+Al.  
+
+
+
+
+{\ttfamily \#include $<$sound.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound_ab0c8ba900b0eedab300923c2145f2441}{\texorpdfstring{$\sim$}{\string~}\+Sound}} ()
+\begin{DoxyCompactList}\small\item\em Détruit le son proprement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Sound\+File\+Type}} \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound_a9d40db58407d9fcfb882c78fdbe4c6a9}{file\+Type}} = \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}{WAV}}
+\begin{DoxyCompactList}\small\item\em Le type de fichier qui est lu dans le buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type}} \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound_a59bfd3f9ef9dd0cbfefd23f4b09b1f05}{type}} = \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{SFX}}
+\begin{DoxyCompactList}\small\item\em Le type de son stocké \end{DoxyCompactList}\item 
+ALuint \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound_a2e37423bec977af2b70ecf09966dd888}{source}}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}identifiant de source Open\+AL pour ce son. \end{DoxyCompactList}\item 
+ALuint \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound_afed6ba6e687ef34194a81a13f6f6443a}{buffer}}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}identifiant du buffer Open\+AL qui contient la donnée de ce son. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound_a66cf8b949b6d8ed89a5ee3771c13abbb}{volume}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em Le volume auquel doit être joué ce son spécifiquement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{struct_engine_1_1_audio_1_1_sound}{Sound} est un type de donnée qui contient ce qu\textquotesingle{}il faut pour jouer un son avec l\textquotesingle{}api Open\+Al. 
+
+\label{doc-constructors}
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_ab0c8ba900b0eedab300923c2145f2441}\index{Engine::Audio::Sound@{Engine::Audio::Sound}!````~Sound@{\texorpdfstring{$\sim$}{\string~}Sound}}
+\index{````~Sound@{\texorpdfstring{$\sim$}{\string~}Sound}!Engine::Audio::Sound@{Engine::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Sound()}{\string~Sound()}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_audio_1_1_sound_ab0c8ba900b0eedab300923c2145f2441} 
+Engine\+::\+Audio\+::\+Sound\+::\texorpdfstring{$\sim$}{\string~}\+Sound (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Détruit le son proprement. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_afed6ba6e687ef34194a81a13f6f6443a}\index{Engine::Audio::Sound@{Engine::Audio::Sound}!buffer@{buffer}}
+\index{buffer@{buffer}!Engine::Audio::Sound@{Engine::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_audio_1_1_sound_afed6ba6e687ef34194a81a13f6f6443a} 
+ALuint Engine\+::\+Audio\+::\+Sound\+::buffer}
+
+
+
+L\textquotesingle{}identifiant du buffer Open\+AL qui contient la donnée de ce son. 
+
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_a9d40db58407d9fcfb882c78fdbe4c6a9}\index{Engine::Audio::Sound@{Engine::Audio::Sound}!fileType@{fileType}}
+\index{fileType@{fileType}!Engine::Audio::Sound@{Engine::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{fileType}{fileType}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_audio_1_1_sound_a9d40db58407d9fcfb882c78fdbe4c6a9} 
+\mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Sound\+File\+Type}} Engine\+::\+Audio\+::\+Sound\+::file\+Type = \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}{WAV}}}
+
+
+
+Le type de fichier qui est lu dans le buffer. 
+
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_a2e37423bec977af2b70ecf09966dd888}\index{Engine::Audio::Sound@{Engine::Audio::Sound}!source@{source}}
+\index{source@{source}!Engine::Audio::Sound@{Engine::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_audio_1_1_sound_a2e37423bec977af2b70ecf09966dd888} 
+ALuint Engine\+::\+Audio\+::\+Sound\+::source}
+
+
+
+L\textquotesingle{}identifiant de source Open\+AL pour ce son. 
+
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_a59bfd3f9ef9dd0cbfefd23f4b09b1f05}\index{Engine::Audio::Sound@{Engine::Audio::Sound}!type@{type}}
+\index{type@{type}!Engine::Audio::Sound@{Engine::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_audio_1_1_sound_a59bfd3f9ef9dd0cbfefd23f4b09b1f05} 
+\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type}} Engine\+::\+Audio\+::\+Sound\+::type = \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{SFX}}}
+
+
+
+Le type de son stocké 
+
+\Hypertarget{struct_engine_1_1_audio_1_1_sound_a66cf8b949b6d8ed89a5ee3771c13abbb}\index{Engine::Audio::Sound@{Engine::Audio::Sound}!volume@{volume}}
+\index{volume@{volume}!Engine::Audio::Sound@{Engine::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{volume}{volume}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_audio_1_1_sound_a66cf8b949b6d8ed89a5ee3771c13abbb} 
+float Engine\+::\+Audio\+::\+Sound\+::volume = 1.\+0f}
+
+
+
+Le volume auquel doit être joué ce son spécifiquement. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+audio/\mbox{\hyperlink{sound_8hpp}{sound.\+hpp}}\end{DoxyCompactItemize}

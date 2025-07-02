@@ -1,0 +1,131 @@
+\doxysection{Engine\+::Graphics\+::Material Class Reference}
+\hypertarget{class_engine_1_1_graphics_1_1_material}{}\label{class_engine_1_1_graphics_1_1_material}\index{Engine::Graphics::Material@{Engine::Graphics::Material}}
+
+
+La classe \doxylink{class_engine_1_1_graphics_1_1_material}{Material} définit un "{}material"{} graphique utilisé pour le rendu de meshes texturés.  
+
+
+
+
+{\ttfamily \#include $<$material.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_a3993f9362a49f5c02db13edac9fb5d19}{Material}} (\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Texture}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_af530118e0e51612b7d82f984eb2031ca}{texture}}=\mbox{\hyperlink{namespace_engine_1_1_defaults_a42a9302220be7228261a4fa8546b37cd}{Defaults\+::texture}}, \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Shader}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_aa4173fc0ba9e75427b22e189ea74776e}{shader}}=\mbox{\hyperlink{namespace_engine_1_1_defaults_a50900cbe6dd6812f41f7fe8ddf0b5671}{Defaults\+::shader}})
+\begin{DoxyCompactList}\small\item\em Construit un nouveau \doxylink{class_engine_1_1_graphics_1_1_material}{Material}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_a0e81f9e353dbe009363c28112d425f7c}{Set\+Uniform}} (const std\+::string \&name, const \mbox{\hyperlink{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}{Uniform\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Enregistre un uniform dans le tableau interne du material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_a26e642036a2df238a08e14e5a9007e80}{Bind}} () const
+\begin{DoxyCompactList}\small\item\em Permet de lier le \doxylink{class_engine_1_1_graphics_1_1_material}{Material} courant et de setup les uniforms avant un drawcall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_aa4173fc0ba9e75427b22e189ea74776e}{shader}}
+\begin{DoxyCompactList}\small\item\em Pointeur vers un objet \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} préalablement compilé \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_af530118e0e51612b7d82f984eb2031ca}{texture}}
+\begin{DoxyCompactList}\small\item\em Pointeur vers un objet \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} (peut être nullptr) \end{DoxyCompactList}\item 
+glm\+::vec4 \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_aa85c488c585fd165386d925c6f968dfa}{color}} = \{1.\+0f, 1.\+0f, 1.\+0f, 1.\+0f\}
+\begin{DoxyCompactList}\small\item\em La couleur du \doxylink{class_engine_1_1_graphics_1_1_material}{Material} (automatiquement envoyée à l\textquotesingle{}uniform u\+\_\+\+Color, peut être utilisée par les shaders) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La classe \doxylink{class_engine_1_1_graphics_1_1_material}{Material} définit un "{}material"{} graphique utilisé pour le rendu de meshes texturés. 
+
+Un \doxylink{class_engine_1_1_graphics_1_1_material}{Material} doit nécessairement avoir un \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} associé pour le rendu. Il peut avoir une texture aussi. En plus de cela, le \doxylink{class_engine_1_1_graphics_1_1_material}{Material} possède une "{}color"{} (qui peut être utilisée pour un rendu flat si pas de texture ou en mix avec la texture) 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_graphics_1_1_material_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_graphics_1_1_material_a3993f9362a49f5c02db13edac9fb5d19}\index{Engine::Graphics::Material@{Engine::Graphics::Material}!Material@{Material}}
+\index{Material@{Material}!Engine::Graphics::Material@{Engine::Graphics::Material}}
+\doxysubsubsection{\texorpdfstring{Material()}{Material()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_material_a3993f9362a49f5c02db13edac9fb5d19} 
+Engine\+::\+Graphics\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Texture}} \texorpdfstring{$\ast$}{*}}]{texture}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_defaults_a42a9302220be7228261a4fa8546b37cd}{Defaults\+::texture}}}, }\item[{\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Shader}} \texorpdfstring{$\ast$}{*}}]{shader}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_defaults_a50900cbe6dd6812f41f7fe8ddf0b5671}{Defaults\+::shader}}}}\end{DoxyParamCaption})}
+
+
+
+Construit un nouveau \doxylink{class_engine_1_1_graphics_1_1_material}{Material}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & La texture à utiliser (charger au préalable et gérer la mémoire) \\
+\hline
+{\em shader} & Le shader à utiliser (charger au préalable, et gérer la mémoire) \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_graphics_1_1_material_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_graphics_1_1_material_a26e642036a2df238a08e14e5a9007e80}\index{Engine::Graphics::Material@{Engine::Graphics::Material}!Bind@{Bind}}
+\index{Bind@{Bind}!Engine::Graphics::Material@{Engine::Graphics::Material}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_material_a26e642036a2df238a08e14e5a9007e80} 
+void Engine\+::\+Graphics\+::\+Material\+::\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Permet de lier le \doxylink{class_engine_1_1_graphics_1_1_material}{Material} courant et de setup les uniforms avant un drawcall. 
+
+\Hypertarget{class_engine_1_1_graphics_1_1_material_a0e81f9e353dbe009363c28112d425f7c}\index{Engine::Graphics::Material@{Engine::Graphics::Material}!SetUniform@{SetUniform}}
+\index{SetUniform@{SetUniform}!Engine::Graphics::Material@{Engine::Graphics::Material}}
+\doxysubsubsection{\texorpdfstring{SetUniform()}{SetUniform()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_material_a0e81f9e353dbe009363c28112d425f7c} 
+void Engine\+::\+Graphics\+::\+Material\+::\+Set\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const \mbox{\hyperlink{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}{Uniform\+Value}} \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Enregistre un uniform dans le tableau interne du material. 
+
+A chaque "{}\+Bind()"{}, les uniforms stockés sont envoyés dans le \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader}. Cela permet de rendre les \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} particulièrement customisables, sans pour autant mettre les mains dans le code des renderers puisuqe le binding à lieu ici.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom de l\textquotesingle{}uniform (doit matcher avec le nom utilisé dans le shader) \\
+\hline
+{\em value} & La valeur à enregistrer (doit faire partie de \doxylink{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}{Uniform\+Value}) \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_engine_1_1_graphics_1_1_material_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_engine_1_1_graphics_1_1_material_aa85c488c585fd165386d925c6f968dfa}\index{Engine::Graphics::Material@{Engine::Graphics::Material}!color@{color}}
+\index{color@{color}!Engine::Graphics::Material@{Engine::Graphics::Material}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_material_aa85c488c585fd165386d925c6f968dfa} 
+glm\+::vec4 Engine\+::\+Graphics\+::\+Material\+::color = \{1.\+0f, 1.\+0f, 1.\+0f, 1.\+0f\}}
+
+
+
+La couleur du \doxylink{class_engine_1_1_graphics_1_1_material}{Material} (automatiquement envoyée à l\textquotesingle{}uniform u\+\_\+\+Color, peut être utilisée par les shaders) 
+
+\Hypertarget{class_engine_1_1_graphics_1_1_material_aa4173fc0ba9e75427b22e189ea74776e}\index{Engine::Graphics::Material@{Engine::Graphics::Material}!shader@{shader}}
+\index{shader@{shader}!Engine::Graphics::Material@{Engine::Graphics::Material}}
+\doxysubsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_material_aa4173fc0ba9e75427b22e189ea74776e} 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Shader}}\texorpdfstring{$\ast$}{*} Engine\+::\+Graphics\+::\+Material\+::shader}
+
+
+
+Pointeur vers un objet \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} préalablement compilé 
+
+\Hypertarget{class_engine_1_1_graphics_1_1_material_af530118e0e51612b7d82f984eb2031ca}\index{Engine::Graphics::Material@{Engine::Graphics::Material}!texture@{texture}}
+\index{texture@{texture}!Engine::Graphics::Material@{Engine::Graphics::Material}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_material_af530118e0e51612b7d82f984eb2031ca} 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Texture}}\texorpdfstring{$\ast$}{*} Engine\+::\+Graphics\+::\+Material\+::texture}
+
+
+
+Pointeur vers un objet \doxylink{class_engine_1_1_graphics_1_1_texture}{Texture} (peut être nullptr) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+graphics/\mbox{\hyperlink{material_8hpp}{material.\+hpp}}\item 
+graphics/\mbox{\hyperlink{material_8cpp}{material.\+cpp}}\end{DoxyCompactItemize}

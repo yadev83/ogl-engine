@@ -1,0 +1,31 @@
+\doxysection{text.\+hpp}
+\hypertarget{text_8hpp_source}{}\label{text_8hpp_source}\index{ui/text.hpp@{ui/text.hpp}}
+\mbox{\hyperlink{text_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{component_8hpp}{engine/ecs/component.hpp}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{defs_8hpp}{engine/defs.hpp}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{defaults_8hpp}{engine/defaults.hpp}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{font_8hpp}{font.hpp}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_u_i}{Engine::UI}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_engine_1_1_u_i_1_1_text}{Text}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{ECS::Component}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_engine_1_1_u_i_1_1_text_a14cbaee467c135fa36655eef5b0c84da}{text}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_engine_1_1_u_i_1_1_text_a996edae5cbd025ae50e8c5ca2ecc9507}{maxWidth}}\ =\ 0.0f;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_engine_1_1_u_i_1_1_text_a048ec0601da0725e299c241efb17af2d}{color}}\ =\ \{1.0f,\ 1.0f,\ 1.0f\};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Graphics::Shader}}\ *\mbox{\hyperlink{struct_engine_1_1_u_i_1_1_text_afd06f7ab10e97422110c9a8a334b38e7}{shader}}\ =\ \mbox{\hyperlink{namespace_engine_1_1_defaults_a225c294301254763c52c08b9cdcaa6da}{Defaults::textShader}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_u_i_1_1_font}{Font}}\ *\mbox{\hyperlink{struct_engine_1_1_u_i_1_1_text_aaa958770eaf03491ab0bf5e3f9d0d7aa}{font}}\ =\ \mbox{\hyperlink{namespace_engine_1_1_defaults_a19c9424e5bcfd95ac5033afad7076900}{Defaults::font}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a720474149568b5b3a8313b5639602f0b}{Anchor}}\ \mbox{\hyperlink{struct_engine_1_1_u_i_1_1_text_aea498766e60dc7f8ce0bb02b1da5babc}{anchor}}\ =\ \mbox{\hyperlink{namespace_engine_a720474149568b5b3a8313b5639602f0ba4f1f6016fc9f3f2353c0cc7c67b292bd}{Anchor::Center}};}
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}

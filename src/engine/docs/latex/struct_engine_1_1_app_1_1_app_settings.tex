@@ -1,0 +1,113 @@
+\doxysection{Engine\+::App\+::App\+Settings Struct Reference}
+\hypertarget{struct_engine_1_1_app_1_1_app_settings}{}\label{struct_engine_1_1_app_1_1_app_settings}\index{Engine::App::AppSettings@{Engine::App::AppSettings}}
+
+
+Structure de données qui contient des paramètres d\textquotesingle{}application.  
+
+
+
+
+{\ttfamily \#include $<$app.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_a8a67dc56a6d93624147b43acfd8999cf}{title}}
+\begin{DoxyCompactList}\small\item\em Le titre de l\textquotesingle{}application en cours. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_aab688d380dc64dc79c0a34ec3e0ae292}{window\+Width}} = 800
+\begin{DoxyCompactList}\small\item\em largeur de la fenêtre Open\+GL générée (peut différer de la taille logique interne de l\textquotesingle{}app) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_a7ebb5dde636458a15699bdcb37cbde2e}{window\+Height}} = 600
+\begin{DoxyCompactList}\small\item\em hauteur de la fenêtre Open\+GL générée (peut différer de la taille logique interne de l\textquotesingle{}app) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_ae2d1f422013b02cefe75c1e2e74c227c}{stretch\+Fit}} = false
+\begin{DoxyCompactList}\small\item\em Décide si le rendu du render\+Target interne doit s\textquotesingle{}étirer à la fenêtre ou maintenir l\textquotesingle{}aspect-\/ratio. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_add016c1bca1d7a8cd9b3fb8d484a81cf}{resolution\+Scaling}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em Multiplie la résolution du render\+Target interne avant de l\textquotesingle{}envoyer à l\textquotesingle{}écran (\texorpdfstring{$>$}{>} 1 = upscale, \texorpdfstring{$<$}{<} 1 = downscale, 1 = natif) \end{DoxyCompactList}\item 
+glm\+::vec4 \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_ae9e65fc518d8afbaf94c6a002ed21397}{clear\+Color}} = glm\+::vec4(0.\+1f, 0.\+2f, 0.\+3f, 1.\+0f)
+\begin{DoxyCompactList}\small\item\em La couleur affichée à chaque nettoyage d\textquotesingle{}écran (avant le dessin de la frame) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_a07480b614e7c61ea5b318e1599311592}{fps\+Limit}} = 60
+\begin{DoxyCompactList}\small\item\em Limite du nombre d\textquotesingle{}images par seconde de la boucle principale Ce paramètre n\textquotesingle{}influence pas la boucle Fixed\+Update qui a son propre framerate interne. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure de données qui contient des paramètres d\textquotesingle{}application. 
+
+Ces paramètres sont modifiables, et il est conseillé de bien les définir au moment de construire une \doxylink{class_engine_1_1_app}{App} 
+
+\label{doc-variable-members}
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_ae9e65fc518d8afbaf94c6a002ed21397}\index{Engine::App::AppSettings@{Engine::App::AppSettings}!clearColor@{clearColor}}
+\index{clearColor@{clearColor}!Engine::App::AppSettings@{Engine::App::AppSettings}}
+\doxysubsubsection{\texorpdfstring{clearColor}{clearColor}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_app_1_1_app_settings_ae9e65fc518d8afbaf94c6a002ed21397} 
+glm\+::vec4 Engine\+::\+App\+::\+App\+Settings\+::clear\+Color = glm\+::vec4(0.\+1f, 0.\+2f, 0.\+3f, 1.\+0f)}
+
+
+
+La couleur affichée à chaque nettoyage d\textquotesingle{}écran (avant le dessin de la frame) 
+
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_a07480b614e7c61ea5b318e1599311592}\index{Engine::App::AppSettings@{Engine::App::AppSettings}!fpsLimit@{fpsLimit}}
+\index{fpsLimit@{fpsLimit}!Engine::App::AppSettings@{Engine::App::AppSettings}}
+\doxysubsubsection{\texorpdfstring{fpsLimit}{fpsLimit}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_app_1_1_app_settings_a07480b614e7c61ea5b318e1599311592} 
+int Engine\+::\+App\+::\+App\+Settings\+::fps\+Limit = 60}
+
+
+
+Limite du nombre d\textquotesingle{}images par seconde de la boucle principale Ce paramètre n\textquotesingle{}influence pas la boucle Fixed\+Update qui a son propre framerate interne. 
+
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_add016c1bca1d7a8cd9b3fb8d484a81cf}\index{Engine::App::AppSettings@{Engine::App::AppSettings}!resolutionScaling@{resolutionScaling}}
+\index{resolutionScaling@{resolutionScaling}!Engine::App::AppSettings@{Engine::App::AppSettings}}
+\doxysubsubsection{\texorpdfstring{resolutionScaling}{resolutionScaling}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_app_1_1_app_settings_add016c1bca1d7a8cd9b3fb8d484a81cf} 
+float Engine\+::\+App\+::\+App\+Settings\+::resolution\+Scaling = 1.\+0f}
+
+
+
+Multiplie la résolution du render\+Target interne avant de l\textquotesingle{}envoyer à l\textquotesingle{}écran (\texorpdfstring{$>$}{>} 1 = upscale, \texorpdfstring{$<$}{<} 1 = downscale, 1 = natif) 
+
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_ae2d1f422013b02cefe75c1e2e74c227c}\index{Engine::App::AppSettings@{Engine::App::AppSettings}!stretchFit@{stretchFit}}
+\index{stretchFit@{stretchFit}!Engine::App::AppSettings@{Engine::App::AppSettings}}
+\doxysubsubsection{\texorpdfstring{stretchFit}{stretchFit}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_app_1_1_app_settings_ae2d1f422013b02cefe75c1e2e74c227c} 
+bool Engine\+::\+App\+::\+App\+Settings\+::stretch\+Fit = false}
+
+
+
+Décide si le rendu du render\+Target interne doit s\textquotesingle{}étirer à la fenêtre ou maintenir l\textquotesingle{}aspect-\/ratio. 
+
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_a8a67dc56a6d93624147b43acfd8999cf}\index{Engine::App::AppSettings@{Engine::App::AppSettings}!title@{title}}
+\index{title@{title}!Engine::App::AppSettings@{Engine::App::AppSettings}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_app_1_1_app_settings_a8a67dc56a6d93624147b43acfd8999cf} 
+std\+::string Engine\+::\+App\+::\+App\+Settings\+::title}
+
+
+
+Le titre de l\textquotesingle{}application en cours. 
+
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_a7ebb5dde636458a15699bdcb37cbde2e}\index{Engine::App::AppSettings@{Engine::App::AppSettings}!windowHeight@{windowHeight}}
+\index{windowHeight@{windowHeight}!Engine::App::AppSettings@{Engine::App::AppSettings}}
+\doxysubsubsection{\texorpdfstring{windowHeight}{windowHeight}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_app_1_1_app_settings_a7ebb5dde636458a15699bdcb37cbde2e} 
+int Engine\+::\+App\+::\+App\+Settings\+::window\+Height = 600}
+
+
+
+hauteur de la fenêtre Open\+GL générée (peut différer de la taille logique interne de l\textquotesingle{}app) 
+
+\Hypertarget{struct_engine_1_1_app_1_1_app_settings_aab688d380dc64dc79c0a34ec3e0ae292}\index{Engine::App::AppSettings@{Engine::App::AppSettings}!windowWidth@{windowWidth}}
+\index{windowWidth@{windowWidth}!Engine::App::AppSettings@{Engine::App::AppSettings}}
+\doxysubsubsection{\texorpdfstring{windowWidth}{windowWidth}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_app_1_1_app_settings_aab688d380dc64dc79c0a34ec3e0ae292} 
+int Engine\+::\+App\+::\+App\+Settings\+::window\+Width = 800}
+
+
+
+largeur de la fenêtre Open\+GL générée (peut différer de la taille logique interne de l\textquotesingle{}app) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{app_8hpp}{app.\+hpp}}\end{DoxyCompactItemize}

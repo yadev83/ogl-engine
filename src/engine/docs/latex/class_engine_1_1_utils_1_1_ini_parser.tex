@@ -1,0 +1,205 @@
+\doxysection{Engine\+::Utils\+::Ini\+Parser Class Reference}
+\hypertarget{class_engine_1_1_utils_1_1_ini_parser}{}\label{class_engine_1_1_utils_1_1_ini_parser}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+
+
+La classe parse un fichier INI et stocke la donnée en proposant des helpers pour lire des valeurs.  
+
+
+
+
+{\ttfamily \#include $<$iniparser.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_a1e06d846fc6e61c288e550731cc577f9}{Ini\+Parser}} ()=default
+\item 
+int \mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_aec2448771fe3a804d52b5c9b69eb9932}{Load}} (const std\+::string \&filepath)
+\begin{DoxyCompactList}\small\item\em Charge un fichier ini à l\textquotesingle{}emplacement défini par le path donné \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_a5077c05f3d6c5b8bdcc1ad5997c55d6c}{Get\+String}} (const std\+::string \&section, const std\+::string \&key, const std\+::string \&default\+Value="{}"{}) const
+\begin{DoxyCompactList}\small\item\em Renvoie une valeur de type string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_ae3c4a4cf1127471402c0ca0850f04d32}{Get\+Int}} (const std\+::string \&section, const std\+::string \&key, int default\+Value=0) const
+\begin{DoxyCompactList}\small\item\em Renvoie une valeur de type int. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_a02e3f9bf18cd009dabf47ae5fe845eaf}{Get\+Float}} (const std\+::string \&section, const std\+::string \&key, float default\+Value=0.\+0f) const
+\begin{DoxyCompactList}\small\item\em Renvoie une valeur de type float. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_a8e3491c69265e2e0849426603f4fdcde}{Get\+Bool}} (const std\+::string \&section, const std\+::string \&key, bool default\+Value=false) const
+\begin{DoxyCompactList}\small\item\em Renvoie une valeur de type bool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_a23b656f08c95e222822dcb19c7cbf1b7}{Has\+Section}} (const std\+::string \&section) const
+\begin{DoxyCompactList}\small\item\em Permet de checker si une section existe. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_1_1_utils_1_1_ini_parser_a1497aaf21141274366cbfb3bf914c885}{Has\+Key}} (const std\+::string \&section, const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Vérifie si une section donnée possède la clé demandée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La classe parse un fichier INI et stocke la donnée en proposant des helpers pour lire des valeurs. 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_a1e06d846fc6e61c288e550731cc577f9}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!IniParser@{IniParser}}
+\index{IniParser@{IniParser}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{IniParser()}{IniParser()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_a1e06d846fc6e61c288e550731cc577f9} 
+Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Ini\+Parser (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_a8e3491c69265e2e0849426603f4fdcde}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!GetBool@{GetBool}}
+\index{GetBool@{GetBool}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{GetBool()}{GetBool()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_a8e3491c69265e2e0849426603f4fdcde} 
+bool Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Get\+Bool (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section}{, }\item[{const std\+::string \&}]{key}{, }\item[{bool}]{default\+Value}{ = {\ttfamily false}}\end{DoxyParamCaption}) const}
+
+
+
+Renvoie une valeur de type bool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & La section dans laquelle lire \\
+\hline
+{\em key} & La clé dans laquelle se trouve la valeur \\
+\hline
+{\em default\+Value} & Valeur par défaut si la lecture n\textquotesingle{}est pas possible ou clé absente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_a02e3f9bf18cd009dabf47ae5fe845eaf}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!GetFloat@{GetFloat}}
+\index{GetFloat@{GetFloat}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{GetFloat()}{GetFloat()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_a02e3f9bf18cd009dabf47ae5fe845eaf} 
+float Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Get\+Float (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section}{, }\item[{const std\+::string \&}]{key}{, }\item[{float}]{default\+Value}{ = {\ttfamily 0.0f}}\end{DoxyParamCaption}) const}
+
+
+
+Renvoie une valeur de type float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & La section dans laquelle lire \\
+\hline
+{\em key} & La clé dans laquelle se trouve la valeur \\
+\hline
+{\em default\+Value} & Valeur par défaut si la lecture n\textquotesingle{}est pas possible ou clé absente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_ae3c4a4cf1127471402c0ca0850f04d32}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!GetInt@{GetInt}}
+\index{GetInt@{GetInt}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{GetInt()}{GetInt()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_ae3c4a4cf1127471402c0ca0850f04d32} 
+int Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Get\+Int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section}{, }\item[{const std\+::string \&}]{key}{, }\item[{int}]{default\+Value}{ = {\ttfamily 0}}\end{DoxyParamCaption}) const}
+
+
+
+Renvoie une valeur de type int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & La section dans laquelle lire \\
+\hline
+{\em key} & La clé dans laquelle se trouve la valeur \\
+\hline
+{\em default\+Value} & Valeur par défaut si la lecture n\textquotesingle{}est pas possible ou clé absente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_a5077c05f3d6c5b8bdcc1ad5997c55d6c}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!GetString@{GetString}}
+\index{GetString@{GetString}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{GetString()}{GetString()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_a5077c05f3d6c5b8bdcc1ad5997c55d6c} 
+std\+::string Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Get\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section}{, }\item[{const std\+::string \&}]{key}{, }\item[{const std\+::string \&}]{default\+Value}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption}) const}
+
+
+
+Renvoie une valeur de type string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & La section dans laquelle lire \\
+\hline
+{\em key} & La clé dans laquelle se trouve la valeur \\
+\hline
+{\em default\+Value} & Valeur par défaut si la lecture n\textquotesingle{}est pas possible ou clé absente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_a1497aaf21141274366cbfb3bf914c885}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!HasKey@{HasKey}}
+\index{HasKey@{HasKey}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{HasKey()}{HasKey()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_a1497aaf21141274366cbfb3bf914c885} 
+bool Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Has\+Key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section}{, }\item[{const std\+::string \&}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Vérifie si une section donnée possède la clé demandée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & \\
+\hline
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_a23b656f08c95e222822dcb19c7cbf1b7}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!HasSection@{HasSection}}
+\index{HasSection@{HasSection}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{HasSection()}{HasSection()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_a23b656f08c95e222822dcb19c7cbf1b7} 
+bool Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Has\+Section (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{section}{}\end{DoxyParamCaption}) const}
+
+
+
+Permet de checker si une section existe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_ini_parser_aec2448771fe3a804d52b5c9b69eb9932}\index{Engine::Utils::IniParser@{Engine::Utils::IniParser}!Load@{Load}}
+\index{Load@{Load}!Engine::Utils::IniParser@{Engine::Utils::IniParser}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_ini_parser_aec2448771fe3a804d52b5c9b69eb9932} 
+int Engine\+::\+Utils\+::\+Ini\+Parser\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath}{}\end{DoxyParamCaption})}
+
+
+
+Charge un fichier ini à l\textquotesingle{}emplacement défini par le path donné 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+utils/\mbox{\hyperlink{iniparser_8hpp}{iniparser.\+hpp}}\item 
+utils/\mbox{\hyperlink{iniparser_8cpp}{iniparser.\+cpp}}\end{DoxyCompactItemize}

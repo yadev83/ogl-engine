@@ -1,0 +1,39 @@
+\doxysection{statestore.\+hpp}
+\hypertarget{statestore_8hpp_source}{}\label{statestore_8hpp_source}\index{utils/statestore.hpp@{utils/statestore.hpp}}
+\mbox{\hyperlink{statestore_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <any>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_utils}{Engine::Utils}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store}{StateStore}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::any>\ mStore;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store_ae280912928c345dddef087e2344f4280}{SetState}}(\textcolor{keyword}{const}\ std::string\&\ key,\ T\ value)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mStore[key]\ =\ value;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store_aff62b480d1bc99ae8d0e73e1608421a2}{GetState}}(\textcolor{keyword}{const}\ std::string\&\ key)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ mStore.find(key);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it\ ==\ mStore.end())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}store\ key\ not\ found:\ "{}}\ +\ key);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<T>(it-\/>second);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(\textcolor{keyword}{const}\ std::bad\_any\_cast\&\ e)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}bad\ type\ cast\ for\ store\ key:\ "{}}\ +\ key);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store_a7437e2bd2814a0ece7543a73b6e9bde5}{HasKey}}(\textcolor{keyword}{const}\ std::string\&\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \};\ \ }
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

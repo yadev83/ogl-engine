@@ -1,0 +1,194 @@
+\doxysection{Engine\+::Scene\+::Transform Struct Reference}
+\hypertarget{struct_engine_1_1_scene_1_1_transform}{}\label{struct_engine_1_1_scene_1_1_transform}\index{Engine::Scene::Transform@{Engine::Scene::Transform}}
+
+
+Cette structure de donnée permet la gestion d\textquotesingle{}une entité dans l\textquotesingle{}espace.  
+
+
+
+
+{\ttfamily \#include $<$transform.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Scene\+::Transform\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_engine_1_1_scene_1_1_transform}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_a28d7ef82bdfd0044beb98774ed1b9b97}{Translate}} (const glm\+::vec3 \&offset)
+\begin{DoxyCompactList}\small\item\em Déplace le component d\textquotesingle{}un offset donné \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_ab3d18ba7bffbbc4f2026f3713925021b}{Translate}} (const glm\+::vec2 \&offset)
+\begin{DoxyCompactList}\small\item\em Déplace le component d\textquotesingle{}un offset donné \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_ae78a00cea25146077cc2f40224bb6498}{Rotate}} (const glm\+::vec3 \&axis, float angle\+Radians)
+\begin{DoxyCompactList}\small\item\em Fait tourner l\textquotesingle{}objet d\textquotesingle{}un angle donné autour d\textquotesingle{}un axe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_a2c04cc43d8dc8e960b8f2fc3297da76b}{Rotate2D}} (float angle\+Radians)
+\begin{DoxyCompactList}\small\item\em Encapsule une rotation dans un cadre 2D (autour de l\textquotesingle{}axe Z) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_a3f45506121198cefa415be82993b2fce}{Is\+Rotated}} ()
+\begin{DoxyCompactList}\small\item\em Permet de savoir si l\textquotesingle{}objet a subi une ou plusieurs rotations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{Engine\+::\+ECS\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}{Component}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}{Set\+Entity}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Attache l\textquotesingle{}entité au component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}entité attachée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}{Get\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la scène en cours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}{Get\+App}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance d\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_a06cedfc621f4da577df2d608ea7b0c2e}{position}} = \{0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em La position dans la scène. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_a8368a8396107322abf2ac23ac359f5fd}{last\+Position}} = \{0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em La position dans la scène lors de la frame précédente (mis à jour par .\doxylink{struct_engine_1_1_scene_1_1_transform_a28d7ef82bdfd0044beb98774ed1b9b97}{Translate()} pour les interpolations) \end{DoxyCompactList}\item 
+glm\+::quat \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_a12b5acbb47d220af4847ee68ca2dcec4}{rotation}} = glm\+::quat(1.\+0f, 0.\+0f, 0.\+0f, 0.\+0f)
+\begin{DoxyCompactList}\small\item\em La rotation (quaternion) du transform. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{struct_engine_1_1_scene_1_1_transform_a75bc05ac9b121764926a9c7fbf0bd5cc}{scale}} = \{1.\+0f, 1.\+0f, 1.\+0f\}
+\begin{DoxyCompactList}\small\item\em Facteur d\textquotesingle{}argrandissement par lequel tous les components avec une taille sont mis à l\textquotesingle{}échelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cette structure de donnée permet la gestion d\textquotesingle{}une entité dans l\textquotesingle{}espace. 
+
+ELle donne accès à une position, une rotation et un facteur d\textquotesingle{}agrandissement permettant le calcul de matrices Model 
+
+\label{doc-func-members}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_a3f45506121198cefa415be82993b2fce}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!IsRotated@{IsRotated}}
+\index{IsRotated@{IsRotated}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{IsRotated()}{IsRotated()}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_a3f45506121198cefa415be82993b2fce} 
+bool Engine\+::\+Scene\+::\+Transform\+::\+Is\+Rotated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Permet de savoir si l\textquotesingle{}objet a subi une ou plusieurs rotations. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_ae78a00cea25146077cc2f40224bb6498}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_ae78a00cea25146077cc2f40224bb6498} 
+void Engine\+::\+Scene\+::\+Transform\+::\+Rotate (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{axis}{, }\item[{float}]{angle\+Radians}{}\end{DoxyParamCaption})}
+
+
+
+Fait tourner l\textquotesingle{}objet d\textquotesingle{}un angle donné autour d\textquotesingle{}un axe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & L\textquotesingle{}axe autour duquel la rotation à lieu \\
+\hline
+{\em angle\+Radians} & L\textquotesingle{}angle de rotation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_a2c04cc43d8dc8e960b8f2fc3297da76b}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!Rotate2D@{Rotate2D}}
+\index{Rotate2D@{Rotate2D}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{Rotate2D()}{Rotate2D()}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_a2c04cc43d8dc8e960b8f2fc3297da76b} 
+void Engine\+::\+Scene\+::\+Transform\+::\+Rotate2D (\begin{DoxyParamCaption}\item[{float}]{angle\+Radians}{}\end{DoxyParamCaption})}
+
+
+
+Encapsule une rotation dans un cadre 2D (autour de l\textquotesingle{}axe Z) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+Radians} & L\textquotesingle{}angle de la rotation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_ab3d18ba7bffbbc4f2026f3713925021b}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!Translate@{Translate}}
+\index{Translate@{Translate}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_ab3d18ba7bffbbc4f2026f3713925021b} 
+void Engine\+::\+Scene\+::\+Transform\+::\+Translate (\begin{DoxyParamCaption}\item[{const glm\+::vec2 \&}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Déplace le component d\textquotesingle{}un offset donné 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Un vecteur 2D pour la translation \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_a28d7ef82bdfd0044beb98774ed1b9b97}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!Translate@{Translate}}
+\index{Translate@{Translate}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_a28d7ef82bdfd0044beb98774ed1b9b97} 
+void Engine\+::\+Scene\+::\+Transform\+::\+Translate (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Déplace le component d\textquotesingle{}un offset donné 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Un vecteur 3D pour la translation \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_a8368a8396107322abf2ac23ac359f5fd}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!lastPosition@{lastPosition}}
+\index{lastPosition@{lastPosition}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{lastPosition}{lastPosition}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_a8368a8396107322abf2ac23ac359f5fd} 
+glm\+::vec3 Engine\+::\+Scene\+::\+Transform\+::last\+Position = \{0.\+0f, 0.\+0f, 0.\+0f\}}
+
+
+
+La position dans la scène lors de la frame précédente (mis à jour par .\doxylink{struct_engine_1_1_scene_1_1_transform_a28d7ef82bdfd0044beb98774ed1b9b97}{Translate()} pour les interpolations) 
+
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_a06cedfc621f4da577df2d608ea7b0c2e}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!position@{position}}
+\index{position@{position}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_a06cedfc621f4da577df2d608ea7b0c2e} 
+glm\+::vec3 Engine\+::\+Scene\+::\+Transform\+::position = \{0.\+0f, 0.\+0f, 0.\+0f\}}
+
+
+
+La position dans la scène. 
+
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_a12b5acbb47d220af4847ee68ca2dcec4}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!rotation@{rotation}}
+\index{rotation@{rotation}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_a12b5acbb47d220af4847ee68ca2dcec4} 
+glm\+::quat Engine\+::\+Scene\+::\+Transform\+::rotation = glm\+::quat(1.\+0f, 0.\+0f, 0.\+0f, 0.\+0f)}
+
+
+
+La rotation (quaternion) du transform. 
+
+\Hypertarget{struct_engine_1_1_scene_1_1_transform_a75bc05ac9b121764926a9c7fbf0bd5cc}\index{Engine::Scene::Transform@{Engine::Scene::Transform}!scale@{scale}}
+\index{scale@{scale}!Engine::Scene::Transform@{Engine::Scene::Transform}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_scene_1_1_transform_a75bc05ac9b121764926a9c7fbf0bd5cc} 
+glm\+::vec3 Engine\+::\+Scene\+::\+Transform\+::scale = \{1.\+0f, 1.\+0f, 1.\+0f\}}
+
+
+
+Facteur d\textquotesingle{}argrandissement par lequel tous les components avec une taille sont mis à l\textquotesingle{}échelle. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+scene/\mbox{\hyperlink{transform_8hpp}{transform.\+hpp}}\item 
+scene/\mbox{\hyperlink{transform_8cpp}{transform.\+cpp}}\end{DoxyCompactItemize}

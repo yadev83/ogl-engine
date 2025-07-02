@@ -1,0 +1,209 @@
+\doxysection{Engine\+::Utils\+::Resource\+Manager Class Reference}
+\hypertarget{class_engine_1_1_utils_1_1_resource_manager}{}\label{class_engine_1_1_utils_1_1_resource_manager}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+
+
+La classe resource manager permet la gestion de fichiers .pak de façon statique pour donner accès de manière globale aux assets.  
+
+
+
+
+{\ttfamily \#include $<$resourcemanager.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_ad3b01c83ec4c266150a9e936afdd4413}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Nettoie les registres du gestionnaire de ressources. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file}{Core\+::\+Pak\+File}} \& \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_a5b0f04b505c88402724b7960b083ccf6}{Load\+Pak}} (const std\+::string \&pak\+Path, const std\+::string \&name="{}"{})
+\begin{DoxyCompactList}\small\item\em Charge un fichier .pak en mémoire. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_a6bc34c8ad35656ffaa809ec43792cfef}{Free\+Pak}} (const std\+::string \&pak\+Name)
+\begin{DoxyCompactList}\small\item\em Libère le fichier pak chargé à l\textquotesingle{}endroit donné \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}{Core\+::\+Buffer}} \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_aa5fa9ba070747a5e89f9727dfdbf2512}{Get\+Binary\+File\+From\+Pak}} (const std\+::string \&pak\+Name, const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Renvoie le fichier binaire contenu dans le fichier .pak. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_a19c9e60eb701d37cfc1e028757303297}{Get\+Text\+File\+From\+Pak}} (const std\+::string \&pak\+Name, const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Renvoie le fichier binaire contenu dans le fichier .pak. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Graphics\+::\+Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_ac27a1f435cdcb9ade66ebfc04a9904f9}{Get\+Texture}} (const std\+::string \&pak\+And\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Renvoie la texture demandée, et chargée depuis le fichier pak donné \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Graphics\+::\+Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_a536fd9e7439ee636141901e7948afcc6}{Get\+Shader}} (const std\+::string \&pak\+And\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Renvoie un shader précompilé \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_engine_1_1_u_i_1_1_font}{UI\+::\+Font}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_a8de0fba0eb8fbab14f2c912018eccc0e}{Get\+Font}} (const std\+::string \&pak\+And\+File\+Name, int font\+Size=48)
+\begin{DoxyCompactList}\small\item\em Renvoie une font préchargée de taille donnée. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Audio\+::\+Sound}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_utils_1_1_resource_manager_aa0c33752d7e18ca9f69fb1c10855fb45}{Get\+Sound}} (const std\+::string \&pak\+And\+File\+Name, \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Audio\+::\+Sound\+Type}} sound\+Type=\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{Audio\+::\+Sound\+Type\+::\+SFX}})
+\begin{DoxyCompactList}\small\item\em Renvoie un fichier audio préchargé \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La classe resource manager permet la gestion de fichiers .pak de façon statique pour donner accès de manière globale aux assets. 
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_ad3b01c83ec4c266150a9e936afdd4413}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!Clear@{Clear}}
+\index{Clear@{Clear}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_ad3b01c83ec4c266150a9e936afdd4413} 
+void Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Nettoie les registres du gestionnaire de ressources. 
+
+Est appelée au moment de la fermeture de l\textquotesingle{}application \Hypertarget{class_engine_1_1_utils_1_1_resource_manager_a6bc34c8ad35656ffaa809ec43792cfef}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!FreePak@{FreePak}}
+\index{FreePak@{FreePak}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{FreePak()}{FreePak()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_a6bc34c8ad35656ffaa809ec43792cfef} 
+void Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Free\+Pak (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Libère le fichier pak chargé à l\textquotesingle{}endroit donné 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+Name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_aa5fa9ba070747a5e89f9727dfdbf2512}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!GetBinaryFileFromPak@{GetBinaryFileFromPak}}
+\index{GetBinaryFileFromPak@{GetBinaryFileFromPak}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetBinaryFileFromPak()}{GetBinaryFileFromPak()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_aa5fa9ba070747a5e89f9727dfdbf2512} 
+\mbox{\hyperlink{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}{Core\+::\+Buffer}} Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Get\+Binary\+File\+From\+Pak (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+Name}{, }\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renvoie le fichier binaire contenu dans le fichier .pak. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+Name} & Le nom du pak à lire \\
+\hline
+{\em file\+Name} & le nom du fichier à trouver dans le pak \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}{Core\+::\+Buffer} 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_a8de0fba0eb8fbab14f2c912018eccc0e}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!GetFont@{GetFont}}
+\index{GetFont@{GetFont}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetFont()}{GetFont()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_a8de0fba0eb8fbab14f2c912018eccc0e} 
+\mbox{\hyperlink{class_engine_1_1_u_i_1_1_font}{UI\+::\+Font}} \texorpdfstring{$\ast$}{*} Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Get\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+And\+File\+Name}{, }\item[{int}]{font\+Size}{ = {\ttfamily 48}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renvoie une font préchargée de taille donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+And\+File\+Name} & Format vers le fichier \+: "{}pak\+:filename.\+extension"{} \\
+\hline
+{\em font\+Size} & La taille de la font à charger (possiblement plusieurs fontes du même nom avec des tailles différentes en mémoire) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_u_i_1_1_font}{UI\+::\+Font}\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_a536fd9e7439ee636141901e7948afcc6}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!GetShader@{GetShader}}
+\index{GetShader@{GetShader}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetShader()}{GetShader()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_a536fd9e7439ee636141901e7948afcc6} 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Graphics\+::\+Shader}} \texorpdfstring{$\ast$}{*} Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Get\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+And\+File\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renvoie un shader précompilé 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+And\+File\+Name} & Le chemin vers le shader au format \+: "{}pak\+:filename"{} =\texorpdfstring{$>$}{>} l\textquotesingle{}extension est automatique (.vert/.frag) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_graphics_1_1_shader}{Graphics\+::\+Shader}\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_aa0c33752d7e18ca9f69fb1c10855fb45}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!GetSound@{GetSound}}
+\index{GetSound@{GetSound}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetSound()}{GetSound()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_aa0c33752d7e18ca9f69fb1c10855fb45} 
+\mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Audio\+::\+Sound}} \texorpdfstring{$\ast$}{*} Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Get\+Sound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+And\+File\+Name}{, }\item[{\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Audio\+::\+Sound\+Type}}}]{sound\+Type}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{Audio\+::\+Sound\+Type\+::\+SFX}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renvoie un fichier audio préchargé 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+And\+File\+Name} & Format attendu \+: "{}pak\+:filename.\+extension"{} \\
+\hline
+{\em sound\+Type} & Le type de son (SFX/\+BGM) chargé \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_engine_1_1_audio_1_1_sound}{Audio\+::\+Sound}\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_a19c9e60eb701d37cfc1e028757303297}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!GetTextFileFromPak@{GetTextFileFromPak}}
+\index{GetTextFileFromPak@{GetTextFileFromPak}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetTextFileFromPak()}{GetTextFileFromPak()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_a19c9e60eb701d37cfc1e028757303297} 
+std\+::string Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Get\+Text\+File\+From\+Pak (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+Name}{, }\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renvoie le fichier binaire contenu dans le fichier .pak. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+Name} & Le nom du pak à lire \\
+\hline
+{\em file\+Name} & le nom du fichier à trouver dans le pak \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_ac27a1f435cdcb9ade66ebfc04a9904f9}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_ac27a1f435cdcb9ade66ebfc04a9904f9} 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Graphics\+::\+Texture}} \texorpdfstring{$\ast$}{*} Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+And\+File\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renvoie la texture demandée, et chargée depuis le fichier pak donné 
+
+UTILITAIRES QUI RENVOIENT DIRECTEMENT DES OBJETS MOTEUR PLUTÖT QUE DES BUFFERS/\+TEXTES 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+And\+File\+Name} & Le chemin de la texture au format \+: "{}pak\+:filename.\+extension"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_graphics_1_1_texture}{Graphics\+::\+Texture}\texorpdfstring{$\ast$}{*} Une texture unique, chargée la première fois, et get depuis le cache sinon. 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_resource_manager_a5b0f04b505c88402724b7960b083ccf6}\index{Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}!LoadPak@{LoadPak}}
+\index{LoadPak@{LoadPak}!Engine::Utils::ResourceManager@{Engine::Utils::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{LoadPak()}{LoadPak()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_resource_manager_a5b0f04b505c88402724b7960b083ccf6} 
+\mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file}{Core\+::\+Pak\+File}} \& Engine\+::\+Utils\+::\+Resource\+Manager\+::\+Load\+Pak (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{pak\+Path}{, }\item[{const std\+::string \&}]{name}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Charge un fichier .pak en mémoire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pak\+Path} & \\
+\hline
+{\em name} & Un nom custom pour accéder aux données plus tard \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_core_1_1_pak_file}{Core\+::\+Pak\+File} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+utils/\mbox{\hyperlink{resourcemanager_8hpp}{resourcemanager.\+hpp}}\item 
+utils/\mbox{\hyperlink{resourcemanager_8cpp}{resourcemanager.\+cpp}}\end{DoxyCompactItemize}

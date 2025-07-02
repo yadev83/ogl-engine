@@ -1,0 +1,47 @@
+\doxysection{system.\+hpp}
+\hypertarget{system_8hpp_source}{}\label{system_8hpp_source}\index{ecs/system.hpp@{ecs/system.hpp}}
+\mbox{\hyperlink{system_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8hpp}{../constants.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{registry_8hpp}{registry.hpp}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_app}{App}};\ \textcolor{comment}{//\ Définition\ en\ avance.\ Pas\ possible\ d'inclure\ app.hpp\ pour\ éviter\ les\ dépendances\ circulaires}}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_e_c_s}{Engine::ECS}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system}{System}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ On\ veut\ que\ App\ puisse\ accéder\ aux\ champs\ private\ du\ System}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_app}{Engine::App}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}}*\ mRegistry;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_app}{Engine::App}}*\ mApp;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mPaused\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}}\&\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a90303eeb793a905e9f17234b9950a0a1}{GetRegistry}}()\ \{\ \textcolor{keywordflow}{return}\ *mRegistry;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_app}{Engine::App}}\&\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a9ad51eb10256be8ef7c6cc08225f1301}{GetApp}}()\ \{\ \textcolor{keywordflow}{return}\ *mApp;\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a11c2d6142b7046c86a745bdca6e8a449}{Resume}}()\ \{\ mPaused\ =\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_aea62adbd04c21239eaefa9ef896fbf99}{Pause}}()\ \{\ mPaused\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a364bba12fc9b3c977cd08e85a49d3cd8}{IsPaused}}()\ \{\ \textcolor{keywordflow}{return}\ mPaused;\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a48be795bdf20d7abc1564ffb47bb7a90}{\string~System}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a0ccefb22c7cc60c5dc9c8fc00175fd47}{OnInit}}()\ \{\}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a2de5a52e952ab31112c20936544192e1}{OnFixedUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_ad19c86b62e938d27a3d56f522fcb823d}{OnUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_aa3550aee57d50afa4427713a1142af36}{OnRender}}(\textcolor{keywordtype}{float}\ alpha\ =\ 0.0f)\ \{\}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a469a4a006f39cd496c18405192ed3621}{OnUIRender}}()\ \{\}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a1d68526a066629fd84611a503c5437b2}{OnLateUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00114\ \ \ \ \ \};}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,31 @@
+\doxysection{texture.\+hpp}
+\hypertarget{texture_8hpp_source}{}\label{texture_8hpp_source}\index{graphics/texture.hpp@{graphics/texture.hpp}}
+\mbox{\hyperlink{texture_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_graphics}{Engine::Graphics}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a41a04135b4bd173b3a120faba127d208}{Texture}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ GLuint\ mID;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Build(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *data,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ channels);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a8be8de537edfc7bca072f3cf3758c953}{Texture}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a8be8de537edfc7bca072f3cf3758c953}{Texture}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a8be8de537edfc7bca072f3cf3758c953}{Texture}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a44ffaee385b6eea92e6d114ef471533f}{\string~Texture}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a4294d430f99393ecf2a87bec31533b2b}{LoadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_acf5f5ee7ba9f7dd1d896fe9d88474f60}{LoadFromMemory}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ GLuint\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_a74da08d473005f8497115bda0bdfd902}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture_ab805d4967e99752251283f13f81d20cd}{Bind}}(\textcolor{keywordtype}{int}\ unit\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}

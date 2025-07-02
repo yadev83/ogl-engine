@@ -1,0 +1,217 @@
+\doxysection{Engine\+::Graphics\+::Particle\+Emitter Struct Reference}
+\hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter}{}\label{struct_engine_1_1_graphics_1_1_particle_emitter}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+
+
+L\textquotesingle{}emetteur est en quelques sortes le "{}moteur"{} qui génère et gère les particules à l\textquotesingle{}écran Peut être configuré de plein de manière différentes pour permettre des effets visuels customisés.  
+
+
+
+
+{\ttfamily \#include $<$particlesystem.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Graphics\+::Particle\+Emitter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_engine_1_1_graphics_1_1_particle_emitter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_abc4eedee4b3ea2f8bb94503bafa932a1}{emission\+Rate}} = 10.\+0f
+\begin{DoxyCompactList}\small\item\em Le nombre de particules que l\textquotesingle{}émetteur génère à chaque seconde. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a8c2c2c9e3f5fa484e7e54c37520262d0}{time\+Since\+Last\+Emission}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Le temps (en secondes) depuis la dernière fois que l\textquotesingle{}émetteur à généré des particules. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a60f996528829dd19f35aaa152179d49c}{max\+Particles}} = 100
+\begin{DoxyCompactList}\small\item\em Le nombre maximal de particules que cet émetteur peut gérer simultanément. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a667efa58e881672ce86f648e0473dcd9}{active}} = true
+\begin{DoxyCompactList}\small\item\em Si faux, l\textquotesingle{}émetteur est inactif (et doit être ignoré par les systèmes de particules) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a7e8954396db971d98926f24a334fd196}{particle\+Min\+Lifetime}} = 2.\+0f
+\begin{DoxyCompactList}\small\item\em La durée de vie minimale d\textquotesingle{}une particule de cet emetteur. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a581ec20d9fa4352221c1e74953da2c52}{particle\+Max\+Lifetime}} = 2.\+0f
+\begin{DoxyCompactList}\small\item\em La durée de vie maximale d\textquotesingle{}une particule de cet emetteur. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a63cec5b4d0162c46502359801b9e5717}{particle\+Min\+Initial\+Speed}} = 50.\+0f
+\begin{DoxyCompactList}\small\item\em La vitesse initiale minimale des particules de cet emetteur. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a94046de835ce8e51944cd46d4c8aa8c5}{particle\+Max\+Initial\+Speed}} = 50.\+0f
+\begin{DoxyCompactList}\small\item\em La vitesse initiale maximale des particules de cet emetteur. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_acf3019c2e7f0db696ea250da5308a905}{particle\+Min\+Initial\+Size}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em La taille initiale minimale des particules de cet emetteur. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a1e515562089733393c27aaff058cf509}{particle\+Max\+Initial\+Size}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em La taille initiale maximale des particules de cet emetteur. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a34320ae45f4523e08b7e9fcc1e1436e1}{particle\+Min\+Initial\+Opacity}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}opacité minmale de la particule générée. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_a4ce3c1456410339a63c98b5c1b479d7e}{particle\+Max\+Initial\+Opacity}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}opacité maximale de la particule générée. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_ac107fb5dc89598b66c6a39af6d0db440}{fade\+Out}} = true
+\begin{DoxyCompactList}\small\item\em Fait disparaître la particule en fondu via l\textquotesingle{}opacité au cours du temps. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material}{Material}} \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter_aa7b60f72482ba251b71406d752a9712a}{source\+Material}}
+\begin{DoxyCompactList}\small\item\em Le material à utiliser pour le rendu des particules de l\textquotesingle{}émetteur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{Engine\+::\+ECS\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}{Component}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}{Set\+Entity}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Attache l\textquotesingle{}entité au component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}entité attachée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}{Get\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la scène en cours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}{Get\+App}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance d\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+L\textquotesingle{}emetteur est en quelques sortes le "{}moteur"{} qui génère et gère les particules à l\textquotesingle{}écran Peut être configuré de plein de manière différentes pour permettre des effets visuels customisés. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a667efa58e881672ce86f648e0473dcd9}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!active@{active}}
+\index{active@{active}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a667efa58e881672ce86f648e0473dcd9} 
+bool Engine\+::\+Graphics\+::\+Particle\+Emitter\+::active = true}
+
+
+
+Si faux, l\textquotesingle{}émetteur est inactif (et doit être ignoré par les systèmes de particules) 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_abc4eedee4b3ea2f8bb94503bafa932a1}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!emissionRate@{emissionRate}}
+\index{emissionRate@{emissionRate}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{emissionRate}{emissionRate}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_abc4eedee4b3ea2f8bb94503bafa932a1} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::emission\+Rate = 10.\+0f}
+
+
+
+Le nombre de particules que l\textquotesingle{}émetteur génère à chaque seconde. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_ac107fb5dc89598b66c6a39af6d0db440}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!fadeOut@{fadeOut}}
+\index{fadeOut@{fadeOut}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{fadeOut}{fadeOut}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_ac107fb5dc89598b66c6a39af6d0db440} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::fade\+Out = true}
+
+
+
+Fait disparaître la particule en fondu via l\textquotesingle{}opacité au cours du temps. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a60f996528829dd19f35aaa152179d49c}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!maxParticles@{maxParticles}}
+\index{maxParticles@{maxParticles}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{maxParticles}{maxParticles}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a60f996528829dd19f35aaa152179d49c} 
+size\+\_\+t Engine\+::\+Graphics\+::\+Particle\+Emitter\+::max\+Particles = 100}
+
+
+
+Le nombre maximal de particules que cet émetteur peut gérer simultanément. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a4ce3c1456410339a63c98b5c1b479d7e}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMaxInitialOpacity@{particleMaxInitialOpacity}}
+\index{particleMaxInitialOpacity@{particleMaxInitialOpacity}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMaxInitialOpacity}{particleMaxInitialOpacity}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a4ce3c1456410339a63c98b5c1b479d7e} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Max\+Initial\+Opacity = 1.\+0f}
+
+
+
+L\textquotesingle{}opacité maximale de la particule générée. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a1e515562089733393c27aaff058cf509}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMaxInitialSize@{particleMaxInitialSize}}
+\index{particleMaxInitialSize@{particleMaxInitialSize}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMaxInitialSize}{particleMaxInitialSize}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a1e515562089733393c27aaff058cf509} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Max\+Initial\+Size = 1.\+0f}
+
+
+
+La taille initiale maximale des particules de cet emetteur. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a94046de835ce8e51944cd46d4c8aa8c5}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMaxInitialSpeed@{particleMaxInitialSpeed}}
+\index{particleMaxInitialSpeed@{particleMaxInitialSpeed}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMaxInitialSpeed}{particleMaxInitialSpeed}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a94046de835ce8e51944cd46d4c8aa8c5} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Max\+Initial\+Speed = 50.\+0f}
+
+
+
+La vitesse initiale maximale des particules de cet emetteur. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a581ec20d9fa4352221c1e74953da2c52}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMaxLifetime@{particleMaxLifetime}}
+\index{particleMaxLifetime@{particleMaxLifetime}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMaxLifetime}{particleMaxLifetime}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a581ec20d9fa4352221c1e74953da2c52} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Max\+Lifetime = 2.\+0f}
+
+
+
+La durée de vie maximale d\textquotesingle{}une particule de cet emetteur. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a34320ae45f4523e08b7e9fcc1e1436e1}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMinInitialOpacity@{particleMinInitialOpacity}}
+\index{particleMinInitialOpacity@{particleMinInitialOpacity}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMinInitialOpacity}{particleMinInitialOpacity}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a34320ae45f4523e08b7e9fcc1e1436e1} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Min\+Initial\+Opacity = 1.\+0f}
+
+
+
+L\textquotesingle{}opacité minmale de la particule générée. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_acf3019c2e7f0db696ea250da5308a905}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMinInitialSize@{particleMinInitialSize}}
+\index{particleMinInitialSize@{particleMinInitialSize}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMinInitialSize}{particleMinInitialSize}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_acf3019c2e7f0db696ea250da5308a905} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Min\+Initial\+Size = 1.\+0f}
+
+
+
+La taille initiale minimale des particules de cet emetteur. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a63cec5b4d0162c46502359801b9e5717}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMinInitialSpeed@{particleMinInitialSpeed}}
+\index{particleMinInitialSpeed@{particleMinInitialSpeed}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMinInitialSpeed}{particleMinInitialSpeed}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a63cec5b4d0162c46502359801b9e5717} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Min\+Initial\+Speed = 50.\+0f}
+
+
+
+La vitesse initiale minimale des particules de cet emetteur. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a7e8954396db971d98926f24a334fd196}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!particleMinLifetime@{particleMinLifetime}}
+\index{particleMinLifetime@{particleMinLifetime}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{particleMinLifetime}{particleMinLifetime}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a7e8954396db971d98926f24a334fd196} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::particle\+Min\+Lifetime = 2.\+0f}
+
+
+
+La durée de vie minimale d\textquotesingle{}une particule de cet emetteur. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_aa7b60f72482ba251b71406d752a9712a}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!sourceMaterial@{sourceMaterial}}
+\index{sourceMaterial@{sourceMaterial}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{sourceMaterial}{sourceMaterial}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_aa7b60f72482ba251b71406d752a9712a} 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material}{Material}} Engine\+::\+Graphics\+::\+Particle\+Emitter\+::source\+Material}
+
+
+
+Le material à utiliser pour le rendu des particules de l\textquotesingle{}émetteur. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_emitter_a8c2c2c9e3f5fa484e7e54c37520262d0}\index{Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}!timeSinceLastEmission@{timeSinceLastEmission}}
+\index{timeSinceLastEmission@{timeSinceLastEmission}!Engine::Graphics::ParticleEmitter@{Engine::Graphics::ParticleEmitter}}
+\doxysubsubsection{\texorpdfstring{timeSinceLastEmission}{timeSinceLastEmission}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_emitter_a8c2c2c9e3f5fa484e7e54c37520262d0} 
+float Engine\+::\+Graphics\+::\+Particle\+Emitter\+::time\+Since\+Last\+Emission = 0.\+0f}
+
+
+
+Le temps (en secondes) depuis la dernière fois que l\textquotesingle{}émetteur à généré des particules. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+graphics/\mbox{\hyperlink{particlesystem_8hpp}{particlesystem.\+hpp}}\end{DoxyCompactItemize}

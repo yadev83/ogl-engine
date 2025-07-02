@@ -1,0 +1,147 @@
+\doxysection{Engine\+::Scene\+::ICamera Class Reference}
+\hypertarget{class_engine_1_1_scene_1_1_i_camera}{}\label{class_engine_1_1_scene_1_1_i_camera}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+
+
+{\ttfamily \#include $<$camera.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Scene\+::ICamera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_engine_1_1_scene_1_1_i_camera}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a0a7b3215bf0fa94ca9f6fe710f73c062}{ICamera}} (int width, int height)
+\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_ac8bcd196963e0accc8c141c7794d663e}{\texorpdfstring{$\sim$}{\string~}\+ICamera}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_aaf109ad01bb050b8aebbf8b8a655718f}{Set\+Position}} (glm\+::vec2 pos)
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a46157434ec82ae05ca4aeecc67dd3069}{Set\+View\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a597650e7360da75404f78f3fdf7bd012}{Set\+Zoom}} (float zoom)
+\item 
+int \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a852f85b1874778d21f532d2c3ab2ccb9}{Get\+View\+Width}} () const
+\item 
+int \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a33535722f0ea7f12c98a9c910a381d14}{Get\+View\+Height}} () const
+\item 
+glm\+::vec2 \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_af8bf4fecb58a9a6e1c50eea4becbb9b0}{Get\+Position}} () const
+\item 
+float \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_ae72ee6dea2ae48aa3a7c8065d8fed7a1}{Get\+Zoom}} () const
+\item 
+\mbox{\hyperlink{struct_engine_1_1_rectangle}{Rectangle}} \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a1cf96af4b8e3b4c47b4361b3a328a4a7}{Get\+Frustum}} () const
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a93a4368041bbd385ad0cf3caa0940af0}{On\+Update}} (float delta\+Time)
+\item 
+virtual glm\+::mat4 \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a4b8d311058037b70085f4aa95734e2f3}{Get\+Projection\+Matrix}} () const =0
+\item 
+virtual glm\+::mat4 \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a5b71d7ce3a3c3662909df718bb948f2a}{Get\+View\+Matrix}} () const =0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a0a7b3215bf0fa94ca9f6fe710f73c062}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!ICamera@{ICamera}}
+\index{ICamera@{ICamera}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{ICamera()}{ICamera()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a0a7b3215bf0fa94ca9f6fe710f73c062} 
+Engine\+::\+Scene\+::\+ICamera\+::\+ICamera (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_ac8bcd196963e0accc8c141c7794d663e}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!````~ICamera@{\texorpdfstring{$\sim$}{\string~}ICamera}}
+\index{````~ICamera@{\texorpdfstring{$\sim$}{\string~}ICamera}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ICamera()}{\string~ICamera()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_ac8bcd196963e0accc8c141c7794d663e} 
+Engine\+::\+Scene\+::\+ICamera\+::\texorpdfstring{$\sim$}{\string~}\+ICamera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a1cf96af4b8e3b4c47b4361b3a328a4a7}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!GetFrustum@{GetFrustum}}
+\index{GetFrustum@{GetFrustum}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{GetFrustum()}{GetFrustum()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a1cf96af4b8e3b4c47b4361b3a328a4a7} 
+\mbox{\hyperlink{struct_engine_1_1_rectangle}{Rectangle}} Engine\+::\+Scene\+::\+ICamera\+::\+Get\+Frustum (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_af8bf4fecb58a9a6e1c50eea4becbb9b0}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_af8bf4fecb58a9a6e1c50eea4becbb9b0} 
+glm\+::vec2 Engine\+::\+Scene\+::\+ICamera\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a4b8d311058037b70085f4aa95734e2f3}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a4b8d311058037b70085f4aa95734e2f3} 
+virtual glm\+::mat4 Engine\+::\+Scene\+::\+ICamera\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ac0623847d154d84dca2bf8cf54dbcad5}{Engine\+::\+Scene\+::\+Camera2D}}.
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a33535722f0ea7f12c98a9c910a381d14}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!GetViewHeight@{GetViewHeight}}
+\index{GetViewHeight@{GetViewHeight}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{GetViewHeight()}{GetViewHeight()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a33535722f0ea7f12c98a9c910a381d14} 
+int Engine\+::\+Scene\+::\+ICamera\+::\+Get\+View\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a5b71d7ce3a3c3662909df718bb948f2a}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a5b71d7ce3a3c3662909df718bb948f2a} 
+virtual glm\+::mat4 Engine\+::\+Scene\+::\+ICamera\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_a5a245369076c66db8262b61aa8bbf484}{Engine\+::\+Scene\+::\+Camera2D}}.
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a852f85b1874778d21f532d2c3ab2ccb9}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!GetViewWidth@{GetViewWidth}}
+\index{GetViewWidth@{GetViewWidth}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{GetViewWidth()}{GetViewWidth()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a852f85b1874778d21f532d2c3ab2ccb9} 
+int Engine\+::\+Scene\+::\+ICamera\+::\+Get\+View\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_ae72ee6dea2ae48aa3a7c8065d8fed7a1}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!GetZoom@{GetZoom}}
+\index{GetZoom@{GetZoom}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{GetZoom()}{GetZoom()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_ae72ee6dea2ae48aa3a7c8065d8fed7a1} 
+float Engine\+::\+Scene\+::\+ICamera\+::\+Get\+Zoom (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a93a4368041bbd385ad0cf3caa0940af0}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a93a4368041bbd385ad0cf3caa0940af0} 
+void Engine\+::\+Scene\+::\+ICamera\+::\+On\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_a004b0687f4f3ffd799a86914dda9bd0c}{Engine\+::\+Scene\+::\+Camera2D}}.
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_aaf109ad01bb050b8aebbf8b8a655718f}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_aaf109ad01bb050b8aebbf8b8a655718f} 
+void Engine\+::\+Scene\+::\+ICamera\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a46157434ec82ae05ca4aeecc67dd3069}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!SetViewSize@{SetViewSize}}
+\index{SetViewSize@{SetViewSize}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{SetViewSize()}{SetViewSize()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a46157434ec82ae05ca4aeecc67dd3069} 
+void Engine\+::\+Scene\+::\+ICamera\+::\+Set\+View\+Size (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_engine_1_1_scene_1_1_i_camera_a597650e7360da75404f78f3fdf7bd012}\index{Engine::Scene::ICamera@{Engine::Scene::ICamera}!SetZoom@{SetZoom}}
+\index{SetZoom@{SetZoom}!Engine::Scene::ICamera@{Engine::Scene::ICamera}}
+\doxysubsubsection{\texorpdfstring{SetZoom()}{SetZoom()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_i_camera_a597650e7360da75404f78f3fdf7bd012} 
+void Engine\+::\+Scene\+::\+ICamera\+::\+Set\+Zoom (\begin{DoxyParamCaption}\item[{float}]{zoom}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+scene/\mbox{\hyperlink{camera_8hpp}{camera.\+hpp}}\item 
+scene/\mbox{\hyperlink{camera_8cpp}{camera.\+cpp}}\end{DoxyCompactItemize}

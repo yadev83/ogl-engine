@@ -1,0 +1,88 @@
+\doxysection{Engine\+::Core\+::Logger Class Reference}
+\hypertarget{class_engine_1_1_core_1_1_logger}{}\label{class_engine_1_1_core_1_1_logger}\index{Engine::Core::Logger@{Engine::Core::Logger}}
+
+
+Classe Singleton "{}\+Logger"{}. Ne devrais jamais être appelée directement, puisqu\textquotesingle{}il existe des macros toutes prêtes.  
+
+
+
+
+{\ttfamily \#include $<$logger.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_engine_1_1_core_1_1_logger_aa96f7229e4fd3c591346efbde3333d61}{Log}} (const std\+::string \&message, \mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7}{Log\+Level}} level=\mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a41abf3cca8cee8cdae01749df7a991c6}{Log\+Level\+::\+LOG\+\_\+\+INFO}}, const char \texorpdfstring{$\ast$}{*}file="{}"{}, int line=0, const char \texorpdfstring{$\ast$}{*}func="{}"{})
+\begin{DoxyCompactList}\small\item\em Envoie un message de log dans la console, et dans le fichier ouvert. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_engine_1_1_core_1_1_logger_aa68437ec47f2846f2b2b2bcef38c1c30}{Stream}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie un stream vers le fichier de log actuellement ouvert. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_engine_1_1_core_1_1_logger}{Logger}} \& \mbox{\hyperlink{class_engine_1_1_core_1_1_logger_ab816080df056b095f06f11f4d5e007e6}{Instance}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance du singleton \doxylink{class_engine_1_1_core_1_1_logger}{Logger}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe Singleton "{}\+Logger"{}. Ne devrais jamais être appelée directement, puisqu\textquotesingle{}il existe des macros toutes prêtes. 
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_core_1_1_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_core_1_1_logger_ab816080df056b095f06f11f4d5e007e6}\index{Engine::Core::Logger@{Engine::Core::Logger}!Instance@{Instance}}
+\index{Instance@{Instance}!Engine::Core::Logger@{Engine::Core::Logger}}
+\doxysubsubsection{\texorpdfstring{Instance()}{Instance()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_core_1_1_logger_ab816080df056b095f06f11f4d5e007e6} 
+\mbox{\hyperlink{class_engine_1_1_core_1_1_logger}{Logger}} \& Engine\+::\+Core\+::\+Logger\+::\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renvoie l\textquotesingle{}instance du singleton \doxylink{class_engine_1_1_core_1_1_logger}{Logger}. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_core_1_1_logger}{Logger}\& 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_core_1_1_logger_aa96f7229e4fd3c591346efbde3333d61}\index{Engine::Core::Logger@{Engine::Core::Logger}!Log@{Log}}
+\index{Log@{Log}!Engine::Core::Logger@{Engine::Core::Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_core_1_1_logger_aa96f7229e4fd3c591346efbde3333d61} 
+void Engine\+::\+Core\+::\+Logger\+::\+Log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{, }\item[{\mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7}{Log\+Level}}}]{level}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a41abf3cca8cee8cdae01749df7a991c6}{Log\+Level\+::\+LOG\+\_\+\+INFO}}}, }\item[{const char \texorpdfstring{$\ast$}{*}}]{file}{ = {\ttfamily "{}"{}}, }\item[{int}]{line}{ = {\ttfamily 0}, }\item[{const char \texorpdfstring{$\ast$}{*}}]{func}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Envoie un message de log dans la console, et dans le fichier ouvert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Le message à envoyer \\
+\hline
+{\em level} & Le niveau de gravité du message (INFO\texorpdfstring{$<$}{<}WARNING\texorpdfstring{$<$}{<}ERROR). Debug n\textquotesingle{}apparaît qu\textquotesingle{}en build de Debug \\
+\hline
+{\em file} & Une string contenant le nom du fichier source qui appelle émet le log \\
+\hline
+{\em line} & La ligne qui a émis le log \\
+\hline
+{\em func} & Le nom de la fonction qui émet le log \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_core_1_1_logger_aa68437ec47f2846f2b2b2bcef38c1c30}\index{Engine::Core::Logger@{Engine::Core::Logger}!Stream@{Stream}}
+\index{Stream@{Stream}!Engine::Core::Logger@{Engine::Core::Logger}}
+\doxysubsubsection{\texorpdfstring{Stream()}{Stream()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_core_1_1_logger_aa68437ec47f2846f2b2b2bcef38c1c30} 
+std\+::ostream \& Engine\+::\+Core\+::\+Logger\+::\+Stream (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renvoie un stream vers le fichier de log actuellement ouvert. 
+
+Renvoie \+: std\+::cout si le fichier n\textquotesingle{}est pas ouvert
+
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{logger_8hpp}{logger.\+hpp}}\item 
+core/\mbox{\hyperlink{logger_8cpp}{logger.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\doxysection{shader.\+hpp}
+\hypertarget{shader_8hpp_source}{}\label{shader_8hpp_source}\index{graphics/shader.hpp@{graphics/shader.hpp}}
+\mbox{\hyperlink{shader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_graphics}{Engine::Graphics}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a1eae87679102e5c84baf5ed8fa5f1a9e}{Shader}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ GLuint\ mID;}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ GLuint\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_ae10df6a6474dd2225b96891ce9aeedbf}{GetID}}()\ \{\ \textcolor{keywordflow}{return}\ mID;\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa889459847bfcb6d55f2d1efc53fb96a}{Shader}}(\textcolor{keyword}{const}\ std::string\&\ vertexPath,\ \textcolor{keyword}{const}\ std::string\&\ fragmentPath);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa889459847bfcb6d55f2d1efc53fb96a}{Shader}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *vertexSource,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fragmentPath);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa889459847bfcb6d55f2d1efc53fb96a}{Shader}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a53b2144b1e7458b3c821de3c658b5d5e}{\string~Shader}}();}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a68f7acdcc95cc4d5732b4e88d9d5ad17}{Bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa29d7edc4da42bc730eedbe0907f92dc}{BuildFromFiles}}(\textcolor{keyword}{const}\ std::string\&\ vertexPath,\ \textcolor{keyword}{const}\ std::string\&\ fragmentPath);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_addec8ea44e4951e8df30f5879489d7a7}{BuildFromSource}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *vertexSource,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fragmentSource);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_afe39eb10f933b34c47648957592aabbc}{SetInt}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ val);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a02a65a0c8398090ad19d65cc735b2751}{SetFloat}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a3349319cca91a020b0543c4eed4724b9}{SetBool}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ val);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a8aa68dad1a2ce909450a6ebbbe32af36}{SetMat4}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::mat4\&\ mat);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a2e53f164587a38a179e21ce85f9b649c}{SetVec4}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::vec4\&\ vec);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a3318cfccfc8884e258e2fc13e737aabe}{SetVec3}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::vec3\&\ vec);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa7c1b79dd045c14c87165a2afe24d479}{SetVec2}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::vec2\&\ vec);}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}

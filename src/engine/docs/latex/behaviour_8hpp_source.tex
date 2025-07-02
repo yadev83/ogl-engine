@@ -1,0 +1,44 @@
+\doxysection{behaviour.\+hpp}
+\hypertarget{behaviour_8hpp_source}{}\label{behaviour_8hpp_source}\index{scene/behaviour.hpp@{scene/behaviour.hpp}}
+\mbox{\hyperlink{behaviour_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component_8hpp}{../ecs/component.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity_8hpp}{../ecs/entity.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{manifold_8hpp}{../physics/manifold.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_scene}{Engine::Scene}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a1051f04fad218427bb7fbb8512488a2c}{Behaviour}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{ECS::Component}}\ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ad93e2feba4eeb278c1152200f6589d54}{BaseType}}\ =\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a1051f04fad218427bb7fbb8512488a2c}{Behaviour}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a1051f04fad218427bb7fbb8512488a2c}{Behaviour}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ad188b6248bf305450e747e3cf7eb6bfa}{\string~Behaviour}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Callback\ de\ cycle\ de\ vie}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ab2956af08fc4bde2fa73fe45733c7a0a}{OnInit}}()\ \{\}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a21878dd3698cc4198b7346ebb95fd90d}{OnFixedUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ac0ae7ffc99737beb8dd0e8cf31dde087}{OnUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a5e05419ecf33e0ec196405b4fec1829b}{OnRender}}(\textcolor{keywordtype}{float}\ alpha\ =\ 0.0f)\ \{\}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ae0023867622f2a6be164c32536d23d5b}{OnUIRender}}()\ \{\}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a83f57027ac9ee2d3c0de69edda2507a6}{OnLateUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Callbacks\ pour\ les\ systèmes\ physiques}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ac306698d596dd04931c59a4c20abfd89}{OnCollisionEnter}}(\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ other,\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics::CollisionManifold}}\ collision)\ \{\}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_aacddc5f1edb3e59543c345cd3d2b3e28}{OnTriggerEnter}}(\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ other,\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics::CollisionManifold}}\ collision)\ \{\}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a9e724b899cc58a4c4c6c4a993a95646f}{OnCollisionStay}}(\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ other,\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics::CollisionManifold}}\ collision)\ \{\}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a71793495f91e03729ea9bd5e141d58c8}{OnTriggerStay}}(\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ other,\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics::CollisionManifold}}\ collision)\ \{\}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a3cd58ad678f58dba0333eed69734ee08}{OnCollisionExit}}(\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ other,\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics::CollisionManifold}}\ collision)\ \{\}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a583d423247e625d25de025a654a3e5e5}{OnTriggerExit}}(\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ other,\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics::CollisionManifold}}\ collision)\ \{\}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Callbacks\ pour\ Actions\ d'interface}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a5dfbb21804d5c965bdaf86020e75596f}{OnHoverEnter}}()\ \{\}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a90484aad033b111e2ea385749c4633fa}{OnHoverExit}}()\ \{\}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ab71112237734b0c6055df76ce49b32b7}{OnFocusEnter}}()\ \{\}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a4b1a44e57ce9f6a10597b0c3f3edad91}{OnFocusExit}}()\ \{\}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a5316ad9786c3a56323f7d9bf5970ff25}{OnSubmit}}()\ \{\}}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,37 @@
+\doxysection{Engine\+::ECS Namespace Reference}
+\hypertarget{namespace_engine_1_1_e_c_s}{}\label{namespace_engine_1_1_e_c_s}\index{Engine::ECS@{Engine::ECS}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{Component}}
+\begin{DoxyCompactList}\small\item\em Classe \doxylink{class_engine_1_1_e_c_s_1_1_component}{Component} à dériver pour pouvoir être utilisée dans les systèmes \doxylink{namespace_engine_1_1_e_c_s}{ECS}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_storage}{Component\+Storage}}
+\begin{DoxyCompactList}\small\item\em Stockage de composant typé selon template, basé sur l\textquotesingle{}interface générique. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}}
+\begin{DoxyCompactList}\small\item\em Une entité est l\textquotesingle{}élément "{}atomique"{} utilisé dans l\textquotesingle{}architecture \doxylink{namespace_engine_1_1_e_c_s}{ECS} pour référencer les composants. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_e_c_s_1_1_i_component_storage}{IComponent\+Storage}}
+\begin{DoxyCompactList}\small\item\em Interface pour le système de stockage de composants. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}}
+\begin{DoxyCompactList}\small\item\em Classe Registre qui stocke des composants et gère l\textquotesingle{}attribution des IDs d\textquotesingle{}entités. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system}{System}}
+\begin{DoxyCompactList}\small\item\em La classe \doxylink{class_engine_1_1_e_c_s_1_1_system}{System} implémente une logique spécifique à des composants. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{namespace_engine_1_1_e_c_s_a89bf611f3da8f73b212c9e487f56cf1c}{next\+Component\+Type\+Id}} = 0
+\begin{DoxyCompactList}\small\item\em Le prochain identifiant de composant pour les storages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-var-members}
+\Hypertarget{namespace_engine_1_1_e_c_s_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_engine_1_1_e_c_s_a89bf611f3da8f73b212c9e487f56cf1c}\index{Engine::ECS@{Engine::ECS}!nextComponentTypeId@{nextComponentTypeId}}
+\index{nextComponentTypeId@{nextComponentTypeId}!Engine::ECS@{Engine::ECS}}
+\doxysubsubsection{\texorpdfstring{nextComponentTypeId}{nextComponentTypeId}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_e_c_s_a89bf611f3da8f73b212c9e487f56cf1c} 
+size\+\_\+t Engine\+::\+ECS\+::next\+Component\+Type\+Id = 0\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Le prochain identifiant de composant pour les storages. 
+

@@ -1,0 +1,288 @@
+\doxysection{Engine\+::Graphics\+::Shader Class Reference}
+\hypertarget{class_engine_1_1_graphics_1_1_shader}{}\label{class_engine_1_1_graphics_1_1_shader}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+
+
+Classe \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} qui porte un identifiant Open\+GL pointant vers le shader compilé  
+
+
+
+
+{\ttfamily \#include $<$shader.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+GLuint \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_ae10df6a6474dd2225b96891ce9aeedbf}{Get\+ID}} ()
+\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a1eae87679102e5c84baf5ed8fa5f1a9e}{Shader}} (const std\+::string \&vertex\+Path, const std\+::string \&fragment\+Path)
+\begin{DoxyCompactList}\small\item\em Construit un objet \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} et le compile à partir de fichiers vertex/fragment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aaa10bf6dccbc892ccd1d4d2077a1d808}{Shader}} (const char \texorpdfstring{$\ast$}{*}vertex\+Source, const char \texorpdfstring{$\ast$}{*}fragment\+Path)
+\begin{DoxyCompactList}\small\item\em Construit un nouveau shader et le compile a partir des sources fournies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa889459847bfcb6d55f2d1efc53fb96a}{Shader}} ()
+\begin{DoxyCompactList}\small\item\em Construit un objhet \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a53b2144b1e7458b3c821de3c658b5d5e}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Détruit proprement un \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a68f7acdcc95cc4d5732b4e88d9d5ad17}{Bind}} () const
+\begin{DoxyCompactList}\small\item\em Permet de lier le \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa29d7edc4da42bc730eedbe0907f92dc}{Build\+From\+Files}} (const std\+::string \&vertex\+Path, const std\+::string \&fragment\+Path)
+\begin{DoxyCompactList}\small\item\em Compile un programme de \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} à partir de fichiers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_addec8ea44e4951e8df30f5879489d7a7}{Build\+From\+Source}} (const char \texorpdfstring{$\ast$}{*}vertex\+Source, const char \texorpdfstring{$\ast$}{*}fragment\+Source)
+\begin{DoxyCompactList}\small\item\em Compile un programme de \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} à partir de sources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_afe39eb10f933b34c47648957592aabbc}{Set\+Int}} (const std\+::string \&name, int val)
+\begin{DoxyCompactList}\small\item\em Définit la valeur d\textquotesingle{}un uniform de type "{}int"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a02a65a0c8398090ad19d65cc735b2751}{Set\+Float}} (const std\+::string \&name, float val)
+\begin{DoxyCompactList}\small\item\em Définit la valeur d\textquotesingle{}un uniform de type "{}float"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a3349319cca91a020b0543c4eed4724b9}{Set\+Bool}} (const std\+::string \&name, bool val)
+\begin{DoxyCompactList}\small\item\em Définit la valeur d\textquotesingle{}un uniform de type "{}bool"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a8aa68dad1a2ce909450a6ebbbe32af36}{Set\+Mat4}} (const std\+::string \&name, const glm\+::mat4 \&mat)
+\begin{DoxyCompactList}\small\item\em Définit la valeur d\textquotesingle{}un uniform de type "{}\+Mat4"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a2e53f164587a38a179e21ce85f9b649c}{Set\+Vec4}} (const std\+::string \&name, const glm\+::vec4 \&vec)
+\begin{DoxyCompactList}\small\item\em Définit la valeur d\textquotesingle{}un uniform de type "{}\+Vec4"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_a3318cfccfc8884e258e2fc13e737aabe}{Set\+Vec3}} (const std\+::string \&name, const glm\+::vec3 \&vec)
+\begin{DoxyCompactList}\small\item\em Définit la valeur d\textquotesingle{}un uniform de type "{}\+Vec3"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader_aa7c1b79dd045c14c87165a2afe24d479}{Set\+Vec2}} (const std\+::string \&name, const glm\+::vec2 \&vec)
+\begin{DoxyCompactList}\small\item\em Définit la valeur d\textquotesingle{}un uniform de type "{}\+Vec2"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} qui porte un identifiant Open\+GL pointant vers le shader compilé 
+
+Contient aussi des méthode utilitaires pour définir des uniforms facilement 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a1eae87679102e5c84baf5ed8fa5f1a9e}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a1eae87679102e5c84baf5ed8fa5f1a9e} 
+Engine\+::\+Graphics\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Path}{, }\item[{const std\+::string \&}]{fragment\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Construit un objet \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} et le compile à partir de fichiers vertex/fragment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Path} & Le chemin vers le fichier vertex \\
+\hline
+{\em fragment\+Path} & Le chemin vers le fichier fragment \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_aaa10bf6dccbc892ccd1d4d2077a1d808}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_aaa10bf6dccbc892ccd1d4d2077a1d808} 
+Engine\+::\+Graphics\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{vertex\+Source}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{fragment\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Construit un nouveau shader et le compile a partir des sources fournies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Source} & Source vertex \\
+\hline
+{\em fragment\+Path} & Source fragment \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_aa889459847bfcb6d55f2d1efc53fb96a}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_aa889459847bfcb6d55f2d1efc53fb96a} 
+Engine\+::\+Graphics\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construit un objhet \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} vide. 
+
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a53b2144b1e7458b3c821de3c658b5d5e}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}}
+\index{````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shader()}{\string~Shader()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a53b2144b1e7458b3c821de3c658b5d5e} 
+Engine\+::\+Graphics\+::\+Shader\+::\texorpdfstring{$\sim$}{\string~}\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Détruit proprement un \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader}. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a68f7acdcc95cc4d5732b4e88d9d5ad17}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!Bind@{Bind}}
+\index{Bind@{Bind}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a68f7acdcc95cc4d5732b4e88d9d5ad17} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Permet de lier le \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader}. 
+
+Utile pour lier le shader pendant une boucle de rendering avant d\textquotesingle{}envoyer un mesh au GPU \Hypertarget{class_engine_1_1_graphics_1_1_shader_aa29d7edc4da42bc730eedbe0907f92dc}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!BuildFromFiles@{BuildFromFiles}}
+\index{BuildFromFiles@{BuildFromFiles}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{BuildFromFiles()}{BuildFromFiles()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_aa29d7edc4da42bc730eedbe0907f92dc} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Build\+From\+Files (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Path}{, }\item[{const std\+::string \&}]{fragment\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Compile un programme de \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} à partir de fichiers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Path} & chemin vers le fichier contenant la source .vertex \\
+\hline
+{\em fragment\+Path} & chemin vers le fichier contenant la source .fragment \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_addec8ea44e4951e8df30f5879489d7a7}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!BuildFromSource@{BuildFromSource}}
+\index{BuildFromSource@{BuildFromSource}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{BuildFromSource()}{BuildFromSource()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_addec8ea44e4951e8df30f5879489d7a7} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Build\+From\+Source (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{vertex\+Source}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{fragment\+Source}{}\end{DoxyParamCaption})}
+
+
+
+Compile un programme de \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} à partir de sources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Source} & code source vertex \\
+\hline
+{\em fragment\+Source} & code source fragment \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_ae10df6a6474dd2225b96891ce9aeedbf}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!GetID@{GetID}}
+\index{GetID@{GetID}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{GetID()}{GetID()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_ae10df6a6474dd2225b96891ce9aeedbf} 
+GLuint Engine\+::\+Graphics\+::\+Shader\+::\+Get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a3349319cca91a020b0543c4eed4724b9}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!SetBool@{SetBool}}
+\index{SetBool@{SetBool}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{SetBool()}{SetBool()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a3349319cca91a020b0543c4eed4724b9} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Set\+Bool (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{bool}]{val}{}\end{DoxyParamCaption})}
+
+
+
+Définit la valeur d\textquotesingle{}un uniform de type "{}bool"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom du uniform à aller chercher \\
+\hline
+{\em val} & La valeur à envoyer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a02a65a0c8398090ad19d65cc735b2751}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!SetFloat@{SetFloat}}
+\index{SetFloat@{SetFloat}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{SetFloat()}{SetFloat()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a02a65a0c8398090ad19d65cc735b2751} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Set\+Float (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{float}]{val}{}\end{DoxyParamCaption})}
+
+
+
+Définit la valeur d\textquotesingle{}un uniform de type "{}float"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom du uniform à aller chercher \\
+\hline
+{\em val} & La valeur à envoyer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_afe39eb10f933b34c47648957592aabbc}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!SetInt@{SetInt}}
+\index{SetInt@{SetInt}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{SetInt()}{SetInt()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_afe39eb10f933b34c47648957592aabbc} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Set\+Int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{int}]{val}{}\end{DoxyParamCaption})}
+
+
+
+Définit la valeur d\textquotesingle{}un uniform de type "{}int"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom du uniform à aller chercher \\
+\hline
+{\em val} & La valeur à envoyer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a8aa68dad1a2ce909450a6ebbbe32af36}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!SetMat4@{SetMat4}}
+\index{SetMat4@{SetMat4}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{SetMat4()}{SetMat4()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a8aa68dad1a2ce909450a6ebbbe32af36} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Set\+Mat4 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const glm\+::mat4 \&}]{mat}{}\end{DoxyParamCaption})}
+
+
+
+Définit la valeur d\textquotesingle{}un uniform de type "{}\+Mat4"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom du uniform à aller chercher \\
+\hline
+{\em val} & La valeur à envoyer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_aa7c1b79dd045c14c87165a2afe24d479}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!SetVec2@{SetVec2}}
+\index{SetVec2@{SetVec2}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{SetVec2()}{SetVec2()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_aa7c1b79dd045c14c87165a2afe24d479} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Set\+Vec2 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const glm\+::vec2 \&}]{vec}{}\end{DoxyParamCaption})}
+
+
+
+Définit la valeur d\textquotesingle{}un uniform de type "{}\+Vec2"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom du uniform à aller chercher \\
+\hline
+{\em val} & La valeur à envoyer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a3318cfccfc8884e258e2fc13e737aabe}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!SetVec3@{SetVec3}}
+\index{SetVec3@{SetVec3}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{SetVec3()}{SetVec3()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a3318cfccfc8884e258e2fc13e737aabe} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Set\+Vec3 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const glm\+::vec3 \&}]{vec}{}\end{DoxyParamCaption})}
+
+
+
+Définit la valeur d\textquotesingle{}un uniform de type "{}\+Vec3"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom du uniform à aller chercher \\
+\hline
+{\em val} & La valeur à envoyer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_graphics_1_1_shader_a2e53f164587a38a179e21ce85f9b649c}\index{Engine::Graphics::Shader@{Engine::Graphics::Shader}!SetVec4@{SetVec4}}
+\index{SetVec4@{SetVec4}!Engine::Graphics::Shader@{Engine::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{SetVec4()}{SetVec4()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_graphics_1_1_shader_a2e53f164587a38a179e21ce85f9b649c} 
+void Engine\+::\+Graphics\+::\+Shader\+::\+Set\+Vec4 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const glm\+::vec4 \&}]{vec}{}\end{DoxyParamCaption})}
+
+
+
+Définit la valeur d\textquotesingle{}un uniform de type "{}\+Vec4"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Le nom du uniform à aller chercher \\
+\hline
+{\em val} & La valeur à envoyer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+graphics/\mbox{\hyperlink{shader_8hpp}{shader.\+hpp}}\item 
+graphics/\mbox{\hyperlink{shader_8cpp}{shader.\+cpp}}\end{DoxyCompactItemize}

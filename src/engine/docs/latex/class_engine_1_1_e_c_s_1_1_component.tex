@@ -1,0 +1,143 @@
+\doxysection{Engine\+::ECS\+::Component Class Reference}
+\hypertarget{class_engine_1_1_e_c_s_1_1_component}{}\label{class_engine_1_1_e_c_s_1_1_component}\index{Engine::ECS::Component@{Engine::ECS::Component}}
+
+
+Classe \doxylink{class_engine_1_1_e_c_s_1_1_component}{Component} à dériver pour pouvoir être utilisée dans les systèmes \doxylink{namespace_engine_1_1_e_c_s}{ECS}.  
+
+
+
+
+{\ttfamily \#include $<$component.\+hpp$>$}
+
+Inheritance diagram for Engine\+::ECS\+::Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11.000000cm]{class_engine_1_1_e_c_s_1_1_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}{Component}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}{Set\+Entity}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Attache l\textquotesingle{}entité au component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}entité attachée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}{Get\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la scène en cours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}{Get\+App}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance d\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ac7b716e6d41ff508ad2d8e5dad655d72}{Registry}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \doxylink{class_engine_1_1_e_c_s_1_1_component}{Component} à dériver pour pouvoir être utilisée dans les systèmes \doxylink{namespace_engine_1_1_e_c_s}{ECS}. 
+
+Son intérêt réside dans le fait qu\textquotesingle{}elle peut stocker une entité et la renvoyer. Dans le cadre de l\textquotesingle{}\doxylink{namespace_engine_1_1_e_c_s}{ECS}, c\textquotesingle{}est le registre qui créé les components, et au passage, il appelle le setter pour lui attacher l\textquotesingle{}entité 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}\index{Engine::ECS::Component@{Engine::ECS::Component}!Component@{Component}}
+\index{Component@{Component}!Engine::ECS::Component@{Engine::ECS::Component}}
+\doxysubsubsection{\texorpdfstring{Component()}{Component()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174} 
+Engine\+::\+ECS\+::\+Component\+::\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}\index{Engine::ECS::Component@{Engine::ECS::Component}!GetApp@{GetApp}}
+\index{GetApp@{GetApp}!Engine::ECS::Component@{Engine::ECS::Component}}
+\doxysubsubsection{\texorpdfstring{GetApp()}{GetApp()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4} 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& Engine\+::\+ECS\+::\+Component\+::\+Get\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie l\textquotesingle{}instance d\textquotesingle{}application. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_app}{App}\& 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}\index{Engine::ECS::Component@{Engine::ECS::Component}!GetEntity@{GetEntity}}
+\index{GetEntity@{GetEntity}!Engine::ECS::Component@{Engine::ECS::Component}}
+\doxysubsubsection{\texorpdfstring{GetEntity()}{GetEntity()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1} 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& Engine\+::\+ECS\+::\+Component\+::\+Get\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie l\textquotesingle{}entité attachée. 
+
+Utile dans les systèmes qui traitent avec des composants externes (physique par exemple). On peut faire dans un callback (\doxylink{class_engine_1_1_e_c_s_1_1_component}{Component}\& other) =\texorpdfstring{$>$}{>} other.\+Get\+Entity() ...
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_e_c_s_1_1_entity}{Entity} 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}\index{Engine::ECS::Component@{Engine::ECS::Component}!GetRegistry@{GetRegistry}}
+\index{GetRegistry@{GetRegistry}!Engine::ECS::Component@{Engine::ECS::Component}}
+\doxysubsubsection{\texorpdfstring{GetRegistry()}{GetRegistry()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363} 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& Engine\+::\+ECS\+::\+Component\+::\+Get\+Registry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie le registre actuel. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_e_c_s_1_1_registry}{Registry}\& 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}\index{Engine::ECS::Component@{Engine::ECS::Component}!GetScene@{GetScene}}
+\index{GetScene@{GetScene}!Engine::ECS::Component@{Engine::ECS::Component}}
+\doxysubsubsection{\texorpdfstring{GetScene()}{GetScene()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4} 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& Engine\+::\+ECS\+::\+Component\+::\+Get\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie la scène en cours. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}\& 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}\index{Engine::ECS::Component@{Engine::ECS::Component}!SetEntity@{SetEntity}}
+\index{SetEntity@{SetEntity}!Engine::ECS::Component@{Engine::ECS::Component}}
+\doxysubsubsection{\texorpdfstring{SetEntity()}{SetEntity()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10} 
+void Engine\+::\+ECS\+::\+Component\+::\+Set\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Attache l\textquotesingle{}entité au component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-related-members}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_component_ac7b716e6d41ff508ad2d8e5dad655d72}\index{Engine::ECS::Component@{Engine::ECS::Component}!Registry@{Registry}}
+\index{Registry@{Registry}!Engine::ECS::Component@{Engine::ECS::Component}}
+\doxysubsubsection{\texorpdfstring{Registry}{Registry}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_component_ac7b716e6d41ff508ad2d8e5dad655d72} 
+friend class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ecs/\mbox{\hyperlink{component_8hpp}{component.\+hpp}}\end{DoxyCompactItemize}

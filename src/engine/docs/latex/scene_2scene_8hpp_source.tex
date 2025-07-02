@@ -1,0 +1,81 @@
+\doxysection{scene.\+hpp}
+\hypertarget{scene_2scene_8hpp_source}{}\label{scene_2scene_8hpp_source}\index{scene/scene.hpp@{scene/scene.hpp}}
+\mbox{\hyperlink{scene_2scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{defs_8hpp}{../defs.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{registry_8hpp}{../ecs/registry.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity_8hpp}{../ecs/entity.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{camera.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{event_8hpp}{../core/event.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}\ \{\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_app}{App}};\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_scene}{Engine::Scene}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespace_engine_1_1_scene_a6a6f1cb2b34691e3232021da6d03451d}{PrimitiveType}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_1_1_scene_a6a6f1cb2b34691e3232021da6d03451dace2c8aed9c2fa0cfbed56cbda4d8bf07}{Empty}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_1_1_scene_a6a6f1cb2b34691e3232021da6d03451dae9017664588010860a92ceb5f8fcb824}{Quad}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_1_1_scene_a6a6f1cb2b34691e3232021da6d03451da9dffbf69ffba8bc38bc4e01abf4b1675}{Text}}}
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_aa06a8b122623883321c96fd5b0a6402e}{Scene}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a4097b3e04a4f8ece21f5abe1b10e6323}{App}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a4097b3e04a4f8ece21f5abe1b10e6323}{App}}*\ mApp;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera}{ICamera}}*\ mCamera;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{ECS::Registry}}\ mRegistry;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher}{Core::EventDispatcher}}\ mEventDispatcher;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_aa06a8b122623883321c96fd5b0a6402e}{Scene}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a1c4b939949adf1b96c4fd0e1276e69a8}{\string~Scene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{ECS::Registry}}*\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a0c079060996b7c0dc2046ca5126bc411}{GetRegistry}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera}{ICamera}}\ *\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a377d0738d2da48992d20266b122b5df1}{GetCamera}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a4097b3e04a4f8ece21f5abe1b10e6323}{App}}\&\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a09b85459a789d95d637148f7cb0cde23}{GetApp}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Event\ management}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ EventType>}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_ae3d9d2ad397c5c4692b96b47f2206ef7}{AddEventListener}}(\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}{Core::EventDispatcher::EventCallback<EventType>}}\ callback)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEventDispatcher.Subscribe<EventType>(callback);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ EventType>}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a0cdb2bcc67606145abee0c0fd78c4f4d}{EmitEvent}}(EventType*\ event)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mEventDispatcher.Emit<EventType>(event);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Entity\ management}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a14dde53e1eeec56e75d5b4aa25bc861e}{CreateEntity}}(\mbox{\hyperlink{namespace_engine_1_1_scene_a6a6f1cb2b34691e3232021da6d03451d}{PrimitiveType}}\ type\ =\ \mbox{\hyperlink{namespace_engine_1_1_scene_a6a6f1cb2b34691e3232021da6d03451dace2c8aed9c2fa0cfbed56cbda4d8bf07}{PrimitiveType::Empty}});}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Components>}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a1e87b003125b69b41ebe12450d46e46a}{CreateEntityWith}}()\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS::Entity}}\ e\ =\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a14dde53e1eeec56e75d5b4aa25bc861e}{CreateEntity}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (e.\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_a8278397ee90952a44ec23bc44af25a9c}{AddComponent}}<Components>(),\ ...);\ \textcolor{comment}{//\ C++17\ fold\ expression}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a1cdc74ccb74bcb377d33e1cc60e31e15}{DestroyEntity}}(\mbox{\hyperlink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{EntityID}}\ entityID);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a1467485072e55570834f70c9eee1f113}{OnEnter}}()\ \{\}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a02047516dd8cf7ff2544493e8f56ee64}{OnExit}}()\ \{\}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Méthodes\ de\ cycle\ de\ vie,\ appelées\ par\ l'application\ pour\ bypass\ l'ECS\ si\ besoin}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_ad73c2b55de81c8ce375aee6c2443bb33}{OnInit}}()\ \{\}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_ade75327720123e2d058af8b4b55af9e6}{OnFixedUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a594932e7ffcac73566bf477bf63eff90}{OnUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a129e4a6ef6b8ce5ed480967216896cc2}{OnRender}}(\textcolor{keywordtype}{float}\ alpha\ =\ 0.0f)\ \{\}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_a112d7f37c1a6d6981754fd7da7f81164}{OnUIRender}}()\ \{\}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene_ab846dfd50d3b37252d78eb3966e022db}{OnLateUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\}}
+\DoxyCodeLine{00143\ \ \ \ \ \};}
+\DoxyCodeLine{00144\ \}}
+
+\end{DoxyCode}

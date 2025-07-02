@@ -1,0 +1,209 @@
+\doxysection{Engine\+::Core Namespace Reference}
+\hypertarget{namespace_engine_1_1_core}{}\label{namespace_engine_1_1_core}\index{Engine::Core@{Engine::Core}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_event}{Event}}
+\begin{DoxyCompactList}\small\item\em Classe \doxylink{class_engine_1_1_core_1_1_event}{Event} dont tous les évènements devront hériter dans le système. Permet simplement de rendre le dispatcher d\textquotesingle{}évènements "{}générique"{} en passant par un type simple comme ça. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher}{Event\+Dispatcher}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_engine_1_1_core_1_1_event_dispatcher}{Event\+Dispatcher} enregistre des listeners, émet des évènements, et appelle des callbacks. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_logger}{Logger}}
+\begin{DoxyCompactList}\small\item\em Classe Singleton "{}\+Logger"{}. Ne devrais jamais être appelée directement, puisqu\textquotesingle{}il existe des macros toutes prêtes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file}{Pak\+File}}
+\begin{DoxyCompactList}\small\item\em Classe qui charge un fichier PAK en mémoire. On peut ensuite accéder à ses contenus au format Binaire ou interpréter le texte. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_core_1_1_pak_header}{Pak\+Header}}
+\begin{DoxyCompactList}\small\item\em Structure qui définit le header du type PAK. Utile pour avoir des infos sur ce que l\textquotesingle{}on va lire. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_profiler}{Profiler}}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_window}{Window}}
+\begin{DoxyCompactList}\small\item\em Wrapper pour le contexte open\+GL, ainsi que la statemachine open\+GL dans une certaine mesure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}{Buffer}} = std\+::vector$<$char$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7}{Log\+Level}} \{ \newline
+\mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7aeded50d942c7c2d37d09ba8241ff017f}{LOG\+\_\+\+DEBUG}}
+, \mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a41abf3cca8cee8cdae01749df7a991c6}{LOG\+\_\+\+INFO}}
+, \mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7ad0cb3df3102ca9270c5785af9a8c137f}{LOG\+\_\+\+WARNING}}
+, \mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a4490aa3d29644e716440fada68f54032}{LOG\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7ab3a01170f5777f9867632e3e4a04e3a9}{LOG\+\_\+\+FATAL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumération qui définit les types de logs à disposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_engine_1_1_core_a829df5f9c6590cebf7c2b0e055c7ef92}{Log\+Level\+To\+String}} (\mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7}{Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em Fonction utilitaire qui revnoie une string associé à un niveau de log Utile pour afficher la sévérité du log dans le message formatté \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_engine_1_1_core_a7a4ba33e3c329b6dacac3b65009618bb}{Print\+Stack\+Trace}} (CONTEXT \texorpdfstring{$\ast$}{*}context, std\+::ostream \&out=std\+::cout)
+\begin{DoxyCompactList}\small\item\em Affiche la stacktrace dans la console. \end{DoxyCompactList}\item 
+LONG WINAPI \mbox{\hyperlink{namespace_engine_1_1_core_a2a19ac5d77e950ef0c35ba50bca89497}{Unhandled\+Exception\+Handler}} (EXCEPTION\+\_\+\+POINTERS \texorpdfstring{$\ast$}{*}exception\+Info)
+\begin{DoxyCompactList}\small\item\em Gère les exceptions en fonction de leur type. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespace_engine_1_1_core_acb4f208eb69c43ba02edef2ccd9d607d}{Exception\+Code\+String}} (DWORD code)
+\begin{DoxyCompactList}\small\item\em Renvoie une string associée au code d\textquotesingle{}exception donné. CF. La doc de Microsoft sur les exceptions C++. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_engine_1_1_core_afad7e91e26bc3bb6060dd74f6d5d952e}{Enable\+Stacktrace}} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui active le Handler dans le programme actuel pour activer la stacktrace. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_engine_1_1_core_a6a3f1c7926ba8fe0e0d7ebe2e045a685}{gl\+Error\+Message\+Callback}} (GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar \texorpdfstring{$\ast$}{*}message, const void \texorpdfstring{$\ast$}{*}user\+Param)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher}{Event\+Dispatcher}} \mbox{\hyperlink{namespace_engine_1_1_core_a50bbb4be9ac3acc20df3e56301318ed5}{Global\+Event\+Dispatcher}}
+\begin{DoxyCompactList}\small\item\em Un Global\+Event\+Dispatcher est mis à disposition pour émettre et écouter des évènements sans contexte spécifique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{namespace_engine_1_1_core_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}\index{Engine::Core@{Engine::Core}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014} 
+using \mbox{\hyperlink{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}{Engine\+::\+Core\+::\+Buffer}} = std\+::vector$<$char$>$}
+
+
+
+\label{doc-enum-members}
+\Hypertarget{namespace_engine_1_1_core_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7}\index{Engine::Core@{Engine::Core}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7} 
+enum class \mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7}{Engine\+::\+Core\+::\+Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumération qui définit les types de logs à disposition. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_DEBUG@{LOG\_DEBUG}!Engine::Core@{Engine::Core}}\index{Engine::Core@{Engine::Core}!LOG\_DEBUG@{LOG\_DEBUG}}}\Hypertarget{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7aeded50d942c7c2d37d09ba8241ff017f}\label{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7aeded50d942c7c2d37d09ba8241ff017f} 
+LOG\+\_\+\+DEBUG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_INFO@{LOG\_INFO}!Engine::Core@{Engine::Core}}\index{Engine::Core@{Engine::Core}!LOG\_INFO@{LOG\_INFO}}}\Hypertarget{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a41abf3cca8cee8cdae01749df7a991c6}\label{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a41abf3cca8cee8cdae01749df7a991c6} 
+LOG\+\_\+\+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_WARNING@{LOG\_WARNING}!Engine::Core@{Engine::Core}}\index{Engine::Core@{Engine::Core}!LOG\_WARNING@{LOG\_WARNING}}}\Hypertarget{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7ad0cb3df3102ca9270c5785af9a8c137f}\label{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7ad0cb3df3102ca9270c5785af9a8c137f} 
+LOG\+\_\+\+WARNING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_ERROR@{LOG\_ERROR}!Engine::Core@{Engine::Core}}\index{Engine::Core@{Engine::Core}!LOG\_ERROR@{LOG\_ERROR}}}\Hypertarget{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a4490aa3d29644e716440fada68f54032}\label{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7a4490aa3d29644e716440fada68f54032} 
+LOG\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_FATAL@{LOG\_FATAL}!Engine::Core@{Engine::Core}}\index{Engine::Core@{Engine::Core}!LOG\_FATAL@{LOG\_FATAL}}}\Hypertarget{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7ab3a01170f5777f9867632e3e4a04e3a9}\label{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7ab3a01170f5777f9867632e3e4a04e3a9} 
+LOG\+\_\+\+FATAL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{namespace_engine_1_1_core_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_engine_1_1_core_afad7e91e26bc3bb6060dd74f6d5d952e}\index{Engine::Core@{Engine::Core}!EnableStacktrace@{EnableStacktrace}}
+\index{EnableStacktrace@{EnableStacktrace}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{EnableStacktrace()}{EnableStacktrace()}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_afad7e91e26bc3bb6060dd74f6d5d952e} 
+void Engine\+::\+Core\+::\+Enable\+Stacktrace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Fonction qui active le Handler dans le programme actuel pour activer la stacktrace. 
+
+\Hypertarget{namespace_engine_1_1_core_acb4f208eb69c43ba02edef2ccd9d607d}\index{Engine::Core@{Engine::Core}!ExceptionCodeString@{ExceptionCodeString}}
+\index{ExceptionCodeString@{ExceptionCodeString}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{ExceptionCodeString()}{ExceptionCodeString()}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_acb4f208eb69c43ba02edef2ccd9d607d} 
+std\+::string Engine\+::\+Core\+::\+Exception\+Code\+String (\begin{DoxyParamCaption}\item[{DWORD}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Renvoie une string associée au code d\textquotesingle{}exception donné. CF. La doc de Microsoft sur les exceptions C++. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{namespace_engine_1_1_core_a6a3f1c7926ba8fe0e0d7ebe2e045a685}\index{Engine::Core@{Engine::Core}!glErrorMessageCallback@{glErrorMessageCallback}}
+\index{glErrorMessageCallback@{glErrorMessageCallback}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{glErrorMessageCallback()}{glErrorMessageCallback()}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_a6a3f1c7926ba8fe0e0d7ebe2e045a685} 
+void Engine\+::\+Core\+::gl\+Error\+Message\+Callback (\begin{DoxyParamCaption}\item[{GLenum}]{source}{, }\item[{GLenum}]{type}{, }\item[{GLuint}]{id}{, }\item[{GLenum}]{severity}{, }\item[{GLsizei}]{length}{, }\item[{const GLchar \texorpdfstring{$\ast$}{*}}]{message}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{user\+Param}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_engine_1_1_core_a829df5f9c6590cebf7c2b0e055c7ef92}\index{Engine::Core@{Engine::Core}!LogLevelToString@{LogLevelToString}}
+\index{LogLevelToString@{LogLevelToString}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{LogLevelToString()}{LogLevelToString()}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_a829df5f9c6590cebf7c2b0e055c7ef92} 
+const char \texorpdfstring{$\ast$}{*} Engine\+::\+Core\+::\+Log\+Level\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_1_1_core_ac395ddd510ca491669ab791129086cb7}{Log\+Level}}}]{level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fonction utilitaire qui revnoie une string associé à un niveau de log Utile pour afficher la sévérité du log dans le message formatté 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{namespace_engine_1_1_core_a7a4ba33e3c329b6dacac3b65009618bb}\index{Engine::Core@{Engine::Core}!PrintStackTrace@{PrintStackTrace}}
+\index{PrintStackTrace@{PrintStackTrace}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{PrintStackTrace()}{PrintStackTrace()}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_a7a4ba33e3c329b6dacac3b65009618bb} 
+void Engine\+::\+Core\+::\+Print\+Stack\+Trace (\begin{DoxyParamCaption}\item[{CONTEXT \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{std\+::ostream \&}]{out}{ = {\ttfamily std\+:\+:cout}}\end{DoxyParamCaption})}
+
+
+
+Affiche la stacktrace dans la console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespace_engine_1_1_core_a2a19ac5d77e950ef0c35ba50bca89497}\index{Engine::Core@{Engine::Core}!UnhandledExceptionHandler@{UnhandledExceptionHandler}}
+\index{UnhandledExceptionHandler@{UnhandledExceptionHandler}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{UnhandledExceptionHandler()}{UnhandledExceptionHandler()}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_a2a19ac5d77e950ef0c35ba50bca89497} 
+LONG WINAPI Engine\+::\+Core\+::\+Unhandled\+Exception\+Handler (\begin{DoxyParamCaption}\item[{EXCEPTION\+\_\+\+POINTERS \texorpdfstring{$\ast$}{*}}]{exception\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Gère les exceptions en fonction de leur type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em exception\+Info} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+LONG 
+\end{DoxyReturn}
+
+
+\label{doc-var-members}
+\Hypertarget{namespace_engine_1_1_core_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_engine_1_1_core_a50bbb4be9ac3acc20df3e56301318ed5}\index{Engine::Core@{Engine::Core}!GlobalEventDispatcher@{GlobalEventDispatcher}}
+\index{GlobalEventDispatcher@{GlobalEventDispatcher}!Engine::Core@{Engine::Core}}
+\doxysubsubsection{\texorpdfstring{GlobalEventDispatcher}{GlobalEventDispatcher}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_core_a50bbb4be9ac3acc20df3e56301318ed5} 
+\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher}{Event\+Dispatcher}} Engine\+::\+Core\+::\+Global\+Event\+Dispatcher\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Un Global\+Event\+Dispatcher est mis à disposition pour émettre et écouter des évènements sans contexte spécifique. 
+

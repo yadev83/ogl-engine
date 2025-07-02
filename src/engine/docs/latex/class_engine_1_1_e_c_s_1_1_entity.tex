@@ -1,0 +1,209 @@
+\doxysection{Engine\+::ECS\+::Entity Class Reference}
+\hypertarget{class_engine_1_1_e_c_s_1_1_entity}{}\label{class_engine_1_1_e_c_s_1_1_entity}\index{Engine::ECS::Entity@{Engine::ECS::Entity}}
+
+
+Une entité est l\textquotesingle{}élément "{}atomique"{} utilisé dans l\textquotesingle{}architecture \doxylink{namespace_engine_1_1_e_c_s}{ECS} pour référencer les composants.  
+
+
+
+
+{\ttfamily \#include $<$entity.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_a5d05648d6130d6d078693a67712b19a0}{Entity}} (\mbox{\hyperlink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID}} id=-\/1, \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \texorpdfstring{$\ast$}{*}registry=nullptr)
+\begin{DoxyCompactList}\small\item\em Construit une nouvelle entité \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID}} \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_a2dddc1c5c0449fe49cf4aa20da5bbed4}{Get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}identifiant \doxylink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID} de cette. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_acc546a81a2e4596fadfc373273890d8f}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre parent de cet entité \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_a989a0e815b36943aca5e467c35450d7b}{Add\+Tag}} (std\+::string tag)
+\begin{DoxyCompactList}\small\item\em Ajoute un tag à l\textquotesingle{}entité actuelle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_adc28e6bca6a0bdbb70d340804d40671f}{Has\+Tag}} (std\+::string tag)
+\begin{DoxyCompactList}\small\item\em Check si l\textquotesingle{}entité possède un tag. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename... Args$>$ }\\T \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_a8278397ee90952a44ec23bc44af25a9c}{Add\+Component}} (Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Ajoute un component de type T au registre, référencé sous l\textquotesingle{}entity\+ID de cette entité \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_ad3b8f6c29a1f81363721723520bd663c}{Remove\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Supprime le composant de type T référencé par l\textquotesingle{}\doxylink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID} de cette entité \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_a353ddbadc1f1f6d4e804629959dd5340}{Get\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le composant de type T associé à cette entité \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity_a826a9381a881f8bc598a3f1a5768525d}{Has\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Vérifie si l\textquotesingle{}entité possède le component demandé \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Une entité est l\textquotesingle{}élément "{}atomique"{} utilisé dans l\textquotesingle{}architecture \doxylink{namespace_engine_1_1_e_c_s}{ECS} pour référencer les composants. 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_a5d05648d6130d6d078693a67712b19a0}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_a5d05648d6130d6d078693a67712b19a0} 
+Engine\+::\+ECS\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID}}}]{id}{ = {\ttfamily -\/1}, }\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \texorpdfstring{$\ast$}{*}}]{registry}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Construit une nouvelle entité 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em registry} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_a8278397ee90952a44ec23bc44af25a9c}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_a8278397ee90952a44ec23bc44af25a9c} 
+template$<$typename T, typename... Args$>$ \\
+T \& Engine\+::\+ECS\+::\+Entity\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ajoute un component de type T au registre, référencé sous l\textquotesingle{}entity\+ID de cette entité 
+
+Cette méthode est un wrapper autour de registry-\/\texorpdfstring{$>$}{>}Add\+Component$<$\+T$>$(\+Entity\+ID) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Le type du composant à ajouter \\
+\hline
+{\em Args} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Les arguments de constructions du component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\& Une référence vers le composant créé 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_a989a0e815b36943aca5e467c35450d7b}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!AddTag@{AddTag}}
+\index{AddTag@{AddTag}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{AddTag()}{AddTag()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_a989a0e815b36943aca5e467c35450d7b} 
+void Engine\+::\+ECS\+::\+Entity\+::\+Add\+Tag (\begin{DoxyParamCaption}\item[{std\+::string}]{tag}{}\end{DoxyParamCaption})}
+
+
+
+Ajoute un tag à l\textquotesingle{}entité actuelle. 
+
+Cette méthode est un wrapper sur Registry-\/\texorpdfstring{$>$}{>}Add\+Tag(\+Entity\+ID, std\+::string) 
+\begin{DoxyParams}{Parameters}
+{\em tag} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_a353ddbadc1f1f6d4e804629959dd5340}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_a353ddbadc1f1f6d4e804629959dd5340} 
+template$<$typename T$>$ \\
+T \& Engine\+::\+ECS\+::\+Entity\+::\+Get\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le composant de type T associé à cette entité 
+
+Wrapper autour de registry-\/\texorpdfstring{$>$}{>}Get\+Component(id) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+T\& Une référence au composant demandé 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_a2dddc1c5c0449fe49cf4aa20da5bbed4}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!GetID@{GetID}}
+\index{GetID@{GetID}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{GetID()}{GetID()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_a2dddc1c5c0449fe49cf4aa20da5bbed4} 
+\mbox{\hyperlink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID}} Engine\+::\+ECS\+::\+Entity\+::\+Get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retourne l\textquotesingle{}identifiant \doxylink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID} de cette. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID} 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_acc546a81a2e4596fadfc373273890d8f}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!GetRegistry@{GetRegistry}}
+\index{GetRegistry@{GetRegistry}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{GetRegistry()}{GetRegistry()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_acc546a81a2e4596fadfc373273890d8f} 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& Engine\+::\+ECS\+::\+Entity\+::\+Get\+Registry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Renvoie le registre parent de cet entité 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_e_c_s_1_1_registry}{Registry}\& 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_a826a9381a881f8bc598a3f1a5768525d}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!HasComponent@{HasComponent}}
+\index{HasComponent@{HasComponent}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{HasComponent()}{HasComponent()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_a826a9381a881f8bc598a3f1a5768525d} 
+template$<$typename T$>$ \\
+bool Engine\+::\+ECS\+::\+Entity\+::\+Has\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie si l\textquotesingle{}entité possède le component demandé 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_adc28e6bca6a0bdbb70d340804d40671f}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!HasTag@{HasTag}}
+\index{HasTag@{HasTag}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{HasTag()}{HasTag()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_adc28e6bca6a0bdbb70d340804d40671f} 
+bool Engine\+::\+ECS\+::\+Entity\+::\+Has\+Tag (\begin{DoxyParamCaption}\item[{std\+::string}]{tag}{}\end{DoxyParamCaption})}
+
+
+
+Check si l\textquotesingle{}entité possède un tag. 
+
+Cette méthode est un wrapper autour de Registry-\/\texorpdfstring{$>$}{>}Has\+Tag(\+Entity\+ID, std\+::string) 
+\begin{DoxyParams}{Parameters}
+{\em tag} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Si l\textquotesingle{}entité possède le tag 
+
+false Si l\textquotesingle{}entité ne possède pas le tag 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_entity_ad3b8f6c29a1f81363721723520bd663c}\index{Engine::ECS::Entity@{Engine::ECS::Entity}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!Engine::ECS::Entity@{Engine::ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_entity_ad3b8f6c29a1f81363721723520bd663c} 
+template$<$typename T$>$ \\
+void Engine\+::\+ECS\+::\+Entity\+::\+Remove\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Supprime le composant de type T référencé par l\textquotesingle{}\doxylink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{Entity\+ID} de cette entité 
+
+Wrapper autour de registry-\/\texorpdfstring{$>$}{>}Remove\+Component(id) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ecs/\mbox{\hyperlink{entity_8hpp}{entity.\+hpp}}\item 
+ecs/\mbox{\hyperlink{entity_8cpp}{entity.\+cpp}}\end{DoxyCompactItemize}

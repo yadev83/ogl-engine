@@ -1,0 +1,106 @@
+\doxysection{Engine\+::Scene\+::Camera2D Class Reference}
+\hypertarget{class_engine_1_1_scene_1_1_camera2_d}{}\label{class_engine_1_1_scene_1_1_camera2_d}\index{Engine::Scene::Camera2D@{Engine::Scene::Camera2D}}
+
+
+{\ttfamily \#include $<$camera.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Scene\+::Camera2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_engine_1_1_scene_1_1_camera2_d}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ae17d4e8accc8184b36f030dcf1eb5f2a}{Camera2D}} (int width, int height)
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ac1728e918c32f68775b9e12978d56f4f}{Lerp\+Position}} (glm\+::vec2 target\+Pos, float duration=1.\+0f)
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_a004b0687f4f3ffd799a86914dda9bd0c}{On\+Update}} (float delta\+Time) override
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ac0623847d154d84dca2bf8cf54dbcad5}{Get\+Projection\+Matrix}} () const override
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_a5a245369076c66db8262b61aa8bbf484}{Get\+View\+Matrix}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera}{Engine\+::\+Scene\+::\+ICamera}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a0a7b3215bf0fa94ca9f6fe710f73c062}{ICamera}} (int width, int height)
+\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_ac8bcd196963e0accc8c141c7794d663e}{\texorpdfstring{$\sim$}{\string~}\+ICamera}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_aaf109ad01bb050b8aebbf8b8a655718f}{Set\+Position}} (glm\+::vec2 pos)
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a46157434ec82ae05ca4aeecc67dd3069}{Set\+View\+Size}} (int width, int height)
+\item 
+void \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a597650e7360da75404f78f3fdf7bd012}{Set\+Zoom}} (float zoom)
+\item 
+int \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a852f85b1874778d21f532d2c3ab2ccb9}{Get\+View\+Width}} () const
+\item 
+int \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a33535722f0ea7f12c98a9c910a381d14}{Get\+View\+Height}} () const
+\item 
+glm\+::vec2 \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_af8bf4fecb58a9a6e1c50eea4becbb9b0}{Get\+Position}} () const
+\item 
+float \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_ae72ee6dea2ae48aa3a7c8065d8fed7a1}{Get\+Zoom}} () const
+\item 
+\mbox{\hyperlink{struct_engine_1_1_rectangle}{Rectangle}} \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a1cf96af4b8e3b4c47b4361b3a328a4a7}{Get\+Frustum}} () const
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_scene_1_1_camera2_d_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_scene_1_1_camera2_d_ae17d4e8accc8184b36f030dcf1eb5f2a}\index{Engine::Scene::Camera2D@{Engine::Scene::Camera2D}!Camera2D@{Camera2D}}
+\index{Camera2D@{Camera2D}!Engine::Scene::Camera2D@{Engine::Scene::Camera2D}}
+\doxysubsubsection{\texorpdfstring{Camera2D()}{Camera2D()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_camera2_d_ae17d4e8accc8184b36f030dcf1eb5f2a} 
+Engine\+::\+Scene\+::\+Camera2\+D\+::\+Camera2D (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_scene_1_1_camera2_d_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_scene_1_1_camera2_d_ac0623847d154d84dca2bf8cf54dbcad5}\index{Engine::Scene::Camera2D@{Engine::Scene::Camera2D}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!Engine::Scene::Camera2D@{Engine::Scene::Camera2D}}
+\doxysubsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_camera2_d_ac0623847d154d84dca2bf8cf54dbcad5} 
+glm\+::mat4 Engine\+::\+Scene\+::\+Camera2\+D\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a4b8d311058037b70085f4aa95734e2f3}{Engine\+::\+Scene\+::\+ICamera}}.
+
+\Hypertarget{class_engine_1_1_scene_1_1_camera2_d_a5a245369076c66db8262b61aa8bbf484}\index{Engine::Scene::Camera2D@{Engine::Scene::Camera2D}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!Engine::Scene::Camera2D@{Engine::Scene::Camera2D}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_camera2_d_a5a245369076c66db8262b61aa8bbf484} 
+glm\+::mat4 Engine\+::\+Scene\+::\+Camera2\+D\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a5b71d7ce3a3c3662909df718bb948f2a}{Engine\+::\+Scene\+::\+ICamera}}.
+
+\Hypertarget{class_engine_1_1_scene_1_1_camera2_d_ac1728e918c32f68775b9e12978d56f4f}\index{Engine::Scene::Camera2D@{Engine::Scene::Camera2D}!LerpPosition@{LerpPosition}}
+\index{LerpPosition@{LerpPosition}!Engine::Scene::Camera2D@{Engine::Scene::Camera2D}}
+\doxysubsubsection{\texorpdfstring{LerpPosition()}{LerpPosition()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_camera2_d_ac1728e918c32f68775b9e12978d56f4f} 
+void Engine\+::\+Scene\+::\+Camera2\+D\+::\+Lerp\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{target\+Pos}{, }\item[{float}]{duration}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+\Hypertarget{class_engine_1_1_scene_1_1_camera2_d_a004b0687f4f3ffd799a86914dda9bd0c}\index{Engine::Scene::Camera2D@{Engine::Scene::Camera2D}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!Engine::Scene::Camera2D@{Engine::Scene::Camera2D}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_camera2_d_a004b0687f4f3ffd799a86914dda9bd0c} 
+void Engine\+::\+Scene\+::\+Camera2\+D\+::\+On\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a93a4368041bbd385ad0cf3caa0940af0}{Engine\+::\+Scene\+::\+ICamera}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+scene/\mbox{\hyperlink{camera_8hpp}{camera.\+hpp}}\item 
+scene/\mbox{\hyperlink{camera_8cpp}{camera.\+cpp}}\end{DoxyCompactItemize}

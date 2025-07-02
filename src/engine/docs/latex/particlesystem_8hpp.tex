@@ -1,0 +1,32 @@
+\doxysection{graphics/particlesystem.hpp File Reference}
+\hypertarget{particlesystem_8hpp}{}\label{particlesystem_8hpp}\index{graphics/particlesystem.hpp@{graphics/particlesystem.hpp}}
+
+
+Définit le fonctionnement d\textquotesingle{}un système de particules.  
+
+
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include "{}../ecs/system.\+hpp"{}}\newline
+{\ttfamily \#include "{}../ecs/component.\+hpp"{}}\newline
+{\ttfamily \#include "{}material.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle}{Engine\+::\+Graphics\+::\+Particle}}
+\begin{DoxyCompactList}\small\item\em La particule est l\textquotesingle{}élément atomique du système de particules du moteur. Les émetteurs de particules instancient des entités avec des components "{}\+Particle"{}, ensuite, c\textquotesingle{}est l\textquotesingle{}émetteur qui gère le cycle de vie de l\textquotesingle{}entité particule et la paramètre. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter}{Engine\+::\+Graphics\+::\+Particle\+Emitter}}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}emetteur est en quelques sortes le "{}moteur"{} qui génère et gère les particules à l\textquotesingle{}écran Peut être configuré de plein de manière différentes pour permettre des effets visuels customisés. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_graphics_1_1_particle_system}{Engine\+::\+Graphics\+::\+Particle\+System}}
+\begin{DoxyCompactList}\small\item\em La classe \doxylink{class_engine_1_1_graphics_1_1_particle_system}{Particle\+System} gère le cycle de vie de tous les components de type "{}\+Particle\+Emitter"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_engine}{Engine}}
+\item 
+namespace \mbox{\hyperlink{namespace_engine_1_1_graphics}{Engine\+::\+Graphics}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définit le fonctionnement d\textquotesingle{}un système de particules. 
+

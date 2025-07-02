@@ -1,0 +1,37 @@
+\doxysection{pakfile.\+hpp}
+\hypertarget{pakfile_8hpp_source}{}\label{pakfile_8hpp_source}\index{core/pakfile.hpp@{core/pakfile.hpp}}
+\mbox{\hyperlink{pakfile_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_core}{Engine::Core}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}{Buffer}}\ =\ std::vector<char>;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_engine_1_1_core_1_1_pak_header}{PakHeader}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_engine_1_1_core_1_1_pak_header_aa60ab10b991c766ba8f1252438351a5a}{format}}[3];\ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_engine_1_1_core_1_1_pak_header_a76b3a4f5a88e12c0deb95fdab38cbd1c}{version}};\ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_engine_1_1_core_1_1_pak_header_a36f9bf9e6bf81a61a84450b4b1586d94}{numFiles}};\ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file}{PakFile}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ Buffer>\ mFiles;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file_a51dafde0e0d8efb67e1edbc96bf7118f}{\string~PakFile}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file_acd845c8e3521289980680e5d12a52ebe}{Load}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_1_1_core_a107157f49164b4b4e449330247fe2014}{Buffer}}\ \mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file_a4f7ba06e9ff1df0f143959682bb14d35}{GetBinaryFile}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_engine_1_1_core_1_1_pak_file_a76d55e5c41a4a1c3d6a6c1720084ba95}{GetTextFile}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,127 @@
+\doxysection{app.\+hpp}
+\hypertarget{app_8hpp_source}{}\label{app_8hpp_source}\mbox{\hyperlink{app_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <typeinfo>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8hpp}{constants.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{statestore_8hpp}{utils/statestore.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity_8hpp}{ecs/entity.hpp}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{registry_8hpp}{ecs/registry.hpp}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{system_8hpp}{ecs/system.hpp}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window_8hpp}{core/window.hpp}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{input_2input_8hpp}{input/input.hpp}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{audiomanager_8hpp}{audio/audiomanager.hpp}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scene_2scene_8hpp}{scene/scene.hpp}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rendertarget_8hpp}{render/rendertarget.hpp}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{screenrenderer_8hpp}{render/screenrenderer.hpp}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_app_a33a0a31013d5395ce3b24ee77b9518c7}{App}}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ECS}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<std::type\_index,\ ECS::System*>\ mSystems;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ std::function<\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene::Scene}}*()>>\ mSceneFactories;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Garde\ en\ mémoire\ le\ nom\ de\ la\ scène\ à\ charger\ (après\ un\ appel\ à\ LoadScene())}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ std::optional<std::string>\ mSceneToLoad;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene::Scene}}*\ mCurrentScene\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \_LoadScene(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mInitialized\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rendering\ pipeline}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mWidth;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mHeight;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mFrameCounter;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_core_1_1_window}{Core::Window}}*\ mWindow;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_render_1_1_render_target}{Render::RenderTarget}}*\ mRenderTarget;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_render_1_1_screen_renderer}{Render::ScreenRenderer}}*\ mRenderer;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings}{AppSettings}}\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_a8a67dc56a6d93624147b43acfd8999cf}{title}};\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_aab688d380dc64dc79c0a34ec3e0ae292}{windowWidth}}\ =\ 800;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_a7ebb5dde636458a15699bdcb37cbde2e}{windowHeight}}\ =\ 600;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_ae2d1f422013b02cefe75c1e2e74c227c}{stretchFit}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_add016c1bca1d7a8cd9b3fb8d484a81cf}{resolutionScaling}}\ =\ 1.0f;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec4\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_ae9e65fc518d8afbaf94c6a002ed21397}{clearColor}}\ =\ glm::vec4(0.1f,\ 0.2f,\ 0.3f,\ 1.0f);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings_a07480b614e7c61ea5b318e1599311592}{fpsLimit}}\ =\ 60;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \mbox{\hyperlink{class_engine_1_1_app_aae09b23971f1cb11fed0f8204f7b608b}{settings}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store}{Utils::StateStore}}\ \mbox{\hyperlink{class_engine_1_1_app_a17d78ffb2f77d4b0325c9c3f6f4fdf2f}{store}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_app_a33a0a31013d5395ce3b24ee77b9518c7}{App}}(\textcolor{keywordtype}{int}\ width\ =\ 800,\ \textcolor{keywordtype}{int}\ height\ =\ 600,\ \mbox{\hyperlink{struct_engine_1_1_app_1_1_app_settings}{AppSettings}}\ \mbox{\hyperlink{class_engine_1_1_app_aae09b23971f1cb11fed0f8204f7b608b}{settings}}\ =\ \{\textcolor{stringliteral}{"{}App"{}}\});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_app_ac8f1ee4c680d47ed7ea788f7d4962324}{Run}}();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_app_abf41d61e49fe5f8e0b8e2db58e53d957}{Quit}}();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_core_1_1_window}{Core::Window}}*\ \mbox{\hyperlink{class_engine_1_1_app_a2b2c8c4222e106ea969e8aad6b75f1e7}{GetWindow}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_render_1_1_render_target}{Render::RenderTarget}}*\ \mbox{\hyperlink{class_engine_1_1_app_a238bc6c01039921dcfc42ee642072972}{GetRenderTarget}}();}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene::Scene}}*\ \mbox{\hyperlink{class_engine_1_1_app_a4093c78623122d2501802cca7aa67eef}{GetCurrentScene}}();}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera}{Scene::ICamera}}*\ \mbox{\hyperlink{class_engine_1_1_app_afdd11228c8d9b6e9da0193e14d7b14a5}{GetCurrentCamera}}();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \mbox{\hyperlink{class_engine_1_1_app_af99498eb65bae2739f1e7ba2e97361f9}{GetMousePosition}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \mbox{\hyperlink{class_engine_1_1_app_ada665bc6bcbf456aaf5530746971c29f}{GetProjectedMousePosition}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_1_1_app_a11e872328ba2f9380db1c93a8a447edc}{GetWidth}}();}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_1_1_app_a8af7abdceddc6bec2679afe85b21cfca}{GetHeight}}();}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_app_a63b1dc7f9a8c09babc880eb2a26a6b06}{SetSize}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ adjustCamera\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_engine_1_1_app_af279c461a7625a122c97e84a096d54a4}{GetFPS}}();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Scene\ Management}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_app_a3642886068f8dd01a5b5cdc6c7599520}{LoadScene}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_app_a7d591cc0df849700ed0ef238c108670a}{RegisterScene}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mSceneFactories[name]\ =\ [\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T*\ scene\ =\ \textcolor{keyword}{new}\ T();}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scene-\/>mApp\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scene-\/>mCamera\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d}{Scene::Camera2D}}(mWidth,\ mHeight);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene::Scene}}*\textcolor{keyword}{>}(scene);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ System\ management}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ T\&\ \mbox{\hyperlink{class_engine_1_1_app_ad362ac07ec41590d6b7abfe899bec721}{RegisterSystem}}(Args\&\&...\ args)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::type\_index\ ti(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mSystems.find(ti)\ !=\ mSystems.end())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}App::RegisterSystem:\ Can\ not\ register\ an\ already\ registered\ system"{}});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mSystems[ti]\ =\ \textcolor{keyword}{new}\ T(args...);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mSystems[ti]-\/>mApp\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mCurrentScene)\ mSystems[ti]-\/>mRegistry\ =\ mCurrentScene-\/>GetRegistry();}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\&\textcolor{keyword}{>}(*mSystems[ti]);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_engine_1_1_app_a05f1b04e251344c535cfe15107c650b4}{HasSystem}}()\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::type\_index\ ti(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mSystems.find(ti)\ !=\ mSystems.end();}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ T\&\ \mbox{\hyperlink{class_engine_1_1_app_a2a4902b007406558637d48f7f2f9abe9}{GetSystem}}()\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::type\_index\ ti(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mSystems.find(ti)\ ==\ mSystems.end())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}App::GetSystem:\ Can\ not\ get\ an\ unregistered\ system"{}});}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\&\textcolor{keyword}{>}(*mSystems[ti]);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_app_a3e1db6632f1bde81e1c45c9361da3b69}{UnregisterSystem}}()\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::type\_index\ ti(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mSystems.find(ti)\ ==\ mSystems.end())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}App::UnregisterSystem:\ Can\ not\ unregister\ an\ already\ unregistered\ system"{}});}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ mSystems[ti];}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \ \ \ \ \};}
+\DoxyCodeLine{00268\ \}}
+
+\end{DoxyCode}

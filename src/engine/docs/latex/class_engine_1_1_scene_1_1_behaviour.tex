@@ -1,0 +1,231 @@
+\doxysection{Engine\+::Scene\+::Behaviour Class Reference}
+\hypertarget{class_engine_1_1_scene_1_1_behaviour}{}\label{class_engine_1_1_scene_1_1_behaviour}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+
+
+Component de "{}scripting"{} qui permet de profiter des fonctions de cycle de vie sur n\textquotesingle{}importe quelle entité  
+
+
+
+
+{\ttfamily \#include $<$behaviour.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Scene\+::Behaviour\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_engine_1_1_scene_1_1_behaviour}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ad93e2feba4eeb278c1152200f6589d54}{Base\+Type}} = \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour}{Behaviour}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a1051f04fad218427bb7fbb8512488a2c}{Behaviour}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ad188b6248bf305450e747e3cf7eb6bfa}{\texorpdfstring{$\sim$}{\string~}\+Behaviour}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ab2956af08fc4bde2fa73fe45733c7a0a}{On\+Init}} ()
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a21878dd3698cc4198b7346ebb95fd90d}{On\+Fixed\+Update}} (float delta\+Time)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ac0ae7ffc99737beb8dd0e8cf31dde087}{On\+Update}} (float delta\+Time)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a5e05419ecf33e0ec196405b4fec1829b}{On\+Render}} (float alpha=0.\+0f)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ae0023867622f2a6be164c32536d23d5b}{On\+UIRender}} ()
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a83f57027ac9ee2d3c0de69edda2507a6}{On\+Late\+Update}} (float delta\+Time)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ac306698d596dd04931c59a4c20abfd89}{On\+Collision\+Enter}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}} other, \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}} collision)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_aacddc5f1edb3e59543c345cd3d2b3e28}{On\+Trigger\+Enter}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}} other, \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}} collision)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a9e724b899cc58a4c4c6c4a993a95646f}{On\+Collision\+Stay}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}} other, \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}} collision)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a71793495f91e03729ea9bd5e141d58c8}{On\+Trigger\+Stay}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}} other, \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}} collision)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a3cd58ad678f58dba0333eed69734ee08}{On\+Collision\+Exit}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}} other, \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}} collision)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a583d423247e625d25de025a654a3e5e5}{On\+Trigger\+Exit}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}} other, \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}} collision)
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a5dfbb21804d5c965bdaf86020e75596f}{On\+Hover\+Enter}} ()
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a90484aad033b111e2ea385749c4633fa}{On\+Hover\+Exit}} ()
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ab71112237734b0c6055df76ce49b32b7}{On\+Focus\+Enter}} ()
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a4b1a44e57ce9f6a10597b0c3f3edad91}{On\+Focus\+Exit}} ()
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_a5316ad9786c3a56323f7d9bf5970ff25}{On\+Submit}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{Engine\+::\+ECS\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}{Component}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}{Set\+Entity}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Attache l\textquotesingle{}entité au component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}entité attachée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}{Get\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la scène en cours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}{Get\+App}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance d\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component de "{}scripting"{} qui permet de profiter des fonctions de cycle de vie sur n\textquotesingle{}importe quelle entité 
+
+Contient des callbacks pour toute sorte d\textquotesingle{}évènements \+: ~\newline
+
+\begin{DoxyItemize}
+\item Cycle de vie de l\textquotesingle{}application ~\newline
+
+\item Callbacks de collision / trigger ~\newline
+
+\item Callbacks pour les interfaces 
+\end{DoxyItemize}
+
+\label{doc-typedef-members}
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_ad93e2feba4eeb278c1152200f6589d54}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!BaseType@{BaseType}}
+\index{BaseType@{BaseType}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{BaseType}{BaseType}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_ad93e2feba4eeb278c1152200f6589d54} 
+using \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_ad93e2feba4eeb278c1152200f6589d54}{Engine\+::\+Scene\+::\+Behaviour\+::\+Base\+Type}} = \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour}{Behaviour}}}
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a1051f04fad218427bb7fbb8512488a2c}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!Behaviour@{Behaviour}}
+\index{Behaviour@{Behaviour}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{Behaviour()}{Behaviour()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a1051f04fad218427bb7fbb8512488a2c} 
+Engine\+::\+Scene\+::\+Behaviour\+::\+Behaviour (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_ad188b6248bf305450e747e3cf7eb6bfa}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!````~Behaviour@{\texorpdfstring{$\sim$}{\string~}Behaviour}}
+\index{````~Behaviour@{\texorpdfstring{$\sim$}{\string~}Behaviour}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Behaviour()}{\string~Behaviour()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_ad188b6248bf305450e747e3cf7eb6bfa} 
+virtual Engine\+::\+Scene\+::\+Behaviour\+::\texorpdfstring{$\sim$}{\string~}\+Behaviour (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_ac306698d596dd04931c59a4c20abfd89}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_ac306698d596dd04931c59a4c20abfd89} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}}}]{other}{, }\item[{\mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}}}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a3cd58ad678f58dba0333eed69734ee08}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnCollisionExit@{OnCollisionExit}}
+\index{OnCollisionExit@{OnCollisionExit}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnCollisionExit()}{OnCollisionExit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a3cd58ad678f58dba0333eed69734ee08} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Collision\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}}}]{other}{, }\item[{\mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}}}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a9e724b899cc58a4c4c6c4a993a95646f}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnCollisionStay@{OnCollisionStay}}
+\index{OnCollisionStay@{OnCollisionStay}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnCollisionStay()}{OnCollisionStay()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a9e724b899cc58a4c4c6c4a993a95646f} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Collision\+Stay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}}}]{other}{, }\item[{\mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}}}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a21878dd3698cc4198b7346ebb95fd90d}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnFixedUpdate@{OnFixedUpdate}}
+\index{OnFixedUpdate@{OnFixedUpdate}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnFixedUpdate()}{OnFixedUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a21878dd3698cc4198b7346ebb95fd90d} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Fixed\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_ab71112237734b0c6055df76ce49b32b7}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnFocusEnter@{OnFocusEnter}}
+\index{OnFocusEnter@{OnFocusEnter}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnFocusEnter()}{OnFocusEnter()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_ab71112237734b0c6055df76ce49b32b7} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Focus\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a4b1a44e57ce9f6a10597b0c3f3edad91}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnFocusExit@{OnFocusExit}}
+\index{OnFocusExit@{OnFocusExit}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnFocusExit()}{OnFocusExit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a4b1a44e57ce9f6a10597b0c3f3edad91} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Focus\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a5dfbb21804d5c965bdaf86020e75596f}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnHoverEnter@{OnHoverEnter}}
+\index{OnHoverEnter@{OnHoverEnter}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnHoverEnter()}{OnHoverEnter()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a5dfbb21804d5c965bdaf86020e75596f} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Hover\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a90484aad033b111e2ea385749c4633fa}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnHoverExit@{OnHoverExit}}
+\index{OnHoverExit@{OnHoverExit}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnHoverExit()}{OnHoverExit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a90484aad033b111e2ea385749c4633fa} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Hover\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_ab2956af08fc4bde2fa73fe45733c7a0a}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnInit@{OnInit}}
+\index{OnInit@{OnInit}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnInit()}{OnInit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_ab2956af08fc4bde2fa73fe45733c7a0a} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a83f57027ac9ee2d3c0de69edda2507a6}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnLateUpdate@{OnLateUpdate}}
+\index{OnLateUpdate@{OnLateUpdate}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnLateUpdate()}{OnLateUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a83f57027ac9ee2d3c0de69edda2507a6} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Late\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a5e05419ecf33e0ec196405b4fec1829b}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnRender@{OnRender}}
+\index{OnRender@{OnRender}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnRender()}{OnRender()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a5e05419ecf33e0ec196405b4fec1829b} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Render (\begin{DoxyParamCaption}\item[{float}]{alpha}{ = {\ttfamily 0.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a5316ad9786c3a56323f7d9bf5970ff25}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnSubmit@{OnSubmit}}
+\index{OnSubmit@{OnSubmit}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnSubmit()}{OnSubmit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a5316ad9786c3a56323f7d9bf5970ff25} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Submit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_aacddc5f1edb3e59543c345cd3d2b3e28}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnTriggerEnter@{OnTriggerEnter}}
+\index{OnTriggerEnter@{OnTriggerEnter}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter()}{OnTriggerEnter()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_aacddc5f1edb3e59543c345cd3d2b3e28} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Trigger\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}}}]{other}{, }\item[{\mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}}}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a583d423247e625d25de025a654a3e5e5}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnTriggerExit@{OnTriggerExit}}
+\index{OnTriggerExit@{OnTriggerExit}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnTriggerExit()}{OnTriggerExit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a583d423247e625d25de025a654a3e5e5} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Trigger\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}}}]{other}{, }\item[{\mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}}}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_a71793495f91e03729ea9bd5e141d58c8}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnTriggerStay@{OnTriggerStay}}
+\index{OnTriggerStay@{OnTriggerStay}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnTriggerStay()}{OnTriggerStay()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_a71793495f91e03729ea9bd5e141d58c8} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Trigger\+Stay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{ECS\+::\+Entity}}}]{other}{, }\item[{\mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{Physics\+::\+Collision\+Manifold}}}]{collision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_ae0023867622f2a6be164c32536d23d5b}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnUIRender@{OnUIRender}}
+\index{OnUIRender@{OnUIRender}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnUIRender()}{OnUIRender()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_ae0023867622f2a6be164c32536d23d5b} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+UIRender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_engine_1_1_scene_1_1_behaviour_ac0ae7ffc99737beb8dd0e8cf31dde087}\index{Engine::Scene::Behaviour@{Engine::Scene::Behaviour}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!Engine::Scene::Behaviour@{Engine::Scene::Behaviour}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_scene_1_1_behaviour_ac0ae7ffc99737beb8dd0e8cf31dde087} 
+virtual void Engine\+::\+Scene\+::\+Behaviour\+::\+On\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scene/\mbox{\hyperlink{behaviour_8hpp}{behaviour.\+hpp}}\end{DoxyCompactItemize}

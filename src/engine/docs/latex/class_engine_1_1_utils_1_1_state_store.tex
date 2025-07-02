@@ -1,0 +1,93 @@
+\doxysection{Engine\+::Utils\+::State\+Store Class Reference}
+\hypertarget{class_engine_1_1_utils_1_1_state_store}{}\label{class_engine_1_1_utils_1_1_state_store}\index{Engine::Utils::StateStore@{Engine::Utils::StateStore}}
+
+
+{\ttfamily \#include $<$statestore.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store_ae280912928c345dddef087e2344f4280}{Set\+State}} (const std\+::string \&key, T value)
+\begin{DoxyCompactList}\small\item\em Setter typé \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store_aff62b480d1bc99ae8d0e73e1608421a2}{Get\+State}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Getter avec cast sur le type. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_1_1_utils_1_1_state_store_a7437e2bd2814a0ece7543a73b6e9bde5}{Has\+Key}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Vérifie si le store contient une clé \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_utils_1_1_state_store_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_utils_1_1_state_store_aff62b480d1bc99ae8d0e73e1608421a2}\index{Engine::Utils::StateStore@{Engine::Utils::StateStore}!GetState@{GetState}}
+\index{GetState@{GetState}!Engine::Utils::StateStore@{Engine::Utils::StateStore}}
+\doxysubsubsection{\texorpdfstring{GetState()}{GetState()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_state_store_aff62b480d1bc99ae8d0e73e1608421a2} 
+template$<$typename T$>$ \\
+T Engine\+::\+Utils\+::\+State\+Store\+::\+Get\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter avec cast sur le type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type de donné à fetch \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & La clé à chercher dans le store \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T La donnée castée sur le bon type (si possible) 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_state_store_a7437e2bd2814a0ece7543a73b6e9bde5}\index{Engine::Utils::StateStore@{Engine::Utils::StateStore}!HasKey@{HasKey}}
+\index{HasKey@{HasKey}!Engine::Utils::StateStore@{Engine::Utils::StateStore}}
+\doxysubsubsection{\texorpdfstring{HasKey()}{HasKey()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_state_store_a7437e2bd2814a0ece7543a73b6e9bde5} 
+bool Engine\+::\+Utils\+::\+State\+Store\+::\+Has\+Key (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Vérifie si le store contient une clé 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_utils_1_1_state_store_ae280912928c345dddef087e2344f4280}\index{Engine::Utils::StateStore@{Engine::Utils::StateStore}!SetState@{SetState}}
+\index{SetState@{SetState}!Engine::Utils::StateStore@{Engine::Utils::StateStore}}
+\doxysubsubsection{\texorpdfstring{SetState()}{SetState()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_utils_1_1_state_store_ae280912928c345dddef087e2344f4280} 
+template$<$typename T$>$ \\
+void Engine\+::\+Utils\+::\+State\+Store\+::\+Set\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key}{, }\item[{T}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Setter typé 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type à stocker \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Clé sous laquelle stocker la donnée \\
+\hline
+{\em value} & La donnée \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+utils/\mbox{\hyperlink{statestore_8hpp}{statestore.\+hpp}}\item 
+utils/\mbox{\hyperlink{statestore_8cpp}{statestore.\+cpp}}\end{DoxyCompactItemize}

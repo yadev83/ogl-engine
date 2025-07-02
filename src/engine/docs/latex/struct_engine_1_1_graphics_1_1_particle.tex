@@ -1,0 +1,121 @@
+\doxysection{Engine\+::Graphics\+::Particle Struct Reference}
+\hypertarget{struct_engine_1_1_graphics_1_1_particle}{}\label{struct_engine_1_1_graphics_1_1_particle}\index{Engine::Graphics::Particle@{Engine::Graphics::Particle}}
+
+
+La particule est l\textquotesingle{}élément atomique du système de particules du moteur. Les émetteurs de particules instancient des entités avec des components "{}\+Particle"{}, ensuite, c\textquotesingle{}est l\textquotesingle{}émetteur qui gère le cycle de vie de l\textquotesingle{}entité particule et la paramètre.  
+
+
+
+
+{\ttfamily \#include $<$particlesystem.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Graphics\+::Particle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_engine_1_1_graphics_1_1_particle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_a0a6e9995e8751ade3185206aa4f4cf4c}{lifetime}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em La durée de vie ACTUELLE de la particule. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_ad7bff90913a60a92e3d2fbdc1a87f105}{max\+Lifetime}} = 2.\+0f
+\begin{DoxyCompactList}\small\item\em La durée de vie MAXIMALE de la particule (la particule est détruite quand lifetime \texorpdfstring{$>$}{>}= max\+Lifetime) \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_a23f96a8a8b866ec5bbdc83b353de02ff}{velocity}} = \{0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em La vélocité de la particule (utilisée pour définir son comportement) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_a14a8e8dc12c4913a8ba6fcf5e4a29d19}{size}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em La taille de la particule (peut varier pour créer des effets visuels) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_a331b36174390a30182cafef81521770a}{initial\+Opacity}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}opacité de la particule (peut varier pour créer des effets visuels) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_a92b3d5615fb544e4136be2054000d1d4}{fade\+Out}} = true
+\begin{DoxyCompactList}\small\item\em Active le fade out de la particule au cours de sa durée de vie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{Engine\+::\+ECS\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}{Component}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}{Set\+Entity}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Attache l\textquotesingle{}entité au component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}entité attachée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}{Get\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la scène en cours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}{Get\+App}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance d\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La particule est l\textquotesingle{}élément atomique du système de particules du moteur. Les émetteurs de particules instancient des entités avec des components "{}\+Particle"{}, ensuite, c\textquotesingle{}est l\textquotesingle{}émetteur qui gère le cycle de vie de l\textquotesingle{}entité particule et la paramètre. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_a92b3d5615fb544e4136be2054000d1d4}\index{Engine::Graphics::Particle@{Engine::Graphics::Particle}!fadeOut@{fadeOut}}
+\index{fadeOut@{fadeOut}!Engine::Graphics::Particle@{Engine::Graphics::Particle}}
+\doxysubsubsection{\texorpdfstring{fadeOut}{fadeOut}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_a92b3d5615fb544e4136be2054000d1d4} 
+bool Engine\+::\+Graphics\+::\+Particle\+::fade\+Out = true}
+
+
+
+Active le fade out de la particule au cours de sa durée de vie. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_a331b36174390a30182cafef81521770a}\index{Engine::Graphics::Particle@{Engine::Graphics::Particle}!initialOpacity@{initialOpacity}}
+\index{initialOpacity@{initialOpacity}!Engine::Graphics::Particle@{Engine::Graphics::Particle}}
+\doxysubsubsection{\texorpdfstring{initialOpacity}{initialOpacity}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_a331b36174390a30182cafef81521770a} 
+float Engine\+::\+Graphics\+::\+Particle\+::initial\+Opacity = 1.\+0f}
+
+
+
+L\textquotesingle{}opacité de la particule (peut varier pour créer des effets visuels) 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_a0a6e9995e8751ade3185206aa4f4cf4c}\index{Engine::Graphics::Particle@{Engine::Graphics::Particle}!lifetime@{lifetime}}
+\index{lifetime@{lifetime}!Engine::Graphics::Particle@{Engine::Graphics::Particle}}
+\doxysubsubsection{\texorpdfstring{lifetime}{lifetime}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_a0a6e9995e8751ade3185206aa4f4cf4c} 
+float Engine\+::\+Graphics\+::\+Particle\+::lifetime = 0.\+0f}
+
+
+
+La durée de vie ACTUELLE de la particule. 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_ad7bff90913a60a92e3d2fbdc1a87f105}\index{Engine::Graphics::Particle@{Engine::Graphics::Particle}!maxLifetime@{maxLifetime}}
+\index{maxLifetime@{maxLifetime}!Engine::Graphics::Particle@{Engine::Graphics::Particle}}
+\doxysubsubsection{\texorpdfstring{maxLifetime}{maxLifetime}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_ad7bff90913a60a92e3d2fbdc1a87f105} 
+float Engine\+::\+Graphics\+::\+Particle\+::max\+Lifetime = 2.\+0f}
+
+
+
+La durée de vie MAXIMALE de la particule (la particule est détruite quand lifetime \texorpdfstring{$>$}{>}= max\+Lifetime) 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_a14a8e8dc12c4913a8ba6fcf5e4a29d19}\index{Engine::Graphics::Particle@{Engine::Graphics::Particle}!size@{size}}
+\index{size@{size}!Engine::Graphics::Particle@{Engine::Graphics::Particle}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_a14a8e8dc12c4913a8ba6fcf5e4a29d19} 
+float Engine\+::\+Graphics\+::\+Particle\+::size = 1.\+0f}
+
+
+
+La taille de la particule (peut varier pour créer des effets visuels) 
+
+\Hypertarget{struct_engine_1_1_graphics_1_1_particle_a23f96a8a8b866ec5bbdc83b353de02ff}\index{Engine::Graphics::Particle@{Engine::Graphics::Particle}!velocity@{velocity}}
+\index{velocity@{velocity}!Engine::Graphics::Particle@{Engine::Graphics::Particle}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_graphics_1_1_particle_a23f96a8a8b866ec5bbdc83b353de02ff} 
+glm\+::vec3 Engine\+::\+Graphics\+::\+Particle\+::velocity = \{0.\+0f, 0.\+0f, 0.\+0f\}}
+
+
+
+La vélocité de la particule (utilisée pour définir son comportement) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+graphics/\mbox{\hyperlink{particlesystem_8hpp}{particlesystem.\+hpp}}\end{DoxyCompactItemize}

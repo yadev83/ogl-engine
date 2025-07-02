@@ -1,0 +1,147 @@
+\doxysection{Engine\+::Audio\+::Audio\+Manager Class Reference}
+\hypertarget{class_engine_1_1_audio_1_1_audio_manager}{}\label{class_engine_1_1_audio_1_1_audio_manager}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+
+
+Classe statique qui gère tous les sons et la lecture audio dans le moteur Il faut juste appeler \doxylink{class_engine_1_1_audio_1_1_audio_manager_a0cd083f29f789975c617126456a3cfb0}{Audio\+Manager\+::\+Init()} une fois avant de pouvoir s\textquotesingle{}en servir (c\textquotesingle{}est fait dans la classe \doxylink{class_engine_1_1_app}{App})  
+
+
+
+
+{\ttfamily \#include $<$audiomanager.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager_af8e275f3cf2a1acff50293fe7493de5f}{Audio\+Manager}} ()=delete
+\item 
+\mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager_ac0c80e28d633712fba6fca6ccef585c7}{\texorpdfstring{$\sim$}{\string~}\+Audio\+Manager}} ()=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager_a0cd083f29f789975c617126456a3cfb0}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Fonction qui initialiser la classe \doxylink{class_engine_1_1_audio_1_1_audio_manager}{Audio\+Manager} en créant le contexte et le device Open\+AL. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager_ac97facc52b49567b552f14e090ff9b5d}{Shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Ferme les contextes/devices Open\+AL. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Sound}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager_ac98c335c131cb770db6820dbedd49ba5}{Load\+Sound}} (const std\+::string \&filepath, \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Sound\+File\+Type}} file\+Type=\mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}{WAV}}, \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type}} type=\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{SFX}})
+\begin{DoxyCompactList}\small\item\em Charge un son avec l\textquotesingle{}API Open\+AL et renvoie un pointeur vers un objet \doxylink{struct_engine_1_1_audio_1_1_sound}{Sound}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Sound}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager_a7eb408fbafab5d13b40485985b8524e6}{Load\+Sound\+From\+Memory}} (const char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size, \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Sound\+File\+Type}} file\+Type=\mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}{WAV}}, \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type}} type=\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{SFX}})
+\begin{DoxyCompactList}\small\item\em Charge un son depuis un buffer mémoire plutôt qu\textquotesingle{}un path. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager_a12cb8c1337f92e96a185aee79bd406d0}{Play\+Sound}} (\mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Sound}} \&sound, bool loop=false, float pitch=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Joue un son préalablement chargé en mémoire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe statique qui gère tous les sons et la lecture audio dans le moteur Il faut juste appeler \doxylink{class_engine_1_1_audio_1_1_audio_manager_a0cd083f29f789975c617126456a3cfb0}{Audio\+Manager\+::\+Init()} une fois avant de pouvoir s\textquotesingle{}en servir (c\textquotesingle{}est fait dans la classe \doxylink{class_engine_1_1_app}{App}) 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_af8e275f3cf2a1acff50293fe7493de5f}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}!AudioManager@{AudioManager}}
+\index{AudioManager@{AudioManager}!Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+\doxysubsubsection{\texorpdfstring{AudioManager()}{AudioManager()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_audio_1_1_audio_manager_af8e275f3cf2a1acff50293fe7493de5f} 
+Engine\+::\+Audio\+::\+Audio\+Manager\+::\+Audio\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_ac0c80e28d633712fba6fca6ccef585c7}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}!````~AudioManager@{\texorpdfstring{$\sim$}{\string~}AudioManager}}
+\index{````~AudioManager@{\texorpdfstring{$\sim$}{\string~}AudioManager}!Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AudioManager()}{\string~AudioManager()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_audio_1_1_audio_manager_ac0c80e28d633712fba6fca6ccef585c7} 
+Engine\+::\+Audio\+::\+Audio\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Audio\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_a0cd083f29f789975c617126456a3cfb0}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}!Init@{Init}}
+\index{Init@{Init}!Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_audio_1_1_audio_manager_a0cd083f29f789975c617126456a3cfb0} 
+void Engine\+::\+Audio\+::\+Audio\+Manager\+::\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fonction qui initialiser la classe \doxylink{class_engine_1_1_audio_1_1_audio_manager}{Audio\+Manager} en créant le contexte et le device Open\+AL. 
+
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_ac98c335c131cb770db6820dbedd49ba5}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}!LoadSound@{LoadSound}}
+\index{LoadSound@{LoadSound}!Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+\doxysubsubsection{\texorpdfstring{LoadSound()}{LoadSound()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_audio_1_1_audio_manager_ac98c335c131cb770db6820dbedd49ba5} 
+\mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Sound}} \texorpdfstring{$\ast$}{*} Engine\+::\+Audio\+::\+Audio\+Manager\+::\+Load\+Sound (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath}{, }\item[{\mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Sound\+File\+Type}}}]{file\+Type}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}{WAV}}}, }\item[{\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type}}}]{type}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{SFX}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Charge un son avec l\textquotesingle{}API Open\+AL et renvoie un pointeur vers un objet \doxylink{struct_engine_1_1_audio_1_1_sound}{Sound}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Le chemin du fichier à lire \\
+\hline
+{\em file\+Type} & Le type de fichier (WAV par défaut) \\
+\hline
+{\em type} & Le type de son à charger (SFX par défaut) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sound\texorpdfstring{$\ast$}{*} Pointeur vers le son chargé 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_a7eb408fbafab5d13b40485985b8524e6}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}!LoadSoundFromMemory@{LoadSoundFromMemory}}
+\index{LoadSoundFromMemory@{LoadSoundFromMemory}!Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+\doxysubsubsection{\texorpdfstring{LoadSoundFromMemory()}{LoadSoundFromMemory()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_audio_1_1_audio_manager_a7eb408fbafab5d13b40485985b8524e6} 
+\mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Sound}} \texorpdfstring{$\ast$}{*} Engine\+::\+Audio\+::\+Audio\+Manager\+::\+Load\+Sound\+From\+Memory (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{size}{, }\item[{\mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Sound\+File\+Type}}}]{file\+Type}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}{WAV}}}, }\item[{\mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type}}}]{type}{ = {\ttfamily \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{SFX}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Charge un son depuis un buffer mémoire plutôt qu\textquotesingle{}un path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Le buffer contenant la donnée audio binaire \\
+\hline
+{\em size} & La taille du buffer à lire \\
+\hline
+{\em file\+Type} & Le type de fichier à lire (WAV par défaut) \\
+\hline
+{\em type} & Le type de son à charger (SFX par défaut) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sound\texorpdfstring{$\ast$}{*} Pointeur vers le son chargé 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_a12cb8c1337f92e96a185aee79bd406d0}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}!PlaySound@{PlaySound}}
+\index{PlaySound@{PlaySound}!Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+\doxysubsubsection{\texorpdfstring{PlaySound()}{PlaySound()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_audio_1_1_audio_manager_a12cb8c1337f92e96a185aee79bd406d0} 
+void Engine\+::\+Audio\+::\+Audio\+Manager\+::\+Play\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Sound}} \&}]{sound}{, }\item[{bool}]{loop}{ = {\ttfamily false}, }\item[{float}]{pitch}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Joue un son préalablement chargé en mémoire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sound} & L\textquotesingle{}objet \doxylink{struct_engine_1_1_audio_1_1_sound}{Sound} à lire \\
+\hline
+{\em loop} & Joue en boucle si vrai \\
+\hline
+{\em pitch} & Le pitch du son, plus aigu si \texorpdfstring{$>$}{>} 1, et plus grave si \texorpdfstring{$<$}{<} 1 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_audio_1_1_audio_manager_ac97facc52b49567b552f14e090ff9b5d}\index{Engine::Audio::AudioManager@{Engine::Audio::AudioManager}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!Engine::Audio::AudioManager@{Engine::Audio::AudioManager}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_audio_1_1_audio_manager_ac97facc52b49567b552f14e090ff9b5d} 
+void Engine\+::\+Audio\+::\+Audio\+Manager\+::\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ferme les contextes/devices Open\+AL. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+audio/\mbox{\hyperlink{audiomanager_8hpp}{audiomanager.\+hpp}}\item 
+audio/\mbox{\hyperlink{audiomanager_8cpp}{audiomanager.\+cpp}}\end{DoxyCompactItemize}

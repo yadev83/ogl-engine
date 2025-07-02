@@ -1,0 +1,31 @@
+\doxysection{collider.\+hpp}
+\hypertarget{collider_8hpp_source}{}\label{collider_8hpp_source}\index{physics/collider.hpp@{physics/collider.hpp}}
+\mbox{\hyperlink{collider_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component_8hpp}{../ecs/component.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_physics}{Engine::Physics}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_engine_1_1_physics_1_1_collider_record}{ColliderRecord}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a92dd6fc178f047ce563d6cb1cf07d0b6}{EntityID}}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collider_record_ae066d5b28b2720e654ceae5578f65974}{other}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collider_record_a0db03d360b8310612c454a1d990119e8}{duration}}\ =\ 0.0f;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collider_record_a76097a13d8196639d15ae7d58f4ab9b4}{isTrigger}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_engine_1_1_physics_1_1_box_collider}{BoxCollider}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{ECS::Component}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_box_collider_aa1897550757a787908d858abde51c75c}{offset}}\ \ \ \ =\ \{0.0f,\ 0.0f,\ 0.0f\};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_box_collider_a5a4048d7863701b4b5763642eddb2106}{size}}\ \ \ \ \ \ =\ \{1.0f,\ 1.0f,\ 1.0f\};\ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_box_collider_af7316a45f7b879c1a7217986f75e2dd0}{isTrigger}}\ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::unordered\_map<EntityID,\ ColliderRecord>\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_box_collider_a2f8046b72ac57cd75ef4cbb1108d0641}{collisionsList}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::unordered\_map<EntityID,\ ColliderRecord>\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_box_collider_a29fdb1b87fe8d4d38c6c59f4b5e06d58}{triggersList}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ :\ Rajouter\ les\ callbacks\ dans\ le\ component\ "{}Behaviour"{}\ (ancien\ script)}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dans\ le\ système\ physique,\ checker\ si\ l'entité\ qui\ tient\ le\ boxcollider\ possède\ un\ behaviour,\ et\ appeler\ les\ callbacks\ si\ besoin}}
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}

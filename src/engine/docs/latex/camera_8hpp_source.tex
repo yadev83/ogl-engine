@@ -1,0 +1,57 @@
+\doxysection{camera.\+hpp}
+\hypertarget{camera_8hpp_source}{}\label{camera_8hpp_source}\index{scene/camera.hpp@{scene/camera.hpp}}
+\mbox{\hyperlink{camera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{defs_8hpp}{../defs.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_scene}{Engine::Scene}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a0a7b3215bf0fa94ca9f6fe710f73c062}{ICamera}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mViewWidth,\ mViewHeight;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ mPosition\ =\ \{0.0f,\ 0.0f\};}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mZoom\ =\ 1.0f;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a0a7b3215bf0fa94ca9f6fe710f73c062}{ICamera}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_ac8bcd196963e0accc8c141c7794d663e}{\string~ICamera}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_aaf109ad01bb050b8aebbf8b8a655718f}{SetPosition}}(glm::vec2\ pos);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a46157434ec82ae05ca4aeecc67dd3069}{SetViewSize}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a597650e7360da75404f78f3fdf7bd012}{SetZoom}}(\textcolor{keywordtype}{float}\ zoom);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a852f85b1874778d21f532d2c3ab2ccb9}{GetViewWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a33535722f0ea7f12c98a9c910a381d14}{GetViewHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_af8bf4fecb58a9a6e1c50eea4becbb9b0}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_ae72ee6dea2ae48aa3a7c8065d8fed7a1}{GetZoom}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_engine_1_1_rectangle}{Rectangle}}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a1cf96af4b8e3b4c47b4361b3a328a4a7}{GetFrustum}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a93a4368041bbd385ad0cf3caa0940af0}{OnUpdate}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::mat4\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a4b8d311058037b70085f4aa95734e2f3}{GetProjectionMatrix}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::mat4\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a5b71d7ce3a3c3662909df718bb948f2a}{GetViewMatrix}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ae17d4e8accc8184b36f030dcf1eb5f2a}{Camera2D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_i_camera_a0a7b3215bf0fa94ca9f6fe710f73c062}{ICamera}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }LerpAnimation\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ start;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ end;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ animating\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ progress\ =\ 0.0f;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ duration\ =\ 1.0f;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ lerpAnim;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ae17d4e8accc8184b36f030dcf1eb5f2a}{Camera2D}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ac1728e918c32f68775b9e12978d56f4f}{LerpPosition}}(glm::vec2\ targetPos,\ \textcolor{keywordtype}{float}\ duration\ =\ 1.0f);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_a004b0687f4f3ffd799a86914dda9bd0c}{OnUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_ac0623847d154d84dca2bf8cf54dbcad5}{GetProjectionMatrix}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_engine_1_1_scene_1_1_camera2_d_a5a245369076c66db8262b61aa8bbf484}{GetViewMatrix}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}

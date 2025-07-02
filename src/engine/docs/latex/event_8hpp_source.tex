@@ -1,0 +1,49 @@
+\doxysection{event.\+hpp}
+\hypertarget{event_8hpp_source}{}\label{event_8hpp_source}\index{core/event.hpp@{core/event.hpp}}
+\mbox{\hyperlink{event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <typeindex>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_core}{Engine::Core}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_core_1_1_event}{Event}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_engine_1_1_core_1_1_event_a718af8ea99826d514860e263b32a705b}{\string~Event}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher}{EventDispatcher}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }RawCallback\ =\ std::function<void(\mbox{\hyperlink{class_engine_1_1_core_1_1_event}{Event}}\&)>;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<std::type\_index,\ std::vector<RawCallback>>\ mListeners;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ EventType>}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}{EventCallback}}\ =\ std::function<void(EventType\&)>;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ EventType>}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_a0b3ca3245ad262f32a3f36343cfcc76b}{Subscribe}}(\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}{EventCallback<EventType>}}\ callback)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ listeners\ =\ mListeners[\textcolor{keyword}{typeid}(EventType)];}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listeners.push\_back([cb\ =\ std::move(callback)](\mbox{\hyperlink{class_engine_1_1_core_1_1_event}{Event}}\&\ e)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cb(\textcolor{keyword}{static\_cast<}EventType\&\textcolor{keyword}{>}(e));}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ EventType>}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_a693a46cdf16825a2d631a567d67614c1}{Emit}}(EventType*\ event)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ mListeners.find(\textcolor{keyword}{typeid}(EventType));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ mListeners.end())\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ listener\ :\ it-\/>second)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listener(*event);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}

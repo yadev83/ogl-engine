@@ -1,0 +1,44 @@
+\doxysection{material.\+hpp}
+\hypertarget{material_8hpp_source}{}\label{material_8hpp_source}\index{graphics/material.hpp@{graphics/material.hpp}}
+\mbox{\hyperlink{material_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{defaults_8hpp}{../defaults.hpp}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texture_8hpp}{texture.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shader_8hpp}{shader.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_graphics}{Engine::Graphics}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}{UniformValue}}\ =\ std::variant<}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ int,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ float,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ bool,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ glm::vec2,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ glm::vec3,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ glm::vec4,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ glm::mat4}
+\DoxyCodeLine{00029\ \ \ \ \ >;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_a3993f9362a49f5c02db13edac9fb5d19}{Material}}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ UniformValue>\ mUniforms;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Shader}}*\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_aa4173fc0ba9e75427b22e189ea74776e}{shader}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Texture}}*\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_af530118e0e51612b7d82f984eb2031ca}{texture}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec4\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_aa85c488c585fd165386d925c6f968dfa}{color}}\ =\ \{1.0f,\ 1.0f,\ 1.0f,\ 1.0f\};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_a3993f9362a49f5c02db13edac9fb5d19}{Material}}(\mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Texture}}*\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_af530118e0e51612b7d82f984eb2031ca}{texture}}\ =\ \mbox{\hyperlink{namespace_engine_1_1_defaults_a42a9302220be7228261a4fa8546b37cd}{Defaults::texture}},\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Shader}}*\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_aa4173fc0ba9e75427b22e189ea74776e}{shader}}\ =\ \mbox{\hyperlink{namespace_engine_1_1_defaults_a50900cbe6dd6812f41f7fe8ddf0b5671}{Defaults::shader}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_a0e81f9e353dbe009363c28112d425f7c}{SetUniform}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}{UniformValue}}\&\ value);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material_a26e642036a2df238a08e14e5a9007e80}{Bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}

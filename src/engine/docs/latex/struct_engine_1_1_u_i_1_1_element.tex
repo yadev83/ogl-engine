@@ -1,0 +1,85 @@
+\doxysection{Engine\+::UI\+::Element Struct Reference}
+\hypertarget{struct_engine_1_1_u_i_1_1_element}{}\label{struct_engine_1_1_u_i_1_1_element}\index{Engine::UI::Element@{Engine::UI::Element}}
+
+
+Définit un component "{}\+Element"{} à ajouter à une entité pour créer des interfaces.  
+
+
+
+
+{\ttfamily \#include $<$element.\+hpp$>$}
+
+Inheritance diagram for Engine\+::UI\+::Element\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_engine_1_1_u_i_1_1_element}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec2 \mbox{\hyperlink{struct_engine_1_1_u_i_1_1_element_ae7d4e029dc2a0aa563491d03cd0cf59d}{size}}
+\begin{DoxyCompactList}\small\item\em la taille de l\textquotesingle{}élément \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material}{Graphics\+::\+Material}} \mbox{\hyperlink{struct_engine_1_1_u_i_1_1_element_a23865c8b58985396ea4bd7dc27b846a9}{material}}
+\begin{DoxyCompactList}\small\item\em le material à appliquer sur l\textquotesingle{}élément \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_engine_a720474149568b5b3a8313b5639602f0b}{Anchor}} \mbox{\hyperlink{struct_engine_1_1_u_i_1_1_element_a027bf419aca45ffc94faba0e5581d6bf}{anchor}} = \mbox{\hyperlink{namespace_engine_a720474149568b5b3a8313b5639602f0ba4f1f6016fc9f3f2353c0cc7c67b292bd}{Anchor\+::\+Center}}
+\begin{DoxyCompactList}\small\item\em Une ancre pour positionner l\textquotesingle{}élément. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{Engine\+::\+ECS\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}{Component}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}{Set\+Entity}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Attache l\textquotesingle{}entité au component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}entité attachée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}{Get\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la scène en cours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}{Get\+App}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance d\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définit un component "{}\+Element"{} à ajouter à une entité pour créer des interfaces. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_engine_1_1_u_i_1_1_element_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_engine_1_1_u_i_1_1_element_a027bf419aca45ffc94faba0e5581d6bf}\index{Engine::UI::Element@{Engine::UI::Element}!anchor@{anchor}}
+\index{anchor@{anchor}!Engine::UI::Element@{Engine::UI::Element}}
+\doxysubsubsection{\texorpdfstring{anchor}{anchor}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_u_i_1_1_element_a027bf419aca45ffc94faba0e5581d6bf} 
+\mbox{\hyperlink{namespace_engine_a720474149568b5b3a8313b5639602f0b}{Anchor}} Engine\+::\+UI\+::\+Element\+::anchor = \mbox{\hyperlink{namespace_engine_a720474149568b5b3a8313b5639602f0ba4f1f6016fc9f3f2353c0cc7c67b292bd}{Anchor\+::\+Center}}}
+
+
+
+Une ancre pour positionner l\textquotesingle{}élément. 
+
+\Hypertarget{struct_engine_1_1_u_i_1_1_element_a23865c8b58985396ea4bd7dc27b846a9}\index{Engine::UI::Element@{Engine::UI::Element}!material@{material}}
+\index{material@{material}!Engine::UI::Element@{Engine::UI::Element}}
+\doxysubsubsection{\texorpdfstring{material}{material}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_u_i_1_1_element_a23865c8b58985396ea4bd7dc27b846a9} 
+\mbox{\hyperlink{class_engine_1_1_graphics_1_1_material}{Graphics\+::\+Material}} Engine\+::\+UI\+::\+Element\+::material}
+
+
+
+le material à appliquer sur l\textquotesingle{}élément 
+
+\Hypertarget{struct_engine_1_1_u_i_1_1_element_ae7d4e029dc2a0aa563491d03cd0cf59d}\index{Engine::UI::Element@{Engine::UI::Element}!size@{size}}
+\index{size@{size}!Engine::UI::Element@{Engine::UI::Element}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_u_i_1_1_element_ae7d4e029dc2a0aa563491d03cd0cf59d} 
+glm\+::vec2 Engine\+::\+UI\+::\+Element\+::size}
+
+
+
+la taille de l\textquotesingle{}élément 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ui/\mbox{\hyperlink{element_8hpp}{element.\+hpp}}\end{DoxyCompactItemize}

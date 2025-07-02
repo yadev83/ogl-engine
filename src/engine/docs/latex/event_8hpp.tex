@@ -1,0 +1,31 @@
+\doxysection{core/event.hpp File Reference}
+\hypertarget{event_8hpp}{}\label{event_8hpp}\index{core/event.hpp@{core/event.hpp}}
+
+
+Fichier qui recense les structures et classes de données nécessaires à la gestion d\textquotesingle{}évènements Permet l\textquotesingle{}émission et l\textquotesingle{}écoute d\textquotesingle{}events customisables à tout endroit du projet.  
+
+
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$typeindex$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_event}{Engine\+::\+Core\+::\+Event}}
+\begin{DoxyCompactList}\small\item\em Classe \doxylink{class_engine_1_1_core_1_1_event}{Event} dont tous les évènements devront hériter dans le système. Permet simplement de rendre le dispatcher d\textquotesingle{}évènements "{}générique"{} en passant par un type simple comme ça. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher}{Engine\+::\+Core\+::\+Event\+Dispatcher}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_engine_1_1_core_1_1_event_dispatcher}{Event\+Dispatcher} enregistre des listeners, émet des évènements, et appelle des callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_engine}{Engine}}
+\item 
+namespace \mbox{\hyperlink{namespace_engine_1_1_core}{Engine\+::\+Core}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier qui recense les structures et classes de données nécessaires à la gestion d\textquotesingle{}évènements Permet l\textquotesingle{}émission et l\textquotesingle{}écoute d\textquotesingle{}events customisables à tout endroit du projet. 
+

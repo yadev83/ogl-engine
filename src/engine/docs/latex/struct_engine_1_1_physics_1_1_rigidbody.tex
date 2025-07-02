@@ -1,0 +1,305 @@
+\doxysection{Engine\+::Physics\+::Rigidbody Struct Reference}
+\hypertarget{struct_engine_1_1_physics_1_1_rigidbody}{}\label{struct_engine_1_1_physics_1_1_rigidbody}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+
+
+La structure rigidbody contient de quoi simuler l\textquotesingle{}existance d\textquotesingle{}un corps physique dans le moteur de jeu.  
+
+
+
+
+{\ttfamily \#include $<$rigidbody.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Physics\+::Rigidbody\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_engine_1_1_physics_1_1_rigidbody}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aa507514a045bb2cd87102fb7be9e1b83}{Add\+Force}} (const glm\+::vec2 \&force)
+\begin{DoxyCompactList}\small\item\em Ajouter une force en 2D sur le rigidbody. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a79bfbce7b718f0f85f0f1560d7b582a8}{Add\+Force}} (const glm\+::vec3 \&force)
+\begin{DoxyCompactList}\small\item\em Ajouter une force en 3D sur le rigidbody. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aaa8a11a09a9a26a24f4146c86138f25d}{Add\+Impulse}} (const glm\+::vec2 \&impulsion)
+\begin{DoxyCompactList}\small\item\em Ajouter une impulsion en 2D sur le rigidbody. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a76faf74c49a92864a9203c5cc0190703}{Add\+Impulse}} (const glm\+::vec3 \&impulsion)
+\begin{DoxyCompactList}\small\item\em Ajouter une impulsion en 3D sur le rigidbody. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{Engine\+::\+ECS\+::\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a6a79120aeaed661fb532b59b853f4174}{Component}} ()=default
+\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_adc5e5952697593b44fc48a388b8ffa10}{Set\+Entity}} (\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Attache l\textquotesingle{}entité au component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_entity}{Entity}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae33e06d6663d2e894eda1642fa2bcee1}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}entité attachée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_ae9e64d7bc8475db7c710ba43c6c97363}{Get\+Registry}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actuel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_scene_1_1_scene}{Scene\+::\+Scene}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7ee320bb8b57ff2f39e1a5c9685fb3b4}{Get\+Scene}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie la scène en cours. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component_a7b151d1dc38f523b3d4ea14fef37acd4}{Get\+App}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}instance d\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a6bf4dede8624f53796cb3b9836fa64d7}{velocity}} = \{0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em La vélocité actuelle de l\textquotesingle{}objet sur 3 axes (dérivation en +position) \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a3f7b5a6509d772a6c444257039ea579a}{acceleration}} = \{0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}accélération de l\textquotesingle{}objet, remise à zéro à chaque frame (dérivation en +vélocité) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aaa5041c097eb426642a6080fda206d32}{mass}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em La masse de l\textquotesingle{}objet, peut servir pour les rapports de force entre deux objets lors de collisions. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a94b6e8798cff5cef0ddabb5ba6e1e106}{restitution}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em coefficient pour gérer la restitution sur la normale lors des rebonds (0 ne rebondit pas, 1 restitue 100\% de la force) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a9446ec1b475ff46f9203da0c7be7eff5}{friction}} = 0.\+2f
+\begin{DoxyCompactList}\small\item\em Coefficient qui permet de décider le ralentissement tangentiel en cas de collision / rebond (0, ne ralentit pas \+: 1, freine instant) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aa71cb4065a4a0888fecd403833342b6f}{is\+Affected\+By\+Gravity}} = true
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} L\textquotesingle{}objet doit être soumis à la gravité des systèmes physiques. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ad20f90b71956932e8a1eeb107f37a467}{is\+Kinematic}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} Ignore les collisions et forces des systèmes physiques (utile pour gérer à la main tout en gardant la détection de collisiosn) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ad5b8f5a67af9332e362f064378eedb77}{freeze\+PositionX}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} Empêche les mouvements automatiques sur l\textquotesingle{}axe X. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a9a85968cf36d53d1a4d929cfa9aef554}{freeze\+PositionY}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} Empêche les mouvements automatiques sur l\textquotesingle{}axe Y. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a6b81eae4bade769ba6dd6884be7059e3}{freeze\+PositionZ}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} Empêche les mouvements automatiques sur l\textquotesingle{}axe Z. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ad5841064d478572def5693a7b9dd83ab}{is\+Bounceable}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} L\textquotesingle{}objet rebondit en cas de contact physique avec un autre collider. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a6e5a6f9c3ca393a948dd5011c2999ef7}{is\+Sleeping}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} L\textquotesingle{}objet est ignoré par le système physique. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ae0b2db75ec16be84738293fc892381f8}{sleep\+Timer}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em temps passé en étant immobile. Au dela d\textquotesingle{}un certain seuil, le rigidbody passe en mode "{}sleep"{} pour économiser des ressources \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a7c8af9305a6e11937733f1ec0d1db5fb}{on\+Ground}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} Inidque que l\textquotesingle{}objet est posé à même le sol (ne chute pas) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_af3736517b376d9c307daa8fc89f4cfb7}{on\+Wall}} = false
+\begin{DoxyCompactList}\small\item\em Si vrai =\texorpdfstring{$>$}{>} Indique que l\textquotesingle{}objet est posé contre un mur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La structure rigidbody contient de quoi simuler l\textquotesingle{}existance d\textquotesingle{}un corps physique dans le moteur de jeu. 
+
+\label{doc-func-members}
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_aa507514a045bb2cd87102fb7be9e1b83}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!AddForce@{AddForce}}
+\index{AddForce@{AddForce}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{AddForce()}{AddForce()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_aa507514a045bb2cd87102fb7be9e1b83} 
+void Engine\+::\+Physics\+::\+Rigidbody\+::\+Add\+Force (\begin{DoxyParamCaption}\item[{const glm\+::vec2 \&}]{force}{}\end{DoxyParamCaption})}
+
+
+
+Ajouter une force en 2D sur le rigidbody. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & La force physique à appliquer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a79bfbce7b718f0f85f0f1560d7b582a8}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!AddForce@{AddForce}}
+\index{AddForce@{AddForce}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{AddForce()}{AddForce()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a79bfbce7b718f0f85f0f1560d7b582a8} 
+void Engine\+::\+Physics\+::\+Rigidbody\+::\+Add\+Force (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{force}{}\end{DoxyParamCaption})}
+
+
+
+Ajouter une force en 3D sur le rigidbody. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_aaa8a11a09a9a26a24f4146c86138f25d}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!AddImpulse@{AddImpulse}}
+\index{AddImpulse@{AddImpulse}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{AddImpulse()}{AddImpulse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_aaa8a11a09a9a26a24f4146c86138f25d} 
+void Engine\+::\+Physics\+::\+Rigidbody\+::\+Add\+Impulse (\begin{DoxyParamCaption}\item[{const glm\+::vec2 \&}]{impulsion}{}\end{DoxyParamCaption})}
+
+
+
+Ajouter une impulsion en 2D sur le rigidbody. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em impulsion} & La impulsion physique à appliquer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a76faf74c49a92864a9203c5cc0190703}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!AddImpulse@{AddImpulse}}
+\index{AddImpulse@{AddImpulse}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{AddImpulse()}{AddImpulse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a76faf74c49a92864a9203c5cc0190703} 
+void Engine\+::\+Physics\+::\+Rigidbody\+::\+Add\+Impulse (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{impulsion}{}\end{DoxyParamCaption})}
+
+
+
+Ajouter une impulsion en 3D sur le rigidbody. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em impulsion} & \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a3f7b5a6509d772a6c444257039ea579a}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{acceleration}{acceleration}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a3f7b5a6509d772a6c444257039ea579a} 
+glm\+::vec3 Engine\+::\+Physics\+::\+Rigidbody\+::acceleration = \{0.\+0f, 0.\+0f, 0.\+0f\}}
+
+
+
+L\textquotesingle{}accélération de l\textquotesingle{}objet, remise à zéro à chaque frame (dérivation en +vélocité) 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_ad5b8f5a67af9332e362f064378eedb77}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!freezePositionX@{freezePositionX}}
+\index{freezePositionX@{freezePositionX}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{freezePositionX}{freezePositionX}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_ad5b8f5a67af9332e362f064378eedb77} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::freeze\+PositionX = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} Empêche les mouvements automatiques sur l\textquotesingle{}axe X. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a9a85968cf36d53d1a4d929cfa9aef554}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!freezePositionY@{freezePositionY}}
+\index{freezePositionY@{freezePositionY}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{freezePositionY}{freezePositionY}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a9a85968cf36d53d1a4d929cfa9aef554} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::freeze\+PositionY = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} Empêche les mouvements automatiques sur l\textquotesingle{}axe Y. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a6b81eae4bade769ba6dd6884be7059e3}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!freezePositionZ@{freezePositionZ}}
+\index{freezePositionZ@{freezePositionZ}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{freezePositionZ}{freezePositionZ}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a6b81eae4bade769ba6dd6884be7059e3} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::freeze\+PositionZ = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} Empêche les mouvements automatiques sur l\textquotesingle{}axe Z. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a9446ec1b475ff46f9203da0c7be7eff5}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!friction@{friction}}
+\index{friction@{friction}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{friction}{friction}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a9446ec1b475ff46f9203da0c7be7eff5} 
+float Engine\+::\+Physics\+::\+Rigidbody\+::friction = 0.\+2f}
+
+
+
+Coefficient qui permet de décider le ralentissement tangentiel en cas de collision / rebond (0, ne ralentit pas \+: 1, freine instant) 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_aa71cb4065a4a0888fecd403833342b6f}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!isAffectedByGravity@{isAffectedByGravity}}
+\index{isAffectedByGravity@{isAffectedByGravity}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{isAffectedByGravity}{isAffectedByGravity}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_aa71cb4065a4a0888fecd403833342b6f} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::is\+Affected\+By\+Gravity = true}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} L\textquotesingle{}objet doit être soumis à la gravité des systèmes physiques. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_ad5841064d478572def5693a7b9dd83ab}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!isBounceable@{isBounceable}}
+\index{isBounceable@{isBounceable}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{isBounceable}{isBounceable}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_ad5841064d478572def5693a7b9dd83ab} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::is\+Bounceable = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} L\textquotesingle{}objet rebondit en cas de contact physique avec un autre collider. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_ad20f90b71956932e8a1eeb107f37a467}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!isKinematic@{isKinematic}}
+\index{isKinematic@{isKinematic}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{isKinematic}{isKinematic}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_ad20f90b71956932e8a1eeb107f37a467} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::is\+Kinematic = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} Ignore les collisions et forces des systèmes physiques (utile pour gérer à la main tout en gardant la détection de collisiosn) 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a6e5a6f9c3ca393a948dd5011c2999ef7}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!isSleeping@{isSleeping}}
+\index{isSleeping@{isSleeping}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{isSleeping}{isSleeping}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a6e5a6f9c3ca393a948dd5011c2999ef7} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::is\+Sleeping = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} L\textquotesingle{}objet est ignoré par le système physique. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_aaa5041c097eb426642a6080fda206d32}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!mass@{mass}}
+\index{mass@{mass}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{mass}{mass}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_aaa5041c097eb426642a6080fda206d32} 
+float Engine\+::\+Physics\+::\+Rigidbody\+::mass = 1.\+0f}
+
+
+
+La masse de l\textquotesingle{}objet, peut servir pour les rapports de force entre deux objets lors de collisions. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a7c8af9305a6e11937733f1ec0d1db5fb}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!onGround@{onGround}}
+\index{onGround@{onGround}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{onGround}{onGround}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a7c8af9305a6e11937733f1ec0d1db5fb} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::on\+Ground = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} Inidque que l\textquotesingle{}objet est posé à même le sol (ne chute pas) 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_af3736517b376d9c307daa8fc89f4cfb7}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!onWall@{onWall}}
+\index{onWall@{onWall}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{onWall}{onWall}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_af3736517b376d9c307daa8fc89f4cfb7} 
+bool Engine\+::\+Physics\+::\+Rigidbody\+::on\+Wall = false}
+
+
+
+Si vrai =\texorpdfstring{$>$}{>} Indique que l\textquotesingle{}objet est posé contre un mur. 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a94b6e8798cff5cef0ddabb5ba6e1e106}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!restitution@{restitution}}
+\index{restitution@{restitution}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{restitution}{restitution}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a94b6e8798cff5cef0ddabb5ba6e1e106} 
+float Engine\+::\+Physics\+::\+Rigidbody\+::restitution = 0.\+5f}
+
+
+
+coefficient pour gérer la restitution sur la normale lors des rebonds (0 ne rebondit pas, 1 restitue 100\% de la force) 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_ae0b2db75ec16be84738293fc892381f8}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!sleepTimer@{sleepTimer}}
+\index{sleepTimer@{sleepTimer}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{sleepTimer}{sleepTimer}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_ae0b2db75ec16be84738293fc892381f8} 
+float Engine\+::\+Physics\+::\+Rigidbody\+::sleep\+Timer = 0.\+0f}
+
+
+
+temps passé en étant immobile. Au dela d\textquotesingle{}un certain seuil, le rigidbody passe en mode "{}sleep"{} pour économiser des ressources 
+
+\Hypertarget{struct_engine_1_1_physics_1_1_rigidbody_a6bf4dede8624f53796cb3b9836fa64d7}\index{Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}!velocity@{velocity}}
+\index{velocity@{velocity}!Engine::Physics::Rigidbody@{Engine::Physics::Rigidbody}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily \label{struct_engine_1_1_physics_1_1_rigidbody_a6bf4dede8624f53796cb3b9836fa64d7} 
+glm\+::vec3 Engine\+::\+Physics\+::\+Rigidbody\+::velocity = \{0.\+0f, 0.\+0f, 0.\+0f\}}
+
+
+
+La vélocité actuelle de l\textquotesingle{}objet sur 3 axes (dérivation en +position) 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+physics/\mbox{\hyperlink{rigidbody_8hpp}{rigidbody.\+hpp}}\item 
+physics/\mbox{\hyperlink{rigidbody_8cpp}{rigidbody.\+cpp}}\end{DoxyCompactItemize}

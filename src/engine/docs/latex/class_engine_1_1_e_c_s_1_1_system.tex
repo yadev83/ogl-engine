@@ -1,0 +1,251 @@
+\doxysection{Engine\+::ECS\+::System Class Reference}
+\hypertarget{class_engine_1_1_e_c_s_1_1_system}{}\label{class_engine_1_1_e_c_s_1_1_system}\index{Engine::ECS::System@{Engine::ECS::System}}
+
+
+La classe \doxylink{class_engine_1_1_e_c_s_1_1_system}{System} implémente une logique spécifique à des composants.  
+
+
+
+
+{\ttfamily \#include $<$system.\+hpp$>$}
+
+Inheritance diagram for Engine\+::ECS\+::System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.910569cm]{class_engine_1_1_e_c_s_1_1_system}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a90303eeb793a905e9f17234b9950a0a1}{Get\+Registry}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actif. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{Engine\+::\+App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a9ad51eb10256be8ef7c6cc08225f1301}{Get\+App}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}objet \doxylink{class_engine_1_1_app}{App} principal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a11c2d6142b7046c86a745bdca6e8a449}{Resume}} ()
+\begin{DoxyCompactList}\small\item\em Passe le booléen "{}m\+Paused"{} a false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_aea62adbd04c21239eaefa9ef896fbf99}{Pause}} ()
+\begin{DoxyCompactList}\small\item\em Passe le booléen "{}m\+Paused"{} a true. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a364bba12fc9b3c977cd08e85a49d3cd8}{Is\+Paused}} ()
+\begin{DoxyCompactList}\small\item\em Vérifie si le système est en pause. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a48be795bdf20d7abc1564ffb47bb7a90}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a0ccefb22c7cc60c5dc9c8fc00175fd47}{On\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}initialisation dans le cycle de vie de l\textquotesingle{}app. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a2de5a52e952ab31112c20936544192e1}{On\+Fixed\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}update fixe dans le cycle de vie. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_ad19c86b62e938d27a3d56f522fcb823d}{On\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}update variable dans le cycle de vie. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_aa3550aee57d50afa4427713a1142af36}{On\+Render}} (float alpha=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Fonction appelée au rendu à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a469a4a006f39cd496c18405192ed3621}{On\+UIRender}} ()
+\begin{DoxyCompactList}\small\item\em Fonction appelée après le rendu de l\textquotesingle{}interface à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a1d68526a066629fd84611a503c5437b2}{On\+Late\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}update tardive appelée à la fin de la boucle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_ad8d0978fe05acf63df411791224bd5e6}{Engine\+::\+App}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La classe \doxylink{class_engine_1_1_e_c_s_1_1_system}{System} implémente une logique spécifique à des composants. 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a48be795bdf20d7abc1564ffb47bb7a90}\index{Engine::ECS::System@{Engine::ECS::System}!````~System@{\texorpdfstring{$\sim$}{\string~}System}}
+\index{````~System@{\texorpdfstring{$\sim$}{\string~}System}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}System()}{\string~System()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a48be795bdf20d7abc1564ffb47bb7a90} 
+virtual Engine\+::\+ECS\+::\+System\+::\texorpdfstring{$\sim$}{\string~}\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a9ad51eb10256be8ef7c6cc08225f1301}\index{Engine::ECS::System@{Engine::ECS::System}!GetApp@{GetApp}}
+\index{GetApp@{GetApp}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{GetApp()}{GetApp()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a9ad51eb10256be8ef7c6cc08225f1301} 
+\mbox{\hyperlink{class_engine_1_1_app}{Engine\+::\+App}} \& Engine\+::\+ECS\+::\+System\+::\+Get\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie l\textquotesingle{}objet \doxylink{class_engine_1_1_app}{App} principal. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_app}{Engine\+::\+App}\& Référence vers l\textquotesingle{}application 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a90303eeb793a905e9f17234b9950a0a1}\index{Engine::ECS::System@{Engine::ECS::System}!GetRegistry@{GetRegistry}}
+\index{GetRegistry@{GetRegistry}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{GetRegistry()}{GetRegistry()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a90303eeb793a905e9f17234b9950a0a1} 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& Engine\+::\+ECS\+::\+System\+::\+Get\+Registry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renvoie le registre actif. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_engine_1_1_e_c_s_1_1_registry}{Registry}\& Référence vers le registre 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a364bba12fc9b3c977cd08e85a49d3cd8}\index{Engine::ECS::System@{Engine::ECS::System}!IsPaused@{IsPaused}}
+\index{IsPaused@{IsPaused}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{IsPaused()}{IsPaused()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a364bba12fc9b3c977cd08e85a49d3cd8} 
+bool Engine\+::\+ECS\+::\+System\+::\+Is\+Paused (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie si le système est en pause. 
+
+\begin{DoxyReturn}{Returns}
+true Si le système est en pause 
+
+false Si le système n\textquotesingle{}est pas en pause 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a2de5a52e952ab31112c20936544192e1}\index{Engine::ECS::System@{Engine::ECS::System}!OnFixedUpdate@{OnFixedUpdate}}
+\index{OnFixedUpdate@{OnFixedUpdate}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{OnFixedUpdate()}{OnFixedUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a2de5a52e952ab31112c20936544192e1} 
+virtual void Engine\+::\+ECS\+::\+System\+::\+On\+Fixed\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fonction d\textquotesingle{}update fixe dans le cycle de vie. 
+
+L\textquotesingle{}update fixe est une fonction appelée tant que l\textquotesingle{}application tourne et que le système est actif. La particularité de la fixed update est qu\textquotesingle{}elle est timée et est éxecutée un nombre fixe de fois, chaque seconde. Ce peut importe la vitesse d\textquotesingle{}éxecution réelle de la boucle applicative (dépendant des performances du PC ou de la VSync) 
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Le temps écoulé depuis le dernier appel à On\+Fixed\+Update \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system_a6044a01b48b2758f7850e91d216de92a}{Engine\+::\+Physics\+::\+Physic\+System}}, and \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_system_a5e3f48d45800b3a72d81ae2c3271d074}{Engine\+::\+Scene\+::\+Behaviour\+System}}.
+
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a0ccefb22c7cc60c5dc9c8fc00175fd47}\index{Engine::ECS::System@{Engine::ECS::System}!OnInit@{OnInit}}
+\index{OnInit@{OnInit}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{OnInit()}{OnInit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a0ccefb22c7cc60c5dc9c8fc00175fd47} 
+virtual void Engine\+::\+ECS\+::\+System\+::\+On\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fonction d\textquotesingle{}initialisation dans le cycle de vie de l\textquotesingle{}app. 
+
+L\textquotesingle{}initialisation à lieu une fois seulement, lors de la première frame qui suit le chargement d\textquotesingle{}une scène. 
+
+Reimplemented in \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_system_a9ddeedda19ee324312cbac9b9f3a0649}{Engine\+::\+Scene\+::\+Behaviour\+System}}.
+
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a1d68526a066629fd84611a503c5437b2}\index{Engine::ECS::System@{Engine::ECS::System}!OnLateUpdate@{OnLateUpdate}}
+\index{OnLateUpdate@{OnLateUpdate}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{OnLateUpdate()}{OnLateUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a1d68526a066629fd84611a503c5437b2} 
+virtual void Engine\+::\+ECS\+::\+System\+::\+On\+Late\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fonction d\textquotesingle{}update tardive appelée à la fin de la boucle. 
+
+Permet l\textquotesingle{}éxecution de tâches en retard par rapport a l\textquotesingle{}update classique et au rendu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Le temps écoulé depuis la dernière frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_system_aa9bd576f9682ec791f10e34f30f89b11}{Engine\+::\+Scene\+::\+Behaviour\+System}}.
+
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_aa3550aee57d50afa4427713a1142af36}\index{Engine::ECS::System@{Engine::ECS::System}!OnRender@{OnRender}}
+\index{OnRender@{OnRender}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{OnRender()}{OnRender()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_aa3550aee57d50afa4427713a1142af36} 
+virtual void Engine\+::\+ECS\+::\+System\+::\+On\+Render (\begin{DoxyParamCaption}\item[{float}]{alpha}{ = {\ttfamily 0.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fonction appelée au rendu à l\textquotesingle{}écran. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & Coefficient d\textquotesingle{}interpolation entre deux frames \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_engine_1_1_render_1_1_sprite_renderer_aaef95fb0086c34b5ff45cf3a78a23b17}{Engine\+::\+Render\+::\+Sprite\+Renderer}}, and \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_system_a9f51894372391861c93f38e9f0929427}{Engine\+::\+Scene\+::\+Behaviour\+System}}.
+
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a469a4a006f39cd496c18405192ed3621}\index{Engine::ECS::System@{Engine::ECS::System}!OnUIRender@{OnUIRender}}
+\index{OnUIRender@{OnUIRender}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{OnUIRender()}{OnUIRender()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a469a4a006f39cd496c18405192ed3621} 
+virtual void Engine\+::\+ECS\+::\+System\+::\+On\+UIRender (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fonction appelée après le rendu de l\textquotesingle{}interface à l\textquotesingle{}écran. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_engine_1_1_render_1_1_debug_renderer_a5a74ef6ee0c9252a4a418dc3fc62c689}{Engine\+::\+Render\+::\+Debug\+Renderer}}, \mbox{\hyperlink{class_engine_1_1_render_1_1_u_i_renderer_a1f217224a3465399b517df02bc366e54}{Engine\+::\+Render\+::\+UIRenderer}}, and \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_system_ad7892741f59a67672906839d92aa6d24}{Engine\+::\+Scene\+::\+Behaviour\+System}}.
+
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_ad19c86b62e938d27a3d56f522fcb823d}\index{Engine::ECS::System@{Engine::ECS::System}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_ad19c86b62e938d27a3d56f522fcb823d} 
+virtual void Engine\+::\+ECS\+::\+System\+::\+On\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fonction d\textquotesingle{}update variable dans le cycle de vie. 
+
+L\textquotesingle{}update fixe est une fonction appelée tant que l\textquotesingle{}application tourne et que le système est actif. On\+Update est appelée à chaque nouvelle frame 
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Le temps écoulé depuis la frame précédente \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_engine_1_1_graphics_1_1_particle_system_a8bbdc9c0d0e6603955a16e92408820a7}{Engine\+::\+Graphics\+::\+Particle\+System}}, \mbox{\hyperlink{class_engine_1_1_render_1_1_u_i_renderer_a33cc9dc0c89014b6645f6fe54c351327}{Engine\+::\+Render\+::\+UIRenderer}}, and \mbox{\hyperlink{class_engine_1_1_scene_1_1_behaviour_system_a04d8537c9d9148bd096cd2e1c26eeda3}{Engine\+::\+Scene\+::\+Behaviour\+System}}.
+
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_aea62adbd04c21239eaefa9ef896fbf99}\index{Engine::ECS::System@{Engine::ECS::System}!Pause@{Pause}}
+\index{Pause@{Pause}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_aea62adbd04c21239eaefa9ef896fbf99} 
+void Engine\+::\+ECS\+::\+System\+::\+Pause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Passe le booléen "{}m\+Paused"{} a true. 
+
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_a11c2d6142b7046c86a745bdca6e8a449}\index{Engine::ECS::System@{Engine::ECS::System}!Resume@{Resume}}
+\index{Resume@{Resume}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{Resume()}{Resume()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_a11c2d6142b7046c86a745bdca6e8a449} 
+void Engine\+::\+ECS\+::\+System\+::\+Resume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Passe le booléen "{}m\+Paused"{} a false. 
+
+
+
+\label{doc-related-members}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_engine_1_1_e_c_s_1_1_system_ad8d0978fe05acf63df411791224bd5e6}\index{Engine::ECS::System@{Engine::ECS::System}!Engine::App@{Engine::App}}
+\index{Engine::App@{Engine::App}!Engine::ECS::System@{Engine::ECS::System}}
+\doxysubsubsection{\texorpdfstring{Engine::App}{Engine::App}}
+{\footnotesize\ttfamily \label{class_engine_1_1_e_c_s_1_1_system_ad8d0978fe05acf63df411791224bd5e6} 
+friend class \mbox{\hyperlink{class_engine_1_1_app}{Engine\+::\+App}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ecs/\mbox{\hyperlink{system_8hpp}{system.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+\doxysection{debugrenderer.\+hpp}
+\hypertarget{debugrenderer_8hpp_source}{}\label{debugrenderer_8hpp_source}\index{render/debugrenderer.hpp@{render/debugrenderer.hpp}}
+\mbox{\hyperlink{debugrenderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{app_8hpp}{../app.hpp}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{shader_8hpp}{../graphics/shader.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{system_8hpp}{../ecs/system.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_render}{Engine::Render}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_render_1_1_debug_renderer_aee9e123302dc947db37e83592a906c08}{DebugRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system}{ECS::System}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Graphics::Shader}}\ *mDebugShader;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ GLuint\ mVAO,\ mVBO,\ mEBO;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawLine(glm::vec2\ a,\ glm::vec2\ b,\ \textcolor{keywordtype}{float}\ thickness\ =\ 1.0f,\ glm::vec4\ color\ =\ glm::vec4(1.0f));}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawRect(glm::vec2\ center,\ glm::vec2\ size,\ \textcolor{keywordtype}{float}\ thickness\ =\ 1.0f,\ glm::vec4\ color\ =\ glm::vec4(1.0f));}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DrawCross(glm::vec2\ center,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{float}\ thickness\ =\ 1.0f,\ glm::vec4\ color\ =\ glm::vec4(1.0f));}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_render_1_1_debug_renderer_aee9e123302dc947db37e83592a906c08}{DebugRenderer}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_render_1_1_debug_renderer_aae0274cb9600852291af41d3ae194711}{\string~DebugRenderer}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_render_1_1_debug_renderer_a5a74ef6ee0c9252a4a418dc3fc62c689}{OnUIRender}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}

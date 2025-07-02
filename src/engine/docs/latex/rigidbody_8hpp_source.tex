@@ -1,0 +1,39 @@
+\doxysection{rigidbody.\+hpp}
+\hypertarget{rigidbody_8hpp_source}{}\label{rigidbody_8hpp_source}\index{physics/rigidbody.hpp@{physics/rigidbody.hpp}}
+\mbox{\hyperlink{rigidbody_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component_8hpp}{../ecs/component.hpp}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_physics}{Engine::Physics}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody}{Rigidbody}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_component}{ECS::Component}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a6bf4dede8624f53796cb3b9836fa64d7}{velocity}}\ \ \ \ \ \ =\ \{0.0f,\ 0.0f,\ 0.0f\};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a3f7b5a6509d772a6c444257039ea579a}{acceleration}}\ \ =\ \{0.0f,\ 0.0f,\ 0.0f\};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aaa5041c097eb426642a6080fda206d32}{mass}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1.0f;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a94b6e8798cff5cef0ddabb5ba6e1e106}{restitution}}\ \ \ \ \ \ \ =\ 0.5f;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a9446ec1b475ff46f9203da0c7be7eff5}{friction}}\ \ \ \ \ \ \ \ \ \ =\ 0.2f;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aa71cb4065a4a0888fecd403833342b6f}{isAffectedByGravity}}\ \ \ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ad20f90b71956932e8a1eeb107f37a467}{isKinematic}}\ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ad5b8f5a67af9332e362f064378eedb77}{freezePositionX}}\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a9a85968cf36d53d1a4d929cfa9aef554}{freezePositionY}}\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a6b81eae4bade769ba6dd6884be7059e3}{freezePositionZ}}\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ad5841064d478572def5693a7b9dd83ab}{isBounceable}}\ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a6e5a6f9c3ca393a948dd5011c2999ef7}{isSleeping}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_ae0b2db75ec16be84738293fc892381f8}{sleepTimer}}\ =\ 0.0f;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_a7c8af9305a6e11937733f1ec0d1db5fb}{onGround}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_af3736517b376d9c307daa8fc89f4cfb7}{onWall}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aa507514a045bb2cd87102fb7be9e1b83}{AddForce}}(\textcolor{keyword}{const}\ glm::vec2\&\ force);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aa507514a045bb2cd87102fb7be9e1b83}{AddForce}}(\textcolor{keyword}{const}\ glm::vec3\&\ force);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aaa8a11a09a9a26a24f4146c86138f25d}{AddImpulse}}(\textcolor{keyword}{const}\ glm::vec2\&\ impulsion);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_rigidbody_aaa8a11a09a9a26a24f4146c86138f25d}{AddImpulse}}(\textcolor{keyword}{const}\ glm::vec3\&\ impulsion);}
+\DoxyCodeLine{00074\ \ \ \ \ \};}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}

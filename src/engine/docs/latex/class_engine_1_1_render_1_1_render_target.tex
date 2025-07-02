@@ -1,0 +1,124 @@
+\doxysection{Engine\+::Render\+::Render\+Target Class Reference}
+\hypertarget{class_engine_1_1_render_1_1_render_target}{}\label{class_engine_1_1_render_1_1_render_target}\index{Engine::Render::RenderTarget@{Engine::Render::RenderTarget}}
+
+
+La classe \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target} encapsule la gestion d\textquotesingle{}un framebuffer de taille custom pour le rendu de scène en deux temps.  
+
+
+
+
+{\ttfamily \#include $<$rendertarget.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_render_1_1_render_target_a5c90c1ba0a07618d19f657f42f51de40}{Render\+Target}} (int width, int height, float resolution\+Scaling=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Construit une nouvelle \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_render_1_1_render_target_a20fe88691669b697b4779be732536573}{\texorpdfstring{$\sim$}{\string~}\+Render\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Détruit la \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_render_1_1_render_target_abdbf2a1ad61d1278896132b0835be875}{Resize}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Redimensionne la render target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_render_1_1_render_target_a5008cb281b684829c2c164432b70586e}{Bind}} ()
+\begin{DoxyCompactList}\small\item\em Permet de lier la \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_render_1_1_render_target_a7974b7d5c740799529a6d6e520f4ebd2}{Unbind}} ()
+\begin{DoxyCompactList}\small\item\em Permet de délier la \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_engine_1_1_render_1_1_render_target_a3a2b602e8414e8f1761c8daa501fd41f}{Get\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}identifiant de la texture générée dans le framebuffer custom. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+La classe \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target} encapsule la gestion d\textquotesingle{}un framebuffer de taille custom pour le rendu de scène en deux temps. 
+
+\label{doc-constructors}
+\Hypertarget{class_engine_1_1_render_1_1_render_target_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_engine_1_1_render_1_1_render_target_a5c90c1ba0a07618d19f657f42f51de40}\index{Engine::Render::RenderTarget@{Engine::Render::RenderTarget}!RenderTarget@{RenderTarget}}
+\index{RenderTarget@{RenderTarget}!Engine::Render::RenderTarget@{Engine::Render::RenderTarget}}
+\doxysubsubsection{\texorpdfstring{RenderTarget()}{RenderTarget()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_render_1_1_render_target_a5c90c1ba0a07618d19f657f42f51de40} 
+Engine\+::\+Render\+::\+Render\+Target\+::\+Render\+Target (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{float}]{resolution\+Scaling}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+
+
+Construit une nouvelle \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. 
+
+Génère les ressources Open\+GL nécessaires 
+\begin{DoxyParams}{Parameters}
+{\em width} & Largeur du viewport original \\
+\hline
+{\em height} & Hauteur du viewport original \\
+\hline
+{\em resolution\+Scaling} & Facteur de scaling de la résolution du viewport pour obtenir la résolution interne désirée \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_render_1_1_render_target_a20fe88691669b697b4779be732536573}\index{Engine::Render::RenderTarget@{Engine::Render::RenderTarget}!````~RenderTarget@{\texorpdfstring{$\sim$}{\string~}RenderTarget}}
+\index{````~RenderTarget@{\texorpdfstring{$\sim$}{\string~}RenderTarget}!Engine::Render::RenderTarget@{Engine::Render::RenderTarget}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RenderTarget()}{\string~RenderTarget()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_render_1_1_render_target_a20fe88691669b697b4779be732536573} 
+Engine\+::\+Render\+::\+Render\+Target\+::\texorpdfstring{$\sim$}{\string~}\+Render\+Target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Détruit la \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_render_1_1_render_target_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_render_1_1_render_target_a5008cb281b684829c2c164432b70586e}\index{Engine::Render::RenderTarget@{Engine::Render::RenderTarget}!Bind@{Bind}}
+\index{Bind@{Bind}!Engine::Render::RenderTarget@{Engine::Render::RenderTarget}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_render_1_1_render_target_a5008cb281b684829c2c164432b70586e} 
+void Engine\+::\+Render\+::\+Render\+Target\+::\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Permet de lier la \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. 
+
+Après un call \doxylink{class_engine_1_1_render_1_1_render_target_a5008cb281b684829c2c164432b70586e}{Bind()}, la \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target} réceptionne tous les draw calls Open\+GL qui ont lieu Ca permet de dessiner dans le framebuffer custom plutôt que dans le framebuffer de base \Hypertarget{class_engine_1_1_render_1_1_render_target_a3a2b602e8414e8f1761c8daa501fd41f}\index{Engine::Render::RenderTarget@{Engine::Render::RenderTarget}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!Engine::Render::RenderTarget@{Engine::Render::RenderTarget}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_render_1_1_render_target_a3a2b602e8414e8f1761c8daa501fd41f} 
+GLuint Engine\+::\+Render\+::\+Render\+Target\+::\+Get\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}identifiant de la texture générée dans le framebuffer custom. 
+
+\begin{DoxyReturn}{Returns}
+GLuint 
+\end{DoxyReturn}
+\Hypertarget{class_engine_1_1_render_1_1_render_target_abdbf2a1ad61d1278896132b0835be875}\index{Engine::Render::RenderTarget@{Engine::Render::RenderTarget}!Resize@{Resize}}
+\index{Resize@{Resize}!Engine::Render::RenderTarget@{Engine::Render::RenderTarget}}
+\doxysubsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_render_1_1_render_target_abdbf2a1ad61d1278896132b0835be875} 
+void Engine\+::\+Render\+::\+Render\+Target\+::\+Resize (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Redimensionne la render target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & La nouvelle largeur du viewport original (scaling appliqué en interne) \\
+\hline
+{\em height} & La nouvelle hauteur du viewport original (scaling appliqué en interne) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_render_1_1_render_target_a7974b7d5c740799529a6d6e520f4ebd2}\index{Engine::Render::RenderTarget@{Engine::Render::RenderTarget}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!Engine::Render::RenderTarget@{Engine::Render::RenderTarget}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_render_1_1_render_target_a7974b7d5c740799529a6d6e520f4ebd2} 
+void Engine\+::\+Render\+::\+Render\+Target\+::\+Unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Permet de délier la \doxylink{class_engine_1_1_render_1_1_render_target}{Render\+Target}. 
+
+Ca aura pour effet de réactiver le Framebuffer par défaut. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+render/\mbox{\hyperlink{rendertarget_8hpp}{rendertarget.\+hpp}}\item 
+render/\mbox{\hyperlink{rendertarget_8cpp}{rendertarget.\+cpp}}\end{DoxyCompactItemize}

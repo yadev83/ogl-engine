@@ -1,0 +1,38 @@
+\doxysection{physicsystem.\+hpp}
+\hypertarget{physicsystem_8hpp_source}{}\label{physicsystem_8hpp_source}\index{physics/physicsystem.hpp@{physics/physicsystem.hpp}}
+\mbox{\hyperlink{physicsystem_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{system_8hpp}{../ecs/system.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{transform_8hpp}{../scene/transform.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{behaviour_8hpp}{../scene/behaviour.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rigidbody_8hpp}{rigidbody.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{collider_8hpp}{collider.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{manifold_8hpp}{manifold.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{aabb_8hpp}{aabb.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{obb_8hpp}{obb.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine_1_1_physics}{Engine::Physics}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system}{PhysicSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system}{ECS::System}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ gravity\ =\ \{0.0f,\ 9.81f\};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ApplyMotion(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResolveCollisions(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{CollisionManifold}}\ CheckAABBCollision(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_a_a_b_b}{AABB}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_a_a_b_b}{AABB}}\&\ b);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collision_manifold}{CollisionManifold}}\ CheckOBBCollision(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_o_b_b}{OBB}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_engine_1_1_physics_1_1_o_b_b}{OBB}}\&\ b);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ Reflect(\textcolor{keyword}{const}\ glm::vec2\&\ velocity,\ \textcolor{keyword}{const}\ glm::vec2\&\ normal);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system_abd488bce3aef19575a12177a0d24471d}{unitsPerMeter}}\ =\ 100.0f;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system_af0419bca1e2be0f964f1d4041543156a}{dampingFactor}}\ =\ 0.99f;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system_a6044a01b48b2758f7850e91d216de92a}{OnFixedUpdate}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00097\ \ \ \ \ \};}
+\DoxyCodeLine{00098\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,25 @@
+\doxysection{defaults.\+hpp File Reference}
+\hypertarget{defaults_8hpp}{}\label{defaults_8hpp}\index{defaults.hpp@{defaults.hpp}}
+
+
+Expose des variables par défaut globalement pour les modules qui en ont besoin.  
+
+
+{\ttfamily \#include "{}ui/font.\+hpp"{}}\newline
+{\ttfamily \#include "{}graphics/shader.\+hpp"{}}\newline
+{\ttfamily \#include "{}graphics/texture.\+hpp"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_engine}{Engine}}
+\item 
+namespace \mbox{\hyperlink{namespace_engine_1_1_defaults}{Engine\+::\+Defaults}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Expose des variables par défaut globalement pour les modules qui en ont besoin. 
+
+Les éléments ci-\/dessous sont non initialisés pour la plupart au démarrage de l\textquotesingle{}app. Ils le sont au moment où l\textquotesingle{}on appelle "{}\+App\+::\+App()"{} avec des assets par défaut (data/default.\+pak).
+
+Ils peuvent tout à fait être écrasés si besoin 

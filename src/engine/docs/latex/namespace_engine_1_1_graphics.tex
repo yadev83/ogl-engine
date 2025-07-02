@@ -1,0 +1,52 @@
+\doxysection{Engine\+::Graphics Namespace Reference}
+\hypertarget{namespace_engine_1_1_graphics}{}\label{namespace_engine_1_1_graphics}\index{Engine::Graphics@{Engine::Graphics}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_graphics_1_1_material}{Material}}
+\begin{DoxyCompactList}\small\item\em La classe \doxylink{class_engine_1_1_graphics_1_1_material}{Material} définit un "{}material"{} graphique utilisé pour le rendu de meshes texturés. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle}{Particle}}
+\begin{DoxyCompactList}\small\item\em La particule est l\textquotesingle{}élément atomique du système de particules du moteur. Les émetteurs de particules instancient des entités avec des components "{}\+Particle"{}, ensuite, c\textquotesingle{}est l\textquotesingle{}émetteur qui gère le cycle de vie de l\textquotesingle{}entité particule et la paramètre. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_particle_emitter}{Particle\+Emitter}}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}emetteur est en quelques sortes le "{}moteur"{} qui génère et gère les particules à l\textquotesingle{}écran Peut être configuré de plein de manière différentes pour permettre des effets visuels customisés. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_graphics_1_1_particle_system}{Particle\+System}}
+\begin{DoxyCompactList}\small\item\em La classe \doxylink{class_engine_1_1_graphics_1_1_particle_system}{Particle\+System} gère le cycle de vie de tous les components de type "{}\+Particle\+Emitter"{}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_graphics_1_1_shader}{Shader}}
+\begin{DoxyCompactList}\small\item\em Classe \doxylink{class_engine_1_1_graphics_1_1_shader}{Shader} qui porte un identifiant Open\+GL pointant vers le shader compilé \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_graphics_1_1_sprite}{Sprite}}
+\begin{DoxyCompactList}\small\item\em Structure de donnée contenant de quoi afficher un sprite à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_engine_1_1_graphics_1_1_texture}{Texture}}
+\begin{DoxyCompactList}\small\item\em Transporte un ID de texture Open\+GL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}{Uniform\+Value}}
+\begin{DoxyCompactList}\small\item\em Permet de ranger sous le nom "{}\+Uniform\+Value"{} tous les types actuellement gérés par les uniforms shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{namespace_engine_1_1_graphics_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}\index{Engine::Graphics@{Engine::Graphics}!UniformValue@{UniformValue}}
+\index{UniformValue@{UniformValue}!Engine::Graphics@{Engine::Graphics}}
+\doxysubsubsection{\texorpdfstring{UniformValue}{UniformValue}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f} 
+using \mbox{\hyperlink{namespace_engine_1_1_graphics_a6d088fe09ff9c2e478a553ce368cb45f}{Engine\+::\+Graphics\+::\+Uniform\+Value}}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ std::variant<}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ int,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ float,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ bool,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ glm::vec2,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ glm::vec3,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ glm::vec4,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ glm::mat4}
+\DoxyCodeLine{\ \ \ \ >}
+
+\end{DoxyCode}
+
+
+Permet de ranger sous le nom "{}\+Uniform\+Value"{} tous les types actuellement gérés par les uniforms shader. 
+

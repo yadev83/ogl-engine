@@ -1,0 +1,116 @@
+\doxysection{Engine\+::Physics\+::Physic\+System Class Reference}
+\hypertarget{class_engine_1_1_physics_1_1_physic_system}{}\label{class_engine_1_1_physics_1_1_physic_system}\index{Engine::Physics::PhysicSystem@{Engine::Physics::PhysicSystem}}
+
+
+Le Système physique dans son ensemble définit ici.  
+
+
+
+
+{\ttfamily \#include $<$physicsystem.\+hpp$>$}
+
+Inheritance diagram for Engine\+::Physics\+::Physic\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_engine_1_1_physics_1_1_physic_system}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system_a6044a01b48b2758f7850e91d216de92a}{On\+Fixed\+Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Méthode de cycle de vie de l\textquotesingle{}app qui appelle les méthodes privées. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system}{Engine\+::\+ECS\+::\+System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_registry}{Registry}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a90303eeb793a905e9f17234b9950a0a1}{Get\+Registry}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie le registre actif. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_engine_1_1_app}{Engine\+::\+App}} \& \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a9ad51eb10256be8ef7c6cc08225f1301}{Get\+App}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}objet \doxylink{class_engine_1_1_app}{App} principal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a11c2d6142b7046c86a745bdca6e8a449}{Resume}} ()
+\begin{DoxyCompactList}\small\item\em Passe le booléen "{}m\+Paused"{} a false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_aea62adbd04c21239eaefa9ef896fbf99}{Pause}} ()
+\begin{DoxyCompactList}\small\item\em Passe le booléen "{}m\+Paused"{} a true. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a364bba12fc9b3c977cd08e85a49d3cd8}{Is\+Paused}} ()
+\begin{DoxyCompactList}\small\item\em Vérifie si le système est en pause. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a48be795bdf20d7abc1564ffb47bb7a90}{\texorpdfstring{$\sim$}{\string~}\+System}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a0ccefb22c7cc60c5dc9c8fc00175fd47}{On\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}initialisation dans le cycle de vie de l\textquotesingle{}app. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_ad19c86b62e938d27a3d56f522fcb823d}{On\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}update variable dans le cycle de vie. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_aa3550aee57d50afa4427713a1142af36}{On\+Render}} (float alpha=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Fonction appelée au rendu à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a469a4a006f39cd496c18405192ed3621}{On\+UIRender}} ()
+\begin{DoxyCompactList}\small\item\em Fonction appelée après le rendu de l\textquotesingle{}interface à l\textquotesingle{}écran. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a1d68526a066629fd84611a503c5437b2}{On\+Late\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}update tardive appelée à la fin de la boucle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system_abd488bce3aef19575a12177a0d24471d}{units\+Per\+Meter}} = 100.\+0f
+\begin{DoxyCompactList}\small\item\em Facteur d\textquotesingle{}echelle pour le système physique. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_engine_1_1_physics_1_1_physic_system_af0419bca1e2be0f964f1d4041543156a}{damping\+Factor}} = 0.\+99f
+\begin{DoxyCompactList}\small\item\em Facteur de ralentissement dans le vide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Le Système physique dans son ensemble définit ici. 
+
+La méthode on\+Fixed\+Update est appelée dans le cycle de vie de l\textquotesingle{}app et gère les collisions, leur résolution, ainsi que la gestion de la dynamique (application de vitesses, mouvements). 
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_physics_1_1_physic_system_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_physics_1_1_physic_system_a6044a01b48b2758f7850e91d216de92a}\index{Engine::Physics::PhysicSystem@{Engine::Physics::PhysicSystem}!OnFixedUpdate@{OnFixedUpdate}}
+\index{OnFixedUpdate@{OnFixedUpdate}!Engine::Physics::PhysicSystem@{Engine::Physics::PhysicSystem}}
+\doxysubsubsection{\texorpdfstring{OnFixedUpdate()}{OnFixedUpdate()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_physics_1_1_physic_system_a6044a01b48b2758f7850e91d216de92a} 
+void Engine\+::\+Physics\+::\+Physic\+System\+::\+On\+Fixed\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Méthode de cycle de vie de l\textquotesingle{}app qui appelle les méthodes privées. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Temps passé depuis la dernière frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_engine_1_1_e_c_s_1_1_system_a2de5a52e952ab31112c20936544192e1}{Engine\+::\+ECS\+::\+System}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_engine_1_1_physics_1_1_physic_system_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_engine_1_1_physics_1_1_physic_system_af0419bca1e2be0f964f1d4041543156a}\index{Engine::Physics::PhysicSystem@{Engine::Physics::PhysicSystem}!dampingFactor@{dampingFactor}}
+\index{dampingFactor@{dampingFactor}!Engine::Physics::PhysicSystem@{Engine::Physics::PhysicSystem}}
+\doxysubsubsection{\texorpdfstring{dampingFactor}{dampingFactor}}
+{\footnotesize\ttfamily \label{class_engine_1_1_physics_1_1_physic_system_af0419bca1e2be0f964f1d4041543156a} 
+float Engine\+::\+Physics\+::\+Physic\+System\+::damping\+Factor = 0.\+99f}
+
+
+
+Facteur de ralentissement dans le vide. 
+
+Simule une perte de vélocité en l\textquotesingle{}absence de force, poru que les entités ne soient pas en mouvement perpétuel Par défaut, le ralentissement est léger, mais sur quelques secondes, la vélocité va tendre vers 0. Passer le damping\+Factor à 1, désactive toute forme de ralentissement naturel \Hypertarget{class_engine_1_1_physics_1_1_physic_system_abd488bce3aef19575a12177a0d24471d}\index{Engine::Physics::PhysicSystem@{Engine::Physics::PhysicSystem}!unitsPerMeter@{unitsPerMeter}}
+\index{unitsPerMeter@{unitsPerMeter}!Engine::Physics::PhysicSystem@{Engine::Physics::PhysicSystem}}
+\doxysubsubsection{\texorpdfstring{unitsPerMeter}{unitsPerMeter}}
+{\footnotesize\ttfamily \label{class_engine_1_1_physics_1_1_physic_system_abd488bce3aef19575a12177a0d24471d} 
+float Engine\+::\+Physics\+::\+Physic\+System\+::units\+Per\+Meter = 100.\+0f}
+
+
+
+Facteur d\textquotesingle{}echelle pour le système physique. 
+
+La simulation physique est basée sur les calculs qu\textquotesingle{}on pourrait faire dans le monde réel. Mais un mètre dans la vraie vie n\textquotesingle{}est pas équivalent à un mètre dans l\textquotesingle{}application.
+
+Ce facteur permet de dire combien d\textquotesingle{}unités (dans le jeu) sont équivalentes à un mètre (dans la vie) Par défaut, la valeur est de 100u/m, si 1 unité = 1 pixel, ça veut dire que 100 pixels = 1 mètre. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+physics/\mbox{\hyperlink{physicsystem_8hpp}{physicsystem.\+hpp}}\item 
+physics/\mbox{\hyperlink{physicsystem_8cpp}{physicsystem.\+cpp}}\end{DoxyCompactItemize}

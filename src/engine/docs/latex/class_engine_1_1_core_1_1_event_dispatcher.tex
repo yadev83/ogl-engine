@@ -1,0 +1,94 @@
+\doxysection{Engine\+::Core\+::Event\+Dispatcher Class Reference}
+\hypertarget{class_engine_1_1_core_1_1_event_dispatcher}{}\label{class_engine_1_1_core_1_1_event_dispatcher}\index{Engine::Core::EventDispatcher@{Engine::Core::EventDispatcher}}
+
+
+\doxylink{class_engine_1_1_core_1_1_event_dispatcher}{Event\+Dispatcher} enregistre des listeners, émet des évènements, et appelle des callbacks.  
+
+
+
+
+{\ttfamily \#include $<$event.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Event\+Type$>$ }\\using \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}{Event\+Callback}} = std\+::function$<$void(Event\+Type\&)$>$
+\begin{DoxyCompactList}\small\item\em Spécifie un nom pour les fonctions de callbacks typés (par event) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Event\+Type$>$ }\\void \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_a0b3ca3245ad262f32a3f36343cfcc76b}{Subscribe}} (\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}{Event\+Callback}}$<$ Event\+Type $>$ callback)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}enregistrer un callback à appeler lors de l\textquotesingle{}émission d\textquotesingle{}un évènement de type Event\+Type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Event\+Type$>$ }\\void \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_a693a46cdf16825a2d631a567d67614c1}{Emit}} (Event\+Type \texorpdfstring{$\ast$}{*}event) const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}émettre un évènement de type Event\+Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_engine_1_1_core_1_1_event_dispatcher}{Event\+Dispatcher} enregistre des listeners, émet des évènements, et appelle des callbacks. 
+
+\label{doc-typedef-members}
+\Hypertarget{class_engine_1_1_core_1_1_event_dispatcher_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}\index{Engine::Core::EventDispatcher@{Engine::Core::EventDispatcher}!EventCallback@{EventCallback}}
+\index{EventCallback@{EventCallback}!Engine::Core::EventDispatcher@{Engine::Core::EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{EventCallback}{EventCallback}}
+{\footnotesize\ttfamily \label{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508} 
+template$<$typename Event\+Type$>$ \\
+using \mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}{Engine\+::\+Core\+::\+Event\+Dispatcher\+::\+Event\+Callback}} = std\+::function$<$void(Event\+Type\&)$>$}
+
+
+
+Spécifie un nom pour les fonctions de callbacks typés (par event) 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_engine_1_1_core_1_1_event_dispatcher_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_engine_1_1_core_1_1_event_dispatcher_a693a46cdf16825a2d631a567d67614c1}\index{Engine::Core::EventDispatcher@{Engine::Core::EventDispatcher}!Emit@{Emit}}
+\index{Emit@{Emit}!Engine::Core::EventDispatcher@{Engine::Core::EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{Emit()}{Emit()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_core_1_1_event_dispatcher_a693a46cdf16825a2d631a567d67614c1} 
+template$<$typename Event\+Type$>$ \\
+void Engine\+::\+Core\+::\+Event\+Dispatcher\+::\+Emit (\begin{DoxyParamCaption}\item[{Event\+Type \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Permet d\textquotesingle{}émettre un évènement de type Event\+Type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Event\+Type} & Le type d\textquotesingle{}évènement à émettre \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & L\textquotesingle{}objet de type Event\+Type qui est passé en paramètre aux callbacks listeners. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_1_1_core_1_1_event_dispatcher_a0b3ca3245ad262f32a3f36343cfcc76b}\index{Engine::Core::EventDispatcher@{Engine::Core::EventDispatcher}!Subscribe@{Subscribe}}
+\index{Subscribe@{Subscribe}!Engine::Core::EventDispatcher@{Engine::Core::EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{Subscribe()}{Subscribe()}}
+{\footnotesize\ttfamily \label{class_engine_1_1_core_1_1_event_dispatcher_a0b3ca3245ad262f32a3f36343cfcc76b} 
+template$<$typename Event\+Type$>$ \\
+void Engine\+::\+Core\+::\+Event\+Dispatcher\+::\+Subscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_engine_1_1_core_1_1_event_dispatcher_acfd96b3c21afe5363e5b7e2a3abde508}{Event\+Callback}}$<$ Event\+Type $>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Permet d\textquotesingle{}enregistrer un callback à appeler lors de l\textquotesingle{}émission d\textquotesingle{}un évènement de type Event\+Type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Event\+Type} & Le type d\textquotesingle{}event à écouter \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & La fonction à appeler si l\textquotesingle{}évent est émis \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{event_8hpp}{event.\+hpp}}\end{DoxyCompactItemize}

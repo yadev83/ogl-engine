@@ -1,0 +1,60 @@
+\doxysection{Engine\+::Audio Namespace Reference}
+\hypertarget{namespace_engine_1_1_audio}{}\label{namespace_engine_1_1_audio}\index{Engine::Audio@{Engine::Audio}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_engine_1_1_audio_1_1_audio_manager}{Audio\+Manager}}
+\begin{DoxyCompactList}\small\item\em Classe statique qui gère tous les sons et la lecture audio dans le moteur Il faut juste appeler \doxylink{class_engine_1_1_audio_1_1_audio_manager_a0cd083f29f789975c617126456a3cfb0}{Audio\+Manager\+::\+Init()} une fois avant de pouvoir s\textquotesingle{}en servir (c\textquotesingle{}est fait dans la classe \doxylink{class_engine_1_1_app}{App}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_audio_1_1_sound}{Sound}}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_engine_1_1_audio_1_1_sound}{Sound} est un type de donnée qui contient ce qu\textquotesingle{}il faut pour jouer un son avec l\textquotesingle{}api Open\+Al. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Sound\+File\+Type}} \{ \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}{WAV}}
+ \}
+\begin{DoxyCompactList}\small\item\em Soun\+File\+Type est une énumération qui liste les types de fichiers audio lisibles par le système. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type}} \{ \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae450113cacde93f336b5ce7c9640b794}{BGM}}
+, \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}{SFX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Sound\+Type est une énumération qui liste les types de sons dispos dans le moteur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespace_engine_1_1_audio_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}\index{Engine::Audio@{Engine::Audio}!SoundFileType@{SoundFileType}}
+\index{SoundFileType@{SoundFileType}!Engine::Audio@{Engine::Audio}}
+\doxysubsubsection{\texorpdfstring{SoundFileType}{SoundFileType}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816} 
+enum \mbox{\hyperlink{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816}{Engine\+::\+Audio\+::\+Sound\+File\+Type}}}
+
+
+
+Soun\+File\+Type est une énumération qui liste les types de fichiers audio lisibles par le système. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WAV@{WAV}!Engine::Audio@{Engine::Audio}}\index{Engine::Audio@{Engine::Audio}!WAV@{WAV}}}\Hypertarget{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a}\label{namespace_engine_1_1_audio_ac43439a453fd80bab0da0666723ae816a4d38bac1feee3822e587abd02b15bf1a} 
+WAV&WAV est le type de fichier son par défaut du moteur \+: lossless et facile à lire. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}\index{Engine::Audio@{Engine::Audio}!SoundType@{SoundType}}
+\index{SoundType@{SoundType}!Engine::Audio@{Engine::Audio}}
+\doxysubsubsection{\texorpdfstring{SoundType}{SoundType}}
+{\footnotesize\ttfamily \label{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377} 
+enum \mbox{\hyperlink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Engine\+::\+Audio\+::\+Sound\+Type}}}
+
+
+
+\doxylink{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377}{Sound\+Type} est une énumération qui liste les types de sons dispos dans le moteur. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGM@{BGM}!Engine::Audio@{Engine::Audio}}\index{Engine::Audio@{Engine::Audio}!BGM@{BGM}}}\Hypertarget{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae450113cacde93f336b5ce7c9640b794}\label{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae450113cacde93f336b5ce7c9640b794} 
+BGM&BGM est le type utilisé pour les musiques de fond, qui vont jouer en boucle penadant l\textquotesingle{}éxecution. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SFX@{SFX}!Engine::Audio@{Engine::Audio}}\index{Engine::Audio@{Engine::Audio}!SFX@{SFX}}}\Hypertarget{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0}\label{namespace_engine_1_1_audio_ac6df5bdfee95cf39974c569d1af03377ae96bf1252489e950f7652e995e532bf0} 
+SFX&SFX est le type utilisé pour les "{}effets"{} sonores, qui sont joués plusieurs fois. \\
+\hline
+
+\end{DoxyEnumFields}

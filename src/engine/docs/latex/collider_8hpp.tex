@@ -1,0 +1,28 @@
+\doxysection{physics/collider.hpp File Reference}
+\hypertarget{collider_8hpp}{}\label{collider_8hpp}\index{physics/collider.hpp@{physics/collider.hpp}}
+
+
+Ce fichier contient les types de données nécessaires à la gestion des collisions dans les systèmes physiques. Un Collider est un component de l\textquotesingle{}ECS qui permet d\textquotesingle{}ajouter une "{}hitbox"{} autour des entités. On peut ensuite traiter toutes les entités qui ont des colliders et résoudre les collisions entre elles.  
+
+
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include "{}../ecs/component.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_engine_1_1_physics_1_1_collider_record}{Engine\+::\+Physics\+::\+Collider\+Record}}
+\begin{DoxyCompactList}\small\item\em Une entrée qui permet de savoir quelles entités sont en collision avec un Collider On a des maps de Collider\+Records dans les composants de type Collider pour ça, on peut savoir à chaque instant qui est en collision avec le collider, et depuis combien de temps. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_engine_1_1_physics_1_1_box_collider}{Engine\+::\+Physics\+::\+Box\+Collider}}
+\begin{DoxyCompactList}\small\item\em Le \doxylink{struct_engine_1_1_physics_1_1_box_collider}{Box\+Collider} est le collider le plus "{}simple"{} qui soit. Il s\textquotesingle{}agit d\textquotesingle{}une "{}box"{} qui se positionne au centre de l\textquotesingle{}entité, et s\textquotesingle{}étend autour d\textquotesingle{}elle. Pas optimal pour les entités arrondies, mais en 2D, avec des sprites, fait amplement l\textquotesingle{}affaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_engine}{Engine}}
+\item 
+namespace \mbox{\hyperlink{namespace_engine_1_1_physics}{Engine\+::\+Physics}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ce fichier contient les types de données nécessaires à la gestion des collisions dans les systèmes physiques. Un Collider est un component de l\textquotesingle{}ECS qui permet d\textquotesingle{}ajouter une "{}hitbox"{} autour des entités. On peut ensuite traiter toutes les entités qui ont des colliders et résoudre les collisions entre elles. 
+

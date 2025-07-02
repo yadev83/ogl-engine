@@ -80,10 +80,10 @@ namespace Engine::Physics {
          * @return true 
          * @return false 
          */
-        bool Intersects(const AABB& other) const {
+        bool Intersects(const AABB& other, float margin = 0.0f) const {
             return (
-                Max().x > other.Min().x && Min().x < other.Max().x &&
-                Max().y > other.Min().y && Min().y < other.Max().y
+                (Max().x + margin) > other.Min().x && (Min().x - margin) < other.Max().x &&
+                (Max().y + margin) > other.Min().y && (Min().y - margin) < other.Max().y
             );
         }
     };

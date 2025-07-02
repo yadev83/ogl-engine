@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['relative_5ffile_0',['RELATIVE_FILE',['../logger_8hpp.html#a9b61ba6932b0d291a20dd6eb6f3892d2',1,'logger.hpp']]]
+  ['stb_5fimage_5fimplementation_0',['STB_IMAGE_IMPLEMENTATION',['../texture_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78',1,'texture.cpp']]]
 ];

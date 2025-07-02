@@ -23,7 +23,8 @@ var searchData=
   ['shouldclose_20',['ShouldClose',['../class_engine_1_1_core_1_1_window.html#aa65a9d3322913f378b42464ae2742004',1,'Engine::Core::Window']]],
   ['shutdown_21',['Shutdown',['../class_engine_1_1_audio_1_1_audio_manager.html#ac97facc52b49567b552f14e090ff9b5d',1,'Engine::Audio::AudioManager']]],
   ['spriterenderer_22',['SpriteRenderer',['../class_engine_1_1_render_1_1_sprite_renderer.html#ae1fed77c5b5194b33589e8cf6f79bc18',1,'Engine::Render::SpriteRenderer']]],
-  ['stream_23',['Stream',['../class_engine_1_1_core_1_1_logger.html#aa68437ec47f2846f2b2b2bcef38c1c30',1,'Engine::Core::Logger']]],
-  ['subscribe_24',['Subscribe',['../class_engine_1_1_core_1_1_event_dispatcher.html#a0b3ca3245ad262f32a3f36343cfcc76b',1,'Engine::Core::EventDispatcher']]],
-  ['swapbuffers_25',['SwapBuffers',['../class_engine_1_1_core_1_1_window.html#a2f74777fed0523db007ee038cf88f3ab',1,'Engine::Core::Window']]]
+  ['start_23',['Start',['../class_engine_1_1_core_1_1_profiler.html#ad68f7c9dcb1e63fda1f113994f5a30ef',1,'Engine::Core::Profiler']]],
+  ['stream_24',['Stream',['../class_engine_1_1_core_1_1_logger.html#aa68437ec47f2846f2b2b2bcef38c1c30',1,'Engine::Core::Logger']]],
+  ['subscribe_25',['Subscribe',['../class_engine_1_1_core_1_1_event_dispatcher.html#a0b3ca3245ad262f32a3f36343cfcc76b',1,'Engine::Core::EventDispatcher']]],
+  ['swapbuffers_26',['SwapBuffers',['../class_engine_1_1_core_1_1_window.html#a2f74777fed0523db007ee038cf88f3ab',1,'Engine::Core::Window']]]
 ];

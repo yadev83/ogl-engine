@@ -5,6 +5,7 @@ var namespace_engine_1_1_core =
     [ "Logger", "class_engine_1_1_core_1_1_logger.html", "class_engine_1_1_core_1_1_logger" ],
     [ "PakFile", "class_engine_1_1_core_1_1_pak_file.html", "class_engine_1_1_core_1_1_pak_file" ],
     [ "PakHeader", "struct_engine_1_1_core_1_1_pak_header.html", "struct_engine_1_1_core_1_1_pak_header" ],
+    [ "Profiler", "class_engine_1_1_core_1_1_profiler.html", "class_engine_1_1_core_1_1_profiler" ],
     [ "Window", "class_engine_1_1_core_1_1_window.html", "class_engine_1_1_core_1_1_window" ],
     [ "Buffer", "namespace_engine_1_1_core.html#a107157f49164b4b4e449330247fe2014", null ],
     [ "LogLevel", "namespace_engine_1_1_core.html#ac395ddd510ca491669ab791129086cb7", [

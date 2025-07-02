@@ -18,6 +18,7 @@ namespace Engine::Physics {
     struct ColliderRecord {
         EntityID other;
         float duration = 0.0f;
+        bool isTrigger = false;
     };
 
     /**

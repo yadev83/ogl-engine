@@ -20,9 +20,9 @@ namespace Engine::Physics {
         /** @brief La masse de l'objet, peut servir pour les rapports de force entre deux objets lors de collisions */
         float mass              = 1.0f;
         /** @brief coefficient pour gérer la restitution sur la normale lors des rebonds (0 ne rebondit pas, 1 restitue 100% de la force) */
-        float restitution       = 0.4f;
+        float restitution       = 0.5f;
         /** @brief Coefficient qui permet de décider le ralentissement tangentiel en cas de collision / rebond (0, ne ralentit pas : 1, freine instant) */
-        float friction          = 0.5f;
+        float friction          = 0.2f;
 
         /** @brief Si vrai => L'objet doit être soumis à la gravité des systèmes physiques */
         bool isAffectedByGravity    = true;
@@ -36,6 +36,10 @@ namespace Engine::Physics {
         bool freezePositionZ        = false;
         /** @brief Si vrai => L'objet rebondit en cas de contact physique avec un autre collider */
         bool isBounceable           = false;
+        /** @brief Si vrai => L'objet est ignoré par le système physique */
+        bool isSleeping = false;
+        /** @brief temps passé en étant immobile. Au dela d'un certain seuil, le rigidbody passe en mode "sleep" pour économiser des ressources */
+        float sleepTimer = 0.0f;
 
         /** @brief Si vrai => Inidque que l'objet est posé à même le sol (ne chute pas) */
         bool onGround               = false;

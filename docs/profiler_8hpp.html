@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Engine: ui/defaults.hpp Source File</title>
+<title>Engine: core/profiler.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('ui_2defaults_8hpp_source.html','',''); });
+$(function(){initNavTree('profiler_8hpp.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -88,30 +88,44 @@ $(function(){initNavTree('ui_2defaults_8hpp_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">defaults.hpp</div></div>
+  <div class="headertitle"><div class="title">profiler.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="ui_2defaults_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="font_8hpp.html">font.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_engine_1_1_u_i.html">Engine::UI</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_engine_1_1_u_i_1_1_defaults.html">Defaults</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">extern</span> Font* <a class="code hl_variable" href="namespace_engine_1_1_u_i_1_1_defaults.html#af52a1959e876cdd14ee3cabdb52e66c7">font</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
-<div class="ttc" id="afont_8hpp_html"><div class="ttname"><a href="font_8hpp.html">font.hpp</a></div></div>
-<div class="ttc" id="anamespace_engine_1_1_u_i_1_1_defaults_html"><div class="ttname"><a href="namespace_engine_1_1_u_i_1_1_defaults.html">Engine::UI::Defaults</a></div><div class="ttdef"><b>Definition</b> defaults.cpp:4</div></div>
-<div class="ttc" id="anamespace_engine_1_1_u_i_1_1_defaults_html_af52a1959e876cdd14ee3cabdb52e66c7"><div class="ttname"><a href="namespace_engine_1_1_u_i_1_1_defaults.html#af52a1959e876cdd14ee3cabdb52e66c7">Engine::UI::Defaults::font</a></div><div class="ttdeci">Font * font</div><div class="ttdoc">Une font par défaut, utilisé pour initialiser les éléments ayant besoin d&#39;une police.</div><div class="ttdef"><b>Definition</b> defaults.cpp:5</div></div>
-<div class="ttc" id="anamespace_engine_1_1_u_i_html"><div class="ttname"><a href="namespace_engine_1_1_u_i.html">Engine::UI</a></div><div class="ttdef"><b>Definition</b> action.hpp:9</div></div>
-</div><!-- fragment --></div><!-- contents -->
+
+<p>Le profiler peut être utilisé pour analyser le temps d'éxecution d'un appel de fonction a des fins de débug.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+</div>
+<p><a href="profiler_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Engine_3A_3ACore_3A_3AProfiler" id="r_Engine_3A_3ACore_3A_3AProfiler"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine_1_1_core_1_1_profiler.html">Engine::Core::Profiler</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:Engine" id="r_Engine"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_engine.html">Engine</a></td></tr>
+<tr class="memitem:Engine_3A_3ACore" id="r_Engine_3A_3ACore"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_engine_1_1_core.html">Engine::Core</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Le profiler peut être utilisé pour analyser le temps d'éxecution d'un appel de fonction a des fins de débug. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_1788f8309b1a812dcb800a185471cf6c.html">ui</a></li><li class="navelem"><a href="ui_2defaults_8hpp.html">defaults.hpp</a></li>
+    <li class="navelem"><a href="dir_4270bfced15e0e73154b13468c7c9ad9.html">core</a></li><li class="navelem"><a href="profiler_8hpp.html">profiler.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

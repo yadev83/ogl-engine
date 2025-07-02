@@ -11,6 +11,7 @@ var annotated_dup =
         [ "Logger", "class_engine_1_1_core_1_1_logger.html", "class_engine_1_1_core_1_1_logger" ],
         [ "PakFile", "class_engine_1_1_core_1_1_pak_file.html", "class_engine_1_1_core_1_1_pak_file" ],
         [ "PakHeader", "struct_engine_1_1_core_1_1_pak_header.html", "struct_engine_1_1_core_1_1_pak_header" ],
+        [ "Profiler", "class_engine_1_1_core_1_1_profiler.html", "class_engine_1_1_core_1_1_profiler" ],
         [ "Window", "class_engine_1_1_core_1_1_window.html", "class_engine_1_1_core_1_1_window" ]
       ] ],
       [ "ECS", "namespace_engine_1_1_e_c_s.html", [

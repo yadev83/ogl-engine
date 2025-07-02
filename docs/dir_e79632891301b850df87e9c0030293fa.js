@@ -1,7 +1,5 @@
 var dir_e79632891301b850df87e9c0030293fa =
 [
-    [ "defaults.cpp", "graphics_2defaults_8cpp.html", "graphics_2defaults_8cpp" ],
-    [ "defaults.hpp", "graphics_2defaults_8hpp.html", null ],
     [ "material.cpp", "material_8cpp.html", null ],
     [ "material.hpp", "material_8hpp.html", "material_8hpp" ],
     [ "particlesystem.cpp", "particlesystem_8cpp.html", null ],

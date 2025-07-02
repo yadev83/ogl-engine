@@ -137,9 +137,9 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a3f7b5a6509d772a6c444257039ea579a"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'accélération de l'objet, remise à zéro à chaque frame (dérivation en +vélocité)  <br /></td></tr>
 <tr class="memitem:aaa5041c097eb426642a6080fda206d32" id="r_aaa5041c097eb426642a6080fda206d32"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa5041c097eb426642a6080fda206d32">mass</a> = 1.0f</td></tr>
 <tr class="memdesc:aaa5041c097eb426642a6080fda206d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">La masse de l'objet, peut servir pour les rapports de force entre deux objets lors de collisions.  <br /></td></tr>
-<tr class="memitem:a94b6e8798cff5cef0ddabb5ba6e1e106" id="r_a94b6e8798cff5cef0ddabb5ba6e1e106"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94b6e8798cff5cef0ddabb5ba6e1e106">restitution</a> = 0.4f</td></tr>
+<tr class="memitem:a94b6e8798cff5cef0ddabb5ba6e1e106" id="r_a94b6e8798cff5cef0ddabb5ba6e1e106"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94b6e8798cff5cef0ddabb5ba6e1e106">restitution</a> = 0.5f</td></tr>
 <tr class="memdesc:a94b6e8798cff5cef0ddabb5ba6e1e106"><td class="mdescLeft">&#160;</td><td class="mdescRight">coefficient pour gérer la restitution sur la normale lors des rebonds (0 ne rebondit pas, 1 restitue 100% de la force)  <br /></td></tr>
-<tr class="memitem:a9446ec1b475ff46f9203da0c7be7eff5" id="r_a9446ec1b475ff46f9203da0c7be7eff5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9446ec1b475ff46f9203da0c7be7eff5">friction</a> = 0.5f</td></tr>
+<tr class="memitem:a9446ec1b475ff46f9203da0c7be7eff5" id="r_a9446ec1b475ff46f9203da0c7be7eff5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9446ec1b475ff46f9203da0c7be7eff5">friction</a> = 0.2f</td></tr>
 <tr class="memdesc:a9446ec1b475ff46f9203da0c7be7eff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coefficient qui permet de décider le ralentissement tangentiel en cas de collision / rebond (0, ne ralentit pas : 1, freine instant)  <br /></td></tr>
 <tr class="memitem:aa71cb4065a4a0888fecd403833342b6f" id="r_aa71cb4065a4a0888fecd403833342b6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71cb4065a4a0888fecd403833342b6f">isAffectedByGravity</a> = true</td></tr>
 <tr class="memdesc:aa71cb4065a4a0888fecd403833342b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si vrai =&gt; L'objet doit être soumis à la gravité des systèmes physiques.  <br /></td></tr>
@@ -153,6 +153,10 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a6b81eae4bade769ba6dd6884be7059e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si vrai =&gt; Empêche les mouvements automatiques sur l'axe Z.  <br /></td></tr>
 <tr class="memitem:ad5841064d478572def5693a7b9dd83ab" id="r_ad5841064d478572def5693a7b9dd83ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5841064d478572def5693a7b9dd83ab">isBounceable</a> = false</td></tr>
 <tr class="memdesc:ad5841064d478572def5693a7b9dd83ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si vrai =&gt; L'objet rebondit en cas de contact physique avec un autre collider.  <br /></td></tr>
+<tr class="memitem:a6e5a6f9c3ca393a948dd5011c2999ef7" id="r_a6e5a6f9c3ca393a948dd5011c2999ef7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e5a6f9c3ca393a948dd5011c2999ef7">isSleeping</a> = false</td></tr>
+<tr class="memdesc:a6e5a6f9c3ca393a948dd5011c2999ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si vrai =&gt; L'objet est ignoré par le système physique.  <br /></td></tr>
+<tr class="memitem:ae0b2db75ec16be84738293fc892381f8" id="r_ae0b2db75ec16be84738293fc892381f8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0b2db75ec16be84738293fc892381f8">sleepTimer</a> = 0.0f</td></tr>
+<tr class="memdesc:ae0b2db75ec16be84738293fc892381f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">temps passé en étant immobile. Au dela d'un certain seuil, le rigidbody passe en mode "sleep" pour économiser des ressources  <br /></td></tr>
 <tr class="memitem:a7c8af9305a6e11937733f1ec0d1db5fb" id="r_a7c8af9305a6e11937733f1ec0d1db5fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c8af9305a6e11937733f1ec0d1db5fb">onGround</a> = false</td></tr>
 <tr class="memdesc:a7c8af9305a6e11937733f1ec0d1db5fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si vrai =&gt; Inidque que l'objet est posé à même le sol (ne chute pas)  <br /></td></tr>
 <tr class="memitem:af3736517b376d9c307daa8fc89f4cfb7" id="r_af3736517b376d9c307daa8fc89f4cfb7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3736517b376d9c307daa8fc89f4cfb7">onWall</a> = false</td></tr>
@@ -333,7 +337,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Engine::Physics::Rigidbody::friction = 0.5f</td>
+          <td class="memname">float Engine::Physics::Rigidbody::friction = 0.2f</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -387,6 +391,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Si vrai =&gt; Ignore les collisions et forces des systèmes physiques (utile pour gérer à la main tout en gardant la détection de collisiosn) </p>
+
+</div>
+</div>
+<a id="a6e5a6f9c3ca393a948dd5011c2999ef7" name="a6e5a6f9c3ca393a948dd5011c2999ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e5a6f9c3ca393a948dd5011c2999ef7">&#9670;&#160;</a></span>isSleeping</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::Physics::Rigidbody::isSleeping = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Si vrai =&gt; L'objet est ignoré par le système physique. </p>
 
 </div>
 </div>
@@ -445,12 +465,28 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Engine::Physics::Rigidbody::restitution = 0.4f</td>
+          <td class="memname">float Engine::Physics::Rigidbody::restitution = 0.5f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>coefficient pour gérer la restitution sur la normale lors des rebonds (0 ne rebondit pas, 1 restitue 100% de la force) </p>
+
+</div>
+</div>
+<a id="ae0b2db75ec16be84738293fc892381f8" name="ae0b2db75ec16be84738293fc892381f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b2db75ec16be84738293fc892381f8">&#9670;&#160;</a></span>sleepTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Engine::Physics::Rigidbody::sleepTimer = 0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>temps passé en étant immobile. Au dela d'un certain seuil, le rigidbody passe en mode "sleep" pour économiser des ressources </p>
 
 </div>
 </div>

@@ -3,7 +3,7 @@ var class_engine_1_1_scene_1_1_scene =
     [ "Scene", "class_engine_1_1_scene_1_1_scene.html#aa06a8b122623883321c96fd5b0a6402e", null ],
     [ "~Scene", "class_engine_1_1_scene_1_1_scene.html#a1c4b939949adf1b96c4fd0e1276e69a8", null ],
     [ "AddEventListener", "class_engine_1_1_scene_1_1_scene.html#ae3d9d2ad397c5c4692b96b47f2206ef7", null ],
-    [ "CreateEntity", "class_engine_1_1_scene_1_1_scene.html#a93b18ace1aeb686d4681bc8495a68b29", null ],
+    [ "CreateEntity", "class_engine_1_1_scene_1_1_scene.html#a14dde53e1eeec56e75d5b4aa25bc861e", null ],
     [ "CreateEntityWith", "class_engine_1_1_scene_1_1_scene.html#a1e87b003125b69b41ebe12450d46e46a", null ],
     [ "DestroyEntity", "class_engine_1_1_scene_1_1_scene.html#a1cdc74ccb74bcb377d33e1cc60e31e15", null ],
     [ "EmitEvent", "class_engine_1_1_scene_1_1_scene.html#a0cdb2bcc67606145abee0c0fd78c4f4d", null ],

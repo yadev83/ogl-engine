@@ -49,7 +49,7 @@ int _main() {
     settings.windowWidth = engineConf.GetInt("WINDOW", "width", 800);
     settings.windowHeight = engineConf.GetInt("WINDOW", "height", 600);
     
-    Game ogl_engine(1600, 900, settings);
+    Game ogl_engine(1920, 1080, settings);
     ogl_engine.Run();
 
     return 0;

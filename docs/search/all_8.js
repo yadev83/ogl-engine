@@ -14,7 +14,7 @@ var searchData=
   ['inputmanager_11',['InputManager',['../class_engine_1_1_input_1_1_input_manager.html',1,'Engine::Input::InputManager'],['../class_engine_1_1_input_1_1_input_manager.html#aa61247e87a782d02c9fe5b14f5d1957a',1,'Engine::Input::InputManager::InputManager()']]],
   ['inputstate_12',['InputState',['../namespace_engine_1_1_input.html#a6783f2bd41714e9a7155856b1cf37375',1,'Engine::Input']]],
   ['instance_13',['Instance',['../class_engine_1_1_core_1_1_logger.html#ab816080df056b095f06f11f4d5e007e6',1,'Engine::Core::Logger']]],
-  ['intersects_14',['Intersects',['../struct_engine_1_1_physics_1_1_a_a_b_b.html#af7191f2c1ccd855babd7f2eb39628307',1,'Engine::Physics::AABB']]],
+  ['intersects_14',['Intersects',['../struct_engine_1_1_physics_1_1_a_a_b_b.html#acaa4b026f79dabc8c9048d318beae786',1,'Engine::Physics::AABB']]],
   ['isaffectedbygravity_15',['isAffectedByGravity',['../struct_engine_1_1_physics_1_1_rigidbody.html#aa71cb4065a4a0888fecd403833342b6f',1,'Engine::Physics::Rigidbody']]],
   ['isbounceable_16',['isBounceable',['../struct_engine_1_1_physics_1_1_rigidbody.html#ad5841064d478572def5693a7b9dd83ab',1,'Engine::Physics::Rigidbody']]],
   ['isheld_17',['IsHeld',['../struct_engine_1_1_input_1_1_key_state.html#a48fa516ee378b01565efad9138c3fca9',1,'Engine::Input::KeyState']]],
@@ -25,5 +25,6 @@ var searchData=
   ['ispressed_22',['IsPressed',['../struct_engine_1_1_input_1_1_key_state.html#a1594efafe57b23388b49766f6827a7df',1,'Engine::Input::KeyState']]],
   ['isreleased_23',['IsReleased',['../struct_engine_1_1_input_1_1_key_state.html#a282905a390d595e3ac1ac3cb2da16fff',1,'Engine::Input::KeyState']]],
   ['isrotated_24',['IsRotated',['../struct_engine_1_1_scene_1_1_transform.html#a3f45506121198cefa415be82993b2fce',1,'Engine::Scene::Transform']]],
-  ['istrigger_25',['isTrigger',['../struct_engine_1_1_physics_1_1_box_collider.html#af7316a45f7b879c1a7217986f75e2dd0',1,'Engine::Physics::BoxCollider']]]
+  ['issleeping_25',['isSleeping',['../struct_engine_1_1_physics_1_1_rigidbody.html#a6e5a6f9c3ca393a948dd5011c2999ef7',1,'Engine::Physics::Rigidbody']]],
+  ['istrigger_26',['isTrigger',['../struct_engine_1_1_physics_1_1_collider_record.html#a76097a13d8196639d15ae7d58f4ab9b4',1,'Engine::Physics::ColliderRecord::isTrigger'],['../struct_engine_1_1_physics_1_1_box_collider.html#af7316a45f7b879c1a7217986f75e2dd0',1,'Engine::Physics::BoxCollider::isTrigger']]]
 ];

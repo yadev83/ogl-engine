@@ -3,6 +3,7 @@
 using namespace Engine::Scene;
 
 #include <iostream>
+#include <random>
 
 namespace Engine::Physics {
     void PhysicSystem::OnFixedUpdate(float dt) {
@@ -15,7 +16,12 @@ namespace Engine::Physics {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& rigidbody = GetRegistry().GetComponent<Rigidbody>(entityID);
 
-            if(rigidbody.isKinematic) continue;
+            if(rigidbody.isKinematic) {
+                rigidbody.isSleeping = true;
+            }
+
+            if(rigidbody.isSleeping) continue;
+
             if(rigidbody.isAffectedByGravity && !rigidbody.onGround) rigidbody.acceleration -= glm::vec3(gravity, 0.0f);
 
             rigidbody.velocity += (rigidbody.acceleration) * dt;           
@@ -23,275 +29,242 @@ namespace Engine::Physics {
 
             rigidbody.acceleration = glm::vec3(0.0f);
             rigidbody.velocity *= dampingFactor;
+
+            // Gestion du sleep
+            float velocitySquared = glm::length(rigidbody.velocity);
+            if(velocitySquared < PHYSICS_SLEEP_SPEED_THRESHOLD) {
+                rigidbody.sleepTimer += dt;
+                if(rigidbody.sleepTimer >= PHYSICS_SLEEP_TIME_THREHSOLD) {
+                    rigidbody.isSleeping = true;
+                    rigidbody.velocity = glm::vec3(0.0f);
+                }
+            } else {
+                rigidbody.isSleeping = false;
+                rigidbody.sleepTimer = 0.0f;
+            }
         }
     }
 
     void PhysicSystem::ResolveCollisions(float dt) {
         auto collidableIDs = GetRegistry().GetEntityIDsWith<Transform, Rigidbody, BoxCollider>();
 
-        for(auto entityID: GetRegistry().GetEntityIDsWith<Rigidbody>()) {
-            auto& r = GetRegistry().GetComponent<Rigidbody>(entityID);
-            r.onGround = false;
-            r.onWall = false;
+        // Randomise l'ordre des entités pour créer un système moins biaisé
+        std::shuffle(
+            collidableIDs.begin(), 
+            collidableIDs.end(), 
+            std::mt19937{std::random_device{}()}
+        );
+
+        // Reset les flags
+        for(auto entityID : collidableIDs) {
+            auto& rb = GetRegistry().GetComponent<Rigidbody>(entityID);
+            rb.onGround = false;
+            rb.onWall = false;
         }
 
         for(int iteration = 0; iteration < MAX_PHYSICS_ITERATIONS; ++iteration) {
-            bool collisionOccured = false;
+            bool collisionOccurred = false;
 
             for(size_t i = 0; i < collidableIDs.size(); ++i) {
-                EntityID aID = collidableIDs[i];
-                auto& ta = GetRegistry().GetComponent<Transform>(aID);
-                auto& ca = GetRegistry().GetComponent<BoxCollider>(aID);
-                auto& ra = GetRegistry().GetComponent<Rigidbody>(aID);
-
-                // Avant quoi que ce soit, on augmente la duration de tous les collision records de ce collider
-                for(auto& [otherID, record] : ca.collisionsList) record.duration += dt;
-                for(auto& [otherID, record] : ca.triggersList) record.duration += dt;
-
-                for (size_t j = i + 1; j < collidableIDs.size(); ++j) {
+                for(size_t j = i + 1; j < collidableIDs.size(); ++j) {
+                    EntityID aID = collidableIDs[i];
                     EntityID bID = collidableIDs[j];
 
+                    auto& ta = GetRegistry().GetComponent<Transform>(aID);
                     auto& tb = GetRegistry().GetComponent<Transform>(bID);
-                    auto& cb = GetRegistry().GetComponent<BoxCollider>(bID);
+                    auto& ra = GetRegistry().GetComponent<Rigidbody>(aID);
                     auto& rb = GetRegistry().GetComponent<Rigidbody>(bID);
+                    auto& ca = GetRegistry().GetComponent<BoxCollider>(aID);
+                    auto& cb = GetRegistry().GetComponent<BoxCollider>(bID);
 
-                    CollisionManifold manifold; // prepare collision manifold to resolve collisions
-                    // Si au moins un des deux transforms à subi ne serait-ce qu'une rotation, on passe en check OBB (plus comples, mais prend en compte les rotas.)
-                    // if(ta.IsRotated() || tb.IsRotated()) {
-                    //     OBB aBox(ta.position, ca.size * ta.scale, ta.rotation), bBox(tb.position, cb.size * tb.scale, tb.rotation);
-                    //     manifold = CheckOBBCollision(aBox, bBox);
-                    // } else {
-                    //     AABB aBox(glm::vec2(ta.position), glm::vec2(ca.size * ta.scale)), bBox(glm::vec2(tb.position), glm::vec2(cb.size * tb.scale));
-                    //     manifold = CheckAABBCollision(aBox, bBox);
-                    // }
+                    AABB aBox(glm::vec2(ta.position), glm::vec2(ca.size * ta.scale), ta.rotation);
+                    AABB bBox(glm::vec2(tb.position), glm::vec2(cb.size * tb.scale), tb.rotation);
 
-                    // AABB pour l'instant, OBB check est pété, les maths cédur
-                    AABB aBox(glm::vec2(ta.position), glm::vec2(ca.size * ta.scale), ta.rotation), bBox(glm::vec2(tb.position), glm::vec2(cb.size * tb.scale), tb.rotation);
-                    manifold = CheckAABBCollision(aBox, bBox);
+                    CollisionManifold manifold = CheckAABBCollision(aBox, bBox);
 
-                    // Si pas de collision, on retire les références de chaque collider (si elles existaient) puis on skip la suite
+                    // Liste de collisionsRecords en fonction des types (isTrigger ou pas)
+                    bool isTrigger = ca.isTrigger || cb.isTrigger;
+                    auto& aRecords = isTrigger ? ca.triggersList : ca.collisionsList;
+                    auto& bRecords = isTrigger ? ca.triggersList : ca.collisionsList;
+
+                    // Si pas de collision, on se débarasse des collisionsRecords et on appelle les callbacks s'il y en a, puis on skip le reste
                     if (!manifold.colliding) {
-                        if(ca.collisionsList.contains(bID) && ca.collisionsList[bID].duration >= COLLISION_EXPIRE_THRESHOLD) {
-                            // on sort de l'état de collision, donc on retire l'élément de la liste, et on appelle les callbacks
-                            ca.collisionsList.erase(bID);  
+                        if(aRecords.contains(bID) && aRecords[bID].duration >= COLLISION_EXPIRE_THRESHOLD) {
+                            aRecords.erase(bID);
 
-                            // Si on a un component "Behaviour" pour l'entité a, on appelle
                             if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(aID);
-                                script.OnCollisionExit(cb.GetEntity(), manifold);
-                            }
-                        }                  
-                        if(ca.triggersList.contains(bID) && ca.triggersList[bID].duration >= COLLISION_EXPIRE_THRESHOLD) {
-                            ca.triggersList.erase(bID);
-
-                            // Si on a un component "Behaviour" pour l'entité a, on appelle
-                            if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(aID);
-                                script.OnTriggerExit(cb.GetEntity(), manifold);
+                                auto& aScript = GetRegistry().GetComponent<Behaviour>(aID);
+                                if(isTrigger) aScript.OnTriggerExit(cb.GetEntity(), manifold);
+                                else aScript.OnCollisionExit(cb.GetEntity(), manifold);
                             }
                         }
 
-                        if(cb.collisionsList.contains(aID) && cb.collisionsList[aID].duration >= COLLISION_EXPIRE_THRESHOLD) {
-                            cb.collisionsList.erase(aID);
+                        if(bRecords.contains(bID) && bRecords[bID].duration >= COLLISION_EXPIRE_THRESHOLD) {
+                            bRecords.erase(bID);
 
                             if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(bID);
-                                script.OnCollisionExit(ca.GetEntity(), manifold);
-                            }
-                        }
-
-                        if(cb.triggersList.contains(aID) && cb.triggersList[aID].duration >= COLLISION_EXPIRE_THRESHOLD) {
-                            cb.triggersList.erase(aID);
-                            // Si on a un component "Behaviour" pour l'entité b, on appelle
-                            if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(bID);
-                                script.OnTriggerExit(ca.GetEntity(), manifold);
-                            }
-                        }
-
-                        continue;
-                    }
-
-                    // Traitement de la collision
-                    if(ca.isTrigger || cb.isTrigger) {
-                        if(!ca.triggersList.contains(bID)) {
-                            // Si cb n'est pas dans la liste de triggers de ca, on l'y ajoute
-                            ca.triggersList[bID] = {bID, dt};
-                            
-                            if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(aID);
-                                script.OnTriggerEnter(cb.GetEntity(), manifold);
-                            }
-                        } else {
-                            // Si cb est déjà dans la liste de triggers, on appelle le script OnStay
-                            if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(aID);
-                                script.OnTriggerStay(cb.GetEntity(), manifold);
-                            }
-                        }
-
-                        if(!cb.triggersList.contains(aID)) {
-                            // Si ca n'est pas dans la liste de triggers de cb, on l'y ajoute
-                            cb.triggersList[aID] = {aID, dt};
-                            
-                            // De plus, si cb à une méthode "onTriggerEnter" on l'appelle maintenant
-                            if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(bID);
-                                script.OnTriggerEnter(ca.GetEntity(), manifold);
-                            }
-                        } else {
-                            if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(bID);
-                                script.OnTriggerStay(ca.GetEntity(), manifold);
+                                auto& bScript = GetRegistry().GetComponent<Behaviour>(bID);
+                                if(isTrigger) bScript.OnTriggerExit(ca.GetEntity(), manifold);
+                                else bScript.OnCollisionExit(ca.GetEntity(), manifold);
                             }
                         }
                         
                         continue;
-                    } else { 
-                        // Même chose qu'en cas de trigger mais pour les collision brutes
-                        if(!ca.collisionsList.contains(bID)) {
-                            ca.collisionsList[bID] = {bID, dt};
-                            if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(aID);
-                                script.OnCollisionEnter(cb.GetEntity(), manifold);
-                            }
-                        } else {
-                            if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(aID);
-                                script.OnCollisionStay(cb.GetEntity(), manifold);
-                            }
-                        }
+                    }
 
-                        if(!cb.collisionsList.contains(aID)) {
-                            cb.collisionsList[aID] = {aID, dt};
-                            if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(bID);
-                                script.OnCollisionEnter(ca.GetEntity(), manifold);
-                            }
-                        } else {
-                            if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                                auto& script = GetRegistry().GetComponent<Behaviour>(bID);
-                                script.OnCollisionStay(ca.GetEntity(), manifold);
-                            }
+                    // En cas de collision, on insert ou update les collisionsRecords et appelle les callbacks s'il y en a avant de passer à la suite
+                    if(aRecords.contains(bID)) {
+                        aRecords[bID].duration += dt;
+
+                        if(GetRegistry().HasComponent<Behaviour>(aID)) {
+                            auto& aScript = GetRegistry().GetComponent<Behaviour>(aID);
+                            if(isTrigger) aScript.OnTriggerStay(cb.GetEntity(), manifold);
+                            else aScript.OnCollisionStay(cb.GetEntity(), manifold);
+                        }
+                    } else {
+                        aRecords[bID] = {bID, 0.0f, isTrigger};
+
+                        if(GetRegistry().HasComponent<Behaviour>(aID)) {
+                            auto& aScript = GetRegistry().GetComponent<Behaviour>(aID);
+                            if(isTrigger) aScript.OnTriggerEnter(cb.GetEntity(), manifold);
+                            else aScript.OnCollisionEnter(cb.GetEntity(), manifold);
                         }
                     }
 
+                    if(bRecords.contains(bID)) {
+                        bRecords[aID].duration += dt;
+
+                        if(GetRegistry().HasComponent<Behaviour>(bID)) {
+                            auto& bScript = GetRegistry().GetComponent<Behaviour>(bID);
+                            if(isTrigger) bScript.OnTriggerStay(ca.GetEntity(), manifold);
+                            else bScript.OnCollisionStay(ca.GetEntity(), manifold);
+                        }
+                    } else {
+                        bRecords[aID] = {aID, 0.0f, isTrigger};
+
+                        if(GetRegistry().HasComponent<Behaviour>(bID)) {
+                            auto& bScript = GetRegistry().GetComponent<Behaviour>(bID);
+                            if(isTrigger) bScript.OnTriggerEnter(ca.GetEntity(), manifold);
+                            else bScript.OnCollisionEnter(ca.GetEntity(), manifold);
+                        }
+                    }
+
+                    // Calcul de la vélocité selon la normale de la collision
+                    glm::vec3 relativeVelocity = rb.velocity - ra.velocity;
+                    float velAlongNormal = glm::dot(relativeVelocity, manifold.normal);
+
+                    // Réveille les entités endormies en cas de collision
+                    // Check si la vitesse projetée (ou la vitesse de l'objet qui entre en collision) est assez élevée pour wake up
+                    if (ra.isSleeping && !ra.isKinematic) {
+                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(rb.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
+                            ra.isSleeping = false;
+                            ra.sleepTimer = 0.0f;
+                        }
+                    }
+                    
+                    if (rb.isSleeping && !rb.isKinematic) {
+                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(ra.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
+                            rb.isSleeping = false;
+                            rb.sleepTimer = 0.0f;
+                        }
+                    }
+
+                    // 1. Skip la résolutionentre deux objets endormis
+                    if (ra.isSleeping && rb.isSleeping) continue;
+                    
+                    // 2. Skip les entités trop éloignées
+                    float broadphaseMargin = 100.0f;
+                    if (!aBox.Intersects(bBox, broadphaseMargin)) continue;
+
+                    // Correction de pénétration
+                    float correctionFactor = 0.8f;
+                    glm::vec3 correction = manifold.normal * manifold.penetration * correctionFactor;
+
+                    float invMassA = (ra.isKinematic || ra.mass <= 0) ? 0.0f : 1.0f / ra.mass;
+                    float invMassB = (rb.isKinematic || rb.mass <= 0) ? 0.0f : 1.0f / rb.mass;
+                    float invMassSum = invMassA + invMassB;
+
+                    if (invMassSum > 0.0f) {
+                        glm::vec3 moveA = -correction * (invMassA / invMassSum);
+                        glm::vec3 moveB =  correction * (invMassB / invMassSum);
+
+                        if (!ra.isKinematic) ta.position += moveA;
+                        if (!rb.isKinematic) tb.position += moveB;
+                    }
+
+                    // Gestion du rebond si au moins un est bounceable
+                    if (ra.isBounceable || rb.isBounceable) {
+                        if (velAlongNormal < 0.0f) {
+                            float restitution = 0.5f * (ra.restitution + rb.restitution);
+
+                            float impulseMag = -(1.0f + restitution) * velAlongNormal / invMassSum;
+                            glm::vec3 impulse = impulseMag * manifold.normal;
+
+                            if (!ra.isKinematic) ra.velocity -= impulse * invMassA;
+                            if (!rb.isKinematic) rb.velocity += impulse * invMassB;
+                        }
+                    }
+
+                    // Gestion du ralentissement dû a la friction contre un objet
+                    // Appliquer la friction dynamique sur chaque objet
+                    auto applyFriction = [](Rigidbody& rb, const glm::vec2& normal, float friction) {
+                        glm::vec3 tangent = glm::normalize(glm::vec3(-normal.y, normal.x, 0.0f));
+
+                        float tangentialSpeed = glm::dot(rb.velocity, tangent);
+                        float frictionMag = tangentialSpeed * friction;
+
+                        // Soustraire une portion de la vitesse tangentielle
+                        if (std::abs(tangentialSpeed) > 0.01f) {
+                            rb.velocity -= tangent * frictionMag;
+                        }
+                    };
+
+                    float frictionA = ra.friction;
+                    float frictionB = rb.friction;
+                    float combinedFriction = (frictionA + frictionB) * 0.5f;
+
+                    // Attention à NaN
+                    if (std::isfinite(combinedFriction) && combinedFriction > 0.0f) {
+                        if(!ra.isKinematic) applyFriction(ra, manifold.normal, combinedFriction);
+                        if(!rb.isKinematic) applyFriction(rb, -manifold.normal, combinedFriction);
+                    }
+
+                    // Détection "au sol" et "contre un mur"
                     if (!ra.isKinematic) {
-                        if(std::abs(manifold.penetration) >= 0.5f) {
-                            glm::vec3 correction = -manifold.normal * manifold.penetration;
-                            if (ra.freezePositionX) correction.x = 0.0f;
-                            if (ra.freezePositionY) correction.y = 0.0f;
-                            if (ra.freezePositionZ) correction.z = 0.0f;
-                            ta.position += correction;
-                        }
-
-                        if(glm::dot(manifold.normal, glm::vec3(0.0f, 1.0f, 0.0f)) > 0.5f) ra.onGround = true;
-                        if(std::abs(glm::dot(manifold.normal, glm::vec3(1.0f, 0.0f, 0.0f))) > 0.5f) ra.onWall = true;
-
-                        collisionOccured = true;
-                    } 
-
+                        if (glm::dot(manifold.normal, glm::vec3(0, 1, 0)) > 0.5f) ra.onGround = true;
+                        if (std::abs(glm::dot(manifold.normal, glm::vec3(1, 0, 0))) > 0.5f) ra.onWall = true;
+                    }
                     if (!rb.isKinematic) {
-                        if(std::abs(manifold.penetration) >= 0.5f) {
-                            glm::vec3 correction = manifold.normal * manifold.penetration;
-                            if (rb.freezePositionX) correction.x = 0.0f;
-                            if (rb.freezePositionY) correction.y = 0.0f;
-                            if (rb.freezePositionZ) correction.z = 0.0f;
-                            tb.position += correction;
-                        }
-
-                        if(glm::dot(-manifold.normal, glm::vec3(0.0f, 1.0f, 0.0f)) > 0.5f) rb.onGround = true;
-                        if(std::abs(glm::dot(-manifold.normal, glm::vec3(1.0f, 0.0f, 0.0f))) > 0.5f) rb.onWall = true;
-                        
-                        collisionOccured = true;
+                        if (glm::dot(-manifold.normal, glm::vec3(0, 1, 0)) > 0.5f) rb.onGround = true;
+                        if (std::abs(glm::dot(-manifold.normal, glm::vec3(1, 0, 0))) > 0.5f) rb.onWall = true;
                     }
 
-                    if((ra.isBounceable || rb.isBounceable) && manifold.colliding) {
-                        glm::vec3 directionalInvMassA = {
-                            (!ra.isKinematic && !ra.freezePositionX && ra.mass > 0) ? 1.0f / ra.mass : 0.0f,
-                            (!ra.isKinematic && !ra.freezePositionY && ra.mass > 0) ? 1.0f / ra.mass : 0.0f,
-                            (!ra.isKinematic && !ra.freezePositionZ && ra.mass > 0) ? 1.0f / ra.mass : 0.0f,
-                        };
-                        glm::vec3 directionalInvMassB = {
-                            (!rb.isKinematic && !rb.freezePositionX && rb.mass > 0) ? 1.0f / rb.mass : 0.0f,
-                            (!rb.isKinematic && !rb.freezePositionY && rb.mass > 0) ? 1.0f / rb.mass : 0.0f,
-                            (!rb.isKinematic && !rb.freezePositionZ && rb.mass > 0) ? 1.0f / rb.mass : 0.0f,
-                        };
-
-                        glm::vec3 effectiveInvMass = directionalInvMassA + directionalInvMassB;
-                        glm::vec3 relativeVelocity = rb.velocity - ra.velocity;
-
-                        // Composante normale
-                        float velocityAlongNormal = glm::dot(relativeVelocity, manifold.normal);
-                        glm::vec3 normalVelocity = velocityAlongNormal * manifold.normal;
-                        // Calcul de l'impulsion selon la normale de la collision
-                        float normalImpulseDenom = glm::dot(effectiveInvMass, manifold.normal * manifold.normal);
-                        float restitutionCoeff =  0.5f * (ra.restitution + rb.restitution);
-                        float normalImpulseMagnitude = -(1 + restitutionCoeff) * velocityAlongNormal;
-                        glm::vec3 normalImpulse = (normalImpulseMagnitude / normalImpulseDenom) * manifold.normal;
-
-                        // Composante tangentielle
-                        glm::vec3 tangentVelocity = relativeVelocity - normalVelocity;
-                        glm::vec3 tangentImpulse(0.0f);
-                        if(glm::length2(tangentVelocity) > 1e-6f) {
-                            glm::vec3 tangent = glm::normalize(tangentVelocity);
-
-                            float frictionCoeff = std::sqrt(rb.friction * ra.friction);
-                            float velocityAlongTangent = glm::dot(relativeVelocity, tangent);
-
-                            float tangentImpulseMagnitude = -frictionCoeff * velocityAlongTangent;
-                            float tangentImpulseDenom = glm::dot(effectiveInvMass, tangent * tangent);
-
-                            if(tangentImpulseDenom > 0.0f) {
-                                tangentImpulse = (tangentImpulseMagnitude / tangentImpulseDenom) * tangent;
-                            }
-                        }
-
-                        glm::vec3 bounceImpulse = normalImpulse + tangentImpulse;
-
-                        if(!ra.isKinematic && ra.mass > 0) {
-                            ra.velocity -= bounceImpulse * directionalInvMassA;
-
-                            if(ra.freezePositionX) ra.velocity.x = 0.0f;
-                            if(ra.freezePositionY) ra.velocity.y = 0.0f;
-                            if(ra.freezePositionZ) ra.velocity.z = 0.0f;
-                        }
-
-                        if(!rb.isKinematic && rb.mass > 0) {
-                            rb.velocity += bounceImpulse * directionalInvMassB;
-
-                            if(rb.freezePositionX) rb.velocity.x = 0.0f;
-                            if(rb.freezePositionY) rb.velocity.y = 0.0f;
-                            if(rb.freezePositionZ) rb.velocity.z = 0.0f;
-                        }
-
-                        collisionOccured = true;
-                    }                   
+                    collisionOccurred = true;
                 }
             }
 
-            if(!collisionOccured) break;
+            if(!collisionOccurred) break;
         }
     }
 
     CollisionManifold PhysicSystem::CheckAABBCollision(const AABB& a, const AABB& b) {
         CollisionManifold manifold;
+        manifold.colliding = false;
 
-        glm::vec2 delta = a.center - b.center;
+        glm::vec2 delta = b.center - a.center;
         glm::vec2 overlap = (a.halfSize + b.halfSize) - glm::abs(delta);
         
-        if(overlap.x > 0 && overlap.y > 0) {
+        const float EPSILON = 0.001f;
+        if(overlap.x > EPSILON && overlap.y > EPSILON) {
             manifold.colliding = true;
 
             if(overlap.x < overlap.y) {
-                manifold.penetration = delta.x > 0 ? -overlap.x : overlap.x;
-                manifold.normal = glm::vec3(1.0f, 0.0f, 0.0f);
+                manifold.penetration = overlap.x;
+                manifold.normal = glm::vec3((delta.x > 0) ? 1.0f : -1.0f, 0.0f, 0.0f);
             } else {
-                manifold.penetration = delta.y > 0 ? -overlap.y : overlap.y;
-                manifold.normal = glm::vec3(0.0f, 1.0f, 0.0f);
+                manifold.penetration = overlap.y;
+                manifold.normal = glm::vec3(0.0f, (delta.y > 0) ? 1.0f : -1.0f, 0.0f);
             }
-        } else {
-            manifold.colliding = false;
         }
 
         return manifold;

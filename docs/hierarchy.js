@@ -38,6 +38,7 @@ var hierarchy =
     [ "Engine::Physics::OBB", "struct_engine_1_1_physics_1_1_o_b_b.html", null ],
     [ "Engine::Core::PakFile", "class_engine_1_1_core_1_1_pak_file.html", null ],
     [ "Engine::Core::PakHeader", "struct_engine_1_1_core_1_1_pak_header.html", null ],
+    [ "Engine::Core::Profiler", "class_engine_1_1_core_1_1_profiler.html", null ],
     [ "Engine::ECS::Registry", "class_engine_1_1_e_c_s_1_1_registry.html", null ],
     [ "Engine::Render::RenderTarget", "class_engine_1_1_render_1_1_render_target.html", null ],
     [ "Engine::Utils::ResourceManager", "class_engine_1_1_utils_1_1_resource_manager.html", null ],

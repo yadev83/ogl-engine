@@ -15,6 +15,8 @@ var files_dup =
     [ "audio.hpp", "audio_8hpp.html", null ],
     [ "constants.hpp", "constants_8hpp.html", "constants_8hpp" ],
     [ "core.hpp", "core_8hpp.html", null ],
+    [ "defaults.cpp", "defaults_8cpp.html", "defaults_8cpp" ],
+    [ "defaults.hpp", "defaults_8hpp.html", null ],
     [ "ecs.hpp", "ecs_8hpp.html", null ],
     [ "graphics.hpp", "graphics_8hpp.html", null ],
     [ "input.hpp", "input_8hpp.html", null ],

@@ -10,11 +10,12 @@ var searchData=
   ['removecomponent_7',['RemoveComponent',['../class_engine_1_1_e_c_s_1_1_entity.html#ad3b8f6c29a1f81363721723520bd663c',1,'Engine::ECS::Entity::RemoveComponent()'],['../class_engine_1_1_e_c_s_1_1_registry.html#aadc4010d9b73c5b577247a2cea829a6c',1,'Engine::ECS::Registry::RemoveComponent()']]],
   ['rendertarget_8',['RenderTarget',['../class_engine_1_1_render_1_1_render_target.html#a5c90c1ba0a07618d19f657f42f51de40',1,'Engine::Render::RenderTarget']]],
   ['rendertoscreen_9',['RenderToScreen',['../class_engine_1_1_render_1_1_screen_renderer.html#a771d18ebaaf6ce1782baa37ebf811591',1,'Engine::Render::ScreenRenderer']]],
-  ['reset_10',['Reset',['../class_engine_1_1_input_1_1_input_manager.html#a40300ac4a17048a4caeebc46dc21e407',1,'Engine::Input::InputManager']]],
-  ['resize_11',['Resize',['../class_engine_1_1_render_1_1_render_target.html#abdbf2a1ad61d1278896132b0835be875',1,'Engine::Render::RenderTarget']]],
-  ['resume_12',['Resume',['../class_engine_1_1_e_c_s_1_1_system.html#a11c2d6142b7046c86a745bdca6e8a449',1,'Engine::ECS::System']]],
-  ['rgbacolor_13',['RGBAColor',['../namespace_engine_1_1_utils.html#af1baa7b8975f201eaf1559d6f03e7d58',1,'Engine::Utils']]],
-  ['rotate_14',['Rotate',['../struct_engine_1_1_scene_1_1_transform.html#ae78a00cea25146077cc2f40224bb6498',1,'Engine::Scene::Transform']]],
-  ['rotate2d_15',['Rotate2D',['../struct_engine_1_1_scene_1_1_transform.html#a2c04cc43d8dc8e960b8f2fc3297da76b',1,'Engine::Scene::Transform']]],
-  ['run_16',['Run',['../class_engine_1_1_app.html#ac8f1ee4c680d47ed7ea788f7d4962324',1,'Engine::App']]]
+  ['report_10',['Report',['../class_engine_1_1_core_1_1_profiler.html#a0504b7a8f674a31f8933f02af58768d9',1,'Engine::Core::Profiler']]],
+  ['reset_11',['Reset',['../class_engine_1_1_core_1_1_profiler.html#ac431886c707baa75427511e8937b2451',1,'Engine::Core::Profiler::Reset()'],['../class_engine_1_1_input_1_1_input_manager.html#a40300ac4a17048a4caeebc46dc21e407',1,'Engine::Input::InputManager::Reset()']]],
+  ['resize_12',['Resize',['../class_engine_1_1_render_1_1_render_target.html#abdbf2a1ad61d1278896132b0835be875',1,'Engine::Render::RenderTarget']]],
+  ['resume_13',['Resume',['../class_engine_1_1_e_c_s_1_1_system.html#a11c2d6142b7046c86a745bdca6e8a449',1,'Engine::ECS::System']]],
+  ['rgbacolor_14',['RGBAColor',['../namespace_engine_1_1_utils.html#af1baa7b8975f201eaf1559d6f03e7d58',1,'Engine::Utils']]],
+  ['rotate_15',['Rotate',['../struct_engine_1_1_scene_1_1_transform.html#ae78a00cea25146077cc2f40224bb6498',1,'Engine::Scene::Transform']]],
+  ['rotate2d_16',['Rotate2D',['../struct_engine_1_1_scene_1_1_transform.html#a2c04cc43d8dc8e960b8f2fc3297da76b',1,'Engine::Scene::Transform']]],
+  ['run_17',['Run',['../class_engine_1_1_app.html#ac8f1ee4c680d47ed7ea788f7d4962324',1,'Engine::App']]]
 ];

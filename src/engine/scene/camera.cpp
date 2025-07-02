@@ -17,6 +17,16 @@ namespace Engine::Scene {
 
     glm::vec2 ICamera::GetPosition() const { return mPosition; }
 
+    Rectangle ICamera::GetFrustum() const {
+        Rectangle frustum;
+        glm::vec3 halfSize = {mViewWidth * 0.5f, mViewHeight * 0.5f, 0.0f};
+
+        frustum.min = glm::vec3(mPosition, 1.0f) - halfSize;
+        frustum.max = glm::vec3(mPosition, 1.0f) + halfSize;
+
+        return frustum;
+    }
+
     void ICamera::SetPosition(glm::vec2 pos) {
         mPosition = pos;
     }

@@ -6,7 +6,7 @@
 
 #include <unordered_map>
 
-#include "../constants.hpp"
+#include "../defs.hpp"
 
 namespace Engine::ECS {
     /**

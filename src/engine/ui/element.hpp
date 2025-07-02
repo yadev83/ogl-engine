@@ -11,7 +11,7 @@
 
 #include "../ecs/component.hpp"
 
-#include "../constants.hpp"
+#include "../defs.hpp"
 #include "../graphics/material.hpp"
 
 namespace Engine::UI {

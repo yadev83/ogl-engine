@@ -6,7 +6,7 @@
 
 #include <queue>
 
-#include "../constants.hpp"
+#include "../defs.hpp"
 #include "../ecs/registry.hpp"
 #include "../ecs/entity.hpp"
 

@@ -84,7 +84,15 @@ namespace Engine::Render {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& sprite = GetRegistry().GetComponent<Sprite>(entityID);
 
-            DrawSprite(transform, sprite, alpha);
+            // Si l'entité n'entre pas dans le frustum de la caméra, on la skip
+            Rectangle cameraFrustum = GetApp().GetCurrentCamera()->GetFrustum();
+            Rectangle spriteRec = {
+                {transform.position - glm::vec3(sprite.size, 0.0f) * 0.5f},
+                {transform.position + glm::vec3(sprite.size, 0.0f) * 0.5f}
+            };
+
+            if((spriteRec.max.x > cameraFrustum.min.x && spriteRec.min.x < cameraFrustum.max.x) && (spriteRec.max.y > cameraFrustum.min.y && spriteRec.min.y < cameraFrustum.max.y))
+                DrawSprite(transform, sprite, alpha);
         }
     }
 }

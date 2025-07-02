@@ -13,6 +13,7 @@
 #include <set>
 #include <iostream>
 
+#include "../defs.hpp"
 #include "../constants.hpp"
 #include "componentstorage.hpp"
 

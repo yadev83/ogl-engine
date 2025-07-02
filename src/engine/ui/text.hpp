@@ -10,7 +10,7 @@
 #include <string>
 
 #include <engine/ecs/component.hpp>
-#include <engine/constants.hpp>
+#include <engine/defs.hpp>
 #include <engine/defaults.hpp>
 
 #include "font.hpp"

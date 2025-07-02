@@ -1,6 +1,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
+#include "../defs.hpp"
 
 namespace Engine::Scene {
     class ICamera {
@@ -20,6 +21,7 @@ namespace Engine::Scene {
             int GetViewHeight() const;
             glm::vec2 GetPosition() const;
             float GetZoom() const;
+            Rectangle GetFrustum() const;
 
             virtual void OnUpdate(float deltaTime);
             virtual glm::mat4 GetProjectionMatrix() const = 0;

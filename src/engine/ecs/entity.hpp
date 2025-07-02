@@ -6,7 +6,7 @@
  */
 #pragma once
 
-#include "../constants.hpp"
+#include "../defs.hpp"
 #include "registry.hpp"
 #include "componentstorage.hpp"
 

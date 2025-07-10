@@ -19,6 +19,7 @@ namespace Engine::Physics {
         EntityID other;
         float duration = 0.0f;
         bool isTrigger = false;
+        bool updatedThisFrame = false;
     };
 
     /**
@@ -33,6 +34,8 @@ namespace Engine::Physics {
         glm::vec3 size      = {1.0f, 1.0f, 1.0f};    
         /** @brief Si true, le collider est un trigger (superposition possible en ne résolvant pas les conditions) */
         bool isTrigger      = false;
+        /** @brief Si true, le collider est mis à jour en fonction de l'angle de rotation du transform rattaché */
+        bool enableRotation = true;
 
         /** @brief Liste des collisions en cours */
         std::unordered_map<EntityID, ColliderRecord> collisionsList;

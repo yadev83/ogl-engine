@@ -16,5 +16,5 @@ namespace Engine {
     /** @brief Vitesse d'éxecution de la boucle d'update fixée dans le cycle de vie (en frame per second) */
     constexpr float FIXED_STEP_FRAMERATE = 60.0f;
     /** @brief Le nombre maximum d'itérations autorisés dans les systèmes physiques pour résoudre collisions et contacts */
-    constexpr int MAX_PHYSICS_ITERATIONS = 1;
+    constexpr int MAX_PHYSICS_ITERATIONS = 5;
 }

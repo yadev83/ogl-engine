@@ -14,6 +14,8 @@ namespace Engine::Graphics {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& sprite = GetRegistry().GetComponent<Sprite>(entityID);
 
+            if(!(particle.enabled && transform.enabled && sprite.enabled)) continue;
+
             particle.lifetime += deltaTime;
             if (particle.lifetime >= particle.maxLifetime) {
                 GetRegistry().DestroyEntity(entityID);
@@ -36,6 +38,7 @@ namespace Engine::Graphics {
             auto& emitter = GetRegistry().GetComponent<ParticleEmitter>(entityID);
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
 
+            if(!(emitter.enabled && transform.enabled)) continue;
             if (!emitter.active) continue;
 
             emitter.timeSinceLastEmission += deltaTime;

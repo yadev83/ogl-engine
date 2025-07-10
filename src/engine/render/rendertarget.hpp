@@ -14,7 +14,7 @@ namespace Engine::Render {
      */
     class RenderTarget {
         private:
-            GLuint mFBO, mTextureID;
+            GLuint mFBO, mTextureID, mRBO;
             bool mGenerated = false;
 
             /** @brief Résolution interne du Framebuffer, peut différer de la résolution du contexte opengl */

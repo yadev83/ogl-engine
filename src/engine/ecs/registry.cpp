@@ -57,6 +57,10 @@ namespace Engine::ECS {
         return mTags[entityID].find(tag) != mTags[entityID].end();
     }
 
+    std::set<std::string> Registry::GetTags(EntityID entityID) {
+        return mTags[entityID];
+    }
+
     EntityID Registry::GetEntityIDWithTag(std::string targetTag) {
         for(auto [id, tags] : mTags) {
             if(tags.find(targetTag) != tags.end())

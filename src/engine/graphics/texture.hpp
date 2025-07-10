@@ -8,6 +8,8 @@
 #include <iostream>
 #include <glad/glad.h>
 
+#include <glm/glm.hpp>
+
 namespace Engine::Graphics {
     /**
      * @brief Transporte un ID de texture OpenGL
@@ -21,6 +23,9 @@ namespace Engine::Graphics {
             void Build(unsigned char *data, int width, int height, int channels);
 
         public:
+            /** @brief Le mode de wrapping de la texture openGL (cf. doc opengl pour les options possibles) */
+            GLenum glWrappingMode = GL_REPEAT;
+
             /**
              * @brief Construit un nouvel objet Texture et charge la texture demandée
              * 
@@ -43,6 +48,13 @@ namespace Engine::Graphics {
              * 
              */
             ~Texture();
+
+            /**
+             * @brief Renvoie la taille de la texture
+             * 
+             * @return glm::ivec2 
+             */
+            glm::ivec2 GetSize();
 
             /**
              * @brief Charge un fichier texture et construit la texture OpenGL

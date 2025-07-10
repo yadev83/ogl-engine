@@ -62,13 +62,6 @@ namespace Engine {
         SetSize(mWidth, mHeight, true);
         Input::InputManager::Init(mWindow->GetRawContext());
         Audio::AudioManager::Init();
-
-        // Default variables init
-        Utils::ResourceManager::LoadPak("data/default.pak", "default");
-        Defaults::font = Utils::ResourceManager::GetFont("default:fonts/default.ttf");
-        Defaults::shader = Utils::ResourceManager::GetShader("default:shaders/default");
-        Defaults::textShader = Utils::ResourceManager::GetShader("default:shaders/default_text");
-        Defaults::texture = Utils::ResourceManager::GetTexture("default:textures/default.png");
     }
 
     int App::GetWidth() { return mWidth; }

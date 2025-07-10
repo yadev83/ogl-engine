@@ -265,6 +265,22 @@ namespace Engine::ECS {
             }
 
             /**
+             * @brief Renvoie un vector de pointeurs vers tous les composants du type donné présents
+             * 
+             * @tparam T 
+             * @param entityID 
+             * @return std::vector<T*> 
+             */
+            template<typename T>
+            std::vector<T*> GetComponents(EntityID entityID) {
+                using Base = typename BaseOrSelf<T>::type;
+
+                auto* storage = GetStorage<Base>();
+                if(!storage) throw std::runtime_error("Registry::GetComponents<T>: no storage for component type");
+                return (storage->GetMany(entityID));            
+            }
+
+            /**
              * @brief Vérifie si une entité possède un component
              * 
              * @tparam T Le type de component à chercher
@@ -298,5 +314,13 @@ namespace Engine::ECS {
              * @return false 
              */
             bool HasTag(EntityID entityID, std::string tag);
+
+            /**
+             * @brief Renvoie les tags associés à une entité donnée
+             * 
+             * @param entityID L'ID de l'entité dont on veut les tags
+             * @return std::set<std::string> La liste de tags
+             */
+            std::set<std::string> GetTags(EntityID entityID);
     };
 }

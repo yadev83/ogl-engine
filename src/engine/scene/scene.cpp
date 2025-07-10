@@ -27,11 +27,17 @@ namespace Engine::Scene {
                 entity.AddComponent<Graphics::Sprite>();
                 break;
 
+            case PrimitiveType::Sprite:
+                entity.AddComponent<Transform>();
+                entity.AddComponent<Graphics::Sprite>();
+                break;
+
             case PrimitiveType::Text:
                 entity.AddComponent<Transform>();
                 entity.AddComponent<UI::Text>(UI::Text{.text="Text"});
                 break;
 
+            case PrimitiveType::Empty:
             default:
                 break;
         }

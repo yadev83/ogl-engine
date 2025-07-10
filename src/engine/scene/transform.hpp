@@ -53,6 +53,14 @@ namespace Engine::Scene {
          * @param angleRadians L'angle de la rotation
          */
         void Rotate2D(float angleRadians);
+
+        /**
+         * @brief Règle l'angle aotour de l'axe Z à l'angle en radians donné
+         * 
+         * @param angleRadians 
+         */
+        void SetRotation2D(float angleRadians);
+
         /**
          * @brief Permet de savoir si l'objet a subi une ou plusieurs rotations
          * 

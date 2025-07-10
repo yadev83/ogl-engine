@@ -17,12 +17,12 @@ namespace Engine::UI {
         mDataBuffer.clear();
     }
     
-    Font::Font(const std::string& fontPath, int fontSize) {
+    Font::Font(const std::string& fontPath, int fontSize) : mSize(fontSize) {
         LOG_DEBUG("Creating Font from file");
         LoadFromFile(fontPath, fontSize);
     }
 
-    Font::Font(const char *buffer, size_t size, int fontSize) {
+    Font::Font(const char *buffer, size_t size, int fontSize) : mSize(fontSize) {
         LOG_DEBUG("Creating Font from memory");
         LoadFromMemory(buffer, size, fontSize);
     }

@@ -15,12 +15,10 @@ namespace Engine::Physics {
         for(auto entityID : GetRegistry().GetEntityIDsWith<Transform, Rigidbody>()) {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& rigidbody = GetRegistry().GetComponent<Rigidbody>(entityID);
+            
+            if(!(transform.enabled && rigidbody.enabled)) continue;
 
-            if(rigidbody.isKinematic) {
-                rigidbody.isSleeping = true;
-            }
-
-            if(rigidbody.isSleeping) continue;
+            if(rigidbody.isKinematic || rigidbody.isSleeping) continue;
 
             if(rigidbody.isAffectedByGravity && !rigidbody.onGround) rigidbody.acceleration -= glm::vec3(gravity, 0.0f);
 
@@ -57,7 +55,19 @@ namespace Engine::Physics {
 
         // Reset les flags
         for(auto entityID : collidableIDs) {
+            auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& rb = GetRegistry().GetComponent<Rigidbody>(entityID);
+            auto& collider = GetRegistry().GetComponent<BoxCollider>(entityID);
+
+            if(!(transform.enabled && rb.enabled && collider.enabled)) continue;
+    
+            for (auto& [id, record] : collider.collisionsList) {
+                record.updatedThisFrame = false;
+            }
+            for (auto& [id, record] : collider.triggersList) {
+                record.updatedThisFrame = false;
+            }
+
             rb.onGround = false;
             rb.onWall = false;
         }
@@ -77,75 +87,66 @@ namespace Engine::Physics {
                     auto& ca = GetRegistry().GetComponent<BoxCollider>(aID);
                     auto& cb = GetRegistry().GetComponent<BoxCollider>(bID);
 
-                    AABB aBox(glm::vec2(ta.position), glm::vec2(ca.size * ta.scale), ta.rotation);
-                    AABB bBox(glm::vec2(tb.position), glm::vec2(cb.size * tb.scale), tb.rotation);
+                    AABB aBox(glm::vec2(ta.position), glm::vec2(ca.size * ta.scale), ca.enableRotation ? ta.rotation : glm::quat());
+                    AABB bBox(glm::vec2(tb.position), glm::vec2(cb.size * tb.scale), cb.enableRotation ? tb.rotation : glm::quat());
 
                     CollisionManifold manifold = CheckAABBCollision(aBox, bBox);
+
+                    if(!manifold.colliding || (ra.isKinematic && rb.isKinematic)) continue;
 
                     // Liste de collisionsRecords en fonction des types (isTrigger ou pas)
                     bool isTrigger = ca.isTrigger || cb.isTrigger;
                     auto& aRecords = isTrigger ? ca.triggersList : ca.collisionsList;
-                    auto& bRecords = isTrigger ? ca.triggersList : ca.collisionsList;
+                    auto& bRecords = isTrigger ? cb.triggersList : cb.collisionsList;
 
-                    // Si pas de collision, on se débarasse des collisionsRecords et on appelle les callbacks s'il y en a, puis on skip le reste
-                    if (!manifold.colliding) {
-                        if(aRecords.contains(bID) && aRecords[bID].duration >= COLLISION_EXPIRE_THRESHOLD) {
-                            aRecords.erase(bID);
-
-                            if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                                auto& aScript = GetRegistry().GetComponent<Behaviour>(aID);
-                                if(isTrigger) aScript.OnTriggerExit(cb.GetEntity(), manifold);
-                                else aScript.OnCollisionExit(cb.GetEntity(), manifold);
-                            }
-                        }
-
-                        if(bRecords.contains(bID) && bRecords[bID].duration >= COLLISION_EXPIRE_THRESHOLD) {
-                            bRecords.erase(bID);
-
-                            if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                                auto& bScript = GetRegistry().GetComponent<Behaviour>(bID);
-                                if(isTrigger) bScript.OnTriggerExit(ca.GetEntity(), manifold);
-                                else bScript.OnCollisionExit(ca.GetEntity(), manifold);
-                            }
-                        }
-                        
-                        continue;
-                    }
-
-                    // En cas de collision, on insert ou update les collisionsRecords et appelle les callbacks s'il y en a avant de passer à la suite
+                    // Mise à jour des collider records
+                    // A => B
                     if(aRecords.contains(bID)) {
-                        aRecords[bID].duration += dt;
+                        ColliderRecord& record = aRecords[bID];
+                        record.duration += dt;
+                        record.updatedThisFrame = true;
 
-                        if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                            auto& aScript = GetRegistry().GetComponent<Behaviour>(aID);
-                            if(isTrigger) aScript.OnTriggerStay(cb.GetEntity(), manifold);
-                            else aScript.OnCollisionStay(cb.GetEntity(), manifold);
+                        if (GetRegistry().HasComponent<Behaviour>(aID)) {
+                            auto scripts = GetRegistry().GetComponents<Behaviour>(aID);
+                            for (auto script : scripts) {
+                                if (isTrigger) script->OnTriggerStay(cb.GetEntity(), manifold);
+                                else script->OnCollisionStay(cb.GetEntity(), manifold);
+                            }
                         }
                     } else {
-                        aRecords[bID] = {bID, 0.0f, isTrigger};
+                        aRecords[bID] = {bID, 0.0f, isTrigger, true};
 
-                        if(GetRegistry().HasComponent<Behaviour>(aID)) {
-                            auto& aScript = GetRegistry().GetComponent<Behaviour>(aID);
-                            if(isTrigger) aScript.OnTriggerEnter(cb.GetEntity(), manifold);
-                            else aScript.OnCollisionEnter(cb.GetEntity(), manifold);
+                        if (GetRegistry().HasComponent<Behaviour>(aID)) {
+                            auto scripts = GetRegistry().GetComponents<Behaviour>(aID);
+                            for (auto script : scripts) {
+                                if (isTrigger) script->OnTriggerEnter(cb.GetEntity(), manifold);
+                                else script->OnCollisionEnter(cb.GetEntity(), manifold);
+                            }
                         }
                     }
 
-                    if(bRecords.contains(bID)) {
-                        bRecords[aID].duration += dt;
+                    // B => A
+                    if (bRecords.contains(aID)) {
+                        ColliderRecord& record = bRecords[aID];
+                        record.duration += dt;
+                        record.updatedThisFrame = true;
 
-                        if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                            auto& bScript = GetRegistry().GetComponent<Behaviour>(bID);
-                            if(isTrigger) bScript.OnTriggerStay(ca.GetEntity(), manifold);
-                            else bScript.OnCollisionStay(ca.GetEntity(), manifold);
+                        if (GetRegistry().HasComponent<Behaviour>(bID)) {
+                            auto scripts = GetRegistry().GetComponents<Behaviour>(bID);
+                            for (auto script : scripts) {
+                                if (isTrigger) script->OnTriggerStay(ca.GetEntity(), manifold);
+                                else script->OnCollisionStay(ca.GetEntity(), manifold);
+                            }
                         }
                     } else {
-                        bRecords[aID] = {aID, 0.0f, isTrigger};
+                        bRecords[aID] = {aID, 0.0f, isTrigger, true};
 
-                        if(GetRegistry().HasComponent<Behaviour>(bID)) {
-                            auto& bScript = GetRegistry().GetComponent<Behaviour>(bID);
-                            if(isTrigger) bScript.OnTriggerEnter(ca.GetEntity(), manifold);
-                            else bScript.OnCollisionEnter(ca.GetEntity(), manifold);
+                        if (GetRegistry().HasComponent<Behaviour>(bID)) {
+                            auto scripts = GetRegistry().GetComponents<Behaviour>(bID);
+                            for (auto script : scripts) {
+                                if (isTrigger) script->OnTriggerEnter(ca.GetEntity(), manifold);
+                                else script->OnCollisionEnter(ca.GetEntity(), manifold);
+                            }
                         }
                     }
 
@@ -156,21 +157,21 @@ namespace Engine::Physics {
                     // Réveille les entités endormies en cas de collision
                     // Check si la vitesse projetée (ou la vitesse de l'objet qui entre en collision) est assez élevée pour wake up
                     if (ra.isSleeping && !ra.isKinematic) {
-                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(rb.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
+                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(rb.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD || std::abs(manifold.penetration) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
                             ra.isSleeping = false;
                             ra.sleepTimer = 0.0f;
                         }
                     }
                     
                     if (rb.isSleeping && !rb.isKinematic) {
-                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(ra.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
+                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(ra.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD  || std::abs(manifold.penetration) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
                             rb.isSleeping = false;
                             rb.sleepTimer = 0.0f;
                         }
                     }
 
-                    // 1. Skip la résolutionentre deux objets endormis
-                    if (ra.isSleeping && rb.isSleeping) continue;
+                    // 1. Skip la résolution entre deux objets endormis (ou si l'un des deux est un trigger)
+                    if ((ra.isSleeping && rb.isSleeping) || isTrigger) continue;
                     
                     // 2. Skip les entités trop éloignées
                     float broadphaseMargin = 100.0f;
@@ -244,6 +245,43 @@ namespace Engine::Physics {
             }
 
             if(!collisionOccurred) break;
+        }
+
+        // Nettoyage des collider records et appel aux callbacks si on est sorti d'une collision pendant la frame
+        for (auto entityID : collidableIDs) {
+            auto& collider = GetRegistry().GetComponent<BoxCollider>(entityID);
+
+            auto cleanupRecords = [&](auto& records, bool isTrigger) {
+                std::vector<EntityID> toRemove;
+
+                for (auto& [otherID, record] : records) {
+                    if (!record.updatedThisFrame) {
+                        record.duration += dt;
+
+                        if (record.duration >= COLLISION_EXPIRE_THRESHOLD) {
+                            toRemove.push_back(otherID);
+
+                            if (GetRegistry().HasComponent<Behaviour>(entityID)) {
+                                auto scripts = GetRegistry().GetComponents<Behaviour>(entityID);
+                                auto& otherCollider = GetRegistry().GetComponent<BoxCollider>(otherID);
+                                CollisionManifold dummyManifold{.colliding = false};
+
+                                for (auto script : scripts) {
+                                    if (isTrigger) script->OnTriggerExit(otherCollider.GetEntity(), dummyManifold);
+                                    else script->OnCollisionExit(otherCollider.GetEntity(), dummyManifold);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                for (auto id : toRemove) {
+                    records.erase(id);
+                }
+            };
+
+            cleanupRecords(collider.collisionsList, false);
+            cleanupRecords(collider.triggersList, true);
         }
     }
 

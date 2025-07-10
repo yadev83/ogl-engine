@@ -67,6 +67,15 @@ namespace Engine::Graphics {
              * @param value La valeur à enregistrer (doit faire partie de UniformValue)
              */
             void SetUniform(const std::string& name, const UniformValue& value);
+
+            /**
+             * @brief Renvoie la valeur d'un uniforme stockée dans le material
+             * 
+             * @param name 
+             * @return UniformValue 
+             */
+            UniformValue GetUniform(const std::string& name) const;
+
             /**
              * @brief Permet de lier le Material courant et de setup les uniforms avant un drawcall
              */

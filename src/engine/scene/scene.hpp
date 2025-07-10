@@ -26,6 +26,7 @@ namespace Engine::Scene {
     enum class PrimitiveType {
         Empty,
         Quad,
+        Sprite,
         Text
     };
 

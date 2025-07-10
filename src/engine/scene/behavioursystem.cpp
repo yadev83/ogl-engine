@@ -5,44 +5,62 @@
 namespace Engine::Scene {
     void BehaviourSystem::OnInit() {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Behaviour>()) {
-            auto& script = GetRegistry().GetComponent<Behaviour>(entityID);
-            script.OnInit();
+            std::vector<Behaviour*> scripts = GetRegistry().GetComponents<Behaviour>(entityID);
+
+            for(auto script : scripts) {
+                if(script->enabled) script->OnInit();
+            }
         }
     }
 
     void BehaviourSystem::OnFixedUpdate(float deltaTime) {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Behaviour>()) {
-            auto& script = GetRegistry().GetComponent<Behaviour>(entityID);
-            script.OnFixedUpdate(deltaTime);
+            std::vector<Behaviour*> scripts = GetRegistry().GetComponents<Behaviour>(entityID);
+
+            for(auto script : scripts) {
+                if(script->enabled) script->OnFixedUpdate(deltaTime);
+            }
         }
     }
 
     void BehaviourSystem::OnUpdate(float deltaTime) {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Behaviour>()) {
-            auto& script = GetRegistry().GetComponent<Behaviour>(entityID);
-            script.OnUpdate(deltaTime);
+            std::vector<Behaviour*> scripts = GetRegistry().GetComponents<Behaviour>(entityID);
+
+            for(auto script : scripts) {
+                if(script->enabled) script->OnUpdate(deltaTime);
+            }
         }
     }
     
     void BehaviourSystem::OnRender(float alpha) {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Behaviour>()) {
-            auto& script = GetRegistry().GetComponent<Behaviour>(entityID);
-            script.OnRender(alpha);
+            std::vector<Behaviour*> scripts = GetRegistry().GetComponents<Behaviour>(entityID);
+
+            for(auto script : scripts) {
+                if(script->enabled) script->OnRender(alpha);
+            }
         }
     }
 
         
     void BehaviourSystem::OnUIRender() {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Behaviour>()) {
-            auto& script = GetRegistry().GetComponent<Behaviour>(entityID);
-            script.OnUIRender();
+            std::vector<Behaviour*> scripts = GetRegistry().GetComponents<Behaviour>(entityID);
+
+            for(auto script : scripts) {
+                if(script->enabled) script->OnUIRender();
+            }
         }
     }
 
     void BehaviourSystem::OnLateUpdate(float deltaTime) {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Behaviour>()) {
-            auto& script = GetRegistry().GetComponent<Behaviour>(entityID);
-            script.OnLateUpdate(deltaTime);
+            std::vector<Behaviour*> scripts = GetRegistry().GetComponents<Behaviour>(entityID);
+
+            for(auto script : scripts) {
+                if(script->enabled) script->OnLateUpdate(deltaTime);
+            }
         }
     }
 }

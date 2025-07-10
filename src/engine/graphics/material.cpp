@@ -7,6 +7,12 @@ namespace Engine::Graphics {
         mUniforms[name] = value;
     }
 
+    UniformValue Material::GetUniform(const std::string& name) const {
+        auto it = mUniforms.find(name);
+        if(it != mUniforms.end()) return it->second;
+        else return false;
+    }
+
     void Material::Bind() const {
         if(!shader) return;
         

@@ -13,11 +13,11 @@ namespace Engine::Render {
     SpriteRenderer::SpriteRenderer() {
         // Basic rectangle quad for sprites and basic stuff
         float vertices[] = {
-            // Pos        // UV for textures
-            -0.5f, -0.5f,  0.0f, 0.0f,
-             0.5f, -0.5f,  1.0f, 0.0f,
-             0.5f,  0.5f,  1.0f, 1.0f,
-            -0.5f,  0.5f,  0.0f, 1.0f
+            // Pos              // UV for textures
+            -0.5f, -0.5f, 0.5f,  0.0f, 0.0f,
+             0.5f, -0.5f, 0.5f,  1.0f, 0.0f,
+             0.5f,  0.5f, 0.5f,  1.0f, 1.0f,
+            -0.5f,  0.5f, 0.5f,  0.0f, 1.0f
         };
 
         unsigned int indices[] = {
@@ -39,11 +39,11 @@ namespace Engine::Render {
 
         // position
         glEnableVertexAttribArray(0); 
-        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 
         // UV
         glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
 
         glBindVertexArray(0);
     }
@@ -83,7 +83,8 @@ namespace Engine::Render {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Transform, Sprite>()) {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& sprite = GetRegistry().GetComponent<Sprite>(entityID);
-
+            if(!(transform.enabled && sprite.enabled)) continue;
+            
             // Si l'entité n'entre pas dans le frustum de la caméra, on la skip
             Rectangle cameraFrustum = GetApp().GetCurrentCamera()->GetFrustum();
             Rectangle spriteRec = {

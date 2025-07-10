@@ -23,7 +23,8 @@ namespace Engine::ECS {
             Entity* mEntity;
         public:
             Component() = default;
-            
+            bool enabled = true;
+
             /**
              * @brief Attache l'entité au component
              * 

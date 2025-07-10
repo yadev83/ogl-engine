@@ -27,6 +27,10 @@ namespace Engine::UI {
         float maxWidth = 0.0f;
         /** @brief la couleur du texte */
         glm::vec3 color = {1.0f, 1.0f, 1.0f};
+        /** @brief Un booléen qui permet d'afficher un contour autour du texte */
+        bool enableOutline = false;
+        /** @brief La couleur du contour si activé */
+        glm::vec3 outlineColor = {0.0f, 0.0f, 0.0f};
         
         /** @brief le shader utilisé pour rendre le texte */
         Graphics::Shader *shader = Defaults::textShader;

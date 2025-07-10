@@ -1,13 +1,14 @@
 #include <iostream>
 #include <windows.h>
+
 #include <engine/app.hpp>
 #include <engine/utils.hpp>
-
+#include <engine/defaults.hpp>
 #include <engine/render.hpp>
 #include <engine/graphics.hpp>
 #include <engine/scene.hpp>
 #include <engine/physics.hpp>
-
+using namespace Engine;
 using namespace Engine::Scene;
 using namespace Engine::Render;
 using namespace Engine::Physics;
@@ -23,7 +24,7 @@ class Game : public Engine::App {
             // Global registration of a debug renderer system
             RegisterSystem<DebugRenderer>();
             #if defined(NDEBUG)
-                GetSystem<Render::DebugRenderer>().Pause();
+                GetSystem<DebugRenderer>().Pause();
             #endif
             RegisterSystem<BehaviourSystem>();
             RegisterSystem<PhysicSystem>();
@@ -31,7 +32,12 @@ class Game : public Engine::App {
             RegisterSystem<UIRenderer>();
             RegisterSystem<ParticleSystem>();
             
-            settings.clearColor = RGBAColor(92, 102, 86);
+             // Define defaults variables
+            ResourceManager::LoadPak("data/default.pak", "default");
+            Defaults::font = ResourceManager::GetFont("default:fonts/default.ttf");
+            Defaults::shader = ResourceManager::GetShader("default:shaders/default");
+            Defaults::textShader = ResourceManager::GetShader("default:shaders/default_text");
+            Defaults::texture = ResourceManager::GetTexture("default:textures/default.png");
 
             RegisterScene<HelloWorld>("HelloWorld");
             LoadScene("HelloWorld");
@@ -48,7 +54,8 @@ int _main() {
     settings.stretchFit = (engineConf.GetString("DISPLAY", "resizeMode", "letterbox") == "stretch");
     settings.windowWidth = engineConf.GetInt("WINDOW", "width", 800);
     settings.windowHeight = engineConf.GetInt("WINDOW", "height", 600);
-    
+    settings.clearColor = RGBAColor(92, 102, 86);
+
     Game ogl_engine(1920, 1080, settings);
     ogl_engine.Run();
 

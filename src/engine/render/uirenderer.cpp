@@ -149,6 +149,7 @@ namespace Engine::Render {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& element = GetRegistry().GetComponent<Element>(entityID);
             auto& action = GetRegistry().GetComponent<Action>(entityID);
+            if(!(transform.enabled && element.enabled && action.enabled)) continue;
 
             bool isInside = IsPointInside(mousePos, transform.position, element.size * glm::vec2(transform.scale));
 
@@ -192,6 +193,7 @@ namespace Engine::Render {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Transform, Element>()) {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& element = GetRegistry().GetComponent<Element>(entityID);
+            if(!(transform.enabled && element.enabled)) continue;
 
             // Draw centered around center
             if(element.material.shader) {
@@ -204,9 +206,33 @@ namespace Engine::Render {
         for(EntityID entityID: GetRegistry().GetEntityIDsWith<Transform, Text>()) {
             auto& transform = GetRegistry().GetComponent<Transform>(entityID);
             auto& text = GetRegistry().GetComponent<Text>(entityID);
+            if(!(transform.enabled && text.enabled)) continue;
 
             if(text.shader) {
-                // Get la position en fonction de l'ancre de positionnement du texte avant de faire le rendu
+                // Si l'outline est activée, procède à 4 rendus différents, avec des transforms légèrement altérés
+                if(text.enableOutline) {
+                    Transform tmpTransform = transform;
+                    Text tmpText = text;
+                    tmpText.color = text.outlineColor;
+                    float outlineOffset = text.font->GetFontSize() * 0.05f;
+
+                    tmpTransform.position.x -= outlineOffset;
+                    PrintText(tmpText, tmpTransform, uiProjection);
+
+                    tmpTransform = transform;
+                    tmpTransform.position.x += outlineOffset;
+                    PrintText(tmpText, tmpTransform, uiProjection);
+
+                    tmpTransform = transform;
+                    tmpTransform.position.y -= outlineOffset;
+                    PrintText(tmpText, tmpTransform, uiProjection);
+
+                    tmpTransform = transform;
+                    tmpTransform.position.y += outlineOffset;
+                    PrintText(tmpText, tmpTransform, uiProjection);
+                }
+
+                // Affiche le texte
                 PrintText(text, transform, uiProjection);
             } else {
                 LOG_DEBUG("Can not render ui text without a valid shader program");

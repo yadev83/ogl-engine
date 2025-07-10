@@ -39,6 +39,13 @@ namespace Engine::ECS {
             EntityID GetID() const;
 
             /**
+             * @brief Renvoie une chaine de caractères qui représente cette entité
+             * 
+             * @return std::string 
+             */
+            std::string ToString() const;
+
+            /**
              * @brief Renvoie le registre parent de cet entité
              * 
              * @return Registry& 
@@ -94,7 +101,7 @@ namespace Engine::ECS {
             }
 
             /**
-             * @brief Retourne le composant de type T associé à cette entité
+             * @brief Retourne le premier composant de type T associé à cette entité
              * 
              * Wrapper autour de registry->GetComponent(id)
              * @tparam T 
@@ -103,6 +110,18 @@ namespace Engine::ECS {
             template<typename T>
             T& GetComponent() {
                 return mRegistry->GetComponent<T>(mID);
+            }
+
+            /**
+             * @brief Retourne le tableau de composants de type T associé à cette entité
+             * 
+             * Wrapper autour de registry->GetComponents(id) 
+             * @tparam T 
+             * @return std::vector<T*> Un tableau de pointeurs vers les composants demandés
+             */
+            template<typename T>
+            std::vector<T*> GetComponents() {
+                return mRegistry->GetComponents<T>(mID);
             }
 
             /**

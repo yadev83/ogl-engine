@@ -21,6 +21,10 @@ namespace Engine::Scene {
         Rotate(glm::vec3(0.0f, 0.0f, 1.0f), angleRadians);
     }
 
+    void Transform::SetRotation2D(float angleRadians) {
+        rotation = glm::normalize(glm::angleAxis(angleRadians, glm::normalize(glm::vec3(0.0f, 0.0f, 1.0f))));
+    }
+    
     bool Transform::IsRotated() {
         glm::quat id = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
         return id != rotation;

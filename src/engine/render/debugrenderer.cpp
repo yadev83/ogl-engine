@@ -134,6 +134,7 @@ namespace Engine::Render {
         
         for (auto entityID : GetRegistry().GetEntityIDsWith<Transform>()) {
             const auto& tf = GetRegistry().GetComponent<Transform>(entityID);
+            if(!(tf.enabled)) continue;
 
             if(!(GetRegistry().HasComponent<Text>(entityID) || GetRegistry().HasComponent<Element>(entityID)))
                 DrawCross(tf.position, 10.f, 2.0f, Utils::Colors::BLACK);
@@ -142,8 +143,9 @@ namespace Engine::Render {
         for (auto entityID : GetRegistry().GetEntityIDsWith<Transform, BoxCollider>()) {
             const auto& tf = GetRegistry().GetComponent<Transform>(entityID);
             const auto& col = GetRegistry().GetComponent<BoxCollider>(entityID);
+            if(!(tf.enabled && col.enabled)) continue;
 
-            AABB aabbCollider = AABB(tf.position, col.size * tf.scale, tf.rotation);
+            AABB aabbCollider = AABB(tf.position, col.size * tf.scale, col.enableRotation ? tf.rotation : glm::quat());
 
             auto color = col.collisionsList.size() ? Utils::Colors::RED : col.triggersList.size() ? Utils::Colors::YELLOW : Utils::Colors::GREEN;
             DrawRect(aabbCollider.center, aabbCollider.halfSize * 2.0f, 2.0f, color);
@@ -152,6 +154,8 @@ namespace Engine::Render {
         for (auto entityID : GetRegistry().GetEntityIDsWith<Transform, Rigidbody>()) {
             const auto& tf = GetRegistry().GetComponent<Transform>(entityID);
             const auto& rb = GetRegistry().GetComponent<Rigidbody>(entityID);
+            if(!(tf.enabled && rb.enabled)) continue;
+
             DrawLine(tf.position, tf.position + (rb.velocity * 50.0f), 1.0f, Utils::Colors::BLUE);
         }
     }

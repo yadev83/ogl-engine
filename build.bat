@@ -18,6 +18,7 @@ cls
 @echo [3] Clean Data
 @echo [4] Run in Debug mode
 @echo [5] Run in Release mode
+@echo [6] Generate Engine Documentation
 @echo [9] Clean Builds
 @echo [0] Exit
 @echo.
@@ -29,6 +30,7 @@ cls
 @if "%choice%"=="3" @goto clean_data
 @if "%choice%"=="4" @goto run_debug
 @if "%choice%"=="5" @goto run_release
+@if "%choice%"=="6" @goto gen_docs
 @if "%choice%"=="9" @goto clean_builds
 @if "%choice%"=="0" exit
 @goto menu
@@ -83,6 +85,14 @@ cls
 ) else (
     @echo Release Executable not found. Build the project in release mode first.
 )
+@pause
+@goto menu
+
+:gen_docs
+cls
+@cd src/engine
+@doxygen.exe Doxyfile
+@cd ../..
 @pause
 @goto menu
 

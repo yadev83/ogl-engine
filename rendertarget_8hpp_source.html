@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -101,7 +101,7 @@ $(function(){initNavTree('rendertarget_8hpp_source.html','',''); });
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_engine_1_1_render_1_1_render_target.html">   15</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_engine_1_1_render_1_1_render_target.html#a5c90c1ba0a07618d19f657f42f51de40">RenderTarget</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            GLuint mFBO, mTextureID;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            GLuint mFBO, mTextureID, mRBO;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keywordtype">bool</span> mGenerated = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordtype">int</span> mInternalWidth, mInternalHeight;</div>
@@ -120,11 +120,11 @@ $(function(){initNavTree('rendertarget_8hpp_source.html','',''); });
 </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 <div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a20fe88691669b697b4779be732536573"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a20fe88691669b697b4779be732536573">Engine::Render::RenderTarget::~RenderTarget</a></div><div class="ttdeci">~RenderTarget()</div><div class="ttdoc">Détruit la RenderTarget.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:11</div></div>
-<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a3a2b602e8414e8f1761c8daa501fd41f"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a3a2b602e8414e8f1761c8daa501fd41f">Engine::Render::RenderTarget::GetTexture</a></div><div class="ttdeci">GLuint GetTexture()</div><div class="ttdoc">Renvoie l&#39;identifiant de la texture générée dans le framebuffer custom.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:50</div></div>
-<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a5008cb281b684829c2c164432b70586e"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a5008cb281b684829c2c164432b70586e">Engine::Render::RenderTarget::Bind</a></div><div class="ttdeci">void Bind()</div><div class="ttdoc">Permet de lier la RenderTarget.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:41</div></div>
+<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a3a2b602e8414e8f1761c8daa501fd41f"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a3a2b602e8414e8f1761c8daa501fd41f">Engine::Render::RenderTarget::GetTexture</a></div><div class="ttdeci">GLuint GetTexture()</div><div class="ttdoc">Renvoie l&#39;identifiant de la texture générée dans le framebuffer custom.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:69</div></div>
+<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a5008cb281b684829c2c164432b70586e"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a5008cb281b684829c2c164432b70586e">Engine::Render::RenderTarget::Bind</a></div><div class="ttdeci">void Bind()</div><div class="ttdoc">Permet de lier la RenderTarget.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:59</div></div>
 <div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a5c90c1ba0a07618d19f657f42f51de40"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a5c90c1ba0a07618d19f657f42f51de40">Engine::Render::RenderTarget::RenderTarget</a></div><div class="ttdeci">RenderTarget(int width, int height, float resolutionScaling=1.0f)</div><div class="ttdoc">Construit une nouvelle RenderTarget.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:7</div></div>
-<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a7974b7d5c740799529a6d6e520f4ebd2"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a7974b7d5c740799529a6d6e520f4ebd2">Engine::Render::RenderTarget::Unbind</a></div><div class="ttdeci">void Unbind()</div><div class="ttdoc">Permet de délier la RenderTarget.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:46</div></div>
-<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_abdbf2a1ad61d1278896132b0835be875"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#abdbf2a1ad61d1278896132b0835be875">Engine::Render::RenderTarget::Resize</a></div><div class="ttdeci">void Resize(int width, int height)</div><div class="ttdoc">Redimensionne la render target.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:15</div></div>
+<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_a7974b7d5c740799529a6d6e520f4ebd2"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#a7974b7d5c740799529a6d6e520f4ebd2">Engine::Render::RenderTarget::Unbind</a></div><div class="ttdeci">void Unbind()</div><div class="ttdoc">Permet de délier la RenderTarget.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:65</div></div>
+<div class="ttc" id="aclass_engine_1_1_render_1_1_render_target_html_abdbf2a1ad61d1278896132b0835be875"><div class="ttname"><a href="class_engine_1_1_render_1_1_render_target.html#abdbf2a1ad61d1278896132b0835be875">Engine::Render::RenderTarget::Resize</a></div><div class="ttdeci">void Resize(int width, int height)</div><div class="ttdoc">Redimensionne la render target.</div><div class="ttdef"><b>Definition</b> rendertarget.cpp:28</div></div>
 <div class="ttc" id="anamespace_engine_1_1_render_html"><div class="ttname"><a href="namespace_engine_1_1_render.html">Engine::Render</a></div><div class="ttdef"><b>Definition</b> debugrenderer.cpp:17</div></div>
 <div class="ttc" id="ashader_8hpp_html"><div class="ttname"><a href="shader_8hpp.html">shader.hpp</a></div><div class="ttdoc">Classe qui encapsule le chargement let l&#39;usage d&#39;un shader OpenGL.</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -10,7 +10,8 @@ var searchData=
   ['isjustpressed_7',['IsJustPressed',['../struct_engine_1_1_input_1_1_key_state.html#a561c37da8282ea943e004e77796b56e8',1,'Engine::Input::KeyState']]],
   ['isjustreleased_8',['IsJustReleased',['../struct_engine_1_1_input_1_1_key_state.html#ad8b93d5d313b145dd9e8e65588474029',1,'Engine::Input::KeyState']]],
   ['ispaused_9',['IsPaused',['../class_engine_1_1_e_c_s_1_1_system.html#a364bba12fc9b3c977cd08e85a49d3cd8',1,'Engine::ECS::System']]],
-  ['ispressed_10',['IsPressed',['../struct_engine_1_1_input_1_1_key_state.html#a1594efafe57b23388b49766f6827a7df',1,'Engine::Input::KeyState']]],
-  ['isreleased_11',['IsReleased',['../struct_engine_1_1_input_1_1_key_state.html#a282905a390d595e3ac1ac3cb2da16fff',1,'Engine::Input::KeyState']]],
-  ['isrotated_12',['IsRotated',['../struct_engine_1_1_scene_1_1_transform.html#a3f45506121198cefa415be82993b2fce',1,'Engine::Scene::Transform']]]
+  ['isplaying_10',['IsPlaying',['../class_engine_1_1_graphics_1_1_sprite_animator.html#aec555bd19325ce9960ab21963a616f4e',1,'Engine::Graphics::SpriteAnimator']]],
+  ['ispressed_11',['IsPressed',['../struct_engine_1_1_input_1_1_key_state.html#a1594efafe57b23388b49766f6827a7df',1,'Engine::Input::KeyState']]],
+  ['isreleased_12',['IsReleased',['../struct_engine_1_1_input_1_1_key_state.html#a282905a390d595e3ac1ac3cb2da16fff',1,'Engine::Input::KeyState']]],
+  ['isrotated_13',['IsRotated',['../struct_engine_1_1_scene_1_1_transform.html#a3f45506121198cefa415be82993b2fce',1,'Engine::Scene::Transform']]]
 ];

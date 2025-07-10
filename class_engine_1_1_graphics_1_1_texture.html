@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -107,6 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8be8de537edfc7bca072f3cf3758c953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel object <a class="el" href="class_engine_1_1_graphics_1_1_texture.html" title="Transporte un ID de texture OpenGL.">Texture</a> vide.  <br /></td></tr>
 <tr class="memitem:a44ffaee385b6eea92e6d114ef471533f" id="r_a44ffaee385b6eea92e6d114ef471533f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44ffaee385b6eea92e6d114ef471533f">~Texture</a> ()</td></tr>
 <tr class="memdesc:a44ffaee385b6eea92e6d114ef471533f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit proprement la texture.  <br /></td></tr>
+<tr class="memitem:aecca9b7947c7005f7ec8217379a58c4d" id="r_aecca9b7947c7005f7ec8217379a58c4d"><td class="memItemLeft" align="right" valign="top">glm::ivec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecca9b7947c7005f7ec8217379a58c4d">GetSize</a> ()</td></tr>
+<tr class="memdesc:aecca9b7947c7005f7ec8217379a58c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la taille de la texture.  <br /></td></tr>
 <tr class="memitem:a4294d430f99393ecf2a87bec31533b2b" id="r_a4294d430f99393ecf2a87bec31533b2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4294d430f99393ecf2a87bec31533b2b">LoadFromFile</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:a4294d430f99393ecf2a87bec31533b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge un fichier texture et construit la texture OpenGL.  <br /></td></tr>
 <tr class="memitem:acf5f5ee7ba9f7dd1d896fe9d88474f60" id="r_acf5f5ee7ba9f7dd1d896fe9d88474f60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf5f5ee7ba9f7dd1d896fe9d88474f60">LoadFromMemory</a> (const char *buffer, size_t size)</td></tr>
@@ -115,6 +117,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a74da08d473005f8497115bda0bdfd902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'identifiant de la texture.  <br /></td></tr>
 <tr class="memitem:ab805d4967e99752251283f13f81d20cd" id="r_ab805d4967e99752251283f13f81d20cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab805d4967e99752251283f13f81d20cd">Bind</a> (int unit=0) const</td></tr>
 <tr class="memdesc:ab805d4967e99752251283f13f81d20cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie la texture à l'unité demandée.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad4728f13e0c7865eed701713aaa8cc42" id="r_ad4728f13e0c7865eed701713aaa8cc42"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4728f13e0c7865eed701713aaa8cc42">glWrappingMode</a> = GL_REPEAT</td></tr>
+<tr class="memdesc:ad4728f13e0c7865eed701713aaa8cc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le mode de wrapping de la texture openGL (cf. doc opengl pour les options possibles)  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Transporte un ID de texture OpenGL. </p>
@@ -258,6 +265,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aecca9b7947c7005f7ec8217379a58c4d" name="aecca9b7947c7005f7ec8217379a58c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecca9b7947c7005f7ec8217379a58c4d">&#9670;&#160;</a></span>GetSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::ivec2 Engine::Graphics::Texture::GetSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la taille de la texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::ivec2 </dd></dl>
+
+</div>
+</div>
 <a id="a4294d430f99393ecf2a87bec31533b2b" name="a4294d430f99393ecf2a87bec31533b2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4294d430f99393ecf2a87bec31533b2b">&#9670;&#160;</a></span>LoadFromFile()</h2>
 
@@ -310,6 +337,23 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ad4728f13e0c7865eed701713aaa8cc42" name="ad4728f13e0c7865eed701713aaa8cc42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4728f13e0c7865eed701713aaa8cc42">&#9670;&#160;</a></span>glWrappingMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum Engine::Graphics::Texture::glWrappingMode = GL_REPEAT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Le mode de wrapping de la texture openGL (cf. doc opengl pour les options possibles) </p>
 
 </div>
 </div>

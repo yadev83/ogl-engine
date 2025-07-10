@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -114,12 +114,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa9aab1e8202d3a9fe00e7cf5b3bcc64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime le composant associé à l'entityID donné  <br /></td></tr>
 <tr class="memitem:a7db350f1ddd6c2444b8ec5e67fed1a12" id="r_a7db350f1ddd6c2444b8ec5e67fed1a12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7db350f1ddd6c2444b8ec5e67fed1a12">Clear</a> () override</td></tr>
 <tr class="memdesc:a7db350f1ddd6c2444b8ec5e67fed1a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nettoye le stockage de composants.  <br /></td></tr>
-<tr class="memitem:ae494ca4da115ff73d2daa3ac7f7034d8" id="r_ae494ca4da115ff73d2daa3ac7f7034d8"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae494ca4da115ff73d2daa3ac7f7034d8">Get</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID)</td></tr>
-<tr class="memdesc:ae494ca4da115ff73d2daa3ac7f7034d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur vers le composant associé à l'entityID.  <br /></td></tr>
-<tr class="memitem:aa47681fddc6ce4967f70e2f02966ae0c" id="r_aa47681fddc6ce4967f70e2f02966ae0c"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa47681fddc6ce4967f70e2f02966ae0c">GetRef</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID)</td></tr>
-<tr class="memdesc:aa47681fddc6ce4967f70e2f02966ae0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une référence vers le composant associé à l'entityID.  <br /></td></tr>
-<tr class="memitem:a4476e5838ea0096f4d01105fd975f0f4" id="r_a4476e5838ea0096f4d01105fd975f0f4"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, T * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4476e5838ea0096f4d01105fd975f0f4">GetRaw</a> () const</td></tr>
-<tr class="memdesc:a4476e5838ea0096f4d01105fd975f0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une réfèrence vers la table entière de stockage de composants.  <br /></td></tr>
+<tr class="memitem:a6256dce7eeb6d11c10976c52dd03f709" id="r_a6256dce7eeb6d11c10976c52dd03f709"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6256dce7eeb6d11c10976c52dd03f709">Get</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID, int index=0)</td></tr>
+<tr class="memdesc:a6256dce7eeb6d11c10976c52dd03f709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un pointeur vers le composant associé à l'entityID.  <br /></td></tr>
+<tr class="memitem:aa1781abbcb63a39b3942fb6c8d778428" id="r_aa1781abbcb63a39b3942fb6c8d778428"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1781abbcb63a39b3942fb6c8d778428">GetMany</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID)</td></tr>
+<tr class="memdesc:aa1781abbcb63a39b3942fb6c8d778428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un tableau de composants du type donné, associé à l'entityID.  <br /></td></tr>
+<tr class="memitem:a670762249eeca77bcfaa503b471150a6" id="r_a670762249eeca77bcfaa503b471150a6"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a670762249eeca77bcfaa503b471150a6">GetRef</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID, int index=0)</td></tr>
+<tr class="memdesc:a670762249eeca77bcfaa503b471150a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une référence vers le composant associé à l'entityID.  <br /></td></tr>
+<tr class="memitem:a6218cafe4bbff0aa5fa7474065ced714" id="r_a6218cafe4bbff0aa5fa7474065ced714"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, std::vector&lt; T * &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6218cafe4bbff0aa5fa7474065ced714">GetRaw</a> () const</td></tr>
+<tr class="memdesc:a6218cafe4bbff0aa5fa7474065ced714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une réfèrence vers la table entière de stockage de composants.  <br /></td></tr>
 <tr class="inherit_header pub_methods_struct_engine_1_1_e_c_s_1_1_i_component_storage"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_struct_engine_1_1_e_c_s_1_1_i_component_storage')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="struct_engine_1_1_e_c_s_1_1_i_component_storage.html">Engine::ECS::IComponentStorage</a></td></tr>
 <tr class="memitem:a127a7de23b8b88c9186347c48c966e06 inherit pub_methods_struct_engine_1_1_e_c_s_1_1_i_component_storage" id="r_a127a7de23b8b88c9186347c48c966e06"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_engine_1_1_e_c_s_1_1_i_component_storage.html#a127a7de23b8b88c9186347c48c966e06">~IComponentStorage</a> ()=default</td></tr>
 </table>
@@ -204,8 +206,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="ae494ca4da115ff73d2daa3ac7f7034d8" name="ae494ca4da115ff73d2daa3ac7f7034d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae494ca4da115ff73d2daa3ac7f7034d8">&#9670;&#160;</a></span>Get()</h2>
+<a id="a6256dce7eeb6d11c10976c52dd03f709" name="a6256dce7eeb6d11c10976c52dd03f709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6256dce7eeb6d11c10976c52dd03f709">&#9670;&#160;</a></span>Get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,8 +220,12 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">T * <a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html">Engine::ECS::ComponentStorage</a>&lt; T &gt;::Get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>entityID</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>entityID</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -240,8 +246,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="a4476e5838ea0096f4d01105fd975f0f4" name="a4476e5838ea0096f4d01105fd975f0f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4476e5838ea0096f4d01105fd975f0f4">&#9670;&#160;</a></span>GetRaw()</h2>
+<a id="aa1781abbcb63a39b3942fb6c8d778428" name="aa1781abbcb63a39b3942fb6c8d778428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1781abbcb63a39b3942fb6c8d778428">&#9670;&#160;</a></span>GetMany()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +258,43 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, T * &gt; &amp; <a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html">Engine::ECS::ComponentStorage</a>&lt; T &gt;::GetRaw </td>
+          <td class="memname">std::vector&lt; T * &gt; <a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html">Engine::ECS::ComponentStorage</a>&lt; T &gt;::GetMany </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>entityID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Récupère un tableau de composants du type donné, associé à l'entityID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T*&gt; Un tableau de pointeurs vers les composants demandés </dd></dl>
+
+</div>
+</div>
+<a id="a6218cafe4bbff0aa5fa7474065ced714" name="a6218cafe4bbff0aa5fa7474065ced714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6218cafe4bbff0aa5fa7474065ced714">&#9670;&#160;</a></span>GetRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, std::vector&lt; T * &gt; &gt; &amp; <a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html">Engine::ECS::ComponentStorage</a>&lt; T &gt;::GetRaw </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -266,12 +308,12 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 
 <p>Renvoie une réfèrence vers la table entière de stockage de composants. </p>
-<dl class="section return"><dt>Returns</dt><dd>const std::unordered_map&lt;EntityID, T&gt;&amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const std::unordered_map&lt;EntityID, std::vector&lt;T*&gt;&gt;&amp; </dd></dl>
 
 </div>
 </div>
-<a id="aa47681fddc6ce4967f70e2f02966ae0c" name="aa47681fddc6ce4967f70e2f02966ae0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa47681fddc6ce4967f70e2f02966ae0c">&#9670;&#160;</a></span>GetRef()</h2>
+<a id="a670762249eeca77bcfaa503b471150a6" name="a670762249eeca77bcfaa503b471150a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670762249eeca77bcfaa503b471150a6">&#9670;&#160;</a></span>GetRef()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -284,8 +326,12 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">T &amp; <a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html">Engine::ECS::ComponentStorage</a>&lt; T &gt;::GetRef </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>entityID</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>entityID</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
         </tr>
       </table>
   </td>

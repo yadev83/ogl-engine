@@ -14,9 +14,11 @@ var searchData=
   ['format_11',['format',['../struct_engine_1_1_core_1_1_pak_header.html#aa60ab10b991c766ba8f1252438351a5a',1,'Engine::Core::PakHeader']]],
   ['fpslimit_12',['fpsLimit',['../struct_engine_1_1_app_1_1_app_settings.html#a07480b614e7c61ea5b318e1599311592',1,'Engine::App::AppSettings']]],
   ['framebuffersizecallbackfittoapp_13',['FramebufferSizeCallbackFitToApp',['../namespace_engine.html#ab2215b2201e008e4d97453e52899be24',1,'Engine']]],
-  ['freepak_14',['FreePak',['../class_engine_1_1_utils_1_1_resource_manager.html#a6bc34c8ad35656ffaa809ec43792cfef',1,'Engine::Utils::ResourceManager']]],
-  ['freezepositionx_15',['freezePositionX',['../struct_engine_1_1_physics_1_1_rigidbody.html#ad5b8f5a67af9332e362f064378eedb77',1,'Engine::Physics::Rigidbody']]],
-  ['freezepositiony_16',['freezePositionY',['../struct_engine_1_1_physics_1_1_rigidbody.html#a9a85968cf36d53d1a4d929cfa9aef554',1,'Engine::Physics::Rigidbody']]],
-  ['freezepositionz_17',['freezePositionZ',['../struct_engine_1_1_physics_1_1_rigidbody.html#a6b81eae4bade769ba6dd6884be7059e3',1,'Engine::Physics::Rigidbody']]],
-  ['friction_18',['friction',['../struct_engine_1_1_physics_1_1_rigidbody.html#a9446ec1b475ff46f9203da0c7be7eff5',1,'Engine::Physics::Rigidbody']]]
+  ['frameduration_14',['frameDuration',['../struct_engine_1_1_graphics_1_1_sprite_animation.html#a883afe66c48bff11f7719560cc753edc',1,'Engine::Graphics::SpriteAnimation']]],
+  ['frames_15',['frames',['../struct_engine_1_1_graphics_1_1_sprite_animation.html#abb96f154912ce426a3912fa61bd0197d',1,'Engine::Graphics::SpriteAnimation']]],
+  ['freepak_16',['FreePak',['../class_engine_1_1_utils_1_1_resource_manager.html#a6bc34c8ad35656ffaa809ec43792cfef',1,'Engine::Utils::ResourceManager']]],
+  ['freezepositionx_17',['freezePositionX',['../struct_engine_1_1_physics_1_1_rigidbody.html#ad5b8f5a67af9332e362f064378eedb77',1,'Engine::Physics::Rigidbody']]],
+  ['freezepositiony_18',['freezePositionY',['../struct_engine_1_1_physics_1_1_rigidbody.html#a9a85968cf36d53d1a4d929cfa9aef554',1,'Engine::Physics::Rigidbody']]],
+  ['freezepositionz_19',['freezePositionZ',['../struct_engine_1_1_physics_1_1_rigidbody.html#a6b81eae4bade769ba6dd6884be7059e3',1,'Engine::Physics::Rigidbody']]],
+  ['friction_20',['friction',['../struct_engine_1_1_physics_1_1_rigidbody.html#a9446ec1b475ff46f9203da0c7be7eff5',1,'Engine::Physics::Rigidbody']]]
 ];

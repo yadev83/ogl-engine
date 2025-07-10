@@ -6,6 +6,7 @@ var dir_e79632891301b850df87e9c0030293fa =
     [ "particlesystem.hpp", "particlesystem_8hpp.html", "particlesystem_8hpp" ],
     [ "shader.cpp", "shader_8cpp.html", null ],
     [ "shader.hpp", "shader_8hpp.html", "shader_8hpp" ],
+    [ "sprite.cpp", "sprite_8cpp.html", null ],
     [ "sprite.hpp", "sprite_8hpp.html", "sprite_8hpp" ],
     [ "texture.cpp", "texture_8cpp.html", "texture_8cpp" ],
     [ "texture.hpp", "texture_8hpp.html", "texture_8hpp" ]

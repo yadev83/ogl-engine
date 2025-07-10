@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -91,7 +91,8 @@ $(function(){initNavTree('functions_g.html','',''); });
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>Get()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html#ae494ca4da115ff73d2daa3ac7f7034d8">Engine::ECS::ComponentStorage&lt; T &gt;</a>, <a class="el" href="class_engine_1_1_graphics_1_1_texture.html#a74da08d473005f8497115bda0bdfd902">Engine::Graphics::Texture</a></li>
+<li>Get()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html#a6256dce7eeb6d11c10976c52dd03f709">Engine::ECS::ComponentStorage&lt; T &gt;</a>, <a class="el" href="class_engine_1_1_graphics_1_1_texture.html#a74da08d473005f8497115bda0bdfd902">Engine::Graphics::Texture</a></li>
+<li>GetAnimation()&#160;:&#160;<a class="el" href="class_engine_1_1_graphics_1_1_sprite_animator.html#accb96ca7aabf4871c88bb24bc258b21c">Engine::Graphics::SpriteAnimator</a></li>
 <li>GetApp()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component.html#a7b151d1dc38f523b3d4ea14fef37acd4">Engine::ECS::Component</a>, <a class="el" href="class_engine_1_1_e_c_s_1_1_system.html#a9ad51eb10256be8ef7c6cc08225f1301">Engine::ECS::System</a>, <a class="el" href="class_engine_1_1_scene_1_1_scene.html#a09b85459a789d95d637148f7cb0cde23">Engine::Scene::Scene</a></li>
 <li>GetBinaryFile()&#160;:&#160;<a class="el" href="class_engine_1_1_core_1_1_pak_file.html#a4f7ba06e9ff1df0f143959682bb14d35">Engine::Core::PakFile</a></li>
 <li>GetBinaryFileFromPak()&#160;:&#160;<a class="el" href="class_engine_1_1_utils_1_1_resource_manager.html#aa5fa9ba070747a5e89f9727dfdbf2512">Engine::Utils::ResourceManager</a></li>
@@ -99,8 +100,11 @@ $(function(){initNavTree('functions_g.html','',''); });
 <li>GetCamera()&#160;:&#160;<a class="el" href="class_engine_1_1_scene_1_1_scene.html#a377d0738d2da48992d20266b122b5df1">Engine::Scene::Scene</a></li>
 <li>GetChar()&#160;:&#160;<a class="el" href="class_engine_1_1_u_i_1_1_font.html#ae01c611d3ad780551cc08495c2b03801">Engine::UI::Font</a></li>
 <li>GetComponent()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_entity.html#a353ddbadc1f1f6d4e804629959dd5340">Engine::ECS::Entity</a>, <a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html#a47ec7022d0a8811c4a4bc630cbcebc85">Engine::ECS::Registry</a></li>
+<li>GetComponents()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_entity.html#a813f8a4c8ca9d6123026e22ed94d8b75">Engine::ECS::Entity</a>, <a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html#a13c1e42f21002c1aeb8e395ec122cc39">Engine::ECS::Registry</a></li>
 <li>GetComponentTypeID()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html#a8f32b1754451aa5579f2e7bef5d6e344">Engine::ECS::Registry</a></li>
+<li>GetCurrentAnimationName()&#160;:&#160;<a class="el" href="class_engine_1_1_graphics_1_1_sprite_animator.html#adfdd19ce8eeb0619f19e638a6f65184d">Engine::Graphics::SpriteAnimator</a></li>
 <li>GetCurrentCamera()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#afdd11228c8d9b6e9da0193e14d7b14a5">Engine::App</a></li>
+<li>GetCurrentFrame()&#160;:&#160;<a class="el" href="class_engine_1_1_graphics_1_1_sprite_animator.html#adb579ca45d7a0ccd3a83974d00c987d6">Engine::Graphics::SpriteAnimator</a></li>
 <li>GetCurrentScene()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#a4093c78623122d2501802cca7aa67eef">Engine::App</a></li>
 <li>GetEntity()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component.html#ae33e06d6663d2e894eda1642fa2bcee1">Engine::ECS::Component</a></li>
 <li>GetEntityIDsWith()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html#a1d39c1629448cbfd65a4b8d67cd5d1cf">Engine::ECS::Registry</a></li>
@@ -115,34 +119,38 @@ $(function(){initNavTree('functions_g.html','',''); });
 <li>GetID()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_entity.html#a2dddc1c5c0449fe49cf4aa20da5bbed4">Engine::ECS::Entity</a>, <a class="el" href="class_engine_1_1_graphics_1_1_shader.html#ae10df6a6474dd2225b96891ce9aeedbf">Engine::Graphics::Shader</a></li>
 <li>GetInt()&#160;:&#160;<a class="el" href="class_engine_1_1_utils_1_1_ini_parser.html#ae3c4a4cf1127471402c0ca0850f04d32">Engine::Utils::IniParser</a></li>
 <li>GetKey()&#160;:&#160;<a class="el" href="class_engine_1_1_input_1_1_input_manager.html#a06da68ca9a4069b486b9ff5f39d76c3a">Engine::Input::InputManager</a></li>
+<li>GetMany()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html#aa1781abbcb63a39b3942fb6c8d778428">Engine::ECS::ComponentStorage&lt; T &gt;</a></li>
 <li>GetMouseButton()&#160;:&#160;<a class="el" href="class_engine_1_1_input_1_1_input_manager.html#a0119042d79ce10f911d6c35a63e337b7">Engine::Input::InputManager</a></li>
 <li>GetMousePosition()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#af99498eb65bae2739f1e7ba2e97361f9">Engine::App</a>, <a class="el" href="class_engine_1_1_input_1_1_input_manager.html#a300839aefcd9bce0a5e6c8693ae778df">Engine::Input::InputManager</a></li>
 <li>GetMouseScroll()&#160;:&#160;<a class="el" href="class_engine_1_1_input_1_1_input_manager.html#a55ed67f0bb0e0f0a0b050c3a71a93144">Engine::Input::InputManager</a></li>
 <li>GetPosition()&#160;:&#160;<a class="el" href="class_engine_1_1_scene_1_1_i_camera.html#af8bf4fecb58a9a6e1c50eea4becbb9b0">Engine::Scene::ICamera</a></li>
 <li>GetProjectedMousePosition()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#ada665bc6bcbf456aaf5530746971c29f">Engine::App</a></li>
 <li>GetProjectionMatrix()&#160;:&#160;<a class="el" href="class_engine_1_1_scene_1_1_camera2_d.html#ac0623847d154d84dca2bf8cf54dbcad5">Engine::Scene::Camera2D</a>, <a class="el" href="class_engine_1_1_scene_1_1_i_camera.html#a4b8d311058037b70085f4aa95734e2f3">Engine::Scene::ICamera</a></li>
-<li>GetRaw()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html#a4476e5838ea0096f4d01105fd975f0f4">Engine::ECS::ComponentStorage&lt; T &gt;</a></li>
+<li>GetRaw()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html#a6218cafe4bbff0aa5fa7474065ced714">Engine::ECS::ComponentStorage&lt; T &gt;</a></li>
 <li>GetRawContext()&#160;:&#160;<a class="el" href="class_engine_1_1_core_1_1_window.html#ab6944b3e8f9776398828934efef22a12">Engine::Core::Window</a></li>
-<li>GetRef()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html#aa47681fddc6ce4967f70e2f02966ae0c">Engine::ECS::ComponentStorage&lt; T &gt;</a></li>
+<li>GetRef()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component_storage.html#a670762249eeca77bcfaa503b471150a6">Engine::ECS::ComponentStorage&lt; T &gt;</a></li>
 <li>GetRegistry()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component.html#ae9e64d7bc8475db7c710ba43c6c97363">Engine::ECS::Component</a>, <a class="el" href="class_engine_1_1_e_c_s_1_1_entity.html#acc546a81a2e4596fadfc373273890d8f">Engine::ECS::Entity</a>, <a class="el" href="class_engine_1_1_e_c_s_1_1_system.html#a90303eeb793a905e9f17234b9950a0a1">Engine::ECS::System</a>, <a class="el" href="class_engine_1_1_scene_1_1_scene.html#a0c079060996b7c0dc2046ca5126bc411">Engine::Scene::Scene</a></li>
 <li>GetRenderTarget()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#a238bc6c01039921dcfc42ee642072972">Engine::App</a></li>
 <li>GetScene()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_component.html#a7ee320bb8b57ff2f39e1a5c9685fb3b4">Engine::ECS::Component</a>, <a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html#aef4e4c3db6f1ce0aebe0d5a8bb57233a">Engine::ECS::Registry</a></li>
 <li>GetShader()&#160;:&#160;<a class="el" href="class_engine_1_1_utils_1_1_resource_manager.html#a536fd9e7439ee636141901e7948afcc6">Engine::Utils::ResourceManager</a></li>
-<li>GetSize()&#160;:&#160;<a class="el" href="class_engine_1_1_core_1_1_window.html#a9860769f53ebe2ed220f7875b494a85c">Engine::Core::Window</a></li>
+<li>GetSize()&#160;:&#160;<a class="el" href="class_engine_1_1_core_1_1_window.html#a9860769f53ebe2ed220f7875b494a85c">Engine::Core::Window</a>, <a class="el" href="class_engine_1_1_graphics_1_1_texture.html#aecca9b7947c7005f7ec8217379a58c4d">Engine::Graphics::Texture</a></li>
 <li>GetSound()&#160;:&#160;<a class="el" href="class_engine_1_1_utils_1_1_resource_manager.html#aa0c33752d7e18ca9f69fb1c10855fb45">Engine::Utils::ResourceManager</a></li>
 <li>GetState()&#160;:&#160;<a class="el" href="class_engine_1_1_utils_1_1_state_store.html#aff62b480d1bc99ae8d0e73e1608421a2">Engine::Utils::StateStore</a></li>
 <li>GetString()&#160;:&#160;<a class="el" href="class_engine_1_1_utils_1_1_ini_parser.html#a5077c05f3d6c5b8bdcc1ad5997c55d6c">Engine::Utils::IniParser</a></li>
 <li>GetSystem()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#a2a4902b007406558637d48f7f2f9abe9">Engine::App</a></li>
+<li>GetTags()&#160;:&#160;<a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html#ab44a33a97d4bbc7d617d3220dc4131f7">Engine::ECS::Registry</a></li>
 <li>GetTextFile()&#160;:&#160;<a class="el" href="class_engine_1_1_core_1_1_pak_file.html#a76d55e5c41a4a1c3d6a6c1720084ba95">Engine::Core::PakFile</a></li>
 <li>GetTextFileFromPak()&#160;:&#160;<a class="el" href="class_engine_1_1_utils_1_1_resource_manager.html#a19c9e60eb701d37cfc1e028757303297">Engine::Utils::ResourceManager</a></li>
 <li>GetTextSize()&#160;:&#160;<a class="el" href="class_engine_1_1_u_i_1_1_font.html#af2e5c476f83b7d6af59c51b21eaa078f">Engine::UI::Font</a></li>
 <li>GetTexture()&#160;:&#160;<a class="el" href="class_engine_1_1_render_1_1_render_target.html#a3a2b602e8414e8f1761c8daa501fd41f">Engine::Render::RenderTarget</a>, <a class="el" href="class_engine_1_1_utils_1_1_resource_manager.html#ac27a1f435cdcb9ade66ebfc04a9904f9">Engine::Utils::ResourceManager</a></li>
+<li>GetUniform()&#160;:&#160;<a class="el" href="class_engine_1_1_graphics_1_1_material.html#a65826da9ab643d316076e6dd60262735">Engine::Graphics::Material</a></li>
 <li>GetViewHeight()&#160;:&#160;<a class="el" href="class_engine_1_1_scene_1_1_i_camera.html#a33535722f0ea7f12c98a9c910a381d14">Engine::Scene::ICamera</a></li>
 <li>GetViewMatrix()&#160;:&#160;<a class="el" href="class_engine_1_1_scene_1_1_camera2_d.html#a5a245369076c66db8262b61aa8bbf484">Engine::Scene::Camera2D</a>, <a class="el" href="class_engine_1_1_scene_1_1_i_camera.html#a5b71d7ce3a3c3662909df718bb948f2a">Engine::Scene::ICamera</a></li>
 <li>GetViewWidth()&#160;:&#160;<a class="el" href="class_engine_1_1_scene_1_1_i_camera.html#a852f85b1874778d21f532d2c3ab2ccb9">Engine::Scene::ICamera</a></li>
 <li>GetWidth()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#a11e872328ba2f9380db1c93a8a447edc">Engine::App</a></li>
 <li>GetWindow()&#160;:&#160;<a class="el" href="class_engine_1_1_app.html#a2b2c8c4222e106ea969e8aad6b75f1e7">Engine::App</a></li>
 <li>GetZoom()&#160;:&#160;<a class="el" href="class_engine_1_1_scene_1_1_i_camera.html#ae72ee6dea2ae48aa3a7c8065d8fed7a1">Engine::Scene::ICamera</a></li>
+<li>glWrappingMode&#160;:&#160;<a class="el" href="class_engine_1_1_graphics_1_1_texture.html#ad4728f13e0c7865eed701713aaa8cc42">Engine::Graphics::Texture</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

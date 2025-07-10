@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -102,6 +102,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ae066d5b28b2720e654ceae5578f65974" id="r_ae066d5b28b2720e654ceae5578f65974"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae066d5b28b2720e654ceae5578f65974">other</a></td></tr>
 <tr class="memitem:a0db03d360b8310612c454a1d990119e8" id="r_a0db03d360b8310612c454a1d990119e8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0db03d360b8310612c454a1d990119e8">duration</a> = 0.0f</td></tr>
 <tr class="memitem:a76097a13d8196639d15ae7d58f4ab9b4" id="r_a76097a13d8196639d15ae7d58f4ab9b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76097a13d8196639d15ae7d58f4ab9b4">isTrigger</a> = false</td></tr>
+<tr class="memitem:ad4c512a132b4d735a224fe28722cbe30" id="r_ad4c512a132b4d735a224fe28722cbe30"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4c512a132b4d735a224fe28722cbe30">updatedThisFrame</a> = false</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Une entrée qui permet de savoir quelles entités sont en collision avec un Collider On a des maps de ColliderRecords dans les composants de type Collider pour ça, on peut savoir à chaque instant qui est en collision avec le collider, et depuis combien de temps. </p>
@@ -142,6 +143,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> Engine::Physics::ColliderRecord::other</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4c512a132b4d735a224fe28722cbe30" name="ad4c512a132b4d735a224fe28722cbe30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c512a132b4d735a224fe28722cbe30">&#9670;&#160;</a></span>updatedThisFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::Physics::ColliderRecord::updatedThisFrame = false</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47ec7022d0a8811c4a4bc630cbcebc85" id="r_a47ec7022d0a8811c4a4bc630cbcebc85"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a47ec7022d0a8811c4a4bc630cbcebc85 template"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47ec7022d0a8811c4a4bc630cbcebc85">GetComponent</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID)</td></tr>
 <tr class="memdesc:a47ec7022d0a8811c4a4bc630cbcebc85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le component référencé par l'<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6" title="Définition de type pour mieux identifier les EntityID.">EntityID</a> donné  <br /></td></tr>
+<tr class="memitem:a13c1e42f21002c1aeb8e395ec122cc39" id="r_a13c1e42f21002c1aeb8e395ec122cc39"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a13c1e42f21002c1aeb8e395ec122cc39 template"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13c1e42f21002c1aeb8e395ec122cc39">GetComponents</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID)</td></tr>
+<tr class="memdesc:a13c1e42f21002c1aeb8e395ec122cc39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un vector de pointeurs vers tous les composants du type donné présents.  <br /></td></tr>
 <tr class="memitem:a69024b5ef22beff90c438aa7c901e219" id="r_a69024b5ef22beff90c438aa7c901e219"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a69024b5ef22beff90c438aa7c901e219 template"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69024b5ef22beff90c438aa7c901e219">HasComponent</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID)</td></tr>
 <tr class="memdesc:a69024b5ef22beff90c438aa7c901e219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si une entité possède un component.  <br /></td></tr>
@@ -140,6 +143,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af896c19002cd4ae3be4fc302284e17a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un tag à une entité  <br /></td></tr>
 <tr class="memitem:ad63d8e0281ef1159a0bcb9b0d9f6d711" id="r_ad63d8e0281ef1159a0bcb9b0d9f6d711"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad63d8e0281ef1159a0bcb9b0d9f6d711">HasTag</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID, std::string tag)</td></tr>
 <tr class="memdesc:ad63d8e0281ef1159a0bcb9b0d9f6d711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si une entité possède un tag.  <br /></td></tr>
+<tr class="memitem:ab44a33a97d4bbc7d617d3220dc4131f7" id="r_ab44a33a97d4bbc7d617d3220dc4131f7"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab44a33a97d4bbc7d617d3220dc4131f7">GetTags</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> entityID)</td></tr>
+<tr class="memdesc:ab44a33a97d4bbc7d617d3220dc4131f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie les tags associés à une entité donnée.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -389,6 +394,48 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a id="a13c1e42f21002c1aeb8e395ec122cc39" name="a13c1e42f21002c1aeb8e395ec122cc39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c1e42f21002c1aeb8e395ec122cc39">&#9670;&#160;</a></span>GetComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; T * &gt; Engine::ECS::Registry::GetComponents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>entityID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie un vector de pointeurs vers tous les composants du type donné présents. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T*&gt; </dd></dl>
+
+</div>
+</div>
 <a id="a8f32b1754451aa5579f2e7bef5d6e344" name="a8f32b1754451aa5579f2e7bef5d6e344"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f32b1754451aa5579f2e7bef5d6e344">&#9670;&#160;</a></span>GetComponentTypeID()</h2>
 
@@ -532,6 +579,32 @@ template&lt;typename... TComponents&gt; </div>
 
 <p>Renvoie la scène courante. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="namespace_engine_1_1_scene.html">Scene</a>&amp; </dd></dl>
+
+</div>
+</div>
+<a id="ab44a33a97d4bbc7d617d3220dc4131f7" name="ab44a33a97d4bbc7d617d3220dc4131f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab44a33a97d4bbc7d617d3220dc4131f7">&#9670;&#160;</a></span>GetTags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::string &gt; Engine::ECS::Registry::GetTags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>entityID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie les tags associés à une entité donnée. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityID</td><td>L'ID de l'entité dont on veut les tags </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::set&lt;std::string&gt; La liste de tags </dd></dl>
 
 </div>
 </div>

@@ -22,9 +22,10 @@ var searchData=
   ['isjustreleased_19',['IsJustReleased',['../struct_engine_1_1_input_1_1_key_state.html#ad8b93d5d313b145dd9e8e65588474029',1,'Engine::Input::KeyState']]],
   ['iskinematic_20',['isKinematic',['../struct_engine_1_1_physics_1_1_rigidbody.html#ad20f90b71956932e8a1eeb107f37a467',1,'Engine::Physics::Rigidbody']]],
   ['ispaused_21',['IsPaused',['../class_engine_1_1_e_c_s_1_1_system.html#a364bba12fc9b3c977cd08e85a49d3cd8',1,'Engine::ECS::System']]],
-  ['ispressed_22',['IsPressed',['../struct_engine_1_1_input_1_1_key_state.html#a1594efafe57b23388b49766f6827a7df',1,'Engine::Input::KeyState']]],
-  ['isreleased_23',['IsReleased',['../struct_engine_1_1_input_1_1_key_state.html#a282905a390d595e3ac1ac3cb2da16fff',1,'Engine::Input::KeyState']]],
-  ['isrotated_24',['IsRotated',['../struct_engine_1_1_scene_1_1_transform.html#a3f45506121198cefa415be82993b2fce',1,'Engine::Scene::Transform']]],
-  ['issleeping_25',['isSleeping',['../struct_engine_1_1_physics_1_1_rigidbody.html#a6e5a6f9c3ca393a948dd5011c2999ef7',1,'Engine::Physics::Rigidbody']]],
-  ['istrigger_26',['isTrigger',['../struct_engine_1_1_physics_1_1_collider_record.html#a76097a13d8196639d15ae7d58f4ab9b4',1,'Engine::Physics::ColliderRecord::isTrigger'],['../struct_engine_1_1_physics_1_1_box_collider.html#af7316a45f7b879c1a7217986f75e2dd0',1,'Engine::Physics::BoxCollider::isTrigger']]]
+  ['isplaying_22',['IsPlaying',['../class_engine_1_1_graphics_1_1_sprite_animator.html#aec555bd19325ce9960ab21963a616f4e',1,'Engine::Graphics::SpriteAnimator']]],
+  ['ispressed_23',['IsPressed',['../struct_engine_1_1_input_1_1_key_state.html#a1594efafe57b23388b49766f6827a7df',1,'Engine::Input::KeyState']]],
+  ['isreleased_24',['IsReleased',['../struct_engine_1_1_input_1_1_key_state.html#a282905a390d595e3ac1ac3cb2da16fff',1,'Engine::Input::KeyState']]],
+  ['isrotated_25',['IsRotated',['../struct_engine_1_1_scene_1_1_transform.html#a3f45506121198cefa415be82993b2fce',1,'Engine::Scene::Transform']]],
+  ['issleeping_26',['isSleeping',['../struct_engine_1_1_physics_1_1_rigidbody.html#a6e5a6f9c3ca393a948dd5011c2999ef7',1,'Engine::Physics::Rigidbody']]],
+  ['istrigger_27',['isTrigger',['../struct_engine_1_1_physics_1_1_collider_record.html#a76097a13d8196639d15ae7d58f4ab9b4',1,'Engine::Physics::ColliderRecord::isTrigger'],['../struct_engine_1_1_physics_1_1_box_collider.html#af7316a45f7b879c1a7217986f75e2dd0',1,'Engine::Physics::BoxCollider::isTrigger']]]
 ];

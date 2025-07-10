@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -103,6 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5d05648d6130d6d078693a67712b19a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit une nouvelle entité  <br /></td></tr>
 <tr class="memitem:a2dddc1c5c0449fe49cf4aa20da5bbed4" id="r_a2dddc1c5c0449fe49cf4aa20da5bbed4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dddc1c5c0449fe49cf4aa20da5bbed4">GetID</a> () const</td></tr>
 <tr class="memdesc:a2dddc1c5c0449fe49cf4aa20da5bbed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'identifiant <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6" title="Définition de type pour mieux identifier les EntityID.">EntityID</a> de cette.  <br /></td></tr>
+<tr class="memitem:ac99af2a582c41aeca56e766e1b196257" id="r_ac99af2a582c41aeca56e766e1b196257"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac99af2a582c41aeca56e766e1b196257">ToString</a> () const</td></tr>
+<tr class="memdesc:ac99af2a582c41aeca56e766e1b196257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une chaine de caractères qui représente cette entité  <br /></td></tr>
 <tr class="memitem:acc546a81a2e4596fadfc373273890d8f" id="r_acc546a81a2e4596fadfc373273890d8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html">Registry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc546a81a2e4596fadfc373273890d8f">GetRegistry</a> () const</td></tr>
 <tr class="memdesc:acc546a81a2e4596fadfc373273890d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le registre parent de cet entité  <br /></td></tr>
 <tr class="memitem:a989a0e815b36943aca5e467c35450d7b" id="r_a989a0e815b36943aca5e467c35450d7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a989a0e815b36943aca5e467c35450d7b">AddTag</a> (std::string tag)</td></tr>
@@ -117,7 +119,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad3b8f6c29a1f81363721723520bd663c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime le composant de type T référencé par l'<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6" title="Définition de type pour mieux identifier les EntityID.">EntityID</a> de cette entité  <br /></td></tr>
 <tr class="memitem:a353ddbadc1f1f6d4e804629959dd5340" id="r_a353ddbadc1f1f6d4e804629959dd5340"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a353ddbadc1f1f6d4e804629959dd5340 template"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353ddbadc1f1f6d4e804629959dd5340">GetComponent</a> ()</td></tr>
-<tr class="memdesc:a353ddbadc1f1f6d4e804629959dd5340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le composant de type T associé à cette entité  <br /></td></tr>
+<tr class="memdesc:a353ddbadc1f1f6d4e804629959dd5340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le premier composant de type T associé à cette entité  <br /></td></tr>
+<tr class="memitem:a813f8a4c8ca9d6123026e22ed94d8b75" id="r_a813f8a4c8ca9d6123026e22ed94d8b75"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a813f8a4c8ca9d6123026e22ed94d8b75 template"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a813f8a4c8ca9d6123026e22ed94d8b75">GetComponents</a> ()</td></tr>
+<tr class="memdesc:a813f8a4c8ca9d6123026e22ed94d8b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le tableau de composants de type T associé à cette entité  <br /></td></tr>
 <tr class="memitem:a826a9381a881f8bc598a3f1a5768525d" id="r_a826a9381a881f8bc598a3f1a5768525d"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a826a9381a881f8bc598a3f1a5768525d template"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a826a9381a881f8bc598a3f1a5768525d">HasComponent</a> ()</td></tr>
 <tr class="memdesc:a826a9381a881f8bc598a3f1a5768525d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si l'entité possède le component demandé  <br /></td></tr>
@@ -249,7 +254,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Retourne le composant de type T associé à cette entité </p>
+<p>Retourne le premier composant de type T associé à cette entité </p>
 <p>Wrapper autour de registry-&gt;GetComponent(id) </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td></td></tr>
@@ -257,6 +262,42 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T&amp; Une référence au composant demandé </dd></dl>
+
+</div>
+</div>
+<a id="a813f8a4c8ca9d6123026e22ed94d8b75" name="a813f8a4c8ca9d6123026e22ed94d8b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813f8a4c8ca9d6123026e22ed94d8b75">&#9670;&#160;</a></span>GetComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; T * &gt; Engine::ECS::Entity::GetComponents </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le tableau de composants de type T associé à cette entité </p>
+<p>Wrapper autour de registry-&gt;GetComponents(id) </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T*&gt; Un tableau de pointeurs vers les composants demandés </dd></dl>
 
 </div>
 </div>
@@ -396,6 +437,26 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ac99af2a582c41aeca56e766e1b196257" name="ac99af2a582c41aeca56e766e1b196257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99af2a582c41aeca56e766e1b196257">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Engine::ECS::Entity::ToString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie une chaine de caractères qui représente cette entité </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
 </div>
 </div>

@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.1.0-dev</span>
+   <div id="projectname">OGL Engine<span id="projectnumber">&#160;1.2.0-dev</span>
    </div>
   </td>
  </tr>
@@ -114,10 +114,14 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a5a4048d7863701b4b5763642eddb2106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille de la hitbox du collider. Pour des collisions indépendantes du rendu.  <br /></td></tr>
 <tr class="memitem:af7316a45f7b879c1a7217986f75e2dd0" id="r_af7316a45f7b879c1a7217986f75e2dd0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7316a45f7b879c1a7217986f75e2dd0">isTrigger</a> = false</td></tr>
 <tr class="memdesc:af7316a45f7b879c1a7217986f75e2dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, le collider est un trigger (superposition possible en ne résolvant pas les conditions)  <br /></td></tr>
+<tr class="memitem:a678ff72f3c6d82618503bb009aa21daf" id="r_a678ff72f3c6d82618503bb009aa21daf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a678ff72f3c6d82618503bb009aa21daf">enableRotation</a> = true</td></tr>
+<tr class="memdesc:a678ff72f3c6d82618503bb009aa21daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, le collider est mis à jour en fonction de l'angle de rotation du transform rattaché  <br /></td></tr>
 <tr class="memitem:a2f8046b72ac57cd75ef4cbb1108d0641" id="r_a2f8046b72ac57cd75ef4cbb1108d0641"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, <a class="el" href="struct_engine_1_1_physics_1_1_collider_record.html">ColliderRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8046b72ac57cd75ef4cbb1108d0641">collisionsList</a></td></tr>
 <tr class="memdesc:a2f8046b72ac57cd75ef4cbb1108d0641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des collisions en cours.  <br /></td></tr>
 <tr class="memitem:a29fdb1b87fe8d4d38c6c59f4b5e06d58" id="r_a29fdb1b87fe8d4d38c6c59f4b5e06d58"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, <a class="el" href="struct_engine_1_1_physics_1_1_collider_record.html">ColliderRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29fdb1b87fe8d4d38c6c59f4b5e06d58">triggersList</a></td></tr>
 <tr class="memdesc:a29fdb1b87fe8d4d38c6c59f4b5e06d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des triggers en cours.  <br /></td></tr>
+<tr class="inherit_header pub_attribs_class_engine_1_1_e_c_s_1_1_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_class_engine_1_1_e_c_s_1_1_component')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Attributes inherited from <a class="el" href="class_engine_1_1_e_c_s_1_1_component.html">Engine::ECS::Component</a></td></tr>
+<tr class="memitem:a7443aabffff5e2a561bc8e0d13e3a186 inherit pub_attribs_class_engine_1_1_e_c_s_1_1_component" id="r_a7443aabffff5e2a561bc8e0d13e3a186"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine_1_1_e_c_s_1_1_component.html#a7443aabffff5e2a561bc8e0d13e3a186">enabled</a> = true</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -150,6 +154,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Liste des collisions en cours. </p>
+
+</div>
+</div>
+<a id="a678ff72f3c6d82618503bb009aa21daf" name="a678ff72f3c6d82618503bb009aa21daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a678ff72f3c6d82618503bb009aa21daf">&#9670;&#160;</a></span>enableRotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::Physics::BoxCollider::enableRotation = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Si true, le collider est mis à jour en fonction de l'angle de rotation du transform rattaché </p>
 
 </div>
 </div>

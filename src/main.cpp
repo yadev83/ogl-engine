@@ -21,7 +21,7 @@ using namespace Engine::Utils;
 class Game : public Engine::App {
     public:
         Game(int width = 800, int height = 600, AppSettings settings = {.title="Game"}) : App(width, height, settings) {
-            // Global registration of a debug renderer system
+            // Registration of engine systems. Comment/remove unused ones if necessary
             RegisterSystem<DebugRenderer>();
             #if defined(NDEBUG)
                 GetSystem<DebugRenderer>().Pause();
@@ -29,6 +29,7 @@ class Game : public Engine::App {
             RegisterSystem<BehaviourSystem>();
             RegisterSystem<PhysicSystem>();
             RegisterSystem<SpriteRenderer>();
+            RegisterSystem<SpriteAnimationSystem>();
             RegisterSystem<UIRenderer>();
             RegisterSystem<ParticleSystem>();
             

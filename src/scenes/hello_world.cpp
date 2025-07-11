@@ -41,7 +41,7 @@ void HelloWorld::OnEnter() {
 
 void HelloWorld::OnFixedUpdate(float deltaTime) {
     if(Input::InputManager::GetMouseButton(GLFW_MOUSE_BUTTON_LEFT).IsJustPressed()) {
-        if(activeIds.size() > 100) {
+        if(activeIds.size() > 200) {
             auto id = activeIds.front();
             DestroyEntity(id);
 
@@ -51,7 +51,7 @@ void HelloWorld::OnFixedUpdate(float deltaTime) {
         glm::vec2 worldPos = GetApp().GetProjectedMousePosition();
         auto box = CreateEntity(PrimitiveType::Quad);
         activeIds.push_back(box.GetID());
-        box.GetComponent<Transform>().position = glm::vec3(0.0f);
+        box.GetComponent<Transform>().position = glm::vec3(worldPos, 0.0f);
         box.GetComponent<Transform>().scale = glm::vec3(15.0f, 15.0f, 0.0f);
         box.GetComponent<Rigidbody>().velocity = glm::normalize(glm::vec3(worldPos, 0.0f)) * 1000.0f * deltaTime;
         box.GetComponent<Rigidbody>().isBounceable = true;

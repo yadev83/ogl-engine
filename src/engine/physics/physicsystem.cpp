@@ -4,11 +4,20 @@ using namespace Engine::Scene;
 
 #include <iostream>
 #include <random>
+#include <chrono>
+#include <iostream>
+using namespace std::chrono;
 
 namespace Engine::Physics {
     void PhysicSystem::OnFixedUpdate(float dt) {
+        auto start = high_resolution_clock::now();
+
         ApplyMotion(dt);
         ResolveCollisions(dt);
+
+        auto end = high_resolution_clock::now();
+        duration<double> elapsed = end - start;
+        physicsTime = elapsed.count() ;
     }
 
     void PhysicSystem::ApplyMotion(float dt) {
@@ -23,10 +32,10 @@ namespace Engine::Physics {
             if(rigidbody.isAffectedByGravity && !rigidbody.onGround) rigidbody.acceleration -= glm::vec3(gravity, 0.0f);
 
             rigidbody.velocity += (rigidbody.acceleration) * dt;           
-            transform.Translate(rigidbody.velocity * unitsPerMeter * dt);
+            transform.Translate(rigidbody.velocity * PHYSICS_UNITS_PER_METER * dt);
 
             rigidbody.acceleration = glm::vec3(0.0f);
-            rigidbody.velocity *= dampingFactor;
+            rigidbody.velocity *= PHYSICS_DAMPING_FACTOR;
 
             // Gestion du sleep
             float velocitySquared = glm::length(rigidbody.velocity);
@@ -70,178 +79,179 @@ namespace Engine::Physics {
 
             rb.onGround = false;
             rb.onWall = false;
+            // Mise à jour du collider
+            collider.aabb = AABB(glm::vec2(transform.position), glm::vec2(collider.size * transform.scale), collider.enableRotation ? transform.rotation : glm::quat());
         }
 
-        for(int iteration = 0; iteration < MAX_PHYSICS_ITERATIONS; ++iteration) {
+        SpatialHash hash = BuildSpatialHash(collidableIDs);
+        std::vector<std::pair<EntityID, EntityID>> candidates = GenerateBroadPhasePairs(hash);
+
+        // LOG_DEBUG(std::string("NB COLLIDABLES " + collidableIDs.size()));
+        // LOG_DEBUG(std::string("NB PAIRS " + candidates.size()));
+        if(physicsTime > dt && maxIterations > 1) {
+            maxIterations--;
+        } else if (physicsTime <= dt && maxIterations < MAX_PHYSICS_ITERATIONS) {
+            maxIterations++;
+        }
+
+        for(int iteration = 0; iteration < maxIterations; ++iteration) {
             bool collisionOccurred = false;
 
-            for(size_t i = 0; i < collidableIDs.size(); ++i) {
-                for(size_t j = i + 1; j < collidableIDs.size(); ++j) {
-                    EntityID aID = collidableIDs[i];
-                    EntityID bID = collidableIDs[j];
+            for(auto [aID, bID] : candidates) {
+                auto& ta = GetRegistry().GetComponent<Transform>(aID);
+                auto& tb = GetRegistry().GetComponent<Transform>(bID);
+                auto& ra = GetRegistry().GetComponent<Rigidbody>(aID);
+                auto& rb = GetRegistry().GetComponent<Rigidbody>(bID);
+                auto& ca = GetRegistry().GetComponent<BoxCollider>(aID);
+                auto& cb = GetRegistry().GetComponent<BoxCollider>(bID);
 
-                    auto& ta = GetRegistry().GetComponent<Transform>(aID);
-                    auto& tb = GetRegistry().GetComponent<Transform>(bID);
-                    auto& ra = GetRegistry().GetComponent<Rigidbody>(aID);
-                    auto& rb = GetRegistry().GetComponent<Rigidbody>(bID);
-                    auto& ca = GetRegistry().GetComponent<BoxCollider>(aID);
-                    auto& cb = GetRegistry().GetComponent<BoxCollider>(bID);
+                CollisionManifold manifold = CheckAABBCollision(ca.aabb, cb.aabb);
 
-                    AABB aBox(glm::vec2(ta.position), glm::vec2(ca.size * ta.scale), ca.enableRotation ? ta.rotation : glm::quat());
-                    AABB bBox(glm::vec2(tb.position), glm::vec2(cb.size * tb.scale), cb.enableRotation ? tb.rotation : glm::quat());
+                if(!manifold.colliding || (ra.isKinematic && rb.isKinematic)) continue;
 
-                    CollisionManifold manifold = CheckAABBCollision(aBox, bBox);
+                // Liste de collisionsRecords en fonction des types (isTrigger ou pas)
+                bool isTrigger = ca.isTrigger || cb.isTrigger;
+                auto& aRecords = isTrigger ? ca.triggersList : ca.collisionsList;
+                auto& bRecords = isTrigger ? cb.triggersList : cb.collisionsList;
 
-                    if(!manifold.colliding || (ra.isKinematic && rb.isKinematic)) continue;
+                // Mise à jour des collider records
+                // A => B
+                if(aRecords.contains(bID)) {
+                    ColliderRecord& record = aRecords[bID];
+                    record.duration += dt;
+                    record.updatedThisFrame = true;
 
-                    // Liste de collisionsRecords en fonction des types (isTrigger ou pas)
-                    bool isTrigger = ca.isTrigger || cb.isTrigger;
-                    auto& aRecords = isTrigger ? ca.triggersList : ca.collisionsList;
-                    auto& bRecords = isTrigger ? cb.triggersList : cb.collisionsList;
-
-                    // Mise à jour des collider records
-                    // A => B
-                    if(aRecords.contains(bID)) {
-                        ColliderRecord& record = aRecords[bID];
-                        record.duration += dt;
-                        record.updatedThisFrame = true;
-
-                        if (GetRegistry().HasComponent<Behaviour>(aID)) {
-                            auto scripts = GetRegistry().GetComponents<Behaviour>(aID);
-                            for (auto script : scripts) {
-                                if (isTrigger) script->OnTriggerStay(cb.GetEntity(), manifold);
-                                else script->OnCollisionStay(cb.GetEntity(), manifold);
-                            }
-                        }
-                    } else {
-                        aRecords[bID] = {bID, 0.0f, isTrigger, true};
-
-                        if (GetRegistry().HasComponent<Behaviour>(aID)) {
-                            auto scripts = GetRegistry().GetComponents<Behaviour>(aID);
-                            for (auto script : scripts) {
-                                if (isTrigger) script->OnTriggerEnter(cb.GetEntity(), manifold);
-                                else script->OnCollisionEnter(cb.GetEntity(), manifold);
-                            }
+                    if (GetRegistry().HasComponent<Behaviour>(aID)) {
+                        auto scripts = GetRegistry().GetComponents<Behaviour>(aID);
+                        for (auto script : scripts) {
+                            if (isTrigger) script->OnTriggerStay(cb.GetEntity(), manifold);
+                            else script->OnCollisionStay(cb.GetEntity(), manifold);
                         }
                     }
+                } else {
+                    aRecords[bID] = {bID, 0.0f, isTrigger, true};
 
-                    // B => A
-                    if (bRecords.contains(aID)) {
-                        ColliderRecord& record = bRecords[aID];
-                        record.duration += dt;
-                        record.updatedThisFrame = true;
-
-                        if (GetRegistry().HasComponent<Behaviour>(bID)) {
-                            auto scripts = GetRegistry().GetComponents<Behaviour>(bID);
-                            for (auto script : scripts) {
-                                if (isTrigger) script->OnTriggerStay(ca.GetEntity(), manifold);
-                                else script->OnCollisionStay(ca.GetEntity(), manifold);
-                            }
-                        }
-                    } else {
-                        bRecords[aID] = {aID, 0.0f, isTrigger, true};
-
-                        if (GetRegistry().HasComponent<Behaviour>(bID)) {
-                            auto scripts = GetRegistry().GetComponents<Behaviour>(bID);
-                            for (auto script : scripts) {
-                                if (isTrigger) script->OnTriggerEnter(ca.GetEntity(), manifold);
-                                else script->OnCollisionEnter(ca.GetEntity(), manifold);
-                            }
+                    if (GetRegistry().HasComponent<Behaviour>(aID)) {
+                        auto scripts = GetRegistry().GetComponents<Behaviour>(aID);
+                        for (auto script : scripts) {
+                            if (isTrigger) script->OnTriggerEnter(cb.GetEntity(), manifold);
+                            else script->OnCollisionEnter(cb.GetEntity(), manifold);
                         }
                     }
-
-                    // Calcul de la vélocité selon la normale de la collision
-                    glm::vec3 relativeVelocity = rb.velocity - ra.velocity;
-                    float velAlongNormal = glm::dot(relativeVelocity, manifold.normal);
-
-                    // Réveille les entités endormies en cas de collision
-                    // Check si la vitesse projetée (ou la vitesse de l'objet qui entre en collision) est assez élevée pour wake up
-                    if (ra.isSleeping && !ra.isKinematic) {
-                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(rb.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD || std::abs(manifold.penetration) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
-                            ra.isSleeping = false;
-                            ra.sleepTimer = 0.0f;
-                        }
-                    }
-                    
-                    if (rb.isSleeping && !rb.isKinematic) {
-                        if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(ra.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD  || std::abs(manifold.penetration) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
-                            rb.isSleeping = false;
-                            rb.sleepTimer = 0.0f;
-                        }
-                    }
-
-                    // 1. Skip la résolution entre deux objets endormis (ou si l'un des deux est un trigger)
-                    if ((ra.isSleeping && rb.isSleeping) || isTrigger) continue;
-                    
-                    // 2. Skip les entités trop éloignées
-                    float broadphaseMargin = 100.0f;
-                    if (!aBox.Intersects(bBox, broadphaseMargin)) continue;
-
-                    // Correction de pénétration
-                    float correctionFactor = 0.8f;
-                    glm::vec3 correction = manifold.normal * manifold.penetration * correctionFactor;
-
-                    float invMassA = (ra.isKinematic || ra.mass <= 0) ? 0.0f : 1.0f / ra.mass;
-                    float invMassB = (rb.isKinematic || rb.mass <= 0) ? 0.0f : 1.0f / rb.mass;
-                    float invMassSum = invMassA + invMassB;
-
-                    if (invMassSum > 0.0f) {
-                        glm::vec3 moveA = -correction * (invMassA / invMassSum);
-                        glm::vec3 moveB =  correction * (invMassB / invMassSum);
-
-                        if (!ra.isKinematic) ta.position += moveA;
-                        if (!rb.isKinematic) tb.position += moveB;
-                    }
-
-                    // Gestion du rebond si au moins un est bounceable
-                    if (ra.isBounceable || rb.isBounceable) {
-                        if (velAlongNormal < 0.0f) {
-                            float restitution = 0.5f * (ra.restitution + rb.restitution);
-
-                            float impulseMag = -(1.0f + restitution) * velAlongNormal / invMassSum;
-                            glm::vec3 impulse = impulseMag * manifold.normal;
-
-                            if (!ra.isKinematic) ra.velocity -= impulse * invMassA;
-                            if (!rb.isKinematic) rb.velocity += impulse * invMassB;
-                        }
-                    }
-
-                    // Gestion du ralentissement dû a la friction contre un objet
-                    // Appliquer la friction dynamique sur chaque objet
-                    auto applyFriction = [](Rigidbody& rb, const glm::vec2& normal, float friction) {
-                        glm::vec3 tangent = glm::normalize(glm::vec3(-normal.y, normal.x, 0.0f));
-
-                        float tangentialSpeed = glm::dot(rb.velocity, tangent);
-                        float frictionMag = tangentialSpeed * friction;
-
-                        // Soustraire une portion de la vitesse tangentielle
-                        if (std::abs(tangentialSpeed) > 0.01f) {
-                            rb.velocity -= tangent * frictionMag;
-                        }
-                    };
-
-                    float frictionA = ra.friction;
-                    float frictionB = rb.friction;
-                    float combinedFriction = (frictionA + frictionB) * 0.5f;
-
-                    // Attention à NaN
-                    if (std::isfinite(combinedFriction) && combinedFriction > 0.0f) {
-                        if(!ra.isKinematic) applyFriction(ra, manifold.normal, combinedFriction);
-                        if(!rb.isKinematic) applyFriction(rb, -manifold.normal, combinedFriction);
-                    }
-
-                    // Détection "au sol" et "contre un mur"
-                    if (!ra.isKinematic) {
-                        if (glm::dot(manifold.normal, glm::vec3(0, 1, 0)) > 0.5f) ra.onGround = true;
-                        if (std::abs(glm::dot(manifold.normal, glm::vec3(1, 0, 0))) > 0.5f) ra.onWall = true;
-                    }
-                    if (!rb.isKinematic) {
-                        if (glm::dot(-manifold.normal, glm::vec3(0, 1, 0)) > 0.5f) rb.onGround = true;
-                        if (std::abs(glm::dot(-manifold.normal, glm::vec3(1, 0, 0))) > 0.5f) rb.onWall = true;
-                    }
-
-                    collisionOccurred = true;
                 }
+
+                // B => A
+                if (bRecords.contains(aID)) {
+                    ColliderRecord& record = bRecords[aID];
+                    record.duration += dt;
+                    record.updatedThisFrame = true;
+
+                    if (GetRegistry().HasComponent<Behaviour>(bID)) {
+                        auto scripts = GetRegistry().GetComponents<Behaviour>(bID);
+                        for (auto script : scripts) {
+                            if (isTrigger) script->OnTriggerStay(ca.GetEntity(), manifold);
+                            else script->OnCollisionStay(ca.GetEntity(), manifold);
+                        }
+                    }
+                } else {
+                    bRecords[aID] = {aID, 0.0f, isTrigger, true};
+
+                    if (GetRegistry().HasComponent<Behaviour>(bID)) {
+                        auto scripts = GetRegistry().GetComponents<Behaviour>(bID);
+                        for (auto script : scripts) {
+                            if (isTrigger) script->OnTriggerEnter(ca.GetEntity(), manifold);
+                            else script->OnCollisionEnter(ca.GetEntity(), manifold);
+                        }
+                    }
+                }
+
+                // Calcul de la vélocité selon la normale de la collision
+                glm::vec3 relativeVelocity = rb.velocity - ra.velocity;
+                float velAlongNormal = glm::dot(relativeVelocity, manifold.normal);
+
+                // Réveille les entités endormies en cas de collision
+                // Check si la vitesse projetée (ou la vitesse de l'objet qui entre en collision) est assez élevée pour wake up
+                if (ra.isSleeping && !ra.isKinematic) {
+                    if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(rb.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD || std::abs(manifold.penetration) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
+                        ra.isSleeping = false;
+                        ra.sleepTimer = 0.0f;
+                    }
+                }
+                
+                if (rb.isSleeping && !rb.isKinematic) {
+                    if(std::abs(velAlongNormal) > PHYSICS_SLEEP_SPEED_THRESHOLD || glm::length(ra.velocity) > PHYSICS_SLEEP_SPEED_THRESHOLD  || std::abs(manifold.penetration) > PHYSICS_SLEEP_SPEED_THRESHOLD) {
+                        rb.isSleeping = false;
+                        rb.sleepTimer = 0.0f;
+                    }
+                }
+
+                // Skip la résolution entre deux objets endormis (ou si l'un des deux est un trigger)
+                if ((ra.isSleeping && rb.isSleeping) || isTrigger) continue;
+
+                // Correction de pénétration
+                float correctionFactor = 0.8f;
+                glm::vec3 correction = manifold.normal * manifold.penetration * correctionFactor;
+
+                float invMassA = (ra.isKinematic || ra.mass <= 0) ? 0.0f : 1.0f / ra.mass;
+                float invMassB = (rb.isKinematic || rb.mass <= 0) ? 0.0f : 1.0f / rb.mass;
+                float invMassSum = invMassA + invMassB;
+
+                if (invMassSum > 0.0f) {
+                    glm::vec3 moveA = -correction * (invMassA / invMassSum);
+                    glm::vec3 moveB =  correction * (invMassB / invMassSum);
+
+                    if (!ra.isKinematic) ta.position += moveA;
+                    if (!rb.isKinematic) tb.position += moveB;
+                }
+
+                // Gestion du rebond si au moins un est bounceable
+                if (ra.isBounceable || rb.isBounceable) {
+                    if (velAlongNormal < 0.0f) {
+                        float restitution = 0.5f * (ra.restitution + rb.restitution);
+
+                        float impulseMag = -(1.0f + restitution) * velAlongNormal / invMassSum;
+                        glm::vec3 impulse = impulseMag * manifold.normal;
+
+                        if (!ra.isKinematic) ra.velocity -= impulse * invMassA;
+                        if (!rb.isKinematic) rb.velocity += impulse * invMassB;
+                    }
+                }
+
+                // Gestion du ralentissement dû a la friction contre un objet
+                // Appliquer la friction dynamique sur chaque objet
+                auto applyFriction = [](Rigidbody& rb, const glm::vec2& normal, float friction) {
+                    glm::vec3 tangent = glm::normalize(glm::vec3(-normal.y, normal.x, 0.0f));
+
+                    float tangentialSpeed = glm::dot(rb.velocity, tangent);
+                    float frictionMag = tangentialSpeed * friction;
+
+                    // Soustraire une portion de la vitesse tangentielle
+                    if (std::abs(tangentialSpeed) > 0.01f) {
+                        rb.velocity -= tangent * frictionMag;
+                    }
+                };
+
+                float frictionA = ra.friction;
+                float frictionB = rb.friction;
+                float combinedFriction = (frictionA + frictionB) * 0.5f;
+
+                // Attention à NaN
+                if (std::isfinite(combinedFriction) && combinedFriction > 0.0f) {
+                    if(!ra.isKinematic) applyFriction(ra, manifold.normal, combinedFriction);
+                    if(!rb.isKinematic) applyFriction(rb, -manifold.normal, combinedFriction);
+                }
+
+                // Détection "au sol" et "contre un mur"
+                if (!ra.isKinematic) {
+                    if (glm::dot(manifold.normal, glm::vec3(0, 1, 0)) > 0.5f) ra.onGround = true;
+                    if (std::abs(glm::dot(manifold.normal, glm::vec3(1, 0, 0))) > 0.5f) ra.onWall = true;
+                }
+                if (!rb.isKinematic) {
+                    if (glm::dot(-manifold.normal, glm::vec3(0, 1, 0)) > 0.5f) rb.onGround = true;
+                    if (std::abs(glm::dot(-manifold.normal, glm::vec3(1, 0, 0))) > 0.5f) rb.onWall = true;
+                }
+
+                collisionOccurred = true;
             }
 
             if(!collisionOccurred) break;
@@ -394,5 +404,44 @@ namespace Engine::Physics {
         manifold.normal = axis;
         manifold.penetration = minPenetration;
         return manifold;
+    }
+
+    SpatialHash PhysicSystem::BuildSpatialHash(const std::vector<EntityID>& collidableIDs) {
+        SpatialHash output;
+        for(EntityID id : collidableIDs) {
+            auto& t = GetRegistry().GetComponent<Transform>(id);
+            auto& c = GetRegistry().GetComponent<BoxCollider>(id);
+            
+            // Mapping de la taille de l'aabb du collider selon la taille des cellules
+            // (Permet de ramener la position/taille du collider à un emplacement dans une ou plusieurs cellules de taille donnée)
+            int minX = floor((c.aabb.center.x - c.aabb.halfSize.x)/SPATIAL_HASH_CELL_SIZE);
+            int maxX = floor((c.aabb.center.x + c.aabb.halfSize.x)/SPATIAL_HASH_CELL_SIZE);
+            int minY = floor((c.aabb.center.y - c.aabb.halfSize.y)/SPATIAL_HASH_CELL_SIZE);
+            int maxY = floor((c.aabb.center.y + c.aabb.halfSize.y)/SPATIAL_HASH_CELL_SIZE);
+
+            // Pour chaque indice de cellule (entre la plus petite et la plus élevée) dans laquelle notre entité rentre, l'y ajouter.
+            for(int cx = minX; cx <= maxX; ++cx) {
+                for(int cy = minY; cy <= maxY; ++cy) {
+                    output[{(uint32_t)cx, (uint32_t)cy}].push_back(id);
+                }
+            }
+        }
+
+        return output;
+    }
+
+    std::vector<std::pair<EntityID, EntityID>> PhysicSystem::GenerateBroadPhasePairs(SpatialHash spatialHash) {
+        std::set<std::pair<EntityID, EntityID>> pairSet;
+
+        for(auto& bucket : spatialHash) {
+            auto& vec = bucket.second;
+            for(size_t i = 0; i < vec.size(); ++i) {
+                for(size_t j = i + 1; j < vec.size(); ++j) {
+                    pairSet.insert({std::min(vec[i], vec[j]), std::max(vec[i], vec[j])});
+                }
+            }
+        }
+
+        return {pairSet.begin(), pairSet.end()};
     }
 }

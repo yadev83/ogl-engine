@@ -11,6 +11,7 @@
 #include "rigidbody.hpp"
 #include "collider.hpp"
 #include "manifold.hpp"
+#include "spatialhash.hpp"
 #include "aabb.hpp"
 #include "obb.hpp"
 
@@ -23,6 +24,9 @@ namespace Engine::Physics {
      */
     class PhysicSystem : public ECS::System {
         private:
+            int maxIterations = MAX_PHYSICS_ITERATIONS;
+            double physicsTime = 0.0f;
+
             /** @brief Un vecteur de force gravitationnelle à appliquer aux rigidbodies qui y sont soumis
              * 
              * La valeur par défaut est de 9.81
@@ -67,27 +71,23 @@ namespace Engine::Physics {
              * @return glm::vec2 
              */
             glm::vec2 Reflect(const glm::vec2& velocity, const glm::vec2& normal);
-        public:
-            /**
-             * @brief Facteur d'echelle pour le système physique.
-             * 
-             * La simulation physique est basée sur les calculs qu'on pourrait faire dans le monde réel.
-             * Mais un mètre dans la vraie vie n'est pas équivalent à un mètre dans l'application.
-             * 
-             * Ce facteur permet de dire combien d'unités (dans le jeu) sont équivalentes à un mètre (dans la vie)
-             * Par défaut, la valeur est de 100u/m, si 1 unité = 1 pixel, ça veut dire que 100 pixels = 1 mètre.
-             */
-            float unitsPerMeter = 100.0f;
 
             /**
-             * @brief Facteur de ralentissement dans le vide
+             * @brief Génération d'un spatial hash à partir d'entités données
              * 
-             * Simule une perte de vélocité en l'absence de force, poru que les entités ne soient pas en mouvement perpétuel
-             * Par défaut, le ralentissement est léger, mais sur quelques secondes, la vélocité va tendre vers 0.
-             * Passer le dampingFactor à 1, désactive toute forme de ralentissement naturel
+             * @param collidableIDs Les identifiants des entités que l'on considère comme collidables
+             * @return SpatialHash 
              */
-            float dampingFactor = 0.99f;
-        
+            SpatialHash BuildSpatialHash(const std::vector<EntityID>& collidableIDs);
+
+            /**
+             * @brief Génère des paires d'entités pour lesquelles on doit checker les collisions
+             * Le tout en se basant sur le contenu d'une spatialHash
+             * 
+             * @return std::vector<std::pair<EntityID, EntityID>> 
+             */
+            std::vector<std::pair<EntityID, EntityID>> GenerateBroadPhasePairs(SpatialHash spatialHash);
+        public:        
             /**
              * @brief Méthode de cycle de vie de l'app qui appelle les méthodes privées
              * 

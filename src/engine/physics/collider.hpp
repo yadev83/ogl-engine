@@ -8,6 +8,7 @@
 #include <functional>
 
 #include "../ecs/component.hpp"
+#include "aabb.hpp"
 
 namespace Engine::Physics {
     /**
@@ -37,12 +38,11 @@ namespace Engine::Physics {
         /** @brief Si true, le collider est mis à jour en fonction de l'angle de rotation du transform rattaché */
         bool enableRotation = true;
 
+        /** @brief La box AABB associée à ce collider. Mise à jour par le système physique lors de la gestion des mouvements */
+        AABB aabb           = {glm::vec2(0.0f), glm::vec2(0.0f)};
         /** @brief Liste des collisions en cours */
         std::unordered_map<EntityID, ColliderRecord> collisionsList;
         /** @brief Liste des triggers en cours */
         std::unordered_map<EntityID, ColliderRecord> triggersList;
-
-        // TODO : Rajouter les callbacks dans le component "Behaviour" (ancien script)
-        // Dans le système physique, checker si l'entité qui tient le boxcollider possède un behaviour, et appeler les callbacks si besoin
     };
 }

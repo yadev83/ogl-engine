@@ -30,7 +30,7 @@ namespace Engine::Physics {
          * @param size La taille totale (X/Y) de l'AABB
          * @param rot La rotation de l'objet que l'on veut englober (quaternion)
          */
-        AABB(glm::vec2 pos, glm::vec2 size, glm::quat rot) {
+        AABB(glm::vec2 pos, glm::vec2 size, glm::quat rot = glm::quat()) {
             glm::vec2 half = size * 0.5f;
 
             // Définir les 4 coins dans l'espace local

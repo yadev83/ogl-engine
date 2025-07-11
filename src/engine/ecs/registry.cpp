@@ -22,6 +22,7 @@ namespace Engine::ECS {
         if(mAvailableEntityIDs.empty()) throw std::runtime_error("Registry::CreateEntity: no available entity ID was found");
         EntityID entityID = mAvailableEntityIDs.front();
         mAvailableEntityIDs.pop();
+        mLivingEntities.insert(entityID);
 
         return entityID;
     }
@@ -32,7 +33,12 @@ namespace Engine::ECS {
         }
 
         mTags[entityID].clear();
+        mLivingEntities.erase(entityID);
         mAvailableEntityIDs.push(entityID);
+    }
+
+    bool Registry::IsValidEntity(EntityID entityID) {
+        return mLivingEntities.find(entityID) != mLivingEntities.end();
     }
 
     void Registry::Clear() {

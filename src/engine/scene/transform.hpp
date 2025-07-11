@@ -10,6 +10,7 @@
 #include <ostream>
 
 #include "../ecs/component.hpp"
+#include "../ecs/hierarchy.hpp"
 
 namespace Engine::Scene {
     /**
@@ -20,8 +21,6 @@ namespace Engine::Scene {
     struct Transform : public ECS::Component {
         /** @brief La position dans la scène */
         glm::vec3 position              = {0.0f, 0.0f, 0.0f};
-        /** @brief La position dans la scène lors de la frame précédente (mis à jour par .Translate() pour les interpolations) */
-        glm::vec3 lastPosition          = {0.0f, 0.0f, 0.0f};
         /** @brief La rotation (quaternion) du transform */
         glm::quat rotation              = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
         /** @brief Facteur d'argrandissement par lequel tous les components avec une taille sont mis à l'échelle */
@@ -68,5 +67,40 @@ namespace Engine::Scene {
          * @return false 
          */
         bool IsRotated();
+
+        /**
+         * @brief Renvoie la position du transform dans le "monde"
+         * 
+         * Comprendre : Mis à jour en fonction de la position de l'entité parente s'il y en a une
+         * 
+         * @return glm::vec3 
+         */
+        glm::vec3 GetWorldPosition() const;
+        /**
+         * @brief Renvoie la rotation du transform dans le "monde"
+         * 
+         * @return glm::quat 
+         */
+        glm::quat GetWorldRotation() const;
+        /**
+         * @brief Renvoie le scaling "monde" du transform
+         * 
+         * @return glm::vec3 
+         */
+        glm::vec3 GetWorldScale() const;
+
+        /**
+         * @brief Renvoie la matrice modèle locale du transform
+         * 
+         * @return glm::mat4 
+         */
+        glm::mat4 GetLocalMatrix() const;
+
+        /**
+         * @brief Renvoie la matrice modèle "monde" du transform
+         * 
+         * @return glm::mat4 
+         */
+        glm::mat4 GetWorldMatrix() const;
     };
 }

@@ -39,6 +39,19 @@ namespace Engine::ECS {
             EntityID GetID() const;
 
             /**
+             * @brief Renvoie true si l'entité est valide, false sinon
+             * 
+             * Les critères sont : 
+             * - mID > 0
+             * - mRegistry != nullptr
+             * - mRegistry->IsValidEntity(mID) == true
+             * 
+             * @return true 
+             * @return false 
+             */
+            bool IsValid() const;
+
+            /**
              * @brief Renvoie une chaine de caractères qui représente cette entité
              * 
              * @return std::string 

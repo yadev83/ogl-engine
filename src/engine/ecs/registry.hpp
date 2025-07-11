@@ -64,6 +64,11 @@ namespace Engine::ECS {
              * Chaque registre à sa propre file d'IDs
              */
             std::queue<EntityID> mAvailableEntityIDs;
+            /**
+             * @brief Tient une liste des IDs actuellement en cours d'utilisation
+             * 
+             */
+            std::set<EntityID> mLivingEntities;
 
             /**
              * @brief Récupère un stockage de component, le créé s'il n'en existe pas pour ce type de composant
@@ -149,6 +154,15 @@ namespace Engine::ECS {
              * @param entityID L'id de l'entité à supprimer
              */
             void DestroyEntity(EntityID entityID);
+
+            /**
+             * @brief Renvoie true si l'entité est valide et utilisable, false sinon
+             * 
+             * @param entityID 
+             * @return true 
+             * @return false 
+             */
+            bool IsValidEntity(EntityID entityID);
 
             /**
              * @brief Nettoie le registre dans son entiereté.

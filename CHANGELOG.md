@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- IsValidEntity check in Registry and Entity classes by managing a new LivingEntities list in the Registry
+- Parent component can be used to reference another entityID through a component and create hierarchies
+  - Parent component is used in Transform component to compute WorldPosition based on parent's transform if it exists
+  - Children component can be used to the the same thing for parents to reference their children if necessary
+  - Managing both the Parent and the Children components should be done manually as there is no way to go both ways automatically for now
+
 ### Changed
 - Physics system now has a broad phase check that uses a simple spatial hash check before resolving collisions
 

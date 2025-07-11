@@ -23,7 +23,6 @@ namespace Engine::Graphics {
             }
 
             // Move particle
-            transform.lastPosition = transform.position;
             transform.position += glm::vec3(particle.velocity) * deltaTime;
 
             // Optional: fade opacity, reduce size, etc.

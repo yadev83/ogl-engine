@@ -27,9 +27,8 @@ namespace Engine::Render {
              * 
              * @param transform La composante transforme associée au sprite
              * @param sprite Le sprite à dessiner
-             * @param alpha Le facteur d'interpolation entre deux frames
              */
-            void DrawSprite(Scene::Transform transform, Graphics::Sprite sprite, float alpha = 0.0f);
+            void DrawSprite(Scene::Transform transform, Graphics::Sprite sprite);
 
         public:
             /**
@@ -51,7 +50,7 @@ namespace Engine::Render {
              * Pour chaque Entité qui possède en simultané au moins un Transform, et un Sprite,
              * effectue le randu du sprite transformé dans la scène.
              * 
-             * @param alpha Composante utilisée pour mixer les positions du transform et interpoler en cas de baisse de framerate
+             * @param alpha Composante utilisée pour mixer les positions du transform et interpoler en cas de baisse de framerate (unused)
              */
             void OnRender(float alpha = 0.0f) override;
     };

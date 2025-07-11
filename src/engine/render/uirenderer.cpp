@@ -64,8 +64,8 @@ namespace Engine::Render {
 
     void UIRenderer::DrawElement(Element element, Transform transform, glm::mat4 projection) {
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, transform.position);
-        model = glm::scale(model, glm::vec3(element.size, 1.0f) * transform.scale);
+        model = glm::translate(model, transform.GetWorldPosition());
+        model = glm::scale(model, glm::vec3(element.size, 1.0f) * transform.GetWorldScale());
 
         element.material.SetUniform("u_Projection", projection);
         element.material.SetUniform("u_View", glm::mat4(1.0f));
@@ -151,7 +151,7 @@ namespace Engine::Render {
             auto& action = GetRegistry().GetComponent<Action>(entityID);
             if(!(transform.enabled && element.enabled && action.enabled)) continue;
 
-            bool isInside = IsPointInside(mousePos, transform.position, element.size * glm::vec2(transform.scale));
+            bool isInside = IsPointInside(mousePos, transform.GetWorldPosition(), element.size * glm::vec2(transform.GetWorldScale()));
 
             if(isInside && !action.hovered) {
                 action.hovered = true;
@@ -212,6 +212,8 @@ namespace Engine::Render {
                 // Si l'outline est activée, procède à 4 rendus différents, avec des transforms légèrement altérés
                 if(text.enableOutline) {
                     Transform tmpTransform = transform;
+                    tmpTransform.position = transform.GetWorldPosition(); // reposition based on world pos before moving around
+
                     Text tmpText = text;
                     tmpText.color = text.outlineColor;
                     float outlineOffset = text.font->GetFontSize() * 0.05f;
@@ -245,17 +247,17 @@ namespace Engine::Render {
 
         switch(text.anchor) {
             case Anchor::BottomLeft:
-                return glm::vec2(transform.position);
+                return glm::vec2(transform.GetWorldPosition());
 
             case Anchor::Top:
-                return glm::vec2(transform.position.x - computedSize.x * 0.5f, transform.position.y - computedSize.y);
+                return glm::vec2(transform.GetWorldPosition().x - computedSize.x * 0.5f, transform.GetWorldPosition().y - computedSize.y);
 
             case Anchor::Bottom:
-                return glm::vec2(transform.position.x - computedSize.x * 0.5f, transform.position.y);
+                return glm::vec2(transform.GetWorldPosition().x - computedSize.x * 0.5f, transform.GetWorldPosition().y);
 
             default:
             case Anchor::Center:
-                return (glm::vec2(transform.position) - (computedSize * 0.5f));
+                return (glm::vec2(transform.GetWorldPosition()) - (computedSize * 0.5f));
         }
     }
 

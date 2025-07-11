@@ -23,6 +23,10 @@ namespace Engine::ECS {
         return *mRegistry;
     }
 
+    bool Entity::IsValid() const {
+        return (mID > 0 && mRegistry && mRegistry->IsValidEntity(mID));
+    }
+
     EntityID Entity::GetID() const {
         return mID;
     }

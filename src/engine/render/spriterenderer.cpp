@@ -54,13 +54,12 @@ namespace Engine::Render {
         glDeleteVertexArrays(1, &mVAO);
     }
 
-    void SpriteRenderer::DrawSprite(Transform transform, Sprite sprite, float alpha) {
+    void SpriteRenderer::DrawSprite(Transform transform, Sprite sprite) {
         if(sprite.material.shader) {
-            glm::vec3 interpolatedPos = glm::length(transform.lastPosition) > 1e-6f ? glm::mix(transform.lastPosition, transform.position, alpha) : transform.position;
             auto mainCamera = GetApp().GetCurrentCamera();
 
             glm::mat4 model(1.0f);
-            model = glm::translate(model, interpolatedPos);
+            model = glm::translate(model, transform.GetWorldPosition());
             model *= glm::toMat4(transform.rotation);
             model = glm::scale(model, glm::vec3(sprite.size, 1.0f) * transform.scale);
 
@@ -88,12 +87,12 @@ namespace Engine::Render {
             // Si l'entité n'entre pas dans le frustum de la caméra, on la skip
             Rectangle cameraFrustum = GetApp().GetCurrentCamera()->GetFrustum();
             Rectangle spriteRec = {
-                {transform.position - glm::vec3(sprite.size, 0.0f) * 0.5f},
-                {transform.position + glm::vec3(sprite.size, 0.0f) * 0.5f}
+                {transform.GetWorldPosition() - glm::vec3(sprite.size, 0.0f) * 0.5f},
+                {transform.GetWorldPosition() + glm::vec3(sprite.size, 0.0f) * 0.5f}
             };
 
             if((spriteRec.max.x > cameraFrustum.min.x && spriteRec.min.x < cameraFrustum.max.x) && (spriteRec.max.y > cameraFrustum.min.y && spriteRec.min.y < cameraFrustum.max.y))
-                DrawSprite(transform, sprite, alpha);
+                DrawSprite(transform, sprite);
         }
     }
 }

@@ -80,7 +80,7 @@ namespace Engine::Physics {
             rb.onGround = false;
             rb.onWall = false;
             // Mise à jour du collider
-            collider.aabb = AABB(glm::vec2(transform.position), glm::vec2(collider.size * transform.scale), collider.enableRotation ? transform.rotation : glm::quat());
+            collider.aabb = AABB(glm::vec2(transform.GetWorldPosition()), glm::vec2(collider.size * transform.GetWorldScale()), collider.enableRotation ? transform.GetWorldRotation() : glm::quat());
         }
 
         SpatialHash hash = BuildSpatialHash(collidableIDs);

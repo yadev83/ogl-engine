@@ -1,4 +1,5 @@
 #include "registry.hpp"
+#include "hierarchy.hpp"
 
 namespace Engine::ECS {
     Registry::Registry() {
@@ -85,5 +86,31 @@ namespace Engine::ECS {
         }
 
         return result;
+    }
+
+    void Registry::AddChild(EntityID parentID, EntityID childID) {
+        // Check if child already has the Parent component or add it, same for the Children component on the parent id
+        if(!HasComponent<Parent>(childID)) AddComponent<Parent>(childID);
+        if(!HasComponent<Children>(parentID)) AddComponent<Children>(parentID);
+
+        // now set the parentID in the child
+        GetComponent<Parent>(childID).id = parentID;
+
+        // add the child to the list of the parent
+        GetComponent<Children>(parentID).ids.emplace(childID);
+    }
+
+    void Registry::RemoveChild(EntityID parentID, EntityID childID, bool removeComponents) {
+        if(!HasComponent<Parent>(childID)) throw std::runtime_error("given childID has no Parent component");
+        if(!HasComponent<Children>(parentID)) throw std::runtime_error("given parentID has no Children component");
+
+        if(GetComponent<Parent>(childID).id != parentID) throw std::runtime_error("given childID is not linked to the given parentID");
+        if(!GetComponent<Children>(parentID).ids.contains(childID)) throw std::runtime_error("given parentID is not linked to the given childID");
+
+        GetComponent<Parent>(childID).id = -1;
+        if(removeComponents) RemoveComponent<Parent>(childID);
+
+        GetComponent<Children>(parentID).ids.erase(childID);
+        if(removeComponents && GetComponent<Children>(parentID).ids.size() == 0) RemoveComponent<Children>(parentID);
     }
 }

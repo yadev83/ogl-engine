@@ -1,7 +1,7 @@
 #pragma once
 
 #include "component.hpp"
-#include <vector>
+#include <set>
 
 namespace Engine::ECS {
     /**
@@ -17,6 +17,6 @@ namespace Engine::ECS {
      * 
      */
     struct Children : public Component {
-        std::vector<EntityID> ids;
+        std::set<EntityID> ids;
     };
 }

@@ -336,5 +336,22 @@ namespace Engine::ECS {
              * @return std::set<std::string> La liste de tags
              */
             std::set<std::string> GetTags(EntityID entityID);
+
+            /**
+             * @brief Ajoute les composants Parent/Children de manière automatique pour créer une relation parent/enfant
+             * 
+             * @param parentID 
+             * @param childID 
+             */
+            void AddChild(EntityID parentID, EntityID childID);
+
+            /**
+             * @brief Brise la relation parent/enfant entre deux entités, si elle existe
+             * 
+             * @param parentID 
+             * @param childID 
+             * @param removeComponents Si true => supprime les composants Children/Parent au passage (s'il n'y a pas d'autre enfant)
+             */
+            void RemoveChild(EntityID parentID, EntityID childID, bool removeComponents = true);
     };
 }

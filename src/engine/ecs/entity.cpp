@@ -1,4 +1,5 @@
 #include "entity.hpp"
+#include "hierarchy.hpp"
 
 namespace Engine::ECS {
     Entity::Entity(EntityID id, Registry* registry) : mID(id), mRegistry(registry) {}
@@ -37,5 +38,23 @@ namespace Engine::ECS {
 
     bool Entity::HasTag(std::string tag) {
         return mRegistry->HasTag(GetID(), tag);
+    }
+
+    void Entity::AddChild(EntityID childID) {
+        mRegistry->AddChild(mID, childID);
+    }
+
+    void Entity::AddParent(EntityID parentID) {
+        mRegistry->AddChild(parentID, mID);
+    }
+
+    void Entity::RemoveChild(EntityID childID) {
+        mRegistry->RemoveChild(mID, childID);
+    }
+
+    void Entity::RemoveParent() {
+        if(!HasComponent<Parent>()) throw std::runtime_error("this entity has no parent to be removed");
+        EntityID parentID = GetComponent<Parent>().id;
+        mRegistry->RemoveChild(parentID, mID);
     }
 }

@@ -147,5 +147,32 @@ namespace Engine::ECS {
             bool HasComponent() {
                 return mRegistry->HasComponent<T>(mID);
             }
+
+            /**
+             * @brief Ajoute l'identifiant donné comme "enfant"
+             * 
+             * @param childID 
+             */
+            void AddChild(EntityID childID);
+
+            /**
+             * @brief Ajoute l'identifiant donné comme "parent"
+             * 
+             * @param parentID 
+             */
+            void AddParent(EntityID parentID);
+
+            /**
+             * @brief Supprime le lien avec l'entité enfant donnée
+             * 
+             * @param childID 
+             */
+            void RemoveChild(EntityID childID);
+
+            /**
+             * @brief Supprime le lien reliant cette entité à son parent
+             * 
+             */
+            void RemoveParent();
     };
 }

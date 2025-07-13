@@ -44,7 +44,7 @@ namespace Engine::ECS {
         mRegistry->AddChild(mID, childID);
     }
 
-    void Entity::AddParent(EntityID parentID) {
+    void Entity::SetParent(EntityID parentID) {
         mRegistry->AddChild(parentID, mID);
     }
 

@@ -160,7 +160,7 @@ namespace Engine::ECS {
              * 
              * @param parentID 
              */
-            void AddParent(EntityID parentID);
+            void SetParent(EntityID parentID);
 
             /**
              * @brief Supprime le lien avec l'entité enfant donnée

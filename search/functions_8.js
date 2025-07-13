@@ -13,5 +13,7 @@ var searchData=
   ['isplaying_10',['IsPlaying',['../class_engine_1_1_graphics_1_1_sprite_animator.html#aec555bd19325ce9960ab21963a616f4e',1,'Engine::Graphics::SpriteAnimator']]],
   ['ispressed_11',['IsPressed',['../struct_engine_1_1_input_1_1_key_state.html#a1594efafe57b23388b49766f6827a7df',1,'Engine::Input::KeyState']]],
   ['isreleased_12',['IsReleased',['../struct_engine_1_1_input_1_1_key_state.html#a282905a390d595e3ac1ac3cb2da16fff',1,'Engine::Input::KeyState']]],
-  ['isrotated_13',['IsRotated',['../struct_engine_1_1_scene_1_1_transform.html#a3f45506121198cefa415be82993b2fce',1,'Engine::Scene::Transform']]]
+  ['isrotated_13',['IsRotated',['../struct_engine_1_1_scene_1_1_transform.html#a3f45506121198cefa415be82993b2fce',1,'Engine::Scene::Transform']]],
+  ['isvalid_14',['IsValid',['../class_engine_1_1_e_c_s_1_1_entity.html#ad13f0ff0ee3c13b3ed3f31e8c9356031',1,'Engine::ECS::Entity']]],
+  ['isvalidentity_15',['IsValidEntity',['../class_engine_1_1_e_c_s_1_1_registry.html#abadc368b150d2d17517e241b03f5d5eb',1,'Engine::ECS::Registry']]]
 ];

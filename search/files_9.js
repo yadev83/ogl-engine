@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['manifold_2ehpp_0',['manifold.hpp',['../manifold_8hpp.html',1,'']]],
-  ['material_2ecpp_1',['material.cpp',['../material_8cpp.html',1,'']]],
-  ['material_2ehpp_2',['material.hpp',['../material_8hpp.html',1,'']]]
+  ['logger_2ecpp_0',['logger.cpp',['../logger_8cpp.html',1,'']]],
+  ['logger_2ehpp_1',['logger.hpp',['../logger_8hpp.html',1,'']]]
 ];

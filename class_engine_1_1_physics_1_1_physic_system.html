@@ -132,13 +132,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a469a4a006f39cd496c18405192ed3621 inherit pub_methods_class_engine_1_1_e_c_s_1_1_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appelée après le rendu de l'interface à l'écran.  <br /></td></tr>
 <tr class="memitem:a1d68526a066629fd84611a503c5437b2 inherit pub_methods_class_engine_1_1_e_c_s_1_1_system" id="r_a1d68526a066629fd84611a503c5437b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine_1_1_e_c_s_1_1_system.html#a1d68526a066629fd84611a503c5437b2">OnLateUpdate</a> (float deltaTime)</td></tr>
 <tr class="memdesc:a1d68526a066629fd84611a503c5437b2 inherit pub_methods_class_engine_1_1_e_c_s_1_1_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'update tardive appelée à la fin de la boucle.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:abd488bce3aef19575a12177a0d24471d" id="r_abd488bce3aef19575a12177a0d24471d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd488bce3aef19575a12177a0d24471d">unitsPerMeter</a> = 100.0f</td></tr>
-<tr class="memdesc:abd488bce3aef19575a12177a0d24471d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Facteur d'echelle pour le système physique.  <br /></td></tr>
-<tr class="memitem:af0419bca1e2be0f964f1d4041543156a" id="r_af0419bca1e2be0f964f1d4041543156a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0419bca1e2be0f964f1d4041543156a">dampingFactor</a> = 0.99f</td></tr>
-<tr class="memdesc:af0419bca1e2be0f964f1d4041543156a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Facteur de ralentissement dans le vide.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Le Système physique dans son ensemble définit ici. </p>
@@ -176,42 +169,6 @@ Public Attributes</h2></td></tr>
 </dl>
 
 <p>Reimplemented from <a class="el" href="class_engine_1_1_e_c_s_1_1_system.html#a2de5a52e952ab31112c20936544192e1">Engine::ECS::System</a>.</p>
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="af0419bca1e2be0f964f1d4041543156a" name="af0419bca1e2be0f964f1d4041543156a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0419bca1e2be0f964f1d4041543156a">&#9670;&#160;</a></span>dampingFactor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Engine::Physics::PhysicSystem::dampingFactor = 0.99f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Facteur de ralentissement dans le vide. </p>
-<p>Simule une perte de vélocité en l'absence de force, poru que les entités ne soient pas en mouvement perpétuel Par défaut, le ralentissement est léger, mais sur quelques secondes, la vélocité va tendre vers 0. Passer le dampingFactor à 1, désactive toute forme de ralentissement naturel </p>
-
-</div>
-</div>
-<a id="abd488bce3aef19575a12177a0d24471d" name="abd488bce3aef19575a12177a0d24471d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd488bce3aef19575a12177a0d24471d">&#9670;&#160;</a></span>unitsPerMeter</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Engine::Physics::PhysicSystem::unitsPerMeter = 100.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Facteur d'echelle pour le système physique. </p>
-<p>La simulation physique est basée sur les calculs qu'on pourrait faire dans le monde réel. Mais un mètre dans la vraie vie n'est pas équivalent à un mètre dans l'application.</p>
-<p>Ce facteur permet de dire combien d'unités (dans le jeu) sont équivalentes à un mètre (dans la vie) Par défaut, la valeur est de 100u/m, si 1 unité = 1 pixel, ça veut dire que 100 pixels = 1 mètre. </p>
 
 </div>
 </div>

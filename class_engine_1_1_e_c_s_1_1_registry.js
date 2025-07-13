@@ -1,6 +1,7 @@
 var class_engine_1_1_e_c_s_1_1_registry =
 [
     [ "Registry", "class_engine_1_1_e_c_s_1_1_registry.html#aac0d5651c7d6efc60372ca158aad7351", null ],
+    [ "AddChild", "class_engine_1_1_e_c_s_1_1_registry.html#a334b5d257dea69bb37ab89728f495b75", null ],
     [ "AddComponent", "class_engine_1_1_e_c_s_1_1_registry.html#af711332b80b10a0d8fda3408cff1ed3f", null ],
     [ "AddTag", "class_engine_1_1_e_c_s_1_1_registry.html#af896c19002cd4ae3be4fc302284e17a5", null ],
     [ "Clear", "class_engine_1_1_e_c_s_1_1_registry.html#ad2feae8d286dc93a88525aa73b2f51db", null ],
@@ -17,7 +18,9 @@ var class_engine_1_1_e_c_s_1_1_registry =
     [ "GetTags", "class_engine_1_1_e_c_s_1_1_registry.html#ab44a33a97d4bbc7d617d3220dc4131f7", null ],
     [ "HasComponent", "class_engine_1_1_e_c_s_1_1_registry.html#a69024b5ef22beff90c438aa7c901e219", null ],
     [ "HasTag", "class_engine_1_1_e_c_s_1_1_registry.html#ad63d8e0281ef1159a0bcb9b0d9f6d711", null ],
+    [ "IsValidEntity", "class_engine_1_1_e_c_s_1_1_registry.html#abadc368b150d2d17517e241b03f5d5eb", null ],
     [ "Print", "class_engine_1_1_e_c_s_1_1_registry.html#a8a924c2976c81af9d6ba2cc3fff64587", null ],
+    [ "RemoveChild", "class_engine_1_1_e_c_s_1_1_registry.html#affb393467ccf958c813c21467c4a6c34", null ],
     [ "RemoveComponent", "class_engine_1_1_e_c_s_1_1_registry.html#aadc4010d9b73c5b577247a2cea829a6c", null ],
     [ "Scene::Scene", "class_engine_1_1_e_c_s_1_1_registry.html#ac003ce073bf9d3249981190ca8d8d845", null ]
 ];

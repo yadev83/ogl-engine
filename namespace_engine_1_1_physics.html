@@ -98,6 +98,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Axis Aligned Bounding Box.  <a href="struct_engine_1_1_physics_1_1_a_a_b_b.html#details">More...</a><br /></td></tr>
 <tr class="memitem:BoxCollider" id="r_BoxCollider"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_engine_1_1_physics_1_1_box_collider.html">BoxCollider</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le <a class="el" href="struct_engine_1_1_physics_1_1_box_collider.html" title="Le BoxCollider est le collider le plus &quot;simple&quot; qui soit. Il s&#39;agit d&#39;une &quot;box&quot; qui se positionne au ...">BoxCollider</a> est le collider le plus "simple" qui soit. Il s'agit d'une "box" qui se positionne au centre de l'entité, et s'étend autour d'elle. Pas optimal pour les entités arrondies, mais en 2D, avec des sprites, fait amplement l'affaire.  <a href="struct_engine_1_1_physics_1_1_box_collider.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Cell" id="r_Cell"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_engine_1_1_physics_1_1_cell.html">Cell</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure qui définit l'emplacement d'une cellule dans l'espace en 2D.  <a href="struct_engine_1_1_physics_1_1_cell.html#details">More...</a><br /></td></tr>
+<tr class="memitem:CellHash" id="r_CellHash"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_engine_1_1_physics_1_1_cell_hash.html">CellHash</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le hash d'une cellule donnée.  <a href="struct_engine_1_1_physics_1_1_cell_hash.html#details">More...</a><br /></td></tr>
 <tr class="memitem:ColliderRecord" id="r_ColliderRecord"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_engine_1_1_physics_1_1_collider_record.html">ColliderRecord</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Une entrée qui permet de savoir quelles entités sont en collision avec un Collider On a des maps de ColliderRecords dans les composants de type Collider pour ça, on peut savoir à chaque instant qui est en collision avec le collider, et depuis combien de temps.  <a href="struct_engine_1_1_physics_1_1_collider_record.html#details">More...</a><br /></td></tr>
 <tr class="memitem:CollisionManifold" id="r_CollisionManifold"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_engine_1_1_physics_1_1_collision_manifold.html">CollisionManifold</a></td></tr>
@@ -108,7 +112,69 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le Système physique dans son ensemble définit ici.  <a href="class_engine_1_1_physics_1_1_physic_system.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Rigidbody" id="r_Rigidbody"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_engine_1_1_physics_1_1_rigidbody.html">Rigidbody</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">La structure rigidbody contient de quoi simuler l'existance d'un corps physique dans le moteur de jeu.  <a href="struct_engine_1_1_physics_1_1_rigidbody.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a9fdf95f7d50d25c8cf01e0ade10695f8" id="r_a9fdf95f7d50d25c8cf01e0ade10695f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fdf95f7d50d25c8cf01e0ade10695f8">SpatialHash</a> = std::unordered_map&lt;<a class="el" href="struct_engine_1_1_physics_1_1_cell.html">Cell</a>, std::vector&lt;<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">Engine::EntityID</a>&gt;, <a class="el" href="struct_engine_1_1_physics_1_1_cell_hash.html">CellHash</a>&gt;</td></tr>
+<tr class="memdesc:a9fdf95f7d50d25c8cf01e0ade10695f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Défiinition du "type" spatialHash =&gt; simplement une unordered_map qui lit des entités à une cellule.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a161267cfcc8694dde7dea87c90900ae0" id="r_a161267cfcc8694dde7dea87c90900ae0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a161267cfcc8694dde7dea87c90900ae0">operator==</a> (const <a class="el" href="struct_engine_1_1_physics_1_1_cell.html">Cell</a> &amp;a, const <a class="el" href="struct_engine_1_1_physics_1_1_cell.html">Cell</a> &amp;b)</td></tr>
+<tr class="memdesc:a161267cfcc8694dde7dea87c90900ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur de test d'égalité pour les cellules.  <br /></td></tr>
 </table>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a9fdf95f7d50d25c8cf01e0ade10695f8" name="a9fdf95f7d50d25c8cf01e0ade10695f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fdf95f7d50d25c8cf01e0ade10695f8">&#9670;&#160;</a></span>SpatialHash</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a9fdf95f7d50d25c8cf01e0ade10695f8">Engine::Physics::SpatialHash</a> = std::unordered_map&lt;<a class="el" href="struct_engine_1_1_physics_1_1_cell.html">Cell</a>, std::vector&lt;<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">Engine::EntityID</a>&gt;, <a class="el" href="struct_engine_1_1_physics_1_1_cell_hash.html">CellHash</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Défiinition du "type" spatialHash =&gt; simplement une unordered_map qui lit des entités à une cellule. </p>
+<p>On précise aussi que l'unordered_map doit hasher les cellules en utilisant le <a class="el" href="struct_engine_1_1_physics_1_1_cell_hash.html" title="Le hash d&#39;une cellule donnée.">CellHash</a> que l'on a définit </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a161267cfcc8694dde7dea87c90900ae0" name="a161267cfcc8694dde7dea87c90900ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a161267cfcc8694dde7dea87c90900ae0">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::Physics::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_engine_1_1_physics_1_1_cell.html">Cell</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_engine_1_1_physics_1_1_cell.html">Cell</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surcharge de l'opérateur de test d'égalité pour les cellules. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Cellule A </td></tr>
+    <tr><td class="paramname">b</td><td>Cellule B </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

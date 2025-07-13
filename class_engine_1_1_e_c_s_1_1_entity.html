@@ -103,6 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5d05648d6130d6d078693a67712b19a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit une nouvelle entité  <br /></td></tr>
 <tr class="memitem:a2dddc1c5c0449fe49cf4aa20da5bbed4" id="r_a2dddc1c5c0449fe49cf4aa20da5bbed4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dddc1c5c0449fe49cf4aa20da5bbed4">GetID</a> () const</td></tr>
 <tr class="memdesc:a2dddc1c5c0449fe49cf4aa20da5bbed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'identifiant <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6" title="Définition de type pour mieux identifier les EntityID.">EntityID</a> de cette.  <br /></td></tr>
+<tr class="memitem:ad13f0ff0ee3c13b3ed3f31e8c9356031" id="r_ad13f0ff0ee3c13b3ed3f31e8c9356031"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad13f0ff0ee3c13b3ed3f31e8c9356031">IsValid</a> () const</td></tr>
+<tr class="memdesc:ad13f0ff0ee3c13b3ed3f31e8c9356031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie true si l'entité est valide, false sinon.  <br /></td></tr>
 <tr class="memitem:ac99af2a582c41aeca56e766e1b196257" id="r_ac99af2a582c41aeca56e766e1b196257"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac99af2a582c41aeca56e766e1b196257">ToString</a> () const</td></tr>
 <tr class="memdesc:ac99af2a582c41aeca56e766e1b196257"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une chaine de caractères qui représente cette entité  <br /></td></tr>
 <tr class="memitem:acc546a81a2e4596fadfc373273890d8f" id="r_acc546a81a2e4596fadfc373273890d8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_engine_1_1_e_c_s_1_1_registry.html">Registry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc546a81a2e4596fadfc373273890d8f">GetRegistry</a> () const</td></tr>
@@ -126,6 +128,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a826a9381a881f8bc598a3f1a5768525d" id="r_a826a9381a881f8bc598a3f1a5768525d"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a826a9381a881f8bc598a3f1a5768525d template"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a826a9381a881f8bc598a3f1a5768525d">HasComponent</a> ()</td></tr>
 <tr class="memdesc:a826a9381a881f8bc598a3f1a5768525d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si l'entité possède le component demandé  <br /></td></tr>
+<tr class="memitem:a24b92ba751a174dffc850d2c4c7e343e" id="r_a24b92ba751a174dffc850d2c4c7e343e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24b92ba751a174dffc850d2c4c7e343e">AddChild</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> childID)</td></tr>
+<tr class="memdesc:a24b92ba751a174dffc850d2c4c7e343e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute l'identifiant donné comme "enfant".  <br /></td></tr>
+<tr class="memitem:a3988a6279cf7f2f64c69dece51953e18" id="r_a3988a6279cf7f2f64c69dece51953e18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3988a6279cf7f2f64c69dece51953e18">SetParent</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> parentID)</td></tr>
+<tr class="memdesc:a3988a6279cf7f2f64c69dece51953e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute l'identifiant donné comme "parent".  <br /></td></tr>
+<tr class="memitem:a16a3ebf7953f8e2a3756575d704394a8" id="r_a16a3ebf7953f8e2a3756575d704394a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16a3ebf7953f8e2a3756575d704394a8">RemoveChild</a> (<a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a> childID)</td></tr>
+<tr class="memdesc:a16a3ebf7953f8e2a3756575d704394a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime le lien avec l'entité enfant donnée.  <br /></td></tr>
+<tr class="memitem:a73ad9daa6798df21b96aa5773e0c1b4f" id="r_a73ad9daa6798df21b96aa5773e0c1b4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73ad9daa6798df21b96aa5773e0c1b4f">RemoveParent</a> ()</td></tr>
+<tr class="memdesc:a73ad9daa6798df21b96aa5773e0c1b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime le lien reliant cette entité à son parent.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Une entité est l'élément "atomique" utilisé dans l'architecture <a class="el" href="namespace_engine_1_1_e_c_s.html">ECS</a> pour référencer les composants. </p>
@@ -161,6 +171,31 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a24b92ba751a174dffc850d2c4c7e343e" name="a24b92ba751a174dffc850d2c4c7e343e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b92ba751a174dffc850d2c4c7e343e">&#9670;&#160;</a></span>AddChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::ECS::Entity::AddChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>childID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute l'identifiant donné comme "enfant". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">childID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8278397ee90952a44ec23bc44af25a9c" name="a8278397ee90952a44ec23bc44af25a9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8278397ee90952a44ec23bc44af25a9c">&#9670;&#160;</a></span>AddComponent()</h2>
 
@@ -405,6 +440,58 @@ false Si l'entité ne possède pas le tag </dd></dl>
 
 </div>
 </div>
+<a id="ad13f0ff0ee3c13b3ed3f31e8c9356031" name="ad13f0ff0ee3c13b3ed3f31e8c9356031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13f0ff0ee3c13b3ed3f31e8c9356031">&#9670;&#160;</a></span>IsValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Engine::ECS::Entity::IsValid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie true si l'entité est valide, false sinon. </p>
+<p>Les critères sont :</p><ul>
+<li>mID &gt; 0</li>
+<li>mRegistry != nullptr</li>
+<li>mRegistry-&gt;IsValidEntity(mID) == true</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
+<a id="a16a3ebf7953f8e2a3756575d704394a8" name="a16a3ebf7953f8e2a3756575d704394a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16a3ebf7953f8e2a3756575d704394a8">&#9670;&#160;</a></span>RemoveChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::ECS::Entity::RemoveChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>childID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime le lien avec l'entité enfant donnée. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">childID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad3b8f6c29a1f81363721723520bd663c" name="ad3b8f6c29a1f81363721723520bd663c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3b8f6c29a1f81363721723520bd663c">&#9670;&#160;</a></span>RemoveComponent()</h2>
 
@@ -434,6 +521,50 @@ template&lt;typename T&gt; </div>
 <p>Wrapper autour de registry-&gt;RemoveComponent(id) </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a73ad9daa6798df21b96aa5773e0c1b4f" name="a73ad9daa6798df21b96aa5773e0c1b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ad9daa6798df21b96aa5773e0c1b4f">&#9670;&#160;</a></span>RemoveParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::ECS::Entity::RemoveParent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime le lien reliant cette entité à son parent. </p>
+
+</div>
+</div>
+<a id="a3988a6279cf7f2f64c69dece51953e18" name="a3988a6279cf7f2f64c69dece51953e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3988a6279cf7f2f64c69dece51953e18">&#9670;&#160;</a></span>SetParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Engine::ECS::Entity::SetParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a></td>          <td class="paramname"><span class="paramname"><em>parentID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute l'identifiant donné comme "parent". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parentID</td><td></td></tr>
   </table>
   </dd>
 </dl>

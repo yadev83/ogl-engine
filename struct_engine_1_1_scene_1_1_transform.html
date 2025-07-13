@@ -120,6 +120,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a46bfd34bd828875797814ba18e11dbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Règle l'angle aotour de l'axe Z à l'angle en radians donné  <br /></td></tr>
 <tr class="memitem:a3f45506121198cefa415be82993b2fce" id="r_a3f45506121198cefa415be82993b2fce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f45506121198cefa415be82993b2fce">IsRotated</a> ()</td></tr>
 <tr class="memdesc:a3f45506121198cefa415be82993b2fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de savoir si l'objet a subi une ou plusieurs rotations.  <br /></td></tr>
+<tr class="memitem:a819693868095f0026c8f062b7e66d3ba" id="r_a819693868095f0026c8f062b7e66d3ba"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a819693868095f0026c8f062b7e66d3ba">GetWorldPosition</a> () const</td></tr>
+<tr class="memdesc:a819693868095f0026c8f062b7e66d3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la position du transform dans le "monde".  <br /></td></tr>
+<tr class="memitem:aadae187f44ab07e136a48d545d8a3b0a" id="r_aadae187f44ab07e136a48d545d8a3b0a"><td class="memItemLeft" align="right" valign="top">glm::quat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadae187f44ab07e136a48d545d8a3b0a">GetWorldRotation</a> () const</td></tr>
+<tr class="memdesc:aadae187f44ab07e136a48d545d8a3b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la rotation du transform dans le "monde".  <br /></td></tr>
+<tr class="memitem:aa161bac148d7add3292793a5029e6736" id="r_aa161bac148d7add3292793a5029e6736"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa161bac148d7add3292793a5029e6736">GetWorldScale</a> () const</td></tr>
+<tr class="memdesc:aa161bac148d7add3292793a5029e6736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le scaling "monde" du transform.  <br /></td></tr>
+<tr class="memitem:a5518d2c63cfc5738f8c01f26e8ba58ff" id="r_a5518d2c63cfc5738f8c01f26e8ba58ff"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5518d2c63cfc5738f8c01f26e8ba58ff">GetLocalMatrix</a> () const</td></tr>
+<tr class="memdesc:a5518d2c63cfc5738f8c01f26e8ba58ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la matrice modèle locale du transform.  <br /></td></tr>
+<tr class="memitem:a4fa3859b93f552d984c959c33d887dea" id="r_a4fa3859b93f552d984c959c33d887dea"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fa3859b93f552d984c959c33d887dea">GetWorldMatrix</a> () const</td></tr>
+<tr class="memdesc:a4fa3859b93f552d984c959c33d887dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la matrice modèle "monde" du transform.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_engine_1_1_e_c_s_1_1_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_engine_1_1_e_c_s_1_1_component')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_engine_1_1_e_c_s_1_1_component.html">Engine::ECS::Component</a></td></tr>
 <tr class="memitem:a6a79120aeaed661fb532b59b853f4174 inherit pub_methods_class_engine_1_1_e_c_s_1_1_component" id="r_a6a79120aeaed661fb532b59b853f4174"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine_1_1_e_c_s_1_1_component.html#a6a79120aeaed661fb532b59b853f4174">Component</a> ()=default</td></tr>
 <tr class="memitem:adc5e5952697593b44fc48a388b8ffa10 inherit pub_methods_class_engine_1_1_e_c_s_1_1_component" id="r_adc5e5952697593b44fc48a388b8ffa10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_engine_1_1_e_c_s_1_1_component.html#adc5e5952697593b44fc48a388b8ffa10">SetEntity</a> (<a class="el" href="class_engine_1_1_e_c_s_1_1_entity.html">Entity</a> e)</td></tr>
@@ -137,8 +147,6 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a06cedfc621f4da577df2d608ea7b0c2e" id="r_a06cedfc621f4da577df2d608ea7b0c2e"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06cedfc621f4da577df2d608ea7b0c2e">position</a> = {0.0f, 0.0f, 0.0f}</td></tr>
 <tr class="memdesc:a06cedfc621f4da577df2d608ea7b0c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">La position dans la scène.  <br /></td></tr>
-<tr class="memitem:a8368a8396107322abf2ac23ac359f5fd" id="r_a8368a8396107322abf2ac23ac359f5fd"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8368a8396107322abf2ac23ac359f5fd">lastPosition</a> = {0.0f, 0.0f, 0.0f}</td></tr>
-<tr class="memdesc:a8368a8396107322abf2ac23ac359f5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">La position dans la scène lors de la frame précédente (mis à jour par .<a class="el" href="#a28d7ef82bdfd0044beb98774ed1b9b97" title="Déplace le component d&#39;un offset donné">Translate()</a> pour les interpolations)  <br /></td></tr>
 <tr class="memitem:a12b5acbb47d220af4847ee68ca2dcec4" id="r_a12b5acbb47d220af4847ee68ca2dcec4"><td class="memItemLeft" align="right" valign="top">glm::quat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12b5acbb47d220af4847ee68ca2dcec4">rotation</a> = glm::quat(1.0f, 0.0f, 0.0f, 0.0f)</td></tr>
 <tr class="memdesc:a12b5acbb47d220af4847ee68ca2dcec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">La rotation (quaternion) du transform.  <br /></td></tr>
 <tr class="memitem:a75bc05ac9b121764926a9c7fbf0bd5cc" id="r_a75bc05ac9b121764926a9c7fbf0bd5cc"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75bc05ac9b121764926a9c7fbf0bd5cc">scale</a> = {1.0f, 1.0f, 1.0f}</td></tr>
@@ -150,6 +158,107 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>Cette structure de donnée permet la gestion d'une entité dans l'espace. </p>
 <p>ELle donne accès à une position, une rotation et un facteur d'agrandissement permettant le calcul de matrices Model </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a5518d2c63cfc5738f8c01f26e8ba58ff" name="a5518d2c63cfc5738f8c01f26e8ba58ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5518d2c63cfc5738f8c01f26e8ba58ff">&#9670;&#160;</a></span>GetLocalMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 Engine::Scene::Transform::GetLocalMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la matrice modèle locale du transform. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::mat4 </dd></dl>
+
+</div>
+</div>
+<a id="a4fa3859b93f552d984c959c33d887dea" name="a4fa3859b93f552d984c959c33d887dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa3859b93f552d984c959c33d887dea">&#9670;&#160;</a></span>GetWorldMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 Engine::Scene::Transform::GetWorldMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la matrice modèle "monde" du transform. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::mat4 </dd></dl>
+
+</div>
+</div>
+<a id="a819693868095f0026c8f062b7e66d3ba" name="a819693868095f0026c8f062b7e66d3ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819693868095f0026c8f062b7e66d3ba">&#9670;&#160;</a></span>GetWorldPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Engine::Scene::Transform::GetWorldPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la position du transform dans le "monde". </p>
+<p>Comprendre : Mis à jour en fonction de la position de l'entité parente s'il y en a une</p>
+<dl class="section return"><dt>Returns</dt><dd>glm::vec3 </dd></dl>
+
+</div>
+</div>
+<a id="aadae187f44ab07e136a48d545d8a3b0a" name="aadae187f44ab07e136a48d545d8a3b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadae187f44ab07e136a48d545d8a3b0a">&#9670;&#160;</a></span>GetWorldRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::quat Engine::Scene::Transform::GetWorldRotation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la rotation du transform dans le "monde". </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::quat </dd></dl>
+
+</div>
+</div>
+<a id="aa161bac148d7add3292793a5029e6736" name="aa161bac148d7add3292793a5029e6736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa161bac148d7add3292793a5029e6736">&#9670;&#160;</a></span>GetWorldScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Engine::Scene::Transform::GetWorldScale </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le scaling "monde" du transform. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::vec3 </dd></dl>
+
+</div>
+</div>
 <a id="a3f45506121198cefa415be82993b2fce" name="a3f45506121198cefa415be82993b2fce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f45506121198cefa415be82993b2fce">&#9670;&#160;</a></span>IsRotated()</h2>
 
@@ -303,22 +412,6 @@ false </dd></dl>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a8368a8396107322abf2ac23ac359f5fd" name="a8368a8396107322abf2ac23ac359f5fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8368a8396107322abf2ac23ac359f5fd">&#9670;&#160;</a></span>lastPosition</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">glm::vec3 Engine::Scene::Transform::lastPosition = {0.0f, 0.0f, 0.0f}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>La position dans la scène lors de la frame précédente (mis à jour par .<a class="el" href="#a28d7ef82bdfd0044beb98774ed1b9b97" title="Déplace le component d&#39;un offset donné">Translate()</a> pour les interpolations) </p>
-
-</div>
-</div>
 <a id="a06cedfc621f4da577df2d608ea7b0c2e" name="a06cedfc621f4da577df2d608ea7b0c2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06cedfc621f4da577df2d608ea7b0c2e">&#9670;&#160;</a></span>position</h2>
 

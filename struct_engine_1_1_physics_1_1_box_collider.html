@@ -116,6 +116,8 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:af7316a45f7b879c1a7217986f75e2dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, le collider est un trigger (superposition possible en ne résolvant pas les conditions)  <br /></td></tr>
 <tr class="memitem:a678ff72f3c6d82618503bb009aa21daf" id="r_a678ff72f3c6d82618503bb009aa21daf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a678ff72f3c6d82618503bb009aa21daf">enableRotation</a> = true</td></tr>
 <tr class="memdesc:a678ff72f3c6d82618503bb009aa21daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si true, le collider est mis à jour en fonction de l'angle de rotation du transform rattaché  <br /></td></tr>
+<tr class="memitem:a12ebd85a01e670a9737674513e994d7b" id="r_a12ebd85a01e670a9737674513e994d7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_engine_1_1_physics_1_1_a_a_b_b.html">AABB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ebd85a01e670a9737674513e994d7b">aabb</a> = {glm::vec2(0.0f), glm::vec2(0.0f)}</td></tr>
+<tr class="memdesc:a12ebd85a01e670a9737674513e994d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">La box <a class="el" href="struct_engine_1_1_physics_1_1_a_a_b_b.html" title="Axis Aligned Bounding Box.">AABB</a> associée à ce collider. Mise à jour par le système physique lors de la gestion des mouvements.  <br /></td></tr>
 <tr class="memitem:a2f8046b72ac57cd75ef4cbb1108d0641" id="r_a2f8046b72ac57cd75ef4cbb1108d0641"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, <a class="el" href="struct_engine_1_1_physics_1_1_collider_record.html">ColliderRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8046b72ac57cd75ef4cbb1108d0641">collisionsList</a></td></tr>
 <tr class="memdesc:a2f8046b72ac57cd75ef4cbb1108d0641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des collisions en cours.  <br /></td></tr>
 <tr class="memitem:a29fdb1b87fe8d4d38c6c59f4b5e06d58" id="r_a29fdb1b87fe8d4d38c6c59f4b5e06d58"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespace_engine.html#a92dd6fc178f047ce563d6cb1cf07d0b6">EntityID</a>, <a class="el" href="struct_engine_1_1_physics_1_1_collider_record.html">ColliderRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29fdb1b87fe8d4d38c6c59f4b5e06d58">triggersList</a></td></tr>
@@ -141,6 +143,22 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Le <a class="el" href="struct_engine_1_1_physics_1_1_box_collider.html" title="Le BoxCollider est le collider le plus &quot;simple&quot; qui soit. Il s&#39;agit d&#39;une &quot;box&quot; qui se positionne au ...">BoxCollider</a> est le collider le plus "simple" qui soit. Il s'agit d'une "box" qui se positionne au centre de l'entité, et s'étend autour d'elle. Pas optimal pour les entités arrondies, mais en 2D, avec des sprites, fait amplement l'affaire. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a12ebd85a01e670a9737674513e994d7b" name="a12ebd85a01e670a9737674513e994d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ebd85a01e670a9737674513e994d7b">&#9670;&#160;</a></span>aabb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_engine_1_1_physics_1_1_a_a_b_b.html">AABB</a> Engine::Physics::BoxCollider::aabb = {glm::vec2(0.0f), glm::vec2(0.0f)}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>La box <a class="el" href="struct_engine_1_1_physics_1_1_a_a_b_b.html" title="Axis Aligned Bounding Box.">AABB</a> associée à ce collider. Mise à jour par le système physique lors de la gestion des mouvements. </p>
+
+</div>
+</div>
 <a id="a2f8046b72ac57cd75ef4cbb1108d0641" name="a2f8046b72ac57cd75ef4cbb1108d0641"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f8046b72ac57cd75ef4cbb1108d0641">&#9670;&#160;</a></span>collisionsList</h2>
 

@@ -5,14 +5,15 @@ All notable changes to the engine will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.3.0-dev] - 2025-97-13
 
 ### Added
 - IsValidEntity check in Registry and Entity classes by managing a new LivingEntities list in the Registry
-- Parent component can be used to reference another entityID through a component and create hierarchies
+- Parent/Children components can be used to reference another entityID through a component and create hierarchies
   - Parent component is used in Transform component to compute WorldPosition based on parent's transform if it exists
   - Children component can be used to the the same thing for parents to reference their children if necessary
-  - Managing both the Parent and the Children components should be done manually as there is no way to go both ways automatically for now
+  - Managing both the Parent and the Children components can be done through the registry or at a higher level through Entities helper methods.
+  - Entity.SetParent / Entity.AddChildren (and deletes) automatically handle the addition and removal of components on both ends of the relation
 
 ### Changed
 - Physics system now has a broad phase check that uses a simple spatial hash check before resolving collisions
